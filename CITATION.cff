@@ -1,0 +1,15 @@
+cff-version: 1.2.0
+message: "Please cite this companion repository and the associated manuscript."
+title: "Exact computational certificates for CMR blue percolation"
+type: software
+authors:
+  - family-names: Pei
+    given-names: Yan Ru
+date-released: 2026-09-14
+url: "https://github.com/PeaBrane/cmr-blue-percolation"
+repository-code: "https://github.com/PeaBrane/cmr-blue-percolation"
+abstract: >-
+  Exact rational certificates for blue percolation in dimension 22 and
+  simultaneous blue percolation with finite spin-glass susceptibility in
+  dimension 180, with independent local checks accompanying Towards the
+  spin-glass transition in finite dimensions via blue percolation.
