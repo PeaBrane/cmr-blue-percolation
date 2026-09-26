@@ -1,0 +1,760 @@
+{
+  "certified_rows": 9,
+  "rows": [
+    {
+      "label": "d12-t3/25",
+      "d": 12,
+      "t": "3/25",
+      "p": "2161/10000",
+      "g_K": "102634/100000",
+      "g_h": "83527/100000",
+      "mbar": "1297431/10000000",
+      "criterion": "basic",
+      "pB_floor": {
+        "vertex_sums": 24,
+        "max_delta_upper": "-0.0001947659",
+        "aligned_witness_upper": "0.2210000",
+        "over_tanh_2beta": [
+          "0.9133",
+          "0.9341"
+        ]
+      },
+      "holley_line": {
+        "environments": 25,
+        "min_log_slack_lower": "0.0018278",
+        "at_S": 24,
+        "log_slack_at_S_min_lower": "0.0019203",
+        "log_slack_at_S_max_lower": "0.0018278"
+      },
+      "hypotheses": {
+        "gK_2d_upper": "1.8664",
+        "abar_upper": "0.311989",
+        "alpha_upper": "0.311972",
+        "lambda_star_upper": "0.226714",
+        "kappa_upper": "1.298172"
+      },
+      "rho_minus_lower": "0.4351284",
+      "green": {
+        "G_d": [
+          "1.1011537095",
+          "1.1011552715"
+        ],
+        "F_d_upper": "0.0918628591",
+        "G2_d_upper": "1.2272959943",
+        "G2_over_G2_minus_1_upper": "0.01216992"
+      },
+      "boost": {
+        "U1_upper": "0.036685",
+        "sum_U_upper": "15.2559",
+        "eta_prime_upper": "0.168972",
+        "T1_upper": "0.00044645"
+      },
+      "terms_upper": [
+        "0.886231",
+        "0.019603",
+        "0.001235"
+      ],
+      "score_upper": "0.907068",
+      "c_cov_lower": "0.00829185",
+      "rho_c_lower": "0.4398924",
+      "score_c_upper": "0.897470",
+      "theta_star_lower": "0.036293",
+      "susceptibility_kappa_2d": [
+        "5.5283",
+        "5.5284"
+      ],
+      "published_checked": [
+        "F_d_minus_1_over_d_upper",
+        "G2_d_upper",
+        "G_d_hi_upper",
+        "G_d_lo_lower",
+        "K_prime_hi_upper",
+        "K_prime_lo_lower",
+        "abs_h_hi_upper",
+        "abs_h_lo_lower",
+        "alpha_upper",
+        "argmax_delta_exact",
+        "closed_floor_exact",
+        "eta_prime_upper",
+        "frozen_success_1_upper",
+        "frozen_success_2_upper",
+        "frozen_success_3_upper",
+        "frozen_success_4_upper",
+        "g_K_exact",
+        "g_h_exact",
+        "gamma_min_lower",
+        "gamma_min_upper",
+        "holley_ratio_S_max_loglower",
+        "holley_ratio_S_min_loglower",
+        "holley_ratio_interior_min_loglower",
+        "kappa_upper",
+        "margin_lower",
+        "margin_upper",
+        "max_delta_lower",
+        "max_delta_upper",
+        "pB_witness_over_tanh_2beta_upper",
+        "pB_witness_upper",
+        "p_A_exact",
+        "p_exact",
+        "p_over_tanh_2beta_lower",
+        "rho_minus_lower",
+        "score_c_upper",
+        "score_closed_floor_lower",
+        "score_closed_floor_upper",
+        "score_upper",
+        "sg_kappa_lower",
+        "sg_kappa_upper",
+        "tanh_2beta_exact",
+        "term1_upper",
+        "term2_upper",
+        "term3_upper",
+        "theta_star_lower"
+      ]
+    },
+    {
+      "label": "d12-t11/100",
+      "d": 12,
+      "t": "11/100",
+      "p": "2023/10000",
+      "g_K": "255577/250000",
+      "g_h": "873143/1000000",
+      "mbar": "114873/1250000",
+      "criterion": "basic",
+      "pB_floor": {
+        "vertex_sums": 24,
+        "max_delta_upper": "-0.0003873143",
+        "aligned_witness_upper": "0.2052495",
+        "over_tanh_2beta": [
+          "0.9306",
+          "0.9443"
+        ]
+      },
+      "holley_line": {
+        "environments": 25,
+        "min_log_slack_lower": "0.0009738",
+        "at_S": -24,
+        "log_slack_at_S_min_lower": "0.0009738",
+        "log_slack_at_S_max_lower": "0.0010211"
+      },
+      "hypotheses": {
+        "gK_2d_upper": "1.6981",
+        "abar_upper": "0.264754",
+        "alpha_upper": "0.264744",
+        "lambda_star_upper": "0.180035",
+        "kappa_upper": "1.202397"
+      },
+      "rho_minus_lower": "0.4540508",
+      "green": {
+        "G_d": [
+          "1.1011537095",
+          "1.1011552715"
+        ],
+        "F_d_upper": "0.0918628591",
+        "G2_d_upper": "1.2272959943",
+        "G2_over_G2_minus_1_upper": "0.01216992"
+      },
+      "boost": {
+        "U1_upper": "0.028331",
+        "sum_U_upper": "9.4422",
+        "eta_prime_upper": "0.127085",
+        "T1_upper": "0.00034479"
+      },
+      "terms_upper": [
+        "0.907233",
+        "0.018786",
+        "0.000870"
+      ],
+      "score_upper": "0.926888",
+      "c_cov_lower": "0.00801394",
+      "rho_c_lower": "0.4584632",
+      "score_c_upper": "0.918156",
+      "theta_star_lower": "0.031296",
+      "susceptibility_kappa_2d": [
+        "3.5629",
+        "3.5630"
+      ],
+      "published_checked": [
+        "eta_prime_upper",
+        "g_K_exact",
+        "g_h_exact",
+        "margin_lower",
+        "margin_upper",
+        "pB_witness_over_tanh_2beta_upper",
+        "p_exact",
+        "p_over_tanh_2beta_lower",
+        "rho_minus_lower",
+        "score_c_upper",
+        "score_upper",
+        "term3_upper",
+        "theta_star_lower"
+      ]
+    },
+    {
+      "label": "d12-t23/200",
+      "d": 12,
+      "t": "23/200",
+      "p": "2094/10000",
+      "g_K": "1024283/1000000",
+      "g_h": "855173/1000000",
+      "mbar": "546199/5000000",
+      "criterion": "basic",
+      "pB_floor": {
+        "vertex_sums": 24,
+        "max_delta_upper": "-0.0002370251",
+        "aligned_witness_upper": "0.2131983",
+        "over_tanh_2beta": [
+          "0.9224",
+          "0.9393"
+        ]
+      },
+      "holley_line": {
+        "environments": 25,
+        "min_log_slack_lower": "0.0009672",
+        "at_S": -24,
+        "log_slack_at_S_min_lower": "0.0009672",
+        "log_slack_at_S_max_lower": "0.0010343"
+      },
+      "hypotheses": {
+        "gK_2d_upper": "1.7787",
+        "abar_upper": "0.287915",
+        "alpha_upper": "0.287901",
+        "lambda_star_upper": "0.202150",
+        "kappa_upper": "1.245274"
+      },
+      "rho_minus_lower": "0.4453801",
+      "green": {
+        "G_d": [
+          "1.1011537095",
+          "1.1011552715"
+        ],
+        "F_d_upper": "0.0918628591",
+        "G2_d_upper": "1.2272959943",
+        "G2_over_G2_minus_1_upper": "0.01216992"
+      },
+      "boost": {
+        "U1_upper": "0.032175",
+        "sum_U_upper": "11.9137",
+        "eta_prime_upper": "0.146062",
+        "T1_upper": "0.00039156"
+      },
+      "terms_upper": [
+        "0.893535",
+        "0.019152",
+        "0.001030"
+      ],
+      "score_upper": "0.913716",
+      "c_cov_lower": "0.00820059",
+      "rho_c_lower": "0.4499832",
+      "score_c_upper": "0.904575",
+      "theta_star_lower": "0.035441",
+      "susceptibility_kappa_2d": [
+        "4.4341",
+        "4.4342"
+      ],
+      "published_checked": [
+        "eta_prime_upper",
+        "g_K_exact",
+        "g_h_exact",
+        "margin_lower",
+        "margin_upper",
+        "pB_witness_over_tanh_2beta_upper",
+        "p_exact",
+        "p_over_tanh_2beta_lower",
+        "rho_minus_lower",
+        "score_c_upper",
+        "score_upper",
+        "term3_upper",
+        "theta_star_lower"
+      ]
+    },
+    {
+      "label": "d12-t1/8",
+      "d": 12,
+      "t": "1/8",
+      "p": "2224/10000",
+      "g_K": "1028469/1000000",
+      "g_h": "407843/500000",
+      "mbar": "759111/5000000",
+      "criterion": "basic",
+      "pB_floor": {
+        "vertex_sums": 24,
+        "max_delta_upper": "-0.0002077845",
+        "aligned_witness_upper": "0.2286552",
+        "over_tanh_2beta": [
+          "0.9035",
+          "0.9290"
+        ]
+      },
+      "holley_line": {
+        "environments": 25,
+        "min_log_slack_lower": "0.0009791",
+        "at_S": -24,
+        "log_slack_at_S_min_lower": "0.0009791",
+        "log_slack_at_S_max_lower": "0.0010072"
+      },
+      "hypotheses": {
+        "gK_2d_upper": "1.9616",
+        "abar_upper": "0.336856",
+        "alpha_upper": "0.336834",
+        "lambda_star_upper": "0.253959",
+        "kappa_upper": "1.357997"
+      },
+      "rho_minus_lower": "0.4240889",
+      "green": {
+        "G_d": [
+          "1.1011537095",
+          "1.1011552715"
+        ],
+        "F_d_upper": "0.0918628591",
+        "G2_d_upper": "1.2272959943",
+        "G2_over_G2_minus_1_upper": "0.01216992"
+      },
+      "boost": {
+        "U1_upper": "0.041859",
+        "sum_U_upper": "19.7901",
+        "eta_prime_upper": "0.196279",
+        "T1_upper": "0.00050942"
+      },
+      "terms_upper": [
+        "0.883542",
+        "0.020113",
+        "0.001495"
+      ],
+      "score_upper": "0.905149",
+      "c_cov_lower": "0.00829794",
+      "rho_c_lower": "0.4289805",
+      "score_c_upper": "0.895074",
+      "theta_star_lower": "0.034916",
+      "susceptibility_kappa_2d": [
+        "6.9068",
+        "6.9069"
+      ],
+      "published_checked": [
+        "eta_prime_upper",
+        "g_K_exact",
+        "g_h_exact",
+        "margin_lower",
+        "margin_upper",
+        "pB_witness_over_tanh_2beta_upper",
+        "p_exact",
+        "p_over_tanh_2beta_lower",
+        "rho_minus_lower",
+        "score_c_upper",
+        "score_upper",
+        "term3_upper",
+        "theta_star_lower"
+      ]
+    },
+    {
+      "label": "d12-t13/100",
+      "d": 12,
+      "t": "13/100",
+      "p": "2283/10000",
+      "g_K": "515339/500000",
+      "g_h": "794291/1000000",
+      "mbar": "444177/2500000",
+      "criterion": "basic",
+      "pB_floor": {
+        "vertex_sums": 24,
+        "max_delta_upper": "-0.0002255803",
+        "aligned_witness_upper": "0.2361651",
+        "over_tanh_2beta": [
+          "0.8929",
+          "0.9237"
+        ]
+      },
+      "holley_line": {
+        "environments": 25,
+        "min_log_slack_lower": "0.0009665",
+        "at_S": -24,
+        "log_slack_at_S_min_lower": "0.0009665",
+        "log_slack_at_S_max_lower": "0.0010261"
+      },
+      "hypotheses": {
+        "gK_2d_upper": "2.0652",
+        "abar_upper": "0.362603",
+        "alpha_upper": "0.362575",
+        "lambda_star_upper": "0.284406",
+        "kappa_upper": "1.432116"
+      },
+      "rho_minus_lower": "0.4111646",
+      "green": {
+        "G_d": [
+          "1.1011537095",
+          "1.1011552715"
+        ],
+        "F_d_upper": "0.0918628591",
+        "G2_d_upper": "1.2272959943",
+        "G2_over_G2_minus_1_upper": "0.01216992"
+      },
+      "boost": {
+        "U1_upper": "0.048064",
+        "sum_U_upper": "26.2341",
+        "eta_prime_upper": "0.230490",
+        "T1_upper": "0.00058493"
+      },
+      "terms_upper": [
+        "0.887764",
+        "0.020745",
+        "0.001849"
+      ],
+      "score_upper": "0.910357",
+      "c_cov_lower": "0.00820378",
+      "rho_c_lower": "0.4161527",
+      "score_c_upper": "0.899716",
+      "theta_star_lower": "0.030631",
+      "susceptibility_kappa_2d": [
+        "8.6492",
+        "8.6493"
+      ],
+      "published_checked": [
+        "eta_prime_upper",
+        "g_K_exact",
+        "g_h_exact",
+        "margin_lower",
+        "margin_upper",
+        "pB_witness_over_tanh_2beta_upper",
+        "p_exact",
+        "p_over_tanh_2beta_lower",
+        "rho_minus_lower",
+        "score_c_upper",
+        "score_upper",
+        "term3_upper",
+        "theta_star_lower"
+      ]
+    },
+    {
+      "label": "d11-t13/100",
+      "d": 11,
+      "t": "13/100",
+      "p": "2310/10000",
+      "g_K": "6443/6250",
+      "g_h": "25553/31250",
+      "mbar": "1495251/10000000",
+      "criterion": "basic",
+      "pB_floor": {
+        "vertex_sums": 22,
+        "max_delta_upper": "-0.0002155907",
+        "aligned_witness_upper": "0.2370879",
+        "over_tanh_2beta": [
+          "0.9034",
+          "0.9273"
+        ]
+      },
+      "holley_line": {
+        "environments": 23,
+        "min_log_slack_lower": "0.0009686",
+        "at_S": -22,
+        "log_slack_at_S_min_lower": "0.0009686",
+        "log_slack_at_S_max_lower": "0.0010638"
+      },
+      "hypotheses": {
+        "gK_2d_upper": "1.9525",
+        "abar_upper": "0.334541",
+        "alpha_upper": "0.334516",
+        "lambda_star_upper": "0.251332",
+        "kappa_upper": "1.351628"
+      },
+      "rho_minus_lower": "0.4252374",
+      "green": {
+        "G_d": [
+          "1.1127290217",
+          "1.1127362983"
+        ],
+        "F_d_upper": "0.1013144789",
+        "G2_d_upper": "1.2577778634",
+        "G2_over_G2_minus_1_upper": "0.01583955"
+      },
+      "boost": {
+        "U1_upper": "0.045493",
+        "sum_U_upper": "15.8893",
+        "eta_prime_upper": "0.215841",
+        "T1_upper": "0.00072059"
+      },
+      "terms_upper": [
+        "0.925474",
+        "0.024470",
+        "0.002161"
+      ],
+      "score_upper": "0.952104",
+      "c_cov_lower": "0.00908480",
+      "rho_c_lower": "0.4305784",
+      "score_c_upper": "0.940624",
+      "theta_star_lower": "0.017392",
+      "susceptibility_kappa_2d": [
+        "6.7084",
+        "6.7085"
+      ],
+      "published_checked": [
+        "F_d_minus_1_over_d_upper",
+        "eta_prime_upper",
+        "g_K_exact",
+        "g_h_exact",
+        "margin_lower",
+        "margin_upper",
+        "pB_witness_over_tanh_2beta_upper",
+        "p_exact",
+        "p_over_tanh_2beta_lower",
+        "rho_minus_lower",
+        "score_c_upper",
+        "score_upper",
+        "theta_star_lower"
+      ]
+    },
+    {
+      "label": "d11-t3/25",
+      "d": 11,
+      "t": "3/25",
+      "p": "2180/10000",
+      "g_K": "513251/500000",
+      "g_h": "427717/500000",
+      "mbar": "136251/1250000",
+      "criterion": "basic",
+      "pB_floor": {
+        "vertex_sums": 22,
+        "max_delta_upper": "-0.0002916551",
+        "aligned_witness_upper": "0.2217826",
+        "over_tanh_2beta": [
+          "0.9214",
+          "0.9375"
+        ]
+      },
+      "holley_line": {
+        "environments": 23,
+        "min_log_slack_lower": "0.0009953",
+        "at_S": -22,
+        "log_slack_at_S_min_lower": "0.0009953",
+        "log_slack_at_S_max_lower": "0.0010136"
+      },
+      "hypotheses": {
+        "gK_2d_upper": "1.7780",
+        "abar_upper": "0.287726",
+        "alpha_upper": "0.287710",
+        "lambda_star_upper": "0.201961",
+        "kappa_upper": "1.244671"
+      },
+      "rho_minus_lower": "0.4454996",
+      "green": {
+        "G_d": [
+          "1.1127290217",
+          "1.1127362983"
+        ],
+        "F_d_upper": "0.1013144789",
+        "G2_d_upper": "1.2577778634",
+        "G2_over_G2_minus_1_upper": "0.01583955"
+      },
+      "boost": {
+        "U1_upper": "0.035303",
+        "sum_U_upper": "9.9524",
+        "eta_prime_upper": "0.162424",
+        "T1_upper": "0.00055918"
+      },
+      "terms_upper": [
+        "0.936060",
+        "0.023357",
+        "0.001499"
+      ],
+      "score_upper": "0.960915",
+      "c_cov_lower": "0.00896647",
+      "rho_c_lower": "0.4505312",
+      "score_c_upper": "0.950461",
+      "theta_star_lower": "0.015882",
+      "susceptibility_kappa_2d": [
+        "4.3941",
+        "4.3942"
+      ],
+      "published_checked": [
+        "eta_prime_upper",
+        "g_K_exact",
+        "g_h_exact",
+        "margin_lower",
+        "margin_upper",
+        "pB_witness_over_tanh_2beta_upper",
+        "p_exact",
+        "p_over_tanh_2beta_lower",
+        "rho_minus_lower",
+        "score_c_upper",
+        "score_upper",
+        "theta_star_lower"
+      ]
+    },
+    {
+      "label": "d10-t27/200",
+      "d": 10,
+      "t": "27/200",
+      "p": "2399/10000",
+      "g_K": "516713/500000",
+      "g_h": "102809/125000",
+      "mbar": "1440853/10000000",
+      "criterion": "refined_c",
+      "pB_floor": {
+        "vertex_sums": 20,
+        "max_delta_upper": "-0.0002476421",
+        "aligned_witness_upper": "0.2456052",
+        "over_tanh_2beta": [
+          "0.9047",
+          "0.9263"
+        ]
+      },
+      "holley_line": {
+        "environments": 21,
+        "min_log_slack_lower": "0.0009849",
+        "at_S": -20,
+        "log_slack_at_S_min_lower": "0.0009849",
+        "log_slack_at_S_max_lower": "0.0012191"
+      },
+      "hypotheses": {
+        "gK_2d_upper": "1.9302",
+        "abar_upper": "0.328795",
+        "alpha_upper": "0.328766",
+        "lambda_star_upper": "0.244896",
+        "kappa_upper": "1.336682"
+      },
+      "rho_minus_lower": "0.4279573",
+      "green": {
+        "G_d": [
+          "1.1273713949",
+          "1.1274052727"
+        ],
+        "F_d_upper": "0.1130075189",
+        "G2_d_upper": "1.2991099949",
+        "G2_over_G2_minus_1_upper": "0.02214358"
+      },
+      "boost": {
+        "U1_upper": "0.049017",
+        "sum_U_upper": "12.2895",
+        "eta_prime_upper": "0.236194",
+        "T1_upper": "0.00108540"
+      },
+      "terms_upper": [
+        "0.974024",
+        "0.030395",
+        "0.003321"
+      ],
+      "score_upper": "1.007739",
+      "c_cov_lower": "0.01003549",
+      "rho_c_lower": "0.4338197",
+      "score_c_upper": "0.994576",
+      "theta_star_lower": "0.001950",
+      "susceptibility_kappa_2d": [
+        "6.3128",
+        "6.3129"
+      ],
+      "published_checked": [
+        "F_d_minus_1_over_d_upper",
+        "eta_prime_upper",
+        "g_K_exact",
+        "g_h_exact",
+        "margin_lower",
+        "margin_upper",
+        "pB_witness_over_tanh_2beta_upper",
+        "p_exact",
+        "p_over_tanh_2beta_lower",
+        "rho_c_gain_lower",
+        "rho_c_gain_upper",
+        "rho_minus_lower",
+        "score_c_upper",
+        "score_lower",
+        "score_upper",
+        "term3_upper",
+        "theta_star_lower"
+      ]
+    },
+    {
+      "label": "d10-t13/100",
+      "d": 10,
+      "t": "13/100",
+      "p": "2336/10000",
+      "g_K": "1031101/1000000",
+      "g_h": "840843/1000000",
+      "mbar": "1240161/10000000",
+      "criterion": "refined_c",
+      "pB_floor": {
+        "vertex_sums": 20,
+        "max_delta_upper": "-0.0001945465",
+        "aligned_witness_upper": "0.2380887",
+        "over_tanh_2beta": [
+          "0.9136",
+          "0.9313"
+        ]
+      },
+      "holley_line": {
+        "environments": 21,
+        "min_log_slack_lower": "0.0010106",
+        "at_S": 20,
+        "log_slack_at_S_min_lower": "0.0010118",
+        "log_slack_at_S_max_lower": "0.0010106"
+      },
+      "hypotheses": {
+        "gK_2d_upper": "1.8452",
+        "abar_upper": "0.306272",
+        "alpha_upper": "0.306248",
+        "lambda_star_upper": "0.220719",
+        "kappa_upper": "1.283147"
+      },
+      "rho_minus_lower": "0.4379919",
+      "green": {
+        "G_d": [
+          "1.1273713949",
+          "1.1274052727"
+        ],
+        "F_d_upper": "0.1130075189",
+        "G2_d_upper": "1.2991099949",
+        "G2_over_G2_minus_1_upper": "0.02214358"
+      },
+      "boost": {
+        "U1_upper": "0.043346",
+        "sum_U_upper": "9.8716",
+        "eta_prime_upper": "0.205616",
+        "T1_upper": "0.00095983"
+      },
+      "terms_upper": [
+        "0.977375",
+        "0.029699",
+        "0.002759"
+      ],
+      "score_upper": "1.009832",
+      "c_cov_lower": "0.00999818",
+      "rho_c_lower": "0.4436987",
+      "score_c_upper": "0.997261",
+      "theta_star_lower": "0.001048",
+      "susceptibility_kappa_2d": [
+        "5.1601",
+        "5.1602"
+      ],
+      "published_checked": [
+        "eta_prime_upper",
+        "g_K_exact",
+        "g_h_exact",
+        "margin_lower",
+        "margin_upper",
+        "pB_witness_over_tanh_2beta_upper",
+        "p_exact",
+        "p_over_tanh_2beta_lower",
+        "rho_c_gain_lower",
+        "rho_c_gain_upper",
+        "rho_minus_lower",
+        "score_c_upper",
+        "score_lower",
+        "score_upper",
+        "term3_upper",
+        "theta_star_lower"
+      ]
+    }
+  ],
+  "uncertified_rows": [
+    {
+      "label": "d10-t3/25",
+      "d": 10,
+      "t": "3/25",
+      "score_upper": "1.030814",
+      "score_c_upper": "1.019284",
+      "published_checked": [
+        "score_c_lower",
+        "score_c_upper"
+      ]
+    }
+  ],
+  "local_vector_sha256": "95512232aa4c9fd865519f716a8e59cb4180e8f5031fc0134c9eb7bf429c5e9b",
+  "bound_vector_sha256": "f34a5a2801bf1880478163da1b6c9d03617fdccbd51741cbda7a864dee9180ca"
+}

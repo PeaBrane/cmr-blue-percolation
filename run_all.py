@@ -1,28 +1,75 @@
-"""Run the paper's certificates, optionally including finite-model checks."""
+"""Run the certificates; optionally add supplementary and optional-dependency checks.
+
+The default run and --supplementary need only the Python standard library.
+--optional-deps adds finite sanity checks and the code-base-A global
+crosscheck, which need mpmath, SymPy, NumPy or networkx; a check whose
+package cannot be imported is skipped with a message. Every script runs in a
+child process of the interpreter that runs this file.
+"""
 
 import argparse
+from importlib.util import find_spec
 from pathlib import Path
 import subprocess
 import sys
+import time
+
+DEFAULT = [
+    "verify_signed_star.py",
+    "verify_signed_star_independent.py",
+    "verify_physical_separation.py",
+    "overlap_revealed/certify.py",
+    "single_floor/verify_single_floor.py",
+    "diluted_uniqueness/gd_constants.py",
+]
+SUPPLEMENTARY = [
+    "checks/smallstar_audit.py",
+    "checks/numerator_audit.py",
+    "checks/check_susceptibility.py",
+    "overlap_revealed/crosscheck/crosscheck_local.py",
+    "single_floor/check_lemmas.py",
+    "single_floor/check_side_results.py",
+    "diluted_uniqueness/check_typeS_rule.py",
+]
+# (script and arguments, packages it imports)
+OPTIONAL = [
+    (["overlap_revealed/crosscheck/crosscheck_global.py"], ["mpmath"]),
+    (["diluted_uniqueness/optional/check_classical_window.py"], ["mpmath"]),
+    (["diluted_uniqueness/optional/check_decimation_exact.py"], ["sympy"]),
+    (["diluted_uniqueness/optional/check_gibbs_reduction.py"], ["numpy"]),
+    (["diluted_uniqueness/optional/surgery_counts.py"], ["networkx"]),
+]
 
 
 def main():
     if sys.flags.optimize:
         raise SystemExit("Verification requires assertions: run Python without -O.")
-    parser = argparse.ArgumentParser(description=__doc__)
+    parser = argparse.ArgumentParser(description=__doc__.splitlines()[0])
     parser.add_argument("--supplementary", action="store_true",
-                        help="also run the independent finite-model checks")
+                        help="also run the independent finite-model and crosscheck programs (standard library)")
+    parser.add_argument("--optional-deps", action="store_true",
+                        help="also run the checks that need mpmath, SymPy, NumPy or networkx, when importable")
     args = parser.parse_args()
     root = Path(__file__).resolve().parent
-    scripts = ["verify_signed_star.py", "verify_signed_star_independent.py",
-               "verify_physical_separation.py"]
+    runs = [[script] for script in DEFAULT]
     if args.supplementary:
-        scripts += ["checks/smallstar_audit.py", "checks/numerator_audit.py",
-                    "checks/check_susceptibility.py"]
-    for script in scripts:
-        print(f"\nRunning {script}", flush=True)
-        subprocess.run([sys.executable, str(root / script)], cwd=root, check=True)
-    print(f"\nPASS: {len(scripts)} verification scripts completed.")
+        runs += [[script] for script in SUPPLEMENTARY]
+    skipped = []
+    if args.optional_deps:
+        for command, packages in OPTIONAL:
+            missing = [name for name in packages if find_spec(name) is None]
+            if missing:
+                skipped.append((" ".join(command), missing))
+            else:
+                runs.append(command)
+    for command in runs:
+        print(f"\nRunning {' '.join(command)}", flush=True)
+        start = time.monotonic()
+        subprocess.run([sys.executable, str(root / command[0]), *command[1:]], cwd=root, check=True)
+        print(f"(finished in {time.monotonic() - start:.1f}s)", flush=True)
+    for command, missing in skipped:
+        print(f"\nSKIPPED optional check {command}: cannot import {', '.join(missing)} with {sys.executable}")
+    print(f"\nPASS: {len(runs)} verification scripts completed.")
 
 
 if __name__ == "__main__":
