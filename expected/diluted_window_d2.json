@@ -1,0 +1,93 @@
+{
+  "constants": {
+    "g_star": "1059411733898907047504026797/90604240507898863756433027512000",
+    "g_star_bracket": [
+      "1.1692738970716e-5",
+      "1.1692738970717e-5"
+    ],
+    "g_2": "2 g_star",
+    "g_2_bracket": [
+      "2.3385477941433e-5",
+      "2.3385477941434e-5"
+    ],
+    "beta_star_2": [
+      "5.3316976645232",
+      "5.3316976645233"
+    ],
+    "log10_gain_over_2^-988/1130": [
+      "295.8396",
+      "295.8397"
+    ]
+  },
+  "geometry": {
+    "coverage_edges_tested": 1250,
+    "spec_files_regenerated": 4
+  },
+  "special_boxes": {
+    "S_L_centred_data": 25,
+    "max_NGc_over_NT": "3/4",
+    "census_L": [
+      9,
+      12,
+      15,
+      30
+    ]
+  },
+  "C1_side": {
+    "records": 218790,
+    "canonical_sha256": "575c9bbdf87bc8282c1d36d0d39983df15defd829ba63a2f885fe011d58ea2aa",
+    "max_ratio": "0.651212649"
+  },
+  "C1_sideo": {
+    "records": 92378,
+    "canonical_sha256": "42f054a28ea9c56adf68561e3acbb67f70617e2ca2a84f8ca3080725e4335a4b",
+    "max_ratio": "0.978414907"
+  },
+  "C1_int": {
+    "records": 12012,
+    "canonical_sha256": "946bc6e254d49eefa36b5b11a4fdb6b1db91b285163648a752d5f3b8b5f76a2f",
+    "max_ratio": "0.993494682"
+  },
+  "python_engine": {
+    "int": {
+      "partitions": 1430,
+      "records": 12012
+    },
+    "side": {
+      "partitions": 533,
+      "records": 6867
+    },
+    "sideo": {
+      "partitions": 526,
+      "records": 2898
+    }
+  },
+  "C2_cells": {
+    "reduced_records": 496272,
+    "boundary_conditions_covered": 3879876,
+    "canonical_sha256": "d51fc9f291e210791aac390acedba4fc6e7260ce895fbee7fa177253e8242ab7",
+    "max_ratio_u0": "0.993502894",
+    "max_ratio_u_half": "0.993729411",
+    "binding": {
+      "argmax_u0": {
+        "reduced_records": 4,
+        "boundary_conditions": 20,
+        "by_D": {
+          "276": 8,
+          "552": 8,
+          "828": 4
+        }
+      },
+      "argmax_u_half": {
+        "reduced_records": 4,
+        "boundary_conditions": 20,
+        "by_D": {
+          "276": 8,
+          "552": 8,
+          "828": 4
+        }
+      }
+    },
+    "grid_pivot_with_D0": 69292
+  }
+}

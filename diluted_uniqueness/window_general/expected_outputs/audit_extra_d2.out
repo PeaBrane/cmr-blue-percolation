@@ -1,0 +1,9 @@
+(1) maximal cliques: own Bron-Kerbosch = networkx.find_cliques on all 10 groups (316 cliques)
+(2) type N, all anchor variants (correct): 1485 compatible pairs, K_N = 2^12.8191
+(2) type N, first variant only (W1 bookkeeping): 1415 compatible pairs, K_N = 2^12.7131
+(3) type-N options with 0 in V(P0): 195 of 195
+(4) mutation "swap labels": rejected 144 of 144
+(4) mutation "arc through internal vertex": rejected 144 of 144
+(4) mutation "arcs swapped attachments": rejected 144 of 144
+(4) mutation "arc ends at internal vertex": rejected 144 of 144
+(4) mutation "drop second arc": rejected 144 of 144

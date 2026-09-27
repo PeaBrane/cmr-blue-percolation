@@ -2,9 +2,12 @@
 
 The default run and --supplementary need only the Python standard library.
 --optional-deps adds finite sanity checks and the code-base-A global
-crosscheck, which need mpmath, SymPy, NumPy or networkx; a check whose
+crosschecks, which need mpmath, SymPy, NumPy or networkx; a check whose
 package cannot be imported is skipped with a message. Every script runs in a
-child process of the interpreter that runs this file.
+child process of the interpreter that runs this file. The full reproductions
+(macrostep/reproduce_engine.py, diluted_uniqueness/window_d2/reproduce_window_d2.py,
+diluted_uniqueness/window_general/reproduce_window_general.py) are separate
+commands; see README.md.
 """
 
 import argparse
@@ -21,6 +24,10 @@ DEFAULT = [
     "overlap_revealed/certify.py",
     "single_floor/verify_single_floor.py",
     "diluted_uniqueness/gd_constants.py",
+    "diluted_uniqueness/window_d2/check_window_d2.py",
+    "diluted_uniqueness/window_general/check_window_general.py",
+    "macrostep/certify_macrostep.py",
+    "overlap_revealed/noisy_cavity/certify_noisy_cavity.py",
 ]
 SUPPLEMENTARY = [
     "checks/smallstar_audit.py",
@@ -30,6 +37,7 @@ SUPPLEMENTARY = [
     "single_floor/check_lemmas.py",
     "single_floor/check_side_results.py",
     "diluted_uniqueness/check_typeS_rule.py",
+    "overlap_revealed/noisy_cavity/crosscheck/nesting_exact.py",
 ]
 # (script and arguments, packages it imports)
 OPTIONAL = [
@@ -38,6 +46,11 @@ OPTIONAL = [
     (["diluted_uniqueness/optional/check_decimation_exact.py"], ["sympy"]),
     (["diluted_uniqueness/optional/check_gibbs_reduction.py"], ["numpy"]),
     (["diluted_uniqueness/optional/surgery_counts.py"], ["networkx"]),
+    (["overlap_revealed/noisy_cavity/crosscheck/crosscheck_global_A.py"], ["mpmath"]),
+    (["overlap_revealed/noisy_cavity/crosscheck/verify_pair_bruteforce.py"], ["numpy"]),
+    (["overlap_revealed/noisy_cavity/crosscheck/verify_holley_bruteforce.py"], ["numpy"]),
+    (["overlap_revealed/noisy_cavity/crosscheck/lemmaN_exact.py"], ["numpy"]),
+    (["overlap_revealed/noisy_cavity/crosscheck/pairing_exact.py"], ["numpy"]),
 ]
 
 

@@ -52,6 +52,22 @@ and `p_c(Z^2) = 1/2` come from the literature cited in the manuscript. The run
 ends by printing a JSON summary equal to
 [../expected/diluted_gd_constants.json](../expected/diluted_gd_constants.json).
 
+## Explicit windows
+
+- [window_d2/](window_d2/README.md): the exact local-ratio window in
+  `d = 2`, `p < 1/2 + g*` with `g* ≈ 1.16927e-5` (`g_2 = 2g*`). Default check
+  `window_d2/check_window_d2.py` (standard library, about 40 s); full
+  reproduction `window_d2/reproduce_window_d2.py` (C engine).
+- [window_general/](window_general/README.md): the sparse-insulation
+  windows, `g_3 >= 1.481105e-8` (vertex coins), `g_2 >= 1.430798e-7`
+  (domino coins), and the octahedral closed form for every `d >= 3`.
+  Default check `window_general/check_window_general.py` (standard
+  library, about 13 s); full reproduction
+  `window_general/reproduce_window_general.py` (networkx for one sanity
+  check).
+
+Both default checks run in the default `run_all.py`.
+
 ## Supplementary sanity check
 
 [check_typeS_rule.py](check_typeS_rule.py) uses only the standard library and
@@ -105,8 +121,9 @@ five runs with their seeds (13, 12, 11, 15 and 14).
 
 The manuscript proves the decimation lemma, the Gibbs-state reduction and the
 strict inequality. The strict inequality follows the Aizenman–Grimmett and
-Grimmett–Stacey template, and the surgery is new. Of the programs here, only
-`gd_constants.py` supplies displayed constants; the rest are sanity checks.
+Grimmett–Stacey template, and the surgery is new. Of the programs here,
+`gd_constants.py`, `window_d2/` and `window_general/` supply displayed
+constants; the rest are sanity checks.
 Runtimes were measured with CPython 3.13.5 on Apple Silicon.
 
 The programs keep the research-note file names. `gd_constants.py` now also

@@ -1,0 +1,37 @@
+{
+  "compiler": "cc (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0",
+  "python": "3.13.5",
+  "threads": 6,
+  "engine_seconds": {
+    "int": 0.0,
+    "side": 2.0,
+    "sideo": 4.9,
+    "cell_reps": 93.6,
+    "cell_all": 455.0
+  },
+  "cell_all": {
+    "records": 3879876,
+    "canonical_sha256": "7a69009a9acc7e31ff09a42f2e663e0b7f8bf72e2fc13037f5e3b660dfbdcb32",
+    "max_ratio_u0": "0.993502894",
+    "max_ratio_u_half": "0.993729411",
+    "binding_boundary_conditions": 20,
+    "grid_pivot_with_D0": 69292,
+    "D4_covariance_mismatches": 0,
+    "python_seconds": 11.2
+  },
+  "canonical_sha256": {
+    "int": "946bc6e254d49eefa36b5b11a4fdb6b1db91b285163648a752d5f3b8b5f76a2f",
+    "side": "575c9bbdf87bc8282c1d36d0d39983df15defd829ba63a2f885fe011d58ea2aa",
+    "sideo": "42f054a28ea9c56adf68561e3acbb67f70617e2ca2a84f8ca3080725e4335a4b",
+    "cell_reps": "d51fc9f291e210791aac390acedba4fc6e7260ce895fbee7fa177253e8242ab7",
+    "cell_all": "7a69009a9acc7e31ff09a42f2e663e0b7f8bf72e2fc13037f5e3b660dfbdcb32"
+  },
+  "brute_force_samples": {
+    "cell": 52,
+    "side": 32,
+    "sideo": 25,
+    "int": 32
+  },
+  "brute_force_seconds": 20.0,
+  "total_seconds": 588.5
+}

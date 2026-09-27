@@ -1,0 +1,222 @@
+{
+  "certified_rows": 5,
+  "rows": [
+    {
+      "label": "t=3/20",
+      "theorem": "Q9",
+      "t": "3/20",
+      "p": "2689/10000",
+      "g_K": "1038887/1000000",
+      "g_h": "831941/1000000",
+      "xbar": "1387291/10000000",
+      "wc_prime": "674054518843/500000000000",
+      "pair_certificate": {
+        "point_conditions": 162,
+        "chord_polynomials": 1377,
+        "max_Psi_upper": "-41.55",
+        "noisy_witness_upper": "0.269100673",
+        "plain_witness_upper": "0.268765673",
+        "p_over_noisy_witness_lower": "0.999254"
+      },
+      "holley_line": {
+        "environments": 19,
+        "classes": 1330,
+        "min_Gamma_lower": "8.60e-5",
+        "at_S": -18,
+        "at_class": [
+          0,
+          9
+        ]
+      },
+      "rho_minus_lower": "0.4306354",
+      "kappa_upper": "1.322150",
+      "alpha_upper": "0.343308",
+      "two_d_Kprime_upper": "0.343350",
+      "eta_prime_upper": "0.2886343",
+      "score_upper": "1.0052115",
+      "score_c_upper": "0.9906968",
+      "c_cov_prime_lower": "0.01805547",
+      "rho_c_prime_lower": "0.44111732",
+      "score_c_prime_upper": "0.9824112",
+      "covariance_lemma": "3.6",
+      "least_Lstar": 36,
+      "score_used": "score_c",
+      "theta_star_lower": "0.003174",
+      "theta_prime_lower": "0.006001"
+    },
+    {
+      "label": "t=29/200",
+      "theorem": "Q9'",
+      "t": "29/200",
+      "p": "1309/5000",
+      "g_K": "2073/2000",
+      "g_h": "53049/62500",
+      "xbar": "1201617/10000000",
+      "wc_prime": "1333696156983/1000000000000",
+      "pair_certificate": {
+        "point_conditions": 162,
+        "chord_polynomials": 1377,
+        "max_Psi_upper": "-30.89",
+        "noisy_witness_upper": "0.261947866",
+        "plain_witness_upper": "0.261577750",
+        "p_over_noisy_witness_lower": "0.999435"
+      },
+      "holley_line": {
+        "environments": 19,
+        "classes": 1330,
+        "min_Gamma_lower": "7.40e-5",
+        "at_S": 18,
+        "at_class": [
+          0,
+          0
+        ]
+      },
+      "rho_minus_lower": "0.4399191",
+      "kappa_upper": "1.273145",
+      "alpha_upper": "0.322613",
+      "two_d_Kprime_upper": "0.322647",
+      "eta_prime_upper": "0.2538020",
+      "score_upper": "1.0085131",
+      "score_c_upper": "0.9945149",
+      "c_cov_prime_lower": "0.01717826",
+      "rho_c_prime_lower": "0.44968132",
+      "score_c_prime_upper": "0.9875693",
+      "covariance_lemma": "3.6",
+      "least_Lstar": 34,
+      "score_used": "score_c",
+      "theta_star_lower": "0.002005",
+      "theta_prime_lower": "0.004544"
+    },
+    {
+      "label": "t=31/200",
+      "theorem": "Q9'",
+      "t": "31/200",
+      "p": "2759/10000",
+      "g_K": "1041383/1000000",
+      "g_h": "101831/125000",
+      "xbar": "199063/1250000",
+      "wc_prime": "17032668421/12500000000",
+      "pair_certificate": {
+        "point_conditions": 162,
+        "chord_polynomials": 1377,
+        "max_Psi_upper": "-43.99",
+        "noisy_witness_upper": "0.276118662",
+        "plain_witness_upper": "0.275816740",
+        "p_over_noisy_witness_lower": "0.999208"
+      },
+      "holley_line": {
+        "environments": 19,
+        "classes": 1330,
+        "min_Gamma_lower": "8.28e-5",
+        "at_S": -18,
+        "at_class": [
+          0,
+          9
+        ]
+      },
+      "rho_minus_lower": "0.4203748",
+      "kappa_upper": "1.378830",
+      "alpha_upper": "0.364897",
+      "two_d_Kprime_upper": "0.364947",
+      "eta_prime_upper": "0.3308447",
+      "score_upper": "1.0061272",
+      "score_c_upper": "0.9910457",
+      "c_cov_prime_lower": "0.01889100",
+      "rho_c_prime_lower": "0.43160942",
+      "score_c_prime_upper": "0.9811907",
+      "covariance_lemma": "3.6'",
+      "least_Lstar": 38,
+      "score_used": "score_c",
+      "theta_star_lower": "0.002805",
+      "theta_prime_lower": "0.005892"
+    },
+    {
+      "label": "t=4/25",
+      "theorem": "Q9'",
+      "t": "4/25",
+      "p": "707/2500",
+      "g_K": "521969/500000",
+      "g_h": "99531/125000",
+      "xbar": "228091/1250000",
+      "wc_prime": "1377218952673/1000000000000",
+      "pair_certificate": {
+        "point_conditions": 162,
+        "chord_polynomials": 1377,
+        "max_Psi_upper": "-28.83",
+        "noisy_witness_upper": "0.283003656",
+        "plain_witness_upper": "0.282732613",
+        "p_over_noisy_witness_lower": "0.999280"
+      },
+      "holley_line": {
+        "environments": 19,
+        "classes": 1330,
+        "min_Gamma_lower": "8.21e-5",
+        "at_S": -18,
+        "at_class": [
+          0,
+          9
+        ]
+      },
+      "rho_minus_lower": "0.4087636",
+      "kappa_upper": "1.446402",
+      "alpha_upper": "0.386942",
+      "two_d_Kprime_upper": "0.387001",
+      "eta_prime_upper": "0.3826874",
+      "score_upper": "1.0125336",
+      "score_c_upper": "0.9967943",
+      "c_cov_prime_lower": "0.01962741",
+      "rho_c_prime_lower": "0.42076773",
+      "score_c_prime_upper": "0.9851119",
+      "covariance_lemma": "3.6'",
+      "least_Lstar": 40,
+      "score_used": "score_c",
+      "theta_star_lower": "0.000900",
+      "theta_prime_lower": "0.004184"
+    },
+    {
+      "label": "t=7/50",
+      "theorem": "Q9'",
+      "t": "7/50",
+      "p": "159/625",
+      "g_K": "1034171/1000000",
+      "g_h": "864557/1000000",
+      "xbar": "1037761/10000000",
+      "wc_prime": "659682561557/500000000000",
+      "pair_certificate": {
+        "point_conditions": 162,
+        "chord_polynomials": 1377,
+        "max_Psi_upper": "-54.61",
+        "noisy_witness_upper": "0.254658477",
+        "plain_witness_upper": "0.254251467",
+        "p_over_noisy_witness_lower": "0.998985"
+      },
+      "holley_line": {
+        "environments": 19,
+        "classes": 1330,
+        "min_Gamma_lower": "9.09e-5",
+        "at_S": -18,
+        "at_class": [
+          0,
+          9
+        ]
+      },
+      "rho_minus_lower": "0.4481119",
+      "kappa_upper": "1.231586",
+      "alpha_upper": "0.302373",
+      "two_d_Kprime_upper": "0.302402",
+      "eta_prime_upper": "0.2243734",
+      "score_upper": "1.0168784",
+      "score_c_upper": "1.0033439",
+      "c_cov_prime_lower": "0.01625507",
+      "rho_c_prime_lower": "0.45718059",
+      "score_c_prime_upper": "0.9975450",
+      "covariance_lemma": "3.6",
+      "least_Lstar": 33,
+      "score_used": "score_c_prime",
+      "theta_star_lower": "0.000950",
+      "theta_prime_lower": "0.000950"
+    }
+  ],
+  "displays_checked": 155,
+  "value_vector_sha256": "d2383cf261f896e236ab50561b48dff85ecdb891205c655d5765e304bf7c8b84"
+}

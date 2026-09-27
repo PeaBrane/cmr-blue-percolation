@@ -1,0 +1,2399 @@
+{
+ "description": "Frozen exact inputs of the macrostep interaction-matrix engine (Theorems Q7, Q8, Q8-sharp, Q9 and the Q7 addendum). All rationals are exact strings.",
+ "instances": {
+  "inst1-d9-t7/50": {
+   "instance": 1,
+   "d": 9,
+   "t": "7/50",
+   "p": "623/2500",
+   "g_K": "1036137/1000000",
+   "g_h": "83033/100000",
+   "xbar": "676921/5000000",
+   "local_inputs": "tangent",
+   "pB_tangent_points": {
+    "form": "direct",
+    "values": {
+     "1": "2.236218849",
+     "3": "2.3895591834",
+     "5": "2.6435589248",
+     "7": "2.9982307668",
+     "9": "3.4566628995",
+     "11": "4.0260079859",
+     "13": "4.7178797274",
+     "15": "5.5485163096",
+     "17": "6.5389679902"
+    }
+   },
+   "holley_weights": [
+    "0",
+    "0",
+    "0",
+    "0",
+    "0",
+    "0",
+    "0",
+    "0",
+    "0",
+    "0",
+    "0",
+    "0",
+    "0.035",
+    "0.09",
+    "0.15",
+    "0.21",
+    "0.275",
+    "0.345",
+    "0.415"
+   ],
+   "provenance": {
+    "pB_tangent_points": "Nelder-Mead family kappa=1.0159580303155498, lambda=0.5926336121972455; c_U rounded to 10 decimals (code base B, assembly/certify_new_point.py)",
+    "holley_weights": "best point of {0} U {i/200: 1<=i<=180} for the floating numerator bound"
+   }
+  },
+  "inst1-d8-t3/20": {
+   "instance": 1,
+   "d": 8,
+   "t": "3/20",
+   "p": "2651/10000",
+   "g_K": "520811/500000",
+   "g_h": "206239/250000",
+   "xbar": "1413829/10000000",
+   "local_inputs": "tangent",
+   "pB_tangent_points": {
+    "form": "direct",
+    "values": {
+     "1": "2.2479966268",
+     "3": "2.426959319",
+     "5": "2.7237318421",
+     "7": "3.1394006863",
+     "9": "3.6796336728",
+     "11": "4.3558595716",
+     "13": "5.1857275118",
+     "15": "6.1933856606"
+    }
+   },
+   "holley_weights": [
+    "0",
+    "0",
+    "0",
+    "0",
+    "0",
+    "0",
+    "0",
+    "0",
+    "0",
+    "0",
+    "0.005",
+    "0.055",
+    "0.115",
+    "0.175",
+    "0.24",
+    "0.31",
+    "0.38"
+   ],
+   "provenance": {
+    "pB_tangent_points": "Nelder-Mead family kappa=1.0172650525180393, lambda=0.6003821319437569; c_U rounded to 10 decimals (code base B, assembly/certify_new_point.py)",
+    "holley_weights": "best point of {0} U {i/200: 1<=i<=180} for the floating numerator bound"
+   }
+  },
+  "inst2-d8-t3/20": {
+   "instance": 2,
+   "d": 8,
+   "t": "3/20",
+   "p": "2707/10000",
+   "g_K": "1039407/1000000",
+   "g_h": "860671/1000000",
+   "xbar": "539947/5000000",
+   "local_inputs": "sharpened"
+  },
+  "inst2-d8-t31/200": {
+   "instance": 2,
+   "d": 8,
+   "t": "31/200",
+   "p": "1389/5000",
+   "g_K": "65119/62500",
+   "g_h": "845583/1000000",
+   "xbar": "154899/1250000",
+   "local_inputs": "sharpened"
+  },
+  "inst3-d7-t3/20": {
+   "instance": 3,
+   "d": 7,
+   "t": "3/20",
+   "p": "273/1000",
+   "g_K": "519989/500000",
+   "g_h": "44449/50000",
+   "xbar": "808479/10000000",
+   "local_inputs": "sharpened"
+  },
+  "inst3-d7-t31/200": {
+   "instance": 3,
+   "d": 7,
+   "t": "31/200",
+   "p": "1401/5000",
+   "g_K": "104253/100000",
+   "g_h": "175269/200000",
+   "xbar": "463903/5000000",
+   "local_inputs": "sharpened"
+  }
+ },
+ "engine": {
+  "c": 3,
+  "N0": 24,
+  "R_S": 4,
+  "R3": 6,
+  "N_F": 60,
+  "family": {
+   "9": {
+    "f": 6,
+    "y": "1/10"
+   },
+   "8": {
+    "f": 5,
+    "y": "1/10"
+   },
+   "7": {
+    "f": 4,
+    "y": "3/25"
+   }
+  },
+  "forward_tails": {
+   "R0": "exact u_n(0) for n < 40 f, Robbins atom bound beyond (engine/ind_green.py)",
+   "R0t": {
+    "description": "exact u_n(0) for n <= NEX (engine/tail_tight.py cache), Lemma R.1 (f = 4) or atom bound (f = 5, 6) beyond",
+    "NEX": {
+     "4": 6000,
+     "5": 5999,
+     "6": 5999
+    }
+   }
+  }
+ },
+ "runs": [
+  {
+   "label": "R0-d9-246",
+   "code_base": "R0",
+   "instance": "inst1-d9-t7/50",
+   "R_A": 8,
+   "R_D": 2,
+   "n_states": 246,
+   "theorems": [
+    "Q9"
+   ]
+  },
+  {
+   "label": "R0-d9-46",
+   "code_base": "R0",
+   "instance": "inst1-d9-t7/50",
+   "R_A": 6,
+   "R_D": 1,
+   "n_states": 46,
+   "theorems": []
+  },
+  {
+   "label": "R0-d8-246",
+   "code_base": "R0",
+   "instance": "inst1-d8-t3/20",
+   "R_A": 8,
+   "R_D": 2,
+   "n_states": 246,
+   "theorems": [
+    "Q8"
+   ]
+  },
+  {
+   "label": "R0-d8-82",
+   "code_base": "R0",
+   "instance": "inst1-d8-t3/20",
+   "R_A": 8,
+   "R_D": 1,
+   "n_states": 82,
+   "theorems": [
+    "Q8"
+   ]
+  },
+  {
+   "label": "R0-d8-46",
+   "code_base": "R0",
+   "instance": "inst1-d8-t3/20",
+   "R_A": 6,
+   "R_D": 1,
+   "n_states": 46,
+   "theorems": [
+    "Q8"
+   ]
+  },
+  {
+   "label": "R0-d8s-46",
+   "code_base": "R0",
+   "instance": "inst2-d8-t3/20",
+   "R_A": 6,
+   "R_D": 1,
+   "n_states": 46,
+   "theorems": [
+    "Q8sharp"
+   ]
+  },
+  {
+   "label": "R0-d8s-82",
+   "code_base": "R0",
+   "instance": "inst2-d8-t3/20",
+   "R_A": 8,
+   "R_D": 1,
+   "n_states": 82,
+   "theorems": []
+  },
+  {
+   "label": "R0-d8t-46",
+   "code_base": "R0",
+   "instance": "inst2-d8-t31/200",
+   "R_A": 6,
+   "R_D": 1,
+   "n_states": 46,
+   "theorems": []
+  },
+  {
+   "label": "R0-d7a-246",
+   "code_base": "R0",
+   "instance": "inst3-d7-t3/20",
+   "R_A": 8,
+   "R_D": 2,
+   "n_states": 246,
+   "theorems": []
+  },
+  {
+   "label": "R0-d7a-804",
+   "code_base": "R0",
+   "instance": "inst3-d7-t3/20",
+   "R_A": 10,
+   "R_D": 3,
+   "n_states": 804,
+   "theorems": [
+    "Q7"
+   ]
+  },
+  {
+   "label": "R0-d7b-804",
+   "code_base": "R0",
+   "instance": "inst3-d7-t31/200",
+   "R_A": 10,
+   "R_D": 3,
+   "n_states": 804,
+   "theorems": [
+    "Q7"
+   ]
+  },
+  {
+   "label": "R0t-d9-246",
+   "code_base": "R0t",
+   "instance": "inst1-d9-t7/50",
+   "R_A": 8,
+   "R_D": 2,
+   "n_states": 246,
+   "theorems": []
+  },
+  {
+   "label": "R0t-d9-82",
+   "code_base": "R0t",
+   "instance": "inst1-d9-t7/50",
+   "R_A": 8,
+   "R_D": 1,
+   "n_states": 82,
+   "theorems": []
+  },
+  {
+   "label": "R0t-d9-46",
+   "code_base": "R0t",
+   "instance": "inst1-d9-t7/50",
+   "R_A": 6,
+   "R_D": 1,
+   "n_states": 46,
+   "theorems": []
+  },
+  {
+   "label": "R0t-d8-246",
+   "code_base": "R0t",
+   "instance": "inst1-d8-t3/20",
+   "R_A": 8,
+   "R_D": 2,
+   "n_states": 246,
+   "theorems": []
+  },
+  {
+   "label": "R0t-d8-82",
+   "code_base": "R0t",
+   "instance": "inst1-d8-t3/20",
+   "R_A": 8,
+   "R_D": 1,
+   "n_states": 82,
+   "theorems": []
+  },
+  {
+   "label": "R0t-d8-46",
+   "code_base": "R0t",
+   "instance": "inst1-d8-t3/20",
+   "R_A": 6,
+   "R_D": 1,
+   "n_states": 46,
+   "theorems": []
+  },
+  {
+   "label": "R0t-d8s-46",
+   "code_base": "R0t",
+   "instance": "inst2-d8-t3/20",
+   "R_A": 6,
+   "R_D": 1,
+   "n_states": 46,
+   "theorems": []
+  },
+  {
+   "label": "R0t-d8s-82",
+   "code_base": "R0t",
+   "instance": "inst2-d8-t3/20",
+   "R_A": 8,
+   "R_D": 1,
+   "n_states": 82,
+   "theorems": []
+  },
+  {
+   "label": "R0t-d8t-46",
+   "code_base": "R0t",
+   "instance": "inst2-d8-t31/200",
+   "R_A": 6,
+   "R_D": 1,
+   "n_states": 46,
+   "theorems": []
+  },
+  {
+   "label": "R0t-d8t-82",
+   "code_base": "R0t",
+   "instance": "inst2-d8-t31/200",
+   "R_A": 8,
+   "R_D": 1,
+   "n_states": 82,
+   "theorems": []
+  },
+  {
+   "label": "R0t-d7a-246",
+   "code_base": "R0t",
+   "instance": "inst3-d7-t3/20",
+   "R_A": 8,
+   "R_D": 2,
+   "n_states": 246,
+   "theorems": [
+    "Q7-addendum"
+   ]
+  },
+  {
+   "label": "R0t-d7b-246",
+   "code_base": "R0t",
+   "instance": "inst3-d7-t31/200",
+   "R_A": 8,
+   "R_D": 2,
+   "n_states": 246,
+   "theorems": [
+    "Q7-addendum"
+   ]
+  },
+  {
+   "label": "R0t-d7a-804",
+   "code_base": "R0t",
+   "instance": "inst3-d7-t3/20",
+   "R_A": 10,
+   "R_D": 3,
+   "n_states": 804,
+   "theorems": []
+  },
+  {
+   "label": "R0t-d7b-804",
+   "code_base": "R0t",
+   "instance": "inst3-d7-t31/200",
+   "R_A": 10,
+   "R_D": 3,
+   "n_states": 804,
+   "theorems": []
+  }
+ ],
+ "displays": [
+  {
+   "scope": "inst1-d9-t7/50",
+   "quantity": "rho_minus",
+   "direction": "lower",
+   "value": "0.4323079",
+   "source": "macrostep write-up Sec. 9.1 table"
+  },
+  {
+   "scope": "inst1-d9-t7/50",
+   "quantity": "rho_c",
+   "direction": "lower",
+   "value": "0.4387813",
+   "source": "macrostep write-up Sec. 9.1 table"
+  },
+  {
+   "scope": "inst1-d9-t7/50",
+   "quantity": "kappa",
+   "direction": "upper",
+   "value": "1.313167",
+   "source": "macrostep write-up Sec. 9.1 table"
+  },
+  {
+   "scope": "inst1-d9-t7/50",
+   "quantity": "t",
+   "direction": "upper",
+   "value": "0.0177479",
+   "source": "macrostep write-up Sec. 9.1 table"
+  },
+  {
+   "scope": "inst1-d9-t7/50",
+   "quantity": "alpha",
+   "direction": "upper",
+   "value": "0.31947",
+   "source": "macrostep write-up Sec. 9.1 table"
+  },
+  {
+   "scope": "inst1-d9-t7/50",
+   "quantity": "qs",
+   "direction": "upper",
+   "value": "0.23472",
+   "source": "macrostep write-up Sec. 9.1 table"
+  },
+  {
+   "scope": "inst1-d9-t7/50",
+   "quantity": "rho_over_rhoc_p",
+   "direction": "upper",
+   "value": "3.95364",
+   "source": "macrostep write-up Sec. 9.1 table"
+  },
+  {
+   "scope": "inst1-d9-t7/50",
+   "quantity": "b1",
+   "direction": "upper",
+   "value": "0.0183857",
+   "source": "macrostep write-up Sec. 9.1 table"
+  },
+  {
+   "scope": "inst1-d9-t7/50",
+   "quantity": "psi3_00",
+   "direction": "upper",
+   "value": "0.000047629",
+   "source": "macrostep write-up Sec. 9.1 table"
+  },
+  {
+   "scope": "inst1-d9-t7/50",
+   "quantity": "rhoc_p",
+   "direction": "lower",
+   "value": "0.109344",
+   "source": "macrostep write-up Sec. 9.1 table"
+  },
+  {
+   "scope": "inst1-d9-t7/50",
+   "quantity": "C_fin",
+   "direction": "upper",
+   "value": "2.3700",
+   "source": "macrostep write-up Sec. 9.2 table, column C_fin"
+  },
+  {
+   "scope": "inst1-d8-t3/20",
+   "quantity": "rho_minus",
+   "direction": "lower",
+   "value": "0.4293085",
+   "source": "macrostep write-up Sec. 9.1 table"
+  },
+  {
+   "scope": "inst1-d8-t3/20",
+   "quantity": "rho_c",
+   "direction": "lower",
+   "value": "0.4366859",
+   "source": "macrostep write-up Sec. 9.1 table"
+  },
+  {
+   "scope": "inst1-d8-t3/20",
+   "quantity": "kappa",
+   "direction": "upper",
+   "value": "1.329328",
+   "source": "macrostep write-up Sec. 9.1 table"
+  },
+  {
+   "scope": "inst1-d8-t3/20",
+   "quantity": "t",
+   "direction": "upper",
+   "value": "0.0203868",
+   "source": "macrostep write-up Sec. 9.1 table"
+  },
+  {
+   "scope": "inst1-d8-t3/20",
+   "quantity": "alpha",
+   "direction": "upper",
+   "value": "0.32619",
+   "source": "macrostep write-up Sec. 9.1 table"
+  },
+  {
+   "scope": "inst1-d8-t3/20",
+   "quantity": "qs",
+   "direction": "upper",
+   "value": "0.24205",
+   "source": "macrostep write-up Sec. 9.1 table"
+  },
+  {
+   "scope": "inst1-d8-t3/20",
+   "quantity": "rho_over_rhoc_p",
+   "direction": "upper",
+   "value": "3.70844",
+   "source": "macrostep write-up Sec. 9.1 table"
+  },
+  {
+   "scope": "inst1-d8-t3/20",
+   "quantity": "b1",
+   "direction": "upper",
+   "value": "0.0212540",
+   "source": "macrostep write-up Sec. 9.1 table"
+  },
+  {
+   "scope": "inst1-d8-t3/20",
+   "quantity": "psi3_00",
+   "direction": "upper",
+   "value": "0.000076692",
+   "source": "macrostep write-up Sec. 9.1 table"
+  },
+  {
+   "scope": "inst1-d8-t3/20",
+   "quantity": "rhoc_p",
+   "direction": "lower",
+   "value": "0.115765",
+   "source": "macrostep write-up Sec. 9.1 table"
+  },
+  {
+   "scope": "inst1-d8-t3/20",
+   "quantity": "C_fin",
+   "direction": "upper",
+   "value": "2.3966",
+   "source": "macrostep write-up Sec. 9.2 table, column C_fin"
+  },
+  {
+   "scope": "inst2-d8-t3/20",
+   "quantity": "rho_minus",
+   "direction": "lower",
+   "value": "0.4460053",
+   "source": "macrostep write-up Sec. 9.1 table"
+  },
+  {
+   "scope": "inst2-d8-t3/20",
+   "quantity": "rho_c",
+   "direction": "lower",
+   "value": "0.4532042",
+   "source": "macrostep write-up Sec. 9.1 table"
+  },
+  {
+   "scope": "inst2-d8-t3/20",
+   "quantity": "kappa",
+   "direction": "upper",
+   "value": "1.242126",
+   "source": "macrostep write-up Sec. 9.1 table"
+  },
+  {
+   "scope": "inst2-d8-t3/20",
+   "quantity": "t",
+   "direction": "upper",
+   "value": "0.0193228",
+   "source": "macrostep write-up Sec. 9.1 table"
+  },
+  {
+   "scope": "inst2-d8-t3/20",
+   "quantity": "alpha",
+   "direction": "upper",
+   "value": "0.30917",
+   "source": "macrostep write-up Sec. 9.1 table"
+  },
+  {
+   "scope": "inst2-d8-t3/20",
+   "quantity": "qs",
+   "direction": "upper",
+   "value": "0.22377",
+   "source": "macrostep write-up Sec. 9.1 table"
+  },
+  {
+   "scope": "inst2-d8-t3/20",
+   "quantity": "rho_over_rhoc_p",
+   "direction": "upper",
+   "value": "3.63545",
+   "source": "macrostep write-up Sec. 9.1 table"
+  },
+  {
+   "scope": "inst2-d8-t3/20",
+   "quantity": "b1",
+   "direction": "upper",
+   "value": "0.0200562",
+   "source": "macrostep write-up Sec. 9.1 table"
+  },
+  {
+   "scope": "inst2-d8-t3/20",
+   "quantity": "psi3_00",
+   "direction": "upper",
+   "value": "0.000063247",
+   "source": "macrostep write-up Sec. 9.1 table"
+  },
+  {
+   "scope": "inst2-d8-t3/20",
+   "quantity": "rhoc_p",
+   "direction": "lower",
+   "value": "0.122682",
+   "source": "macrostep write-up Sec. 9.1 table"
+  },
+  {
+   "scope": "inst2-d8-t3/20",
+   "quantity": "C_fin",
+   "direction": "upper",
+   "value": "2.2991",
+   "source": "macrostep write-up Sec. 9.2 table, column C_fin"
+  },
+  {
+   "scope": "inst2-d8-t31/200",
+   "quantity": "rho_minus",
+   "direction": "lower",
+   "value": "0.4380404",
+   "source": "macrostep write-up Sec. 9.1 table"
+  },
+  {
+   "scope": "inst2-d8-t31/200",
+   "quantity": "rho_c",
+   "direction": "lower",
+   "value": "0.4454108",
+   "source": "macrostep write-up Sec. 9.1 table"
+  },
+  {
+   "scope": "inst2-d8-t31/200",
+   "quantity": "kappa",
+   "direction": "upper",
+   "value": "1.282895",
+   "source": "macrostep write-up Sec. 9.1 table"
+  },
+  {
+   "scope": "inst2-d8-t31/200",
+   "quantity": "t",
+   "direction": "upper",
+   "value": "0.0205221",
+   "source": "macrostep write-up Sec. 9.1 table"
+  },
+  {
+   "scope": "inst2-d8-t31/200",
+   "quantity": "alpha",
+   "direction": "upper",
+   "value": "0.32836",
+   "source": "macrostep write-up Sec. 9.1 table"
+  },
+  {
+   "scope": "inst2-d8-t31/200",
+   "quantity": "qs",
+   "direction": "upper",
+   "value": "0.24444",
+   "source": "macrostep write-up Sec. 9.1 table"
+  },
+  {
+   "scope": "inst2-d8-t31/200",
+   "quantity": "rho_over_rhoc_p",
+   "direction": "upper",
+   "value": "3.54015",
+   "source": "macrostep write-up Sec. 9.1 table"
+  },
+  {
+   "scope": "inst2-d8-t31/200",
+   "quantity": "b1",
+   "direction": "upper",
+   "value": "0.0214075",
+   "source": "macrostep write-up Sec. 9.1 table"
+  },
+  {
+   "scope": "inst2-d8-t31/200",
+   "quantity": "psi3_00",
+   "direction": "upper",
+   "value": "0.000078556",
+   "source": "macrostep write-up Sec. 9.1 table"
+  },
+  {
+   "scope": "inst2-d8-t31/200",
+   "quantity": "rhoc_p",
+   "direction": "lower",
+   "value": "0.123735",
+   "source": "macrostep write-up Sec. 9.1 table"
+  },
+  {
+   "scope": "inst2-d8-t31/200",
+   "quantity": "C_fin",
+   "direction": "upper",
+   "value": "2.3470",
+   "source": "macrostep write-up Sec. 9.2 table, column C_fin"
+  },
+  {
+   "scope": "inst3-d7-t3/20",
+   "quantity": "rho_minus",
+   "direction": "lower",
+   "value": "0.4595760",
+   "source": "macrostep write-up Sec. 9.1 table"
+  },
+  {
+   "scope": "inst3-d7-t3/20",
+   "quantity": "rho_c",
+   "direction": "lower",
+   "value": "0.4673814",
+   "source": "macrostep write-up Sec. 9.1 table"
+  },
+  {
+   "scope": "inst3-d7-t3/20",
+   "quantity": "kappa",
+   "direction": "upper",
+   "value": "1.175919",
+   "source": "macrostep write-up Sec. 9.1 table"
+  },
+  {
+   "scope": "inst3-d7-t3/20",
+   "quantity": "t",
+   "direction": "upper",
+   "value": "0.0195973",
+   "source": "macrostep write-up Sec. 9.1 table"
+  },
+  {
+   "scope": "inst3-d7-t3/20",
+   "quantity": "alpha",
+   "direction": "upper",
+   "value": "0.27437",
+   "source": "macrostep write-up Sec. 9.1 table"
+  },
+  {
+   "scope": "inst3-d7-t3/20",
+   "quantity": "qs",
+   "direction": "upper",
+   "value": "0.18905",
+   "source": "macrostep write-up Sec. 9.1 table"
+  },
+  {
+   "scope": "inst3-d7-t3/20",
+   "quantity": "rho_over_rhoc_p",
+   "direction": "upper",
+   "value": "3.60184",
+   "source": "macrostep write-up Sec. 9.1 table"
+  },
+  {
+   "scope": "inst3-d7-t3/20",
+   "quantity": "b1",
+   "direction": "upper",
+   "value": "0.0202623",
+   "source": "macrostep write-up Sec. 9.1 table"
+  },
+  {
+   "scope": "inst3-d7-t3/20",
+   "quantity": "psi3_00",
+   "direction": "upper",
+   "value": "0.000065199",
+   "source": "macrostep write-up Sec. 9.1 table"
+  },
+  {
+   "scope": "inst3-d7-t3/20",
+   "quantity": "rhoc_p",
+   "direction": "lower",
+   "value": "0.127595",
+   "source": "macrostep write-up Sec. 9.1 table"
+  },
+  {
+   "scope": "inst3-d7-t3/20",
+   "quantity": "C_fin",
+   "direction": "upper",
+   "value": "2.2288",
+   "source": "macrostep write-up Sec. 9.2 table, column C_fin"
+  },
+  {
+   "scope": "inst3-d7-t31/200",
+   "quantity": "rho_minus",
+   "direction": "lower",
+   "value": "0.4536097",
+   "source": "macrostep write-up Sec. 9.1 table"
+  },
+  {
+   "scope": "inst3-d7-t31/200",
+   "quantity": "rho_c",
+   "direction": "lower",
+   "value": "0.4616630",
+   "source": "macrostep write-up Sec. 9.1 table"
+  },
+  {
+   "scope": "inst3-d7-t31/200",
+   "quantity": "kappa",
+   "direction": "upper",
+   "value": "1.204539",
+   "source": "macrostep write-up Sec. 9.1 table"
+  },
+  {
+   "scope": "inst3-d7-t31/200",
+   "quantity": "t",
+   "direction": "upper",
+   "value": "0.0208223",
+   "source": "macrostep write-up Sec. 9.1 table"
+  },
+  {
+   "scope": "inst3-d7-t31/200",
+   "quantity": "alpha",
+   "direction": "upper",
+   "value": "0.29152",
+   "source": "macrostep write-up Sec. 9.1 table"
+  },
+  {
+   "scope": "inst3-d7-t31/200",
+   "quantity": "qs",
+   "direction": "upper",
+   "value": "0.20573",
+   "source": "macrostep write-up Sec. 9.1 table"
+  },
+  {
+   "scope": "inst3-d7-t31/200",
+   "quantity": "rho_over_rhoc_p",
+   "direction": "upper",
+   "value": "3.50663",
+   "source": "macrostep write-up Sec. 9.1 table"
+  },
+  {
+   "scope": "inst3-d7-t31/200",
+   "quantity": "b1",
+   "direction": "upper",
+   "value": "0.0216254",
+   "source": "macrostep write-up Sec. 9.1 table"
+  },
+  {
+   "scope": "inst3-d7-t31/200",
+   "quantity": "psi3_00",
+   "direction": "upper",
+   "value": "0.000080921",
+   "source": "macrostep write-up Sec. 9.1 table"
+  },
+  {
+   "scope": "inst3-d7-t31/200",
+   "quantity": "rhoc_p",
+   "direction": "lower",
+   "value": "0.129357",
+   "source": "macrostep write-up Sec. 9.1 table"
+  },
+  {
+   "scope": "inst3-d7-t31/200",
+   "quantity": "C_fin",
+   "direction": "upper",
+   "value": "2.2632",
+   "source": "macrostep write-up Sec. 9.2 table, column C_fin"
+  },
+  {
+   "scope": "inst1-d9-t7/50",
+   "quantity": "L0_1",
+   "direction": "exact",
+   "value": "15",
+   "source": "macrostep write-up Sec. 9.3"
+  },
+  {
+   "scope": "inst1-d9-t7/50",
+   "quantity": "L0_10",
+   "direction": "exact",
+   "value": "73",
+   "source": "macrostep write-up Sec. 9.3"
+  },
+  {
+   "scope": "inst1-d9-t7/50",
+   "quantity": "L0_100",
+   "direction": "exact",
+   "value": "617",
+   "source": "macrostep write-up Sec. 9.3"
+  },
+  {
+   "scope": "inst3-d7-t31/200",
+   "quantity": "L0_1",
+   "direction": "exact",
+   "value": "14",
+   "source": "macrostep write-up Sec. 9.3"
+  },
+  {
+   "scope": "inst3-d7-t31/200",
+   "quantity": "L0_10",
+   "direction": "exact",
+   "value": "72",
+   "source": "macrostep write-up Sec. 9.3"
+  },
+  {
+   "scope": "inst3-d7-t31/200",
+   "quantity": "L0_100",
+   "direction": "exact",
+   "value": "615",
+   "source": "macrostep write-up Sec. 9.3"
+  },
+  {
+   "scope": "inst1-d9-t7/50",
+   "quantity": "max_delta",
+   "direction": "upper",
+   "value": "-0.0002306",
+   "source": "macrostep write-up Sec. 7.1 (safe-direction rounding; see README)"
+  },
+  {
+   "scope": "inst1-d9-t7/50",
+   "quantity": "aligned_witness",
+   "direction": "upper",
+   "value": "0.254252",
+   "source": "macrostep write-up Sec. 7.1 (safe-direction rounding; see README)"
+  },
+  {
+   "scope": "inst1-d9-t7/50",
+   "quantity": "min_log_slack",
+   "direction": "lower",
+   "value": "0.001005",
+   "source": "macrostep write-up Sec. 7.1 (safe-direction rounding; see README)"
+  },
+  {
+   "scope": "inst1-d8-t3/20",
+   "quantity": "max_delta",
+   "direction": "upper",
+   "value": "-0.0001760",
+   "source": "macrostep write-up Sec. 7.1 (safe-direction rounding; see README)"
+  },
+  {
+   "scope": "inst1-d8-t3/20",
+   "quantity": "min_log_slack",
+   "direction": "lower",
+   "value": "0.000980",
+   "source": "macrostep write-up Sec. 7.1 (safe-direction rounding; see README)"
+  },
+  {
+   "scope": "inst2-d8-t3/20",
+   "quantity": "chords",
+   "direction": "exact",
+   "value": "960",
+   "source": "macrostep write-up Sec. 7.5 table"
+  },
+  {
+   "scope": "inst2-d8-t3/20",
+   "quantity": "max_Psi",
+   "direction": "upper",
+   "value": "-13.94",
+   "source": "macrostep write-up Sec. 7.5 table"
+  },
+  {
+   "scope": "inst2-d8-t3/20",
+   "quantity": "noisy_witness",
+   "direction": "upper",
+   "value": "0.270974",
+   "source": "macrostep write-up Sec. 7.5 table"
+  },
+  {
+   "scope": "inst2-d8-t3/20",
+   "quantity": "min_gamma",
+   "direction": "lower",
+   "value": "0.0000749",
+   "source": "macrostep write-up Sec. 7.5 table"
+  },
+  {
+   "scope": "inst2-d8-t31/200",
+   "quantity": "chords",
+   "direction": "exact",
+   "value": "960",
+   "source": "macrostep write-up Sec. 7.5 table"
+  },
+  {
+   "scope": "inst2-d8-t31/200",
+   "quantity": "max_Psi",
+   "direction": "upper",
+   "value": "-14.39",
+   "source": "macrostep write-up Sec. 7.5 table"
+  },
+  {
+   "scope": "inst2-d8-t31/200",
+   "quantity": "noisy_witness",
+   "direction": "upper",
+   "value": "0.278085",
+   "source": "macrostep write-up Sec. 7.5 table"
+  },
+  {
+   "scope": "inst2-d8-t31/200",
+   "quantity": "min_gamma",
+   "direction": "lower",
+   "value": "0.0000730",
+   "source": "macrostep write-up Sec. 7.5 table"
+  },
+  {
+   "scope": "inst3-d7-t3/20",
+   "quantity": "chords",
+   "direction": "exact",
+   "value": "637",
+   "source": "macrostep write-up Sec. 7.5 table"
+  },
+  {
+   "scope": "inst3-d7-t3/20",
+   "quantity": "max_Psi",
+   "direction": "upper",
+   "value": "-2.80",
+   "source": "macrostep write-up Sec. 7.5 table"
+  },
+  {
+   "scope": "inst3-d7-t3/20",
+   "quantity": "noisy_witness",
+   "direction": "upper",
+   "value": "0.273224",
+   "source": "macrostep write-up Sec. 7.5 table"
+  },
+  {
+   "scope": "inst3-d7-t3/20",
+   "quantity": "min_gamma",
+   "direction": "lower",
+   "value": "0.0000931",
+   "source": "macrostep write-up Sec. 7.5 table"
+  },
+  {
+   "scope": "inst3-d7-t31/200",
+   "quantity": "chords",
+   "direction": "exact",
+   "value": "637",
+   "source": "macrostep write-up Sec. 7.5 table"
+  },
+  {
+   "scope": "inst3-d7-t31/200",
+   "quantity": "max_Psi",
+   "direction": "upper",
+   "value": "-3.08",
+   "source": "macrostep write-up Sec. 7.5 table"
+  },
+  {
+   "scope": "inst3-d7-t31/200",
+   "quantity": "noisy_witness",
+   "direction": "upper",
+   "value": "0.280449",
+   "source": "macrostep write-up Sec. 7.5 table"
+  },
+  {
+   "scope": "inst3-d7-t31/200",
+   "quantity": "min_gamma",
+   "direction": "lower",
+   "value": "0.0000933",
+   "source": "macrostep write-up Sec. 7.5 table"
+  },
+  {
+   "scope": "inst3-d7-t3/20",
+   "quantity": "plain_witness",
+   "direction": "upper",
+   "value": "0.272179",
+   "source": "macrostep write-up Sec. 7.5 notes and Sec. 11"
+  },
+  {
+   "scope": "inst3-d7-t3/20",
+   "quantity": "p_minus_plain_witness",
+   "direction": "lower",
+   "value": "0.0008",
+   "source": "macrostep write-up Sec. 7.5 notes: p = 0.273 exceeds the plain witness"
+  },
+  {
+   "scope": "R0-d9-246",
+   "quantity": "etaF",
+   "direction": "upper",
+   "value": "0.003727",
+   "source": "macrostep write-up Sec. 9.2 table (R0 columns; shared columns are the worse of L2 and R0)"
+  },
+  {
+   "scope": "R0-d9-246",
+   "quantity": "lambda_min",
+   "direction": "upper",
+   "value": "0.779209",
+   "source": "macrostep write-up Sec. 9.2 table (R0 columns; shared columns are the worse of L2 and R0)"
+  },
+  {
+   "scope": "R0-d9-246",
+   "quantity": "theta_min",
+   "direction": "lower",
+   "value": "0.000567",
+   "source": "macrostep write-up Sec. 9.2 table (R0 columns; shared columns are the worse of L2 and R0)"
+  },
+  {
+   "scope": "R0-d9-246",
+   "quantity": "Gamma_w_min",
+   "direction": "upper",
+   "value": "208.106",
+   "source": "macrostep write-up Sec. 9.2 table (R0 columns; shared columns are the worse of L2 and R0)"
+  },
+  {
+   "scope": "R0-d9-246",
+   "quantity": "lambda_best",
+   "direction": "upper",
+   "value": "0.867129",
+   "source": "macrostep write-up Sec. 9.2 table (R0 columns; shared columns are the worse of L2 and R0)"
+  },
+  {
+   "scope": "R0-d9-246",
+   "quantity": "bound_best",
+   "direction": "upper",
+   "value": "518.74",
+   "source": "macrostep write-up Sec. 9.2 table (R0 columns; shared columns are the worse of L2 and R0)"
+  },
+  {
+   "scope": "R0-d9-246",
+   "quantity": "theta_best",
+   "direction": "lower",
+   "value": "0.001908",
+   "source": "macrostep write-up Sec. 9.2 table (R0 columns; shared columns are the worse of L2 and R0)"
+  },
+  {
+   "scope": "R0-d9-46",
+   "quantity": "etaF",
+   "direction": "upper",
+   "value": "0.012493",
+   "source": "macrostep write-up Sec. 9.2 table (R0 columns; shared columns are the worse of L2 and R0)"
+  },
+  {
+   "scope": "R0-d9-46",
+   "quantity": "lambda_min",
+   "direction": "upper",
+   "value": "0.816438",
+   "source": "macrostep write-up Sec. 9.2 table (R0 columns; shared columns are the worse of L2 and R0)"
+  },
+  {
+   "scope": "R0-d9-46",
+   "quantity": "theta_min",
+   "direction": "lower",
+   "value": "0.001441",
+   "source": "macrostep write-up Sec. 9.2 table (R0 columns; shared columns are the worse of L2 and R0)"
+  },
+  {
+   "scope": "R0-d9-46",
+   "quantity": "Gamma_w_min",
+   "direction": "upper",
+   "value": "64.355",
+   "source": "macrostep write-up Sec. 9.2 table (R0 columns; shared columns are the worse of L2 and R0)"
+  },
+  {
+   "scope": "R0-d9-46",
+   "quantity": "lambda_best",
+   "direction": "upper",
+   "value": "0.871403",
+   "source": "macrostep write-up Sec. 9.2 table (R0 columns; shared columns are the worse of L2 and R0)"
+  },
+  {
+   "scope": "R0-d9-46",
+   "quantity": "bound_best",
+   "direction": "upper",
+   "value": "518.73",
+   "source": "macrostep write-up Sec. 9.2 table (R0 columns; shared columns are the worse of L2 and R0)"
+  },
+  {
+   "scope": "R0-d9-46",
+   "quantity": "theta_best",
+   "direction": "lower",
+   "value": "0.001908",
+   "source": "macrostep write-up Sec. 9.2 table (R0 columns; shared columns are the worse of L2 and R0)"
+  },
+  {
+   "scope": "R0-d8-246",
+   "quantity": "etaF",
+   "direction": "upper",
+   "value": "0.009559",
+   "source": "macrostep write-up Sec. 9.2 table (R0 columns; shared columns are the worse of L2 and R0)"
+  },
+  {
+   "scope": "R0-d8-246",
+   "quantity": "lambda_min",
+   "direction": "upper",
+   "value": "0.892491",
+   "source": "macrostep write-up Sec. 9.2 table (R0 columns; shared columns are the worse of L2 and R0)"
+  },
+  {
+   "scope": "R0-d8-246",
+   "quantity": "theta_min",
+   "direction": "lower",
+   "value": "0.000539",
+   "source": "macrostep write-up Sec. 9.2 table (R0 columns; shared columns are the worse of L2 and R0)"
+  },
+  {
+   "scope": "R0-d8-246",
+   "quantity": "Gamma_w_min",
+   "direction": "upper",
+   "value": "92.376",
+   "source": "macrostep write-up Sec. 9.2 table (R0 columns; shared columns are the worse of L2 and R0)"
+  },
+  {
+   "scope": "R0-d8-246",
+   "quantity": "lambda_best",
+   "direction": "upper",
+   "value": "0.924459",
+   "source": "macrostep write-up Sec. 9.2 table (R0 columns; shared columns are the worse of L2 and R0)"
+  },
+  {
+   "scope": "R0-d8-246",
+   "quantity": "bound_best",
+   "direction": "upper",
+   "value": "1499.16",
+   "source": "macrostep write-up Sec. 9.2 table (R0 columns; shared columns are the worse of L2 and R0)"
+  },
+  {
+   "scope": "R0-d8-246",
+   "quantity": "theta_best",
+   "direction": "lower",
+   "value": "0.000660",
+   "source": "macrostep write-up Sec. 9.2 table (R0 columns; shared columns are the worse of L2 and R0)"
+  },
+  {
+   "scope": "R0-d8-82",
+   "quantity": "etaF",
+   "direction": "upper",
+   "value": "0.020292",
+   "source": "macrostep write-up Sec. 9.2 table (R0 columns; shared columns are the worse of L2 and R0)"
+  },
+  {
+   "scope": "R0-d8-82",
+   "quantity": "lambda_min",
+   "direction": "upper",
+   "value": "0.933186",
+   "source": "macrostep write-up Sec. 9.2 table (R0 columns; shared columns are the worse of L2 and R0)"
+  },
+  {
+   "scope": "R0-d8-82",
+   "quantity": "theta_min",
+   "direction": "lower",
+   "value": "0.000647",
+   "source": "macrostep write-up Sec. 9.2 table (R0 columns; shared columns are the worse of L2 and R0)"
+  },
+  {
+   "scope": "R0-d8-82",
+   "quantity": "Gamma_w_min",
+   "direction": "upper",
+   "value": "44.989",
+   "source": "macrostep write-up Sec. 9.2 table (R0 columns; shared columns are the worse of L2 and R0)"
+  },
+  {
+   "scope": "R0-d8-82",
+   "quantity": "lambda_best",
+   "direction": "upper",
+   "value": "0.934026",
+   "source": "macrostep write-up Sec. 9.2 table (R0 columns; shared columns are the worse of L2 and R0)"
+  },
+  {
+   "scope": "R0-d8-82",
+   "quantity": "bound_best",
+   "direction": "upper",
+   "value": "1535.14",
+   "source": "macrostep write-up Sec. 9.2 table (R0 columns; shared columns are the worse of L2 and R0)"
+  },
+  {
+   "scope": "R0-d8-82",
+   "quantity": "theta_best",
+   "direction": "lower",
+   "value": "0.000647",
+   "source": "macrostep write-up Sec. 9.2 table (R0 columns; shared columns are the worse of L2 and R0)"
+  },
+  {
+   "scope": "R0-d8-46",
+   "quantity": "etaF",
+   "direction": "upper",
+   "value": "0.028082",
+   "source": "macrostep write-up Sec. 9.2 table (R0 columns; shared columns are the worse of L2 and R0)"
+  },
+  {
+   "scope": "R0-d8-46",
+   "quantity": "lambda_min",
+   "direction": "upper",
+   "value": "0.961349",
+   "source": "macrostep write-up Sec. 9.2 table (R0 columns; shared columns are the worse of L2 and R0)"
+  },
+  {
+   "scope": "R0-d8-46",
+   "quantity": "theta_min",
+   "direction": "lower",
+   "value": "0.000490",
+   "source": "macrostep write-up Sec. 9.2 table (R0 columns; shared columns are the worse of L2 and R0)"
+  },
+  {
+   "scope": "R0-d8-46",
+   "quantity": "Gamma_w_min",
+   "direction": "upper",
+   "value": "33.234",
+   "source": "macrostep write-up Sec. 9.2 table (R0 columns; shared columns are the worse of L2 and R0)"
+  },
+  {
+   "scope": "R0-d8-46",
+   "quantity": "lambda_best",
+   "direction": "upper",
+   "value": "0.962154",
+   "source": "macrostep write-up Sec. 9.2 table (R0 columns; shared columns are the worse of L2 and R0)"
+  },
+  {
+   "scope": "R0-d8-46",
+   "quantity": "bound_best",
+   "direction": "upper",
+   "value": "2048.90",
+   "source": "macrostep write-up Sec. 9.2 table (R0 columns; shared columns are the worse of L2 and R0)"
+  },
+  {
+   "scope": "R0-d8-46",
+   "quantity": "theta_best",
+   "direction": "lower",
+   "value": "0.000490",
+   "source": "macrostep write-up Sec. 9.2 table (R0 columns; shared columns are the worse of L2 and R0)"
+  },
+  {
+   "scope": "R0-d8s-46",
+   "quantity": "etaF",
+   "direction": "upper",
+   "value": "0.022533",
+   "source": "macrostep write-up Sec. 9.2 table (R0 columns; shared columns are the worse of L2 and R0)"
+  },
+  {
+   "scope": "R0-d8s-46",
+   "quantity": "lambda_min",
+   "direction": "upper",
+   "value": "0.858128",
+   "source": "macrostep write-up Sec. 9.2 table (R0 columns; shared columns are the worse of L2 and R0)"
+  },
+  {
+   "scope": "R0-d8s-46",
+   "quantity": "theta_min",
+   "direction": "lower",
+   "value": "0.001884",
+   "source": "macrostep write-up Sec. 9.2 table (R0 columns; shared columns are the worse of L2 and R0)"
+  },
+  {
+   "scope": "R0-d8s-46",
+   "quantity": "Gamma_w_min",
+   "direction": "upper",
+   "value": "37.084",
+   "source": "macrostep write-up Sec. 9.2 table (R0 columns; shared columns are the worse of L2 and R0)"
+  },
+  {
+   "scope": "R0-d8s-46",
+   "quantity": "lambda_best",
+   "direction": "upper",
+   "value": "0.872724",
+   "source": "macrostep write-up Sec. 9.2 table (R0 columns; shared columns are the worse of L2 and R0)"
+  },
+  {
+   "scope": "R0-d8s-46",
+   "quantity": "bound_best",
+   "direction": "upper",
+   "value": "510.93",
+   "source": "macrostep write-up Sec. 9.2 table (R0 columns; shared columns are the worse of L2 and R0)"
+  },
+  {
+   "scope": "R0-d8s-46",
+   "quantity": "theta_best",
+   "direction": "lower",
+   "value": "0.001937",
+   "source": "macrostep write-up Sec. 9.2 table (R0 columns; shared columns are the worse of L2 and R0)"
+  },
+  {
+   "scope": "R0-d8s-82",
+   "quantity": "etaF",
+   "direction": "upper",
+   "value": "0.016090",
+   "source": "macrostep write-up Sec. 9.2 table (R0 columns; shared columns are the worse of L2 and R0)"
+  },
+  {
+   "scope": "R0-d8s-82",
+   "quantity": "lambda_min",
+   "direction": "upper",
+   "value": "0.834445",
+   "source": "macrostep write-up Sec. 9.2 table (R0 columns; shared columns are the worse of L2 and R0)"
+  },
+  {
+   "scope": "R0-d8s-82",
+   "quantity": "theta_min",
+   "direction": "lower",
+   "value": "0.001654",
+   "source": "macrostep write-up Sec. 9.2 table (R0 columns; shared columns are the worse of L2 and R0)"
+  },
+  {
+   "scope": "R0-d8s-82",
+   "quantity": "Gamma_w_min",
+   "direction": "upper",
+   "value": "50.863",
+   "source": "macrostep write-up Sec. 9.2 table (R0 columns; shared columns are the worse of L2 and R0)"
+  },
+  {
+   "scope": "R0-d8s-82",
+   "quantity": "lambda_best",
+   "direction": "upper",
+   "value": "0.884225",
+   "source": "macrostep write-up Sec. 9.2 table (R0 columns; shared columns are the worse of L2 and R0)"
+  },
+  {
+   "scope": "R0-d8s-82",
+   "quantity": "bound_best",
+   "direction": "upper",
+   "value": "510.31",
+   "source": "macrostep write-up Sec. 9.2 table (R0 columns; shared columns are the worse of L2 and R0)"
+  },
+  {
+   "scope": "R0-d8s-82",
+   "quantity": "theta_best",
+   "direction": "lower",
+   "value": "0.001941",
+   "source": "macrostep write-up Sec. 9.2 table (R0 columns; shared columns are the worse of L2 and R0)"
+  },
+  {
+   "scope": "R0-d8t-46",
+   "quantity": "etaF",
+   "direction": "upper",
+   "value": "0.027622",
+   "source": "macrostep write-up Sec. 9.2 table (R0 columns; shared columns are the worse of L2 and R0)"
+  },
+  {
+   "scope": "R0-d8t-46",
+   "quantity": "lambda_min",
+   "direction": "upper",
+   "value": "0.872212",
+   "source": "macrostep write-up Sec. 9.2 table (R0 columns; shared columns are the worse of L2 and R0)"
+  },
+  {
+   "scope": "R0-d8t-46",
+   "quantity": "theta_min",
+   "direction": "lower",
+   "value": "0.001971",
+   "source": "macrostep write-up Sec. 9.2 table (R0 columns; shared columns are the worse of L2 and R0)"
+  },
+  {
+   "scope": "R0-d8t-46",
+   "quantity": "Gamma_w_min",
+   "direction": "upper",
+   "value": "30.578",
+   "source": "macrostep write-up Sec. 9.2 table (R0 columns; shared columns are the worse of L2 and R0)"
+  },
+  {
+   "scope": "R0-d8t-46",
+   "quantity": "lambda_best",
+   "direction": "upper",
+   "value": "0.873009",
+   "source": "macrostep write-up Sec. 9.2 table (R0 columns; shared columns are the worse of L2 and R0)"
+  },
+  {
+   "scope": "R0-d8t-46",
+   "quantity": "bound_best",
+   "direction": "upper",
+   "value": "502.28",
+   "source": "macrostep write-up Sec. 9.2 table (R0 columns; shared columns are the worse of L2 and R0)"
+  },
+  {
+   "scope": "R0-d8t-46",
+   "quantity": "theta_best",
+   "direction": "lower",
+   "value": "0.001971",
+   "source": "macrostep write-up Sec. 9.2 table (R0 columns; shared columns are the worse of L2 and R0)"
+  },
+  {
+   "scope": "R0-d7a-246",
+   "quantity": "etaF",
+   "direction": "upper",
+   "value": "0.018561",
+   "source": "macrostep write-up Sec. 9.2 table (R0 columns; shared columns are the worse of L2 and R0)"
+  },
+  {
+   "scope": "R0-d7a-246",
+   "quantity": "lambda_min",
+   "direction": "upper",
+   "value": "0.989775",
+   "source": "macrostep write-up Sec. 9.2 table (R0 columns; shared columns are the worse of L2 and R0)"
+  },
+  {
+   "scope": "R0-d7a-246",
+   "quantity": "theta_min",
+   "direction": "lower",
+   "value": "0.000092",
+   "source": "macrostep write-up Sec. 9.2 table (R0 columns; shared columns are the worse of L2 and R0)"
+  },
+  {
+   "scope": "R0-d7a-246",
+   "quantity": "Gamma_w_min",
+   "direction": "upper",
+   "value": "52.327",
+   "source": "macrostep write-up Sec. 9.2 table (R0 columns; shared columns are the worse of L2 and R0)"
+  },
+  {
+   "scope": "R0-d7a-246",
+   "quantity": "lambda_best",
+   "direction": "upper",
+   "value": "0.989807",
+   "source": "macrostep write-up Sec. 9.2 table (R0 columns; shared columns are the worse of L2 and R0)"
+  },
+  {
+   "scope": "R0-d7a-246",
+   "quantity": "bound_best",
+   "direction": "upper",
+   "value": "10783.35",
+   "source": "macrostep write-up Sec. 9.2 table (R0 columns; shared columns are the worse of L2 and R0)"
+  },
+  {
+   "scope": "R0-d7a-246",
+   "quantity": "theta_best",
+   "direction": "lower",
+   "value": "0.000092",
+   "source": "macrostep write-up Sec. 9.2 table (R0 columns; shared columns are the worse of L2 and R0)"
+  },
+  {
+   "scope": "R0-d7a-804",
+   "quantity": "etaF",
+   "direction": "upper",
+   "value": "0.004216",
+   "source": "macrostep write-up Sec. 9.2 table (R0 columns; shared columns are the worse of L2 and R0)"
+  },
+  {
+   "scope": "R0-d7a-804",
+   "quantity": "lambda_min",
+   "direction": "upper",
+   "value": "0.935275",
+   "source": "macrostep write-up Sec. 9.2 table (R0 columns; shared columns are the worse of L2 and R0)"
+  },
+  {
+   "scope": "R0-d7a-804",
+   "quantity": "theta_min",
+   "direction": "lower",
+   "value": "0.000171",
+   "source": "macrostep write-up Sec. 9.2 table (R0 columns; shared columns are the worse of L2 and R0)"
+  },
+  {
+   "scope": "R0-d7a-804",
+   "quantity": "Gamma_w_min",
+   "direction": "upper",
+   "value": "220.847",
+   "source": "macrostep write-up Sec. 9.2 table (R0 columns; shared columns are the worse of L2 and R0)"
+  },
+  {
+   "scope": "R0-d7a-804",
+   "quantity": "lambda_best",
+   "direction": "upper",
+   "value": "0.954393",
+   "source": "macrostep write-up Sec. 9.2 table (R0 columns; shared columns are the worse of L2 and R0)"
+  },
+  {
+   "scope": "R0-d7a-804",
+   "quantity": "bound_best",
+   "direction": "upper",
+   "value": "4353.09",
+   "source": "macrostep write-up Sec. 9.2 table (R0 columns; shared columns are the worse of L2 and R0)"
+  },
+  {
+   "scope": "R0-d7a-804",
+   "quantity": "theta_best",
+   "direction": "lower",
+   "value": "0.000227",
+   "source": "macrostep write-up Sec. 9.2 table (R0 columns; shared columns are the worse of L2 and R0)"
+  },
+  {
+   "scope": "R0-d7b-804",
+   "quantity": "etaF",
+   "direction": "upper",
+   "value": "0.005788",
+   "source": "macrostep write-up Sec. 9.2 table (R0 columns; shared columns are the worse of L2 and R0)"
+  },
+  {
+   "scope": "R0-d7b-804",
+   "quantity": "lambda_min",
+   "direction": "upper",
+   "value": "0.924670",
+   "source": "macrostep write-up Sec. 9.2 table (R0 columns; shared columns are the worse of L2 and R0)"
+  },
+  {
+   "scope": "R0-d7b-804",
+   "quantity": "theta_min",
+   "direction": "lower",
+   "value": "0.000265",
+   "source": "macrostep write-up Sec. 9.2 table (R0 columns; shared columns are the worse of L2 and R0)"
+  },
+  {
+   "scope": "R0-d7b-804",
+   "quantity": "Gamma_w_min",
+   "direction": "upper",
+   "value": "158.760",
+   "source": "macrostep write-up Sec. 9.2 table (R0 columns; shared columns are the worse of L2 and R0)"
+  },
+  {
+   "scope": "R0-d7b-804",
+   "quantity": "lambda_best",
+   "direction": "upper",
+   "value": "0.946970",
+   "source": "macrostep write-up Sec. 9.2 table (R0 columns; shared columns are the worse of L2 and R0)"
+  },
+  {
+   "scope": "R0-d7b-804",
+   "quantity": "bound_best",
+   "direction": "upper",
+   "value": "3030.13",
+   "source": "macrostep write-up Sec. 9.2 table (R0 columns; shared columns are the worse of L2 and R0)"
+  },
+  {
+   "scope": "R0-d7b-804",
+   "quantity": "theta_best",
+   "direction": "lower",
+   "value": "0.000326",
+   "source": "macrostep write-up Sec. 9.2 table (R0 columns; shared columns are the worse of L2 and R0)"
+  },
+  {
+   "scope": "R0-d9-246",
+   "quantity": "lambda_min",
+   "direction": "upper",
+   "value": "0.779215",
+   "source": "macrostep write-up Sec. 2 (theorem statements)"
+  },
+  {
+   "scope": "R0-d9-246",
+   "quantity": "theta_min",
+   "direction": "lower",
+   "value": "0.000567",
+   "source": "macrostep write-up Sec. 2 (theorem statements)"
+  },
+  {
+   "scope": "R0-d9-246",
+   "quantity": "lambda_best",
+   "direction": "upper",
+   "value": "0.867129",
+   "source": "macrostep write-up Sec. 2 (theorem statements)"
+  },
+  {
+   "scope": "R0-d9-246",
+   "quantity": "theta_best",
+   "direction": "lower",
+   "value": "0.001908",
+   "source": "macrostep write-up Sec. 2 (theorem statements)"
+  },
+  {
+   "scope": "R0-d8-246",
+   "quantity": "lambda_min",
+   "direction": "upper",
+   "value": "0.892512",
+   "source": "macrostep write-up Sec. 2 (theorem statements)"
+  },
+  {
+   "scope": "R0-d8-246",
+   "quantity": "theta_min",
+   "direction": "lower",
+   "value": "0.000539",
+   "source": "macrostep write-up Sec. 2 (theorem statements)"
+  },
+  {
+   "scope": "R0-d8-246",
+   "quantity": "lambda_best",
+   "direction": "upper",
+   "value": "0.924459",
+   "source": "macrostep write-up Sec. 2 (theorem statements)"
+  },
+  {
+   "scope": "R0-d8-246",
+   "quantity": "theta_best",
+   "direction": "lower",
+   "value": "0.000660",
+   "source": "macrostep write-up Sec. 2 (theorem statements)"
+  },
+  {
+   "scope": "R0-d8-82",
+   "quantity": "lambda_min",
+   "direction": "upper",
+   "value": "0.934027",
+   "source": "macrostep write-up Sec. 2 (theorem statements)"
+  },
+  {
+   "scope": "R0-d8-82",
+   "quantity": "theta_best",
+   "direction": "lower",
+   "value": "0.000644",
+   "source": "macrostep write-up Sec. 2 (theorem statements)"
+  },
+  {
+   "scope": "R0-d8-46",
+   "quantity": "lambda_min",
+   "direction": "upper",
+   "value": "0.962154",
+   "source": "macrostep write-up Sec. 2 (theorem statements)"
+  },
+  {
+   "scope": "R0-d8-46",
+   "quantity": "theta_best",
+   "direction": "lower",
+   "value": "0.000483",
+   "source": "macrostep write-up Sec. 2 (theorem statements)"
+  },
+  {
+   "scope": "R0-d8s-46",
+   "quantity": "lambda_min",
+   "direction": "upper",
+   "value": "0.858694",
+   "source": "macrostep write-up Sec. 2 (theorem statements)"
+  },
+  {
+   "scope": "R0-d8s-46",
+   "quantity": "theta_min",
+   "direction": "lower",
+   "value": "0.001884",
+   "source": "macrostep write-up Sec. 2 (theorem statements)"
+  },
+  {
+   "scope": "R0-d8s-46",
+   "quantity": "lambda_best",
+   "direction": "upper",
+   "value": "0.872724",
+   "source": "macrostep write-up Sec. 2 (theorem statements)"
+  },
+  {
+   "scope": "R0-d8s-46",
+   "quantity": "theta_best",
+   "direction": "lower",
+   "value": "0.001937",
+   "source": "macrostep write-up Sec. 2 (theorem statements)"
+  },
+  {
+   "scope": "R0-d7b-804",
+   "quantity": "lambda_min",
+   "direction": "upper",
+   "value": "0.924672",
+   "source": "macrostep write-up Sec. 2 (theorem statements)"
+  },
+  {
+   "scope": "R0-d7b-804",
+   "quantity": "theta_min",
+   "direction": "lower",
+   "value": "0.000265",
+   "source": "macrostep write-up Sec. 2 (theorem statements)"
+  },
+  {
+   "scope": "R0-d7b-804",
+   "quantity": "lambda_best",
+   "direction": "upper",
+   "value": "0.946970",
+   "source": "macrostep write-up Sec. 2 (theorem statements)"
+  },
+  {
+   "scope": "R0-d7b-804",
+   "quantity": "theta_best",
+   "direction": "lower",
+   "value": "0.000326",
+   "source": "macrostep write-up Sec. 2 (theorem statements)"
+  },
+  {
+   "scope": "R0-d7a-804",
+   "quantity": "lambda_min",
+   "direction": "upper",
+   "value": "0.935276",
+   "source": "macrostep write-up Sec. 2 (theorem statements)"
+  },
+  {
+   "scope": "R0-d7a-804",
+   "quantity": "theta_min",
+   "direction": "lower",
+   "value": "0.000171",
+   "source": "macrostep write-up Sec. 2 (theorem statements)"
+  },
+  {
+   "scope": "R0-d7a-804",
+   "quantity": "lambda_best",
+   "direction": "upper",
+   "value": "0.954393",
+   "source": "macrostep write-up Sec. 2 (theorem statements)"
+  },
+  {
+   "scope": "R0-d7a-804",
+   "quantity": "theta_best",
+   "direction": "lower",
+   "value": "0.000227",
+   "source": "macrostep write-up Sec. 2 (theorem statements)"
+  },
+  {
+   "scope": "R0t-d7a-246",
+   "quantity": "lambda_min",
+   "direction": "upper",
+   "value": "0.966950",
+   "source": "macrostep write-up Sec. 2 (theorem statements)"
+  },
+  {
+   "scope": "R0t-d7a-246",
+   "quantity": "theta_best",
+   "direction": "lower",
+   "value": "0.000213",
+   "source": "macrostep write-up Sec. 2 (theorem statements)"
+  },
+  {
+   "scope": "R0t-d7b-246",
+   "quantity": "lambda_min",
+   "direction": "upper",
+   "value": "0.964284",
+   "source": "macrostep write-up Sec. 2 (theorem statements)"
+  },
+  {
+   "scope": "R0t-d7b-246",
+   "quantity": "theta_best",
+   "direction": "lower",
+   "value": "0.000288",
+   "source": "macrostep write-up Sec. 2 (theorem statements)"
+  },
+  {
+   "scope": "R0-d9-246",
+   "quantity": "margin",
+   "direction": "lower",
+   "value": "0.22",
+   "source": "macrostep write-up Sec. 0 (margins 1 - lambda)"
+  },
+  {
+   "scope": "R0-d8-246",
+   "quantity": "margin",
+   "direction": "lower",
+   "value": "0.107",
+   "source": "macrostep write-up Sec. 0 (margins 1 - lambda)"
+  },
+  {
+   "scope": "R0-d8s-46",
+   "quantity": "margin",
+   "direction": "lower",
+   "value": "0.14",
+   "source": "macrostep write-up Sec. 0 (margins 1 - lambda)"
+  },
+  {
+   "scope": "R0-d7b-804",
+   "quantity": "margin",
+   "direction": "lower",
+   "value": "0.075",
+   "source": "macrostep write-up Sec. 0 (margins 1 - lambda)"
+  },
+  {
+   "scope": "R0t-d7a-246",
+   "quantity": "margin",
+   "direction": "lower",
+   "value": "0.033",
+   "source": "macrostep write-up Sec. 9.5 (margins 3.3% and 3.6%; the second is 0.0357..., shown here as 0.035)"
+  },
+  {
+   "scope": "R0t-d7b-246",
+   "quantity": "margin",
+   "direction": "lower",
+   "value": "0.035",
+   "source": "macrostep write-up Sec. 9.5 (margins 3.3% and 3.6%; the second is 0.0357..., shown here as 0.035)"
+  },
+  {
+   "scope": "R0t-d9-246",
+   "quantity": "etaF",
+   "direction": "upper",
+   "value": "0.0035954",
+   "source": "macrostep write-up Sec. 9.5 Table 9.5b and the R0t table (R0t columns)"
+  },
+  {
+   "scope": "R0t-d9-246",
+   "quantity": "lambda_min",
+   "direction": "upper",
+   "value": "0.778620",
+   "source": "macrostep write-up Sec. 9.5 Table 9.5b and the R0t table (R0t columns)"
+  },
+  {
+   "scope": "R0t-d9-246",
+   "quantity": "theta_min",
+   "direction": "lower",
+   "value": "0.000549",
+   "source": "macrostep write-up Sec. 9.5 Table 9.5b and the R0t table (R0t columns)"
+  },
+  {
+   "scope": "R0t-d9-246",
+   "quantity": "lambda_best",
+   "direction": "upper",
+   "value": "0.866773",
+   "source": "macrostep write-up Sec. 9.5 Table 9.5b and the R0t table (R0t columns)"
+  },
+  {
+   "scope": "R0t-d9-246",
+   "quantity": "theta_best",
+   "direction": "lower",
+   "value": "0.00190",
+   "source": "macrostep write-up Sec. 9.5 Table 9.5b and the R0t table (R0t columns)"
+  },
+  {
+   "scope": "R0t-d9-82",
+   "quantity": "etaF",
+   "direction": "upper",
+   "value": "0.0078229",
+   "source": "macrostep write-up Sec. 9.5 Table 9.5b and the R0t table (R0t columns)"
+  },
+  {
+   "scope": "R0t-d9-82",
+   "quantity": "lambda_min",
+   "direction": "upper",
+   "value": "0.796897",
+   "source": "macrostep write-up Sec. 9.5 Table 9.5b and the R0t table (R0t columns)"
+  },
+  {
+   "scope": "R0t-d9-82",
+   "quantity": "theta_min",
+   "direction": "lower",
+   "value": "0.00104",
+   "source": "macrostep write-up Sec. 9.5 Table 9.5b and the R0t table (R0t columns)"
+  },
+  {
+   "scope": "R0t-d9-82",
+   "quantity": "lambda_best",
+   "direction": "upper",
+   "value": "0.877739",
+   "source": "macrostep write-up Sec. 9.5 Table 9.5b and the R0t table (R0t columns)"
+  },
+  {
+   "scope": "R0t-d9-82",
+   "quantity": "theta_best",
+   "direction": "lower",
+   "value": "0.00191",
+   "source": "macrostep write-up Sec. 9.5 Table 9.5b and the R0t table (R0t columns)"
+  },
+  {
+   "scope": "R0t-d9-46",
+   "quantity": "etaF",
+   "direction": "upper",
+   "value": "0.012267",
+   "source": "macrostep write-up Sec. 9.5 Table 9.5b and the R0t table (R0t columns)"
+  },
+  {
+   "scope": "R0t-d9-46",
+   "quantity": "lambda_min",
+   "direction": "upper",
+   "value": "0.815502",
+   "source": "macrostep write-up Sec. 9.5 Table 9.5b and the R0t table (R0t columns)"
+  },
+  {
+   "scope": "R0t-d9-46",
+   "quantity": "theta_min",
+   "direction": "lower",
+   "value": "0.00142",
+   "source": "macrostep write-up Sec. 9.5 Table 9.5b and the R0t table (R0t columns)"
+  },
+  {
+   "scope": "R0t-d9-46",
+   "quantity": "lambda_best",
+   "direction": "upper",
+   "value": "0.870551",
+   "source": "macrostep write-up Sec. 9.5 Table 9.5b and the R0t table (R0t columns)"
+  },
+  {
+   "scope": "R0t-d9-46",
+   "quantity": "theta_best",
+   "direction": "lower",
+   "value": "0.00190",
+   "source": "macrostep write-up Sec. 9.5 Table 9.5b and the R0t table (R0t columns)"
+  },
+  {
+   "scope": "R0t-d8-246",
+   "quantity": "etaF",
+   "direction": "upper",
+   "value": "0.0083599",
+   "source": "macrostep write-up Sec. 9.5 Table 9.5b and the R0t table (R0t columns)"
+  },
+  {
+   "scope": "R0t-d8-246",
+   "quantity": "lambda_min",
+   "direction": "upper",
+   "value": "0.887552",
+   "source": "macrostep write-up Sec. 9.5 Table 9.5b and the R0t table (R0t columns)"
+  },
+  {
+   "scope": "R0t-d8-246",
+   "quantity": "theta_min",
+   "direction": "lower",
+   "value": "0.000498",
+   "source": "macrostep write-up Sec. 9.5 Table 9.5b and the R0t table (R0t columns)"
+  },
+  {
+   "scope": "R0t-d8-246",
+   "quantity": "lambda_best",
+   "direction": "upper",
+   "value": "0.920987",
+   "source": "macrostep write-up Sec. 9.5 Table 9.5b and the R0t table (R0t columns)"
+  },
+  {
+   "scope": "R0t-d8-246",
+   "quantity": "theta_best",
+   "direction": "lower",
+   "value": "0.000660",
+   "source": "macrostep write-up Sec. 9.5 Table 9.5b and the R0t table (R0t columns)"
+  },
+  {
+   "scope": "R0t-d8-82",
+   "quantity": "etaF",
+   "direction": "upper",
+   "value": "0.018129",
+   "source": "macrostep write-up Sec. 9.5 Table 9.5b and the R0t table (R0t columns)"
+  },
+  {
+   "scope": "R0t-d8-82",
+   "quantity": "lambda_min",
+   "direction": "upper",
+   "value": "0.925010",
+   "source": "macrostep write-up Sec. 9.5 Table 9.5b and the R0t table (R0t columns)"
+  },
+  {
+   "scope": "R0t-d8-82",
+   "quantity": "theta_min",
+   "direction": "lower",
+   "value": "0.000659",
+   "source": "macrostep write-up Sec. 9.5 Table 9.5b and the R0t table (R0t columns)"
+  },
+  {
+   "scope": "R0t-d8-82",
+   "quantity": "lambda_best",
+   "direction": "upper",
+   "value": "0.925010",
+   "source": "macrostep write-up Sec. 9.5 Table 9.5b and the R0t table (R0t columns)"
+  },
+  {
+   "scope": "R0t-d8-82",
+   "quantity": "theta_best",
+   "direction": "lower",
+   "value": "0.000659",
+   "source": "macrostep write-up Sec. 9.5 Table 9.5b and the R0t table (R0t columns)"
+  },
+  {
+   "scope": "R0t-d8-46",
+   "quantity": "etaF",
+   "direction": "upper",
+   "value": "0.025743",
+   "source": "macrostep write-up Sec. 9.5 Table 9.5b and the R0t table (R0t columns)"
+  },
+  {
+   "scope": "R0t-d8-46",
+   "quantity": "lambda_min",
+   "direction": "upper",
+   "value": "0.952885",
+   "source": "macrostep write-up Sec. 9.5 Table 9.5b and the R0t table (R0t columns)"
+  },
+  {
+   "scope": "R0t-d8-46",
+   "quantity": "theta_min",
+   "direction": "lower",
+   "value": "0.000557",
+   "source": "macrostep write-up Sec. 9.5 Table 9.5b and the R0t table (R0t columns)"
+  },
+  {
+   "scope": "R0t-d8-46",
+   "quantity": "lambda_best",
+   "direction": "upper",
+   "value": "0.952885",
+   "source": "macrostep write-up Sec. 9.5 Table 9.5b and the R0t table (R0t columns)"
+  },
+  {
+   "scope": "R0t-d8-46",
+   "quantity": "theta_best",
+   "direction": "lower",
+   "value": "0.000557",
+   "source": "macrostep write-up Sec. 9.5 Table 9.5b and the R0t table (R0t columns)"
+  },
+  {
+   "scope": "R0t-d8s-46",
+   "quantity": "etaF",
+   "direction": "upper",
+   "value": "0.020695",
+   "source": "macrostep write-up Sec. 9.5 Table 9.5b and the R0t table (R0t columns)"
+  },
+  {
+   "scope": "R0t-d8s-46",
+   "quantity": "lambda_min",
+   "direction": "upper",
+   "value": "0.851358",
+   "source": "macrostep write-up Sec. 9.5 Table 9.5b and the R0t table (R0t columns)"
+  },
+  {
+   "scope": "R0t-d8s-46",
+   "quantity": "theta_min",
+   "direction": "lower",
+   "value": "0.00184",
+   "source": "macrostep write-up Sec. 9.5 Table 9.5b and the R0t table (R0t columns)"
+  },
+  {
+   "scope": "R0t-d8s-46",
+   "quantity": "lambda_best",
+   "direction": "upper",
+   "value": "0.880887",
+   "source": "macrostep write-up Sec. 9.5 Table 9.5b and the R0t table (R0t columns)"
+  },
+  {
+   "scope": "R0t-d8s-46",
+   "quantity": "theta_best",
+   "direction": "lower",
+   "value": "0.00194",
+   "source": "macrostep write-up Sec. 9.5 Table 9.5b and the R0t table (R0t columns)"
+  },
+  {
+   "scope": "R0t-d8s-82",
+   "quantity": "etaF",
+   "direction": "upper",
+   "value": "0.014398",
+   "source": "macrostep write-up Sec. 9.5 Table 9.5b and the R0t table (R0t columns)"
+  },
+  {
+   "scope": "R0t-d8s-82",
+   "quantity": "lambda_min",
+   "direction": "upper",
+   "value": "0.827947",
+   "source": "macrostep write-up Sec. 9.5 Table 9.5b and the R0t table (R0t columns)"
+  },
+  {
+   "scope": "R0t-d8s-82",
+   "quantity": "theta_min",
+   "direction": "lower",
+   "value": "0.00156",
+   "source": "macrostep write-up Sec. 9.5 Table 9.5b and the R0t table (R0t columns)"
+  },
+  {
+   "scope": "R0t-d8s-82",
+   "quantity": "lambda_best",
+   "direction": "upper",
+   "value": "0.879263",
+   "source": "macrostep write-up Sec. 9.5 Table 9.5b and the R0t table (R0t columns)"
+  },
+  {
+   "scope": "R0t-d8s-82",
+   "quantity": "theta_best",
+   "direction": "lower",
+   "value": "0.00194",
+   "source": "macrostep write-up Sec. 9.5 Table 9.5b and the R0t table (R0t columns)"
+  },
+  {
+   "scope": "R0t-d8t-46",
+   "quantity": "etaF",
+   "direction": "upper",
+   "value": "0.025314",
+   "source": "macrostep write-up Sec. 9.5 Table 9.5b and the R0t table (R0t columns)"
+  },
+  {
+   "scope": "R0t-d8t-46",
+   "quantity": "lambda_min",
+   "direction": "upper",
+   "value": "0.863735",
+   "source": "macrostep write-up Sec. 9.5 Table 9.5b and the R0t table (R0t columns)"
+  },
+  {
+   "scope": "R0t-d8t-46",
+   "quantity": "theta_min",
+   "direction": "lower",
+   "value": "0.00196",
+   "source": "macrostep write-up Sec. 9.5 Table 9.5b and the R0t table (R0t columns)"
+  },
+  {
+   "scope": "R0t-d8t-46",
+   "quantity": "lambda_best",
+   "direction": "upper",
+   "value": "0.877261",
+   "source": "macrostep write-up Sec. 9.5 Table 9.5b and the R0t table (R0t columns)"
+  },
+  {
+   "scope": "R0t-d8t-46",
+   "quantity": "theta_best",
+   "direction": "lower",
+   "value": "0.00197",
+   "source": "macrostep write-up Sec. 9.5 Table 9.5b and the R0t table (R0t columns)"
+  },
+  {
+   "scope": "R0t-d8t-82",
+   "quantity": "etaF",
+   "direction": "upper",
+   "value": "0.017856",
+   "source": "macrostep write-up Sec. 9.5 Table 9.5b and the R0t table (R0t columns)"
+  },
+  {
+   "scope": "R0t-d8t-82",
+   "quantity": "lambda_min",
+   "direction": "upper",
+   "value": "0.835926",
+   "source": "macrostep write-up Sec. 9.5 Table 9.5b and the R0t table (R0t columns)"
+  },
+  {
+   "scope": "R0t-d8t-82",
+   "quantity": "theta_min",
+   "direction": "lower",
+   "value": "0.00177",
+   "source": "macrostep write-up Sec. 9.5 Table 9.5b and the R0t table (R0t columns)"
+  },
+  {
+   "scope": "R0t-d8t-82",
+   "quantity": "lambda_best",
+   "direction": "upper",
+   "value": "0.868541",
+   "source": "macrostep write-up Sec. 9.5 Table 9.5b and the R0t table (R0t columns)"
+  },
+  {
+   "scope": "R0t-d8t-82",
+   "quantity": "theta_best",
+   "direction": "lower",
+   "value": "0.00197",
+   "source": "macrostep write-up Sec. 9.5 Table 9.5b and the R0t table (R0t columns)"
+  },
+  {
+   "scope": "R0t-d7a-246",
+   "quantity": "etaF",
+   "direction": "upper",
+   "value": "0.012891",
+   "source": "macrostep write-up Sec. 9.5 Table 9.5b and the R0t table (R0t columns)"
+  },
+  {
+   "scope": "R0t-d7a-246",
+   "quantity": "lambda_min",
+   "direction": "upper",
+   "value": "0.966950",
+   "source": "macrostep write-up Sec. 9.5 Table 9.5b and the R0t table (R0t columns)"
+  },
+  {
+   "scope": "R0t-d7a-246",
+   "quantity": "theta_min",
+   "direction": "lower",
+   "value": "0.000213",
+   "source": "macrostep write-up Sec. 9.5 Table 9.5b and the R0t table (R0t columns)"
+  },
+  {
+   "scope": "R0t-d7a-246",
+   "quantity": "lambda_best",
+   "direction": "upper",
+   "value": "0.966950",
+   "source": "macrostep write-up Sec. 9.5 Table 9.5b and the R0t table (R0t columns)"
+  },
+  {
+   "scope": "R0t-d7a-246",
+   "quantity": "theta_best",
+   "direction": "lower",
+   "value": "0.000213",
+   "source": "macrostep write-up Sec. 9.5 Table 9.5b and the R0t table (R0t columns)"
+  },
+  {
+   "scope": "R0t-d7b-246",
+   "quantity": "etaF",
+   "direction": "upper",
+   "value": "0.016406",
+   "source": "macrostep write-up Sec. 9.5 Table 9.5b and the R0t table (R0t columns)"
+  },
+  {
+   "scope": "R0t-d7b-246",
+   "quantity": "lambda_min",
+   "direction": "upper",
+   "value": "0.964284",
+   "source": "macrostep write-up Sec. 9.5 Table 9.5b and the R0t table (R0t columns)"
+  },
+  {
+   "scope": "R0t-d7b-246",
+   "quantity": "theta_min",
+   "direction": "lower",
+   "value": "0.000288",
+   "source": "macrostep write-up Sec. 9.5 Table 9.5b and the R0t table (R0t columns)"
+  },
+  {
+   "scope": "R0t-d7b-246",
+   "quantity": "lambda_best",
+   "direction": "upper",
+   "value": "0.964284",
+   "source": "macrostep write-up Sec. 9.5 Table 9.5b and the R0t table (R0t columns)"
+  },
+  {
+   "scope": "R0t-d7b-246",
+   "quantity": "theta_best",
+   "direction": "lower",
+   "value": "0.000288",
+   "source": "macrostep write-up Sec. 9.5 Table 9.5b and the R0t table (R0t columns)"
+  },
+  {
+   "scope": "R0t-d7a-804",
+   "quantity": "etaF",
+   "direction": "upper",
+   "value": "0.0027888",
+   "source": "macrostep write-up Sec. 9.5 Table 9.5b and the R0t table (R0t columns)"
+  },
+  {
+   "scope": "R0t-d7a-804",
+   "quantity": "lambda_min",
+   "direction": "upper",
+   "value": "0.927870",
+   "source": "macrostep write-up Sec. 9.5 Table 9.5b and the R0t table (R0t columns)"
+  },
+  {
+   "scope": "R0t-d7a-804",
+   "quantity": "theta_min",
+   "direction": "lower",
+   "value": "0.000124",
+   "source": "macrostep write-up Sec. 9.5 Table 9.5b and the R0t table (R0t columns)"
+  },
+  {
+   "scope": "R0t-d7a-804",
+   "quantity": "lambda_best",
+   "direction": "upper",
+   "value": "0.956322",
+   "source": "macrostep write-up Sec. 9.5 Table 9.5b and the R0t table (R0t columns)"
+  },
+  {
+   "scope": "R0t-d7a-804",
+   "quantity": "theta_best",
+   "direction": "lower",
+   "value": "0.000228",
+   "source": "macrostep write-up Sec. 9.5 Table 9.5b and the R0t table (R0t columns)"
+  },
+  {
+   "scope": "R0t-d7b-804",
+   "quantity": "etaF",
+   "direction": "upper",
+   "value": "0.0038234",
+   "source": "macrostep write-up Sec. 9.5 Table 9.5b and the R0t table (R0t columns)"
+  },
+  {
+   "scope": "R0t-d7b-804",
+   "quantity": "lambda_min",
+   "direction": "upper",
+   "value": "0.914627",
+   "source": "macrostep write-up Sec. 9.5 Table 9.5b and the R0t table (R0t columns)"
+  },
+  {
+   "scope": "R0t-d7b-804",
+   "quantity": "theta_min",
+   "direction": "lower",
+   "value": "0.000196",
+   "source": "macrostep write-up Sec. 9.5 Table 9.5b and the R0t table (R0t columns)"
+  },
+  {
+   "scope": "R0t-d7b-804",
+   "quantity": "lambda_best",
+   "direction": "upper",
+   "value": "0.948377",
+   "source": "macrostep write-up Sec. 9.5 Table 9.5b and the R0t table (R0t columns)"
+  },
+  {
+   "scope": "R0t-d7b-804",
+   "quantity": "theta_best",
+   "direction": "lower",
+   "value": "0.000327",
+   "source": "macrostep write-up Sec. 9.5 Table 9.5b and the R0t table (R0t columns)"
+  }
+ ],
+ "theorems": {
+  "Q9": {
+   "statement": "d = 9, t = 7/50, instance 1 (local methods of the overlap-revealed route)",
+   "runs": [
+    "R0-d9-246"
+   ],
+   "instance": "inst1-d9-t7/50"
+  },
+  "Q8": {
+   "statement": "d = 8, t = 3/20, instance 1",
+   "runs": [
+    "R0-d8-246",
+    "R0-d8-82",
+    "R0-d8-46"
+   ],
+   "instance": "inst1-d8-t3/20"
+  },
+  "Q8sharp": {
+   "statement": "d = 8, t = 3/20, instance 2 (Lemmas N, P, S)",
+   "runs": [
+    "R0-d8s-46"
+   ],
+   "instance": "inst2-d8-t3/20"
+  },
+  "Q7": {
+   "statement": "d = 7, t = 31/200 and 3/20, instance 3 (Lemmas N, P, S), 804 near types",
+   "runs": [
+    "R0-d7b-804",
+    "R0-d7a-804"
+   ],
+   "instance": [
+    "inst3-d7-t31/200",
+    "inst3-d7-t3/20"
+   ]
+  },
+  "Q7-addendum": {
+   "statement": "d = 7, 246 near types with the tightened forward tails of Lemma R.1 (code base R0t)",
+   "runs": [
+    "R0t-d7a-246",
+    "R0t-d7b-246"
+   ],
+   "instance": [
+    "inst3-d7-t3/20",
+    "inst3-d7-t31/200"
+   ]
+  },
+  "_note": "The other stored certificates (R0 at 46/82/246 types, all certified R0t runs) are the remaining rows of the research tables (macrostep write-up Secs. 9.2, 9.5); every one is re-decided."
+ }
+}

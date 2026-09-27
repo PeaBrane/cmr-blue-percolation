@@ -1,0 +1,29 @@
+clean-room check: d=2 region=box |Lambda_0|=9 entries=8; p in [499999/1000000, 500001/1000000]; rho_hi = 1-(1-p_hi)^3
+  |Lambda^+|=21  q = |Q(e)| = 32   N_Q = max_P #{e: P in Q(e)} = 64   (JSON: q=32, N_Q=64)
+  domino coins: q_c = max_e #{coins meeting Lambda^+(e)} = 20   N_Qc = max_coin #{e} = 76
+  type-N regions lie in B_2: the N-type hypotheses I cap S_L = {} hold for L >= 3
+  rule table: 112 B and 128 N configurations (complete), 339 options; all satisfy the Design-Lemma hypotheses; weights positive, summing to 1
+  worst single B-key cost 2^19.8074
+  worst single N-key cost 2^17.6147
+  type B: keys produced by designs with different anchor sets: 0
+  type N: keys produced by designs with different anchor sets: 12
+  type B: 2 groups, 73 keys, 234 compatible pairs, 73 maximal cliques; K_B = 2^19.3442
+    [rev1] K_B(p_lo=499999/1000000) = 2^19.344182, K_B(p_hi=500001/1000000) = 2^19.344193; K_B = max = 2^19.344193 = 665552.744356, attained at p = 500001/1000000
+  type N: 8 groups, 183 keys, 1485 compatible pairs, 243 maximal cliques; K_N = 2^12.8191
+    [rev1] K_N(p_lo=499999/1000000) = 2^12.819063, K_N(p_hi=500001/1000000) = 2^12.819069; K_N = max = 2^12.819069 = 7226.435969, attained at p = 500001/1000000
+    [rev1] type-B configurations with {x'-z, y'-z} = e: 0
+    [rev1] maximal single-design type-B cost 2^19.8074: attained by an option of 8 configurations; configurations all of whose options attain it: 8 (= the {x'-z, y'-z} = e set: False)
+    [rev1] argmax B-clique at p = 500001/1000000: 3 keys, value 2^19.344193; keys (edge in the frame min(P0) = 0, (|I|,|O|,|W*\O|), n, W, log2 W c, #producing configurations, #of them with {x'-z, y'-z} = e):
+      e=((0, 0), (1, 0)) (7,9,11) n=2 W=41423/50000 log2(Wc)=19.3432 cfgs=2 e-cfgs=0
+      e=((1, 1), (2, 1)) (2,4,4) n=1 W=1 log2(Wc)=7.8074 cfgs=2 e-cfgs=0
+      e=((1, 1), (1, 2)) (2,4,4) n=1 W=1 log2(Wc)=7.8074 cfgs=2 e-cfgs=0
+  joint B+N groups at the origin (8 labelled plaquettes, 183 keys): K_BN = 2^12.8191
+  type S, L=5: 338 configurations, each with a verified design; 154 distinct (picture, k, x'-z, design); worst key 2^9.8074; max #keys per labelled P0 = 7; K_S <= sum over keys = 2^11.7748
+  type S, L=6: 430 configurations, each with a verified design; 154 distinct (picture, k, x'-z, design); worst key 2^9.8074; max #keys per labelled P0 = 7; K_S <= sum over keys = 2^11.7748
+  type S, L=7: 522 configurations, each with a verified design; 154 distinct (picture, k, x'-z, design); worst key 2^9.8074; max #keys per labelled P0 = 7; K_S <= sum over keys = 2^11.7748
+  type S: identical (picture, k, x'-z, design) sets for L in [5, 6, 7]: True
+  K = max(K_B, K_BN, K_S) = 2^19.3442   [K_B 2^19.3442, K_N 2^12.8191, K_BN 2^12.8191, K_S 2^11.7748]
+  plaquette coins: Delta = (1-2^-33) / (33 (K + 64/(2(1-p_hi)))) >= 4.552624e-8;  g = 2 Delta >= 9.105248e-8
+  domino coins: Delta_c = (1-2^-21) / (21 (K + 76/(2(1-p_hi)))) >= 7.153991e-8;  g = 2 Delta_c >= 1.430798e-7
+  exact K (numerator/denominator digits): 108 102
+  [rev1] comparison only: with K replaced by max(K_B, K_N) at p = 499999/1000000 alone (2^19.344182 < K), Delta would be 4.552660e-8, coin Delta 7.154048e-8 (too large, not claimed)

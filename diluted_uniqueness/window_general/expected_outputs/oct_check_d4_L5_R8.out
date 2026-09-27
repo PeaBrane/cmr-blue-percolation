@@ -1,0 +1,22 @@
+d=4: every configuration has rule designs satisfying the Design Lemma: B 3968, N 4096, S(L=5) 383076
+  B    F1   : (|O|, |W*\O|) = [(6, 23)]
+  B    F2   : (|O|, |W*\O|) = [(7, 28)]
+  B    F3   : (|O|, |W*\O|) = [(6, 23)]
+  B    G    : (|O|, |W*\O|) = [(4, 12), (5, 17), (6, 22)]
+  Nint Nint1: (|O|, |W*\O|) = [(4, 12)]
+  Nint Nint2: (|O|, |W*\O|) = [(5, 17)]
+  Nter F1   : (|O|, |W*\O|) = [(6, 23)]
+  Nter F2   : (|O|, |W*\O|) = [(7, 28)]
+  Nter F3   : (|O|, |W*\O|) = [(6, 23)]
+  Nter G    : (|O|, |W*\O|) = [(4, 12), (5, 17), (6, 22)]
+  S    S1a  : (|O|, |W*\O|) = [(4, 12)]
+  S    S1b  : (|O|, |W*\O|) = [(4, 12)]
+  S    S2a  : (|O|, |W*\O|) = [(4, 12)]
+  S    S2b  : (|O|, |W*\O|) = [(5, 17)]
+  S    S2c  : (|O|, |W*\O|) = [(5, 17)]
+  28094 labelled plaquettes checked (240 carry keys of two types); 880808 same-edge key pairs: all incompatible except N-int pairs with arcs at different terminals
+  max over labelled P0 of sum_e max_(D at e) W c  /  K_d = 1.000000 (<= 1 required)
+  hand constant: log2 K_d = 27.3847 at p in [0.146971, 0.278746]
+  [rev1] bracket "R8": p_lo = 249998299/1701000000, p_hi = 139373/500000; log2 K_d = 27.384688
+  exact bulk max-clique value: 2^27.1006  (hand bound 2^27.3847)
+  [rev1] bracket "R8": exact bulk max-clique value 2^27.100618 <= K_d = 2^27.384688: True

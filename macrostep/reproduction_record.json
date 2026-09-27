@@ -1,0 +1,273 @@
+{
+ "description": "Record of python reproduce_engine.py --nproc 6 --l2 (default theorem runs), 27 September 2026, 24-core x86-64 Linux machine, CPython 3.13.5, numpy 2.5.3, numba 0.67.0, from a clean copy of this directory over repository commit 97b57ed. Final line: PASS: 9/9 runs reproduce the stored near data bit for bit [1262s]; exact re-check of the recomputed certificates: PASS.",
+ "runs": [
+  {
+   "label": "R0-d9-246",
+   "engine_seconds": 38.4,
+   "near_data_sha256": "160006a5add4baa47c532cdc0bf00d319d2871335bd7e796c387ef00f2ae2238",
+   "near_data_equal_to_stored": true,
+   "payload_equal_to_stored": true,
+   "payload_sha256": "e1cbaeb8e6fec1c9797df1b90c92f37d4e63bf88453708df8cdc95084dc6b50d",
+   "recheck_certs_pass": true,
+   "lambda_min_fresh": 0.7792089098196837,
+   "lambda_min_stored": 0.7792089098196837,
+   "L2": {
+    "eta_R0_over_L2_minus_1": [
+     2.0001267309055493e-08,
+     2.4800214548648114e-08
+    ],
+    "M_R0_over_L2_minus_1": [
+     2.195784554182012e-08,
+     2.9200460938128003e-08
+    ],
+    "Gnear_R0_over_L2_minus_1": [
+     1.0955420570724073e-08,
+     1.0999992694493699e-08
+    ],
+    "etaF_L2": 0.0037275255206220864,
+    "etaF_R0": 0.0037263932014071355,
+    "lambda_min_L2": 0.7792138478382523,
+    "lambda_best_L2": 0.8671283095700798,
+    "theta_best_L2": 0.0019084799051315357,
+    "L2_exact_recheck": [
+     true,
+     true
+    ],
+    "seconds": 156.2
+   }
+  },
+  {
+   "label": "R0-d8-246",
+   "engine_seconds": 33.1,
+   "near_data_sha256": "950eee026fc1fa49537422fb595c8f07d57abc233729452880e19cff177b5886",
+   "near_data_equal_to_stored": true,
+   "payload_equal_to_stored": true,
+   "payload_sha256": "760b580de3cabf03a6d7a84c4c9c67d15af494cc4e7a9de142fd3ce503cd688e",
+   "recheck_certs_pass": true,
+   "lambda_min_fresh": 0.8924908761185242,
+   "lambda_min_stored": 0.8924908761185242,
+   "L2": {
+    "eta_R0_over_L2_minus_1": [
+     2.0001275524705875e-08,
+     2.2931242460444423e-08
+    ],
+    "M_R0_over_L2_minus_1": [
+     2.1956516604859644e-08,
+     2.6288939913854392e-08
+    ],
+    "Gnear_R0_over_L2_minus_1": [
+     1.0954713580701991e-08,
+     1.0999992028359884e-08
+    ],
+    "etaF_L2": 0.009563227273120983,
+    "etaF_R0": 0.009558075800625367,
+    "lambda_min_L2": 0.8925113802217863,
+    "lambda_best_L2": 0.9244579670797085,
+    "theta_best_L2": 0.0006603741666991333,
+    "L2_exact_recheck": [
+     true,
+     true
+    ],
+    "seconds": 91.6
+   }
+  },
+  {
+   "label": "R0-d8-82",
+   "engine_seconds": 23.8,
+   "near_data_sha256": "0b8ada9342c6eae4e41b7627936592a88b362139b0be525afca9ac7f12d4de63",
+   "near_data_equal_to_stored": true,
+   "payload_equal_to_stored": true,
+   "payload_sha256": "12049b7a501c68609b97f44d511fd0de92bc19b6d6618f760bed3b1f270a3c87",
+   "recheck_certs_pass": true,
+   "lambda_min_fresh": 0.9331851619244314,
+   "lambda_min_stored": 0.9331851619244314,
+   "L2": {
+    "eta_R0_over_L2_minus_1": [
+     2.0001275524705875e-08,
+     2.248140540395127e-08
+    ],
+    "M_R0_over_L2_minus_1": [
+     2.195750381517314e-08,
+     2.614007477141911e-08
+    ],
+    "Gnear_R0_over_L2_minus_1": [
+     1.0955809592871901e-08,
+     1.0999992028359884e-08
+    ],
+    "etaF_L2": 0.02051896921871624,
+    "etaF_R0": 0.0202917719619455,
+    "lambda_min_L2": 0.9340257467117151,
+    "lambda_best_L2": 0.9340257467117151,
+    "theta_best_L2": 0.000644893653249044,
+    "L2_exact_recheck": [
+     true,
+     true
+    ],
+    "seconds": 32.7
+   }
+  },
+  {
+   "label": "R0-d8-46",
+   "engine_seconds": 17.8,
+   "near_data_sha256": "bbc102843ce532f49438e459f8c081c259dd4519c38c576abafa75f908e12798",
+   "near_data_equal_to_stored": true,
+   "payload_equal_to_stored": true,
+   "payload_sha256": "d85f8e5bf65c5167018d1199d57a0abc771a91cab6adcbe72f251826fe881bbe",
+   "recheck_certs_pass": true,
+   "lambda_min_fresh": 0.9613485263234051,
+   "lambda_min_stored": 0.9613485263234051,
+   "L2": {
+    "eta_R0_over_L2_minus_1": [
+     2.0001275524705875e-08,
+     2.039824575916782e-08
+    ],
+    "M_R0_over_L2_minus_1": [
+     2.1966833463338276e-08,
+     2.2357731888078547e-08
+    ],
+    "Gnear_R0_over_L2_minus_1": [
+     1.0963658647611396e-08,
+     1.0999992028359884e-08
+    ],
+    "etaF_L2": 0.028309097932964836,
+    "etaF_R0": 0.028081900761872024,
+    "lambda_min_L2": 0.9621532344955105,
+    "lambda_best_L2": 0.9621532344955105,
+    "theta_best_L2": 0.00048318694305494667,
+    "L2_exact_recheck": [
+     true,
+     true
+    ],
+    "seconds": 21.8
+   }
+  },
+  {
+   "label": "R0-d8s-46",
+   "engine_seconds": 17.7,
+   "near_data_sha256": "e8249c52f76d103962af773dd91173a72ba609ad381d4de0731d6e883b817f0c",
+   "near_data_equal_to_stored": true,
+   "payload_equal_to_stored": true,
+   "payload_sha256": "6f31c47440cee1eee0367154c5c5a95dc7dad5416467be8b621ce9c2d2755755",
+   "recheck_certs_pass": true,
+   "lambda_min_fresh": 0.8581271050149349,
+   "lambda_min_stored": 0.8581271050149349,
+   "L2": {
+    "eta_R0_over_L2_minus_1": [
+     2.0001310607753453e-08,
+     2.0486881524561795e-08
+    ],
+    "M_R0_over_L2_minus_1": [
+     2.1966875429768606e-08,
+     2.2434813784499852e-08
+    ],
+    "Gnear_R0_over_L2_minus_1": [
+     1.0963658647611396e-08,
+     1.0999992028359884e-08
+    ],
+    "etaF_L2": 0.022689624942147418,
+    "etaF_R0": 0.0225326847303229,
+    "lambda_min_L2": 0.8586927663033201,
+    "lambda_best_L2": 0.8727234905457116,
+    "theta_best_L2": 0.0019381042905183608,
+    "L2_exact_recheck": [
+     true,
+     true
+    ],
+    "seconds": 21.8
+   }
+  },
+  {
+   "label": "R0-d7a-804",
+   "engine_seconds": 87.5,
+   "near_data_sha256": "05209e95fe5b2efbd875c18314d7351f26c68137259fb5b89d50428acf2502e2",
+   "near_data_equal_to_stored": true,
+   "payload_equal_to_stored": true,
+   "payload_sha256": "35a76e01def3a64b6e538af62ecf33b07181d0eccdbc6903618e3f97aab4e751",
+   "recheck_certs_pass": true,
+   "lambda_min_fresh": 0.9352741906272592,
+   "lambda_min_stored": 0.9352741906272592,
+   "L2": {
+    "eta_R0_over_L2_minus_1": [
+     2.0001282408088628e-08,
+     3.875211840309589e-08
+    ],
+    "M_R0_over_L2_minus_1": [
+     2.196751447414158e-08,
+     5.4674680338706594e-08
+    ],
+    "Gnear_R0_over_L2_minus_1": [
+     1.0966208607854355e-08,
+     1.0999984700887921e-08
+    ],
+    "etaF_L2": 0.0042160210440997286,
+    "etaF_R0": 0.004215866351970635,
+    "lambda_min_L2": 0.9352747062350993,
+    "lambda_best_L2": 0.9543922953189619,
+    "theta_best_L2": 0.00022742576163740908,
+    "L2_exact_recheck": [
+     true,
+     true
+    ],
+    "seconds": 289.5
+   }
+  },
+  {
+   "label": "R0-d7b-804",
+   "engine_seconds": 81.1,
+   "near_data_sha256": "876d293165a332a7ea77516002fd818d47a786d3862e0273ce6626d3b6570262",
+   "near_data_equal_to_stored": true,
+   "payload_equal_to_stored": true,
+   "payload_sha256": "503b9d011d24d3531b451dc094c9de11d0f3358421e51e9019dce9e5a3d1b490",
+   "recheck_certs_pass": true,
+   "lambda_min_fresh": 0.9246695431724509,
+   "lambda_min_stored": 0.9246695431724509,
+   "L2": {
+    "eta_R0_over_L2_minus_1": [
+     2.0001283074222442e-08,
+     3.4057445530422115e-08
+    ],
+    "M_R0_over_L2_minus_1": [
+     2.1967515584364605e-08,
+     4.6174579715341224e-08
+    ],
+    "Gnear_R0_over_L2_minus_1": [
+     1.0966208607854355e-08,
+     1.0999984700887921e-08
+    ],
+    "etaF_L2": 0.005788176762192589,
+    "etaF_R0": 0.005787896673214241,
+    "lambda_min_L2": 0.924670602461076,
+    "lambda_best_L2": 0.9469694226697227,
+    "theta_best_L2": 0.0003267197969431557,
+    "L2_exact_recheck": [
+     true,
+     true
+    ],
+    "seconds": 250.2
+   }
+  },
+  {
+   "label": "R0t-d7a-246",
+   "engine_seconds": 38.2,
+   "near_data_sha256": "2695d35195949c7b39de1cf6c59b04b36005f4f9ab04f930770c9f3c81484050",
+   "near_data_equal_to_stored": true,
+   "payload_equal_to_stored": true,
+   "payload_sha256": "82ec3b074c4128d81858536a2ea1cd3b8bdd9e7ef61ab641c6732e8a6a8b3804",
+   "recheck_certs_pass": true,
+   "lambda_min_fresh": 0.9669494759491039,
+   "lambda_min_stored": 0.9669494759491039
+  },
+  {
+   "label": "R0t-d7b-246",
+   "engine_seconds": 41.0,
+   "near_data_sha256": "7b0672f87279a1c9a01e9bb5023424b82a03c60a443f64125cfe329ec11e9652",
+   "near_data_equal_to_stored": true,
+   "payload_equal_to_stored": true,
+   "payload_sha256": "464e6d6a34b18856ec9e0c7545ed36b8f50d69dd3e9b55bd370ff3d0aa79eb6e",
+   "recheck_certs_pass": true,
+   "lambda_min_fresh": 0.9642830278553548,
+   "lambda_min_stored": 0.9642830278553548
+  }
+ ],
+ "seconds": 1261.7
+}

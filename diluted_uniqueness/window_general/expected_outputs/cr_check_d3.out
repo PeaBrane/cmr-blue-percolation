@@ -1,0 +1,35 @@
+clean-room check: d=3 region=cube |Lambda_0|=8 entries=8; p in [211/1000, 3473/10000]; rho_hi = 1-(1-p_hi)^5
+  |Lambda^+|=32  q = |Q(e)| = 180   N_Q = max_P #{e: P in Q(e)} = 180   (JSON: q=180, N_Q=180)
+  vertex coins: q_c = max_e #{coins meeting Lambda^+(e)} = 78   N_Qc = max_coin #{e} = 234
+  type-N regions lie in B_1: the N-type hypotheses I cap S_L = {} hold for L >= 2
+  rule table: 168 B and 168 N configurations (complete), 813 options; all satisfy the Design-Lemma hypotheses; weights positive, summing to 1
+  worst single B-key cost 2^22.3749
+  worst single N-key cost 2^19.0026
+  type B: keys produced by designs with different anchor sets: 0
+  type N: keys produced by designs with different anchor sets: 72
+  type B: 6 groups, 191 keys, 260 compatible pairs, 183 maximal cliques; K_B = 2^20.7048
+    [rev1] K_B(p_lo=211/1000) = 2^20.704819, K_B(p_hi=3473/10000) = 2^20.704816; K_B = max = 2^20.704819 = 1709115.617131, attained at p = 211/1000
+  type N: 24 groups, 371 keys, 1935 compatible pairs, 510 maximal cliques; K_N = 2^15.2143
+    [rev1] K_N(p_lo=211/1000) = 2^15.214348, K_N(p_hi=3473/10000) = 2^14.974702; K_N = max = 2^15.214348 = 38016.749545, attained at p = 211/1000
+    [rev1] type-B configurations with {x'-z, y'-z} = e: 6
+      cfg (k=0, x'-z=(0, 0, 0), y'-z=(1, 0, 0)): 8 options, (|I|,|O|,|W*\O|) in [(5, 7, 19)], max cost 2^22.3749, max weight 65414/499999, weights sum to 1
+      cfg (k=0, x'-z=(1, 0, 0), y'-z=(0, 0, 0)): 8 options, (|I|,|O|,|W*\O|) in [(5, 7, 19)], max cost 2^22.3749, max weight 65414/499999, weights sum to 1
+      cfg (k=1, x'-z=(0, 0, 0), y'-z=(0, 1, 0)): 8 options, (|I|,|O|,|W*\O|) in [(5, 7, 19)], max cost 2^22.3749, max weight 130828/999997, weights sum to 1
+      cfg (k=1, x'-z=(0, 1, 0), y'-z=(0, 0, 0)): 8 options, (|I|,|O|,|W*\O|) in [(5, 7, 19)], max cost 2^22.3749, max weight 130828/999997, weights sum to 1
+      cfg (k=2, x'-z=(0, 0, 0), y'-z=(0, 0, 1)): 8 options, (|I|,|O|,|W*\O|) in [(5, 7, 19)], max cost 2^22.3749, max weight 130828/999997, weights sum to 1
+      cfg (k=2, x'-z=(0, 0, 1), y'-z=(0, 0, 0)): 8 options, (|I|,|O|,|W*\O|) in [(5, 7, 19)], max cost 2^22.3749, max weight 130828/999997, weights sum to 1
+    [rev1] maximal single-design type-B cost 2^22.3749: attained by an option of 16 configurations; configurations all of whose options attain it: 6 (= the {x'-z, y'-z} = e set: True)
+    [rev1] argmax B-clique at p = 211/1000: 3 keys, value 2^20.704819; keys (edge in the frame min(P0) = 0, (|I|,|O|,|W*\O|), n, W, log2 W c, #producing configurations, #of them with {x'-z, y'-z} = e):
+      e=((-1, 0, 0), (-1, 0, 1)) (5,7,18) n=2 W=82991/250000 log2(Wc)=19.9123 cfgs=2 e-cfgs=0
+      e=((0, 0, 0), (1, 0, 0)) (5,7,19) n=0 W=107515/999998 log2(Wc)=18.9916 cfgs=2 e-cfgs=2
+      e=((0, 0, 0), (0, 1, 0)) (5,7,18) n=1 W=29823/500000 log2(Wc)=17.6177 cfgs=2 e-cfgs=0
+  joint B+N groups at the origin (24 labelled plaquettes, 371 keys): K_BN = 2^15.2143
+  type S, L=5: 3318 configurations, each with a verified design; 528 distinct (picture, k, x'-z, design); worst key 2^12.0559; max #keys per labelled P0 = 5; K_S <= sum over keys = 2^13.9751
+  type S, L=6: 5106 configurations, each with a verified design; 528 distinct (picture, k, x'-z, design); worst key 2^12.0559; max #keys per labelled P0 = 5; K_S <= sum over keys = 2^13.9751
+  type S, L=7: 7278 configurations, each with a verified design; 528 distinct (picture, k, x'-z, design); worst key 2^12.0559; max #keys per labelled P0 = 5; K_S <= sum over keys = 2^13.9751
+  type S: identical (picture, k, x'-z, design) sets for L in [5, 6, 7]: True
+  K = max(K_B, K_BN, K_S) = 2^20.7048   [K_B 2^20.7048, K_N 2^15.2143, K_BN 2^15.2143, K_S 2^13.9751]
+  plaquette coins: Delta = (1-2^-181) / (181 (K + 180/(2(1-p_hi)))) >= 3.232324e-9;  g = 2 Delta >= 6.464648e-9
+  vertex coins: Delta_c = (1-2^-79) / (79 (K + 234/(2(1-p_hi)))) >= 7.405526e-9;  g = 2 Delta_c >= 1.481105e-8
+  exact K (numerator/denominator digits): 84 78
+  [rev1] comparison only: with K replaced by max(K_B, K_N) at p = 3473/10000 alone (2^20.704816 < K), Delta would be 3.232329e-9, coin Delta 7.405538e-9 (too large, not claimed)
