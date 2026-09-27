@@ -10,12 +10,13 @@ hypotheses are checked with cr_check.check_design (own code).  Checks:
   (4) per labelled plaquette, the realizable-key bound sum_e max_{D at e} W_D c_D (x2 at N-int edges) is at most the
       hand constant K_d = 2d [max(c(7,10d-12)/(2(d-2)), c(6,8d-9)) + c(6,8d-9)];
   (5) for type B in the bulk frame, the exact maximal-clique value (for comparison with K_d).
-The optional 5th argument (added after the first audit) selects the p-bracket used in (4) and (5):
-  old  -- the first version's bracket (d = 3: [211/1000, 3473/10000]; d >= 4: [1/(2d), 7/20]); default;
-  R8   -- the exact Table R8 bracket (p_-, p_+) of gd_table.window(d);
-  univ -- [1/(2d), 7/20].
+The optional 5th argument selects the p-bracket used in (4) and (5):
+  coarse -- a coarser admissible bracket (d = 3: [211/1000, 3473/10000]; d >= 4: [1/(2d), 7/20]; cf. "Admissible
+            brackets" in Section 5.6 of the diluted-model manuscript); default;
+  table  -- the exact bracket (p_-, p_+) of Table 1 of the diluted-model manuscript (gd_table.window(d));
+  univ   -- [1/(2d), 7/20].
 The bracket is printed as exact fractions and log2 values with 6 decimals.
-Usage: python oct_check.py d L_S [bulk_clique(0/1)] [store_S_keys(0/1)] [old|R8|univ]
+Usage: python oct_check.py d L_S [bulk_clique(0/1)] [store_S_keys(0/1)] [coarse|table|univ]
 """
 import sys
 import itertools
@@ -151,10 +152,10 @@ def main():
     ent0 = entries(O0)
     assert ent0 == sorted(v for v in O0 if v != o)
     # p-interval used for the check of (4): the d=3 values of the theorem (any p <= 1/2 gives the same ordering)
-    bracket = sys.argv[5] if len(sys.argv) > 5 else 'old'
-    if bracket == 'old':
+    bracket = sys.argv[5] if len(sys.argv) > 5 else 'coarse'
+    if bracket == 'coarse':
         p_lo, p_hi = (Fr(211, 1000), Fr(3473, 10000)) if d == 3 else (Fr(1, 2 * d), Fr(35, 100))
-    elif bracket == 'R8':
+    elif bracket == 'table':
         from gd_table import window
         p_lo, p_hi = window(d)[2:4]
     elif bracket == 'univ':
@@ -309,10 +310,10 @@ def main():
     print(f'  max over labelled P0 of sum_e max_(D at e) W c  /  K_d = {float(worst_ratio):.6f} (<= 1 required)')
     assert worst_ratio <= 1
     print(f'  hand constant: log2 K_d = {math.log2(Kd):.4f} at p in [{float(p_lo):.6f}, {float(p_hi):.6f}]')
-    print(f'  [rev1] bracket "{bracket}": p_lo = {p_lo}, p_hi = {p_hi}; log2 K_d = {math.log2(Kd):.6f}')
+    print(f'  bracket "{bracket}": p_lo = {p_lo}, p_hi = {p_hi}; log2 K_d = {math.log2(Kd):.6f}')
     if bulk_clique:
         print(f'  exact bulk max-clique value: 2^{math.log2(best_clique):.4f}  (hand bound 2^{math.log2(Kd):.4f})')
-        print(f'  [rev1] bracket "{bracket}": exact bulk max-clique value 2^{math.log2(best_clique):.6f} '
+        print(f'  bracket "{bracket}": exact bulk max-clique value 2^{math.log2(best_clique):.6f} '
               f'<= K_d = 2^{math.log2(Kd):.6f}: {best_clique <= Kd}')
         assert best_clique <= Kd
 

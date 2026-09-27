@@ -1,7 +1,7 @@
-"""Axis-star coins for the octahedral rule (remark on axis-star coins): exact enumeration for specific d.
+"""Axis-star coins for the octahedral rule (Remark 5.27 of the diluted-model manuscript): exact enumeration for specific d.
 
 Coin partition: coin(P_ij(w)) = (w, min(i, j)) for the plaquette w + {0, e_i, e_j, e_i + e_j}; the members of coin (w, i)
-are P_ij(w), j > i, which pairwise share the edge {w, w + e_i}.  By Proposition R7.2 the window of Theorem R8.6 holds
+are P_ij(w), j > i, which pairwise share the edge {w, w + e_i}.  By Proposition 5.20 the window of Theorem 5.26 holds
 with (q, N_Q) replaced by
     q_c(d)  = #{(w, i) : some P_ij(w), j > i, meets O^+}          (O^+ = {|v|_inf <= 2, |v|_1 <= 3})
     N_Qc(d) = d * max_i |V(coin(0, i)) - O^+|

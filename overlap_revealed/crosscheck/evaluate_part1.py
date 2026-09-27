@@ -1,5 +1,5 @@
-"""Theorem 4.5 evaluated at part 1's certified comparison models (local.md Thm C4 / Cor D2 / Sec. 6;
-results_headline.txt, results_nearby.txt).  Inputs: d, p_B (rational lower bound), g_K = e^{2K'}, g_h = e^{2h}
+"""Theorem 4.33 of the manuscript evaluated at the comparison models certified by the local checkers of this
+directory (Proposition 4.12, Lemma 4.22, Section 4.7).  Inputs: d, p_B (rational lower bound), g_K = e^{2K'}, g_h = e^{2h}
 (exact rationals).  K' = log(g_K)/2, H = |h| = -log(g_h)/2 are enclosed by rational intervals (mpmath.iv, outward).
 Upper endpoints are used for the mean-field root (m* is increasing in K', H), for tbar >= tanh K', and in the
 denominator of c_cov; the lower endpoint of K' in the numerator of c_cov."""
@@ -40,7 +40,7 @@ def run(label, d, pB, gK, gh):
     return o, sc
 
 if __name__ == "__main__" and "sharp" not in sys.argv:
-    run("headline C4", 12, "2161/10000", "102634/100000", "83527/100000")
+    run("headline t=0.120", 12, "2161/10000", "102634/100000", "83527/100000")
     rows = [(12, "2023/10000", "255577/250000", "873143/1000000", "t=0.110"),
             (12, "2094/10000", "1024283/1000000", "855173/1000000", "t=0.115"),
             (12, "2161/10000", "513169/500000", "208997/250000", "t=0.120 opt"),
@@ -72,7 +72,7 @@ def run_sharp(label, d, pB, gK, gh):
           f"Score_c'<={f(sc)} theta'>={f(th)}")
 
 if __name__ == "__main__" and "sharp" in sys.argv:
-    run_sharp("headline C4", 12, "2161/10000", "102634/100000", "83527/100000")
+    run_sharp("headline t=0.120", 12, "2161/10000", "102634/100000", "83527/100000")
     run_sharp("t=0.125", 12, "2224/10000", "1028469/1000000", "407843/500000")
     run_sharp("t=0.130", 11, "2310/10000", "6443/6250", "25553/31250")
     run_sharp("t=0.130", 10, "2336/10000", "1031101/1000000", "840843/1000000")

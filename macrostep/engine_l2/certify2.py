@@ -1,6 +1,6 @@
 """Rigorous certificate, part 2: far region constants and the Collatz-Wielandt verification.
 
-Theorem G conditions (see report):
+Conditions of Theorem 5.9 of the first manuscript:
   (i)  for every near state z in C':  (Mbar w)(z) + H * etaF * eta_bar(z) <= lam * w(z)
   (ii) Gamma_w + H * etaF <= lam * H,   Gamma_w >= max_{z in C'} sum_{z' in C'} G(z,z') w(z')
 with etaF >= sup_{z''} sum_{far z'} G(z'',z') Ubar(z').  Then E W_n^2 <= e^{kappa eps} C_fin (1 + Lam lam H/(1-lam)),

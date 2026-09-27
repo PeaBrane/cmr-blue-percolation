@@ -1,5 +1,5 @@
 {
- "description": "Frozen exact inputs of the macrostep interaction-matrix engine (Theorems Q7, Q8, Q8-sharp, Q9 and the Q7 addendum). All rationals are exact strings.",
+ "description": "Frozen exact inputs of the macrostep interaction-matrix engine (Section 5 of the first manuscript: the rows of Table 4 and the near sets of Table 5, plus further stored certificates that the manuscript does not use). All rationals are exact strings.",
  "instances": {
   "inst1-d9-t7/50": {
    "instance": 1,
@@ -46,7 +46,7 @@
     "0.415"
    ],
    "provenance": {
-    "pB_tangent_points": "Nelder-Mead family kappa=1.0159580303155498, lambda=0.5926336121972455; c_U rounded to 10 decimals (code base B, assembly/certify_new_point.py)",
+    "pB_tangent_points": "Nelder-Mead family kappa=1.0159580303155498, lambda=0.5926336121972455; c_U rounded to 10 decimals (search functions of overlap_revealed/search/freeze_params.py)",
     "holley_weights": "best point of {0} U {i/200: 1<=i<=180} for the floating numerator bound"
    }
   },
@@ -92,7 +92,7 @@
     "0.38"
    ],
    "provenance": {
-    "pB_tangent_points": "Nelder-Mead family kappa=1.0172650525180393, lambda=0.6003821319437569; c_U rounded to 10 decimals (code base B, assembly/certify_new_point.py)",
+    "pB_tangent_points": "Nelder-Mead family kappa=1.0172650525180393, lambda=0.6003821319437569; c_U rounded to 10 decimals (search functions of overlap_revealed/search/freeze_params.py)",
     "holley_weights": "best point of {0} U {i/200: 1<=i<=180} for the floating numerator bound"
    }
   },
@@ -158,9 +158,9 @@
    }
   },
   "forward_tails": {
-   "R0": "exact u_n(0) for n < 40 f, Robbins atom bound beyond (engine/ind_green.py)",
+   "R0": "exact u_n(0) for n < 40 f, Robbins atom bound (Lemma 4.29(ii)) beyond (engine/ind_green.py)",
    "R0t": {
-    "description": "exact u_n(0) for n <= NEX (engine/tail_tight.py cache), Lemma R.1 (f = 4) or atom bound (f = 5, 6) beyond",
+    "description": "exact u_n(0) for n <= NEX (engine/tail_tight.py cache), the 2+2 split bound of engine/tail_tight.py (f = 4) or the atom bound of Lemma 4.29(ii) (f = 5, 6) beyond",
     "NEX": {
      "4": 6000,
      "5": 5999,
@@ -178,7 +178,7 @@
    "R_D": 2,
    "n_states": 246,
    "theorems": [
-    "Q9"
+    "Table5-row1"
    ]
   },
   {
@@ -198,7 +198,7 @@
    "R_D": 2,
    "n_states": 246,
    "theorems": [
-    "Q8"
+    "Table5-row2"
    ]
   },
   {
@@ -209,7 +209,7 @@
    "R_D": 1,
    "n_states": 82,
    "theorems": [
-    "Q8"
+    "Table5-row3"
    ]
   },
   {
@@ -220,7 +220,7 @@
    "R_D": 1,
    "n_states": 46,
    "theorems": [
-    "Q8"
+    "Table5-row4"
    ]
   },
   {
@@ -231,7 +231,7 @@
    "R_D": 1,
    "n_states": 46,
    "theorems": [
-    "Q8sharp"
+    "Table5-row5"
    ]
   },
   {
@@ -269,7 +269,7 @@
    "R_D": 3,
    "n_states": 804,
    "theorems": [
-    "Q7"
+    "Table5-row7"
    ]
   },
   {
@@ -280,7 +280,7 @@
    "R_D": 3,
    "n_states": 804,
    "theorems": [
-    "Q7"
+    "Table5-row6"
    ]
   },
   {
@@ -381,7 +381,7 @@
    "R_D": 2,
    "n_states": 246,
    "theorems": [
-    "Q7-addendum"
+    "tightened-tails"
    ]
   },
   {
@@ -392,7 +392,7 @@
    "R_D": 2,
    "n_states": 246,
    "theorems": [
-    "Q7-addendum"
+    "tightened-tails"
    ]
   },
   {
@@ -420,1971 +420,1986 @@
    "quantity": "rho_minus",
    "direction": "lower",
    "value": "0.4323079",
-   "source": "macrostep write-up Sec. 9.1 table"
+   "source": "Table 4 of the first manuscript (rho_-, rho_c) and its caption (kappa, alpha at d = 9 and at (7, 31/200)); the other entries are reference values"
   },
   {
    "scope": "inst1-d9-t7/50",
    "quantity": "rho_c",
    "direction": "lower",
    "value": "0.4387813",
-   "source": "macrostep write-up Sec. 9.1 table"
+   "source": "Table 4 of the first manuscript (rho_-, rho_c) and its caption (kappa, alpha at d = 9 and at (7, 31/200)); the other entries are reference values"
   },
   {
    "scope": "inst1-d9-t7/50",
    "quantity": "kappa",
    "direction": "upper",
    "value": "1.313167",
-   "source": "macrostep write-up Sec. 9.1 table"
+   "source": "Table 4 of the first manuscript (rho_-, rho_c) and its caption (kappa, alpha at d = 9 and at (7, 31/200)); the other entries are reference values"
   },
   {
    "scope": "inst1-d9-t7/50",
    "quantity": "t",
    "direction": "upper",
    "value": "0.0177479",
-   "source": "macrostep write-up Sec. 9.1 table"
+   "source": "Table 4 of the first manuscript (rho_-, rho_c) and its caption (kappa, alpha at d = 9 and at (7, 31/200)); the other entries are reference values"
   },
   {
    "scope": "inst1-d9-t7/50",
    "quantity": "alpha",
    "direction": "upper",
    "value": "0.31947",
-   "source": "macrostep write-up Sec. 9.1 table"
+   "source": "Table 4 of the first manuscript (rho_-, rho_c) and its caption (kappa, alpha at d = 9 and at (7, 31/200)); the other entries are reference values"
   },
   {
    "scope": "inst1-d9-t7/50",
    "quantity": "qs",
    "direction": "upper",
    "value": "0.23472",
-   "source": "macrostep write-up Sec. 9.1 table"
+   "source": "Table 4 of the first manuscript (rho_-, rho_c) and its caption (kappa, alpha at d = 9 and at (7, 31/200)); the other entries are reference values"
   },
   {
    "scope": "inst1-d9-t7/50",
    "quantity": "rho_over_rhoc_p",
    "direction": "upper",
    "value": "3.95364",
-   "source": "macrostep write-up Sec. 9.1 table"
+   "source": "Table 4 of the first manuscript (rho_-, rho_c) and its caption (kappa, alpha at d = 9 and at (7, 31/200)); the other entries are reference values"
   },
   {
    "scope": "inst1-d9-t7/50",
    "quantity": "b1",
    "direction": "upper",
    "value": "0.0183857",
-   "source": "macrostep write-up Sec. 9.1 table"
+   "source": "Table 4 of the first manuscript (rho_-, rho_c) and its caption (kappa, alpha at d = 9 and at (7, 31/200)); the other entries are reference values"
   },
   {
    "scope": "inst1-d9-t7/50",
    "quantity": "psi3_00",
    "direction": "upper",
    "value": "0.000047629",
-   "source": "macrostep write-up Sec. 9.1 table"
+   "source": "Table 4 of the first manuscript (rho_-, rho_c) and its caption (kappa, alpha at d = 9 and at (7, 31/200)); the other entries are reference values"
   },
   {
    "scope": "inst1-d9-t7/50",
    "quantity": "rhoc_p",
    "direction": "lower",
    "value": "0.109344",
-   "source": "macrostep write-up Sec. 9.1 table"
+   "source": "Table 4 of the first manuscript (rho_-, rho_c) and its caption (kappa, alpha at d = 9 and at (7, 31/200)); the other entries are reference values"
   },
   {
    "scope": "inst1-d9-t7/50",
    "quantity": "C_fin",
    "direction": "upper",
    "value": "2.3700",
-   "source": "macrostep write-up Sec. 9.2 table, column C_fin"
+   "source": "Table 4 of the first manuscript, column C_fin; the row inst2-d8-t31/200 is a reference value"
   },
   {
    "scope": "inst1-d8-t3/20",
    "quantity": "rho_minus",
    "direction": "lower",
    "value": "0.4293085",
-   "source": "macrostep write-up Sec. 9.1 table"
+   "source": "Table 4 of the first manuscript (rho_-, rho_c) and its caption (kappa, alpha at d = 9 and at (7, 31/200)); the other entries are reference values"
   },
   {
    "scope": "inst1-d8-t3/20",
    "quantity": "rho_c",
    "direction": "lower",
    "value": "0.4366859",
-   "source": "macrostep write-up Sec. 9.1 table"
+   "source": "Table 4 of the first manuscript (rho_-, rho_c) and its caption (kappa, alpha at d = 9 and at (7, 31/200)); the other entries are reference values"
   },
   {
    "scope": "inst1-d8-t3/20",
    "quantity": "kappa",
    "direction": "upper",
    "value": "1.329328",
-   "source": "macrostep write-up Sec. 9.1 table"
+   "source": "Table 4 of the first manuscript (rho_-, rho_c) and its caption (kappa, alpha at d = 9 and at (7, 31/200)); the other entries are reference values"
   },
   {
    "scope": "inst1-d8-t3/20",
    "quantity": "t",
    "direction": "upper",
    "value": "0.0203868",
-   "source": "macrostep write-up Sec. 9.1 table"
+   "source": "Table 4 of the first manuscript (rho_-, rho_c) and its caption (kappa, alpha at d = 9 and at (7, 31/200)); the other entries are reference values"
   },
   {
    "scope": "inst1-d8-t3/20",
    "quantity": "alpha",
    "direction": "upper",
    "value": "0.32619",
-   "source": "macrostep write-up Sec. 9.1 table"
+   "source": "Table 4 of the first manuscript (rho_-, rho_c) and its caption (kappa, alpha at d = 9 and at (7, 31/200)); the other entries are reference values"
   },
   {
    "scope": "inst1-d8-t3/20",
    "quantity": "qs",
    "direction": "upper",
    "value": "0.24205",
-   "source": "macrostep write-up Sec. 9.1 table"
+   "source": "Table 4 of the first manuscript (rho_-, rho_c) and its caption (kappa, alpha at d = 9 and at (7, 31/200)); the other entries are reference values"
   },
   {
    "scope": "inst1-d8-t3/20",
    "quantity": "rho_over_rhoc_p",
    "direction": "upper",
    "value": "3.70844",
-   "source": "macrostep write-up Sec. 9.1 table"
+   "source": "Table 4 of the first manuscript (rho_-, rho_c) and its caption (kappa, alpha at d = 9 and at (7, 31/200)); the other entries are reference values"
   },
   {
    "scope": "inst1-d8-t3/20",
    "quantity": "b1",
    "direction": "upper",
    "value": "0.0212540",
-   "source": "macrostep write-up Sec. 9.1 table"
+   "source": "Table 4 of the first manuscript (rho_-, rho_c) and its caption (kappa, alpha at d = 9 and at (7, 31/200)); the other entries are reference values"
   },
   {
    "scope": "inst1-d8-t3/20",
    "quantity": "psi3_00",
    "direction": "upper",
    "value": "0.000076692",
-   "source": "macrostep write-up Sec. 9.1 table"
+   "source": "Table 4 of the first manuscript (rho_-, rho_c) and its caption (kappa, alpha at d = 9 and at (7, 31/200)); the other entries are reference values"
   },
   {
    "scope": "inst1-d8-t3/20",
    "quantity": "rhoc_p",
    "direction": "lower",
    "value": "0.115765",
-   "source": "macrostep write-up Sec. 9.1 table"
+   "source": "Table 4 of the first manuscript (rho_-, rho_c) and its caption (kappa, alpha at d = 9 and at (7, 31/200)); the other entries are reference values"
   },
   {
    "scope": "inst1-d8-t3/20",
    "quantity": "C_fin",
    "direction": "upper",
    "value": "2.3966",
-   "source": "macrostep write-up Sec. 9.2 table, column C_fin"
+   "source": "Table 4 of the first manuscript, column C_fin; the row inst2-d8-t31/200 is a reference value"
   },
   {
    "scope": "inst2-d8-t3/20",
    "quantity": "rho_minus",
    "direction": "lower",
    "value": "0.4460053",
-   "source": "macrostep write-up Sec. 9.1 table"
+   "source": "Table 4 of the first manuscript (rho_-, rho_c) and its caption (kappa, alpha at d = 9 and at (7, 31/200)); the other entries are reference values"
   },
   {
    "scope": "inst2-d8-t3/20",
    "quantity": "rho_c",
    "direction": "lower",
    "value": "0.4532042",
-   "source": "macrostep write-up Sec. 9.1 table"
+   "source": "Table 4 of the first manuscript (rho_-, rho_c) and its caption (kappa, alpha at d = 9 and at (7, 31/200)); the other entries are reference values"
   },
   {
    "scope": "inst2-d8-t3/20",
    "quantity": "kappa",
    "direction": "upper",
    "value": "1.242126",
-   "source": "macrostep write-up Sec. 9.1 table"
+   "source": "Table 4 of the first manuscript (rho_-, rho_c) and its caption (kappa, alpha at d = 9 and at (7, 31/200)); the other entries are reference values"
   },
   {
    "scope": "inst2-d8-t3/20",
    "quantity": "t",
    "direction": "upper",
    "value": "0.0193228",
-   "source": "macrostep write-up Sec. 9.1 table"
+   "source": "Table 4 of the first manuscript (rho_-, rho_c) and its caption (kappa, alpha at d = 9 and at (7, 31/200)); the other entries are reference values"
   },
   {
    "scope": "inst2-d8-t3/20",
    "quantity": "alpha",
    "direction": "upper",
    "value": "0.30917",
-   "source": "macrostep write-up Sec. 9.1 table"
+   "source": "Table 4 of the first manuscript (rho_-, rho_c) and its caption (kappa, alpha at d = 9 and at (7, 31/200)); the other entries are reference values"
   },
   {
    "scope": "inst2-d8-t3/20",
    "quantity": "qs",
    "direction": "upper",
    "value": "0.22377",
-   "source": "macrostep write-up Sec. 9.1 table"
+   "source": "Table 4 of the first manuscript (rho_-, rho_c) and its caption (kappa, alpha at d = 9 and at (7, 31/200)); the other entries are reference values"
   },
   {
    "scope": "inst2-d8-t3/20",
    "quantity": "rho_over_rhoc_p",
    "direction": "upper",
    "value": "3.63545",
-   "source": "macrostep write-up Sec. 9.1 table"
+   "source": "Table 4 of the first manuscript (rho_-, rho_c) and its caption (kappa, alpha at d = 9 and at (7, 31/200)); the other entries are reference values"
   },
   {
    "scope": "inst2-d8-t3/20",
    "quantity": "b1",
    "direction": "upper",
    "value": "0.0200562",
-   "source": "macrostep write-up Sec. 9.1 table"
+   "source": "Table 4 of the first manuscript (rho_-, rho_c) and its caption (kappa, alpha at d = 9 and at (7, 31/200)); the other entries are reference values"
   },
   {
    "scope": "inst2-d8-t3/20",
    "quantity": "psi3_00",
    "direction": "upper",
    "value": "0.000063247",
-   "source": "macrostep write-up Sec. 9.1 table"
+   "source": "Table 4 of the first manuscript (rho_-, rho_c) and its caption (kappa, alpha at d = 9 and at (7, 31/200)); the other entries are reference values"
   },
   {
    "scope": "inst2-d8-t3/20",
    "quantity": "rhoc_p",
    "direction": "lower",
    "value": "0.122682",
-   "source": "macrostep write-up Sec. 9.1 table"
+   "source": "Table 4 of the first manuscript (rho_-, rho_c) and its caption (kappa, alpha at d = 9 and at (7, 31/200)); the other entries are reference values"
   },
   {
    "scope": "inst2-d8-t3/20",
    "quantity": "C_fin",
    "direction": "upper",
    "value": "2.2991",
-   "source": "macrostep write-up Sec. 9.2 table, column C_fin"
+   "source": "Table 4 of the first manuscript, column C_fin; the row inst2-d8-t31/200 is a reference value"
   },
   {
    "scope": "inst2-d8-t31/200",
    "quantity": "rho_minus",
    "direction": "lower",
    "value": "0.4380404",
-   "source": "macrostep write-up Sec. 9.1 table"
+   "source": "Table 4 of the first manuscript (rho_-, rho_c) and its caption (kappa, alpha at d = 9 and at (7, 31/200)); the other entries are reference values"
   },
   {
    "scope": "inst2-d8-t31/200",
    "quantity": "rho_c",
    "direction": "lower",
    "value": "0.4454108",
-   "source": "macrostep write-up Sec. 9.1 table"
+   "source": "Table 4 of the first manuscript (rho_-, rho_c) and its caption (kappa, alpha at d = 9 and at (7, 31/200)); the other entries are reference values"
   },
   {
    "scope": "inst2-d8-t31/200",
    "quantity": "kappa",
    "direction": "upper",
    "value": "1.282895",
-   "source": "macrostep write-up Sec. 9.1 table"
+   "source": "Table 4 of the first manuscript (rho_-, rho_c) and its caption (kappa, alpha at d = 9 and at (7, 31/200)); the other entries are reference values"
   },
   {
    "scope": "inst2-d8-t31/200",
    "quantity": "t",
    "direction": "upper",
    "value": "0.0205221",
-   "source": "macrostep write-up Sec. 9.1 table"
+   "source": "Table 4 of the first manuscript (rho_-, rho_c) and its caption (kappa, alpha at d = 9 and at (7, 31/200)); the other entries are reference values"
   },
   {
    "scope": "inst2-d8-t31/200",
    "quantity": "alpha",
    "direction": "upper",
    "value": "0.32836",
-   "source": "macrostep write-up Sec. 9.1 table"
+   "source": "Table 4 of the first manuscript (rho_-, rho_c) and its caption (kappa, alpha at d = 9 and at (7, 31/200)); the other entries are reference values"
   },
   {
    "scope": "inst2-d8-t31/200",
    "quantity": "qs",
    "direction": "upper",
    "value": "0.24444",
-   "source": "macrostep write-up Sec. 9.1 table"
+   "source": "Table 4 of the first manuscript (rho_-, rho_c) and its caption (kappa, alpha at d = 9 and at (7, 31/200)); the other entries are reference values"
   },
   {
    "scope": "inst2-d8-t31/200",
    "quantity": "rho_over_rhoc_p",
    "direction": "upper",
    "value": "3.54015",
-   "source": "macrostep write-up Sec. 9.1 table"
+   "source": "Table 4 of the first manuscript (rho_-, rho_c) and its caption (kappa, alpha at d = 9 and at (7, 31/200)); the other entries are reference values"
   },
   {
    "scope": "inst2-d8-t31/200",
    "quantity": "b1",
    "direction": "upper",
    "value": "0.0214075",
-   "source": "macrostep write-up Sec. 9.1 table"
+   "source": "Table 4 of the first manuscript (rho_-, rho_c) and its caption (kappa, alpha at d = 9 and at (7, 31/200)); the other entries are reference values"
   },
   {
    "scope": "inst2-d8-t31/200",
    "quantity": "psi3_00",
    "direction": "upper",
    "value": "0.000078556",
-   "source": "macrostep write-up Sec. 9.1 table"
+   "source": "Table 4 of the first manuscript (rho_-, rho_c) and its caption (kappa, alpha at d = 9 and at (7, 31/200)); the other entries are reference values"
   },
   {
    "scope": "inst2-d8-t31/200",
    "quantity": "rhoc_p",
    "direction": "lower",
    "value": "0.123735",
-   "source": "macrostep write-up Sec. 9.1 table"
+   "source": "Table 4 of the first manuscript (rho_-, rho_c) and its caption (kappa, alpha at d = 9 and at (7, 31/200)); the other entries are reference values"
   },
   {
    "scope": "inst2-d8-t31/200",
    "quantity": "C_fin",
    "direction": "upper",
    "value": "2.3470",
-   "source": "macrostep write-up Sec. 9.2 table, column C_fin"
+   "source": "Table 4 of the first manuscript, column C_fin; the row inst2-d8-t31/200 is a reference value"
   },
   {
    "scope": "inst3-d7-t3/20",
    "quantity": "rho_minus",
    "direction": "lower",
    "value": "0.4595760",
-   "source": "macrostep write-up Sec. 9.1 table"
+   "source": "Table 4 of the first manuscript (rho_-, rho_c) and its caption (kappa, alpha at d = 9 and at (7, 31/200)); the other entries are reference values"
   },
   {
    "scope": "inst3-d7-t3/20",
    "quantity": "rho_c",
    "direction": "lower",
    "value": "0.4673814",
-   "source": "macrostep write-up Sec. 9.1 table"
+   "source": "Table 4 of the first manuscript (rho_-, rho_c) and its caption (kappa, alpha at d = 9 and at (7, 31/200)); the other entries are reference values"
   },
   {
    "scope": "inst3-d7-t3/20",
    "quantity": "kappa",
    "direction": "upper",
    "value": "1.175919",
-   "source": "macrostep write-up Sec. 9.1 table"
+   "source": "Table 4 of the first manuscript (rho_-, rho_c) and its caption (kappa, alpha at d = 9 and at (7, 31/200)); the other entries are reference values"
   },
   {
    "scope": "inst3-d7-t3/20",
    "quantity": "t",
    "direction": "upper",
    "value": "0.0195973",
-   "source": "macrostep write-up Sec. 9.1 table"
+   "source": "Table 4 of the first manuscript (rho_-, rho_c) and its caption (kappa, alpha at d = 9 and at (7, 31/200)); the other entries are reference values"
   },
   {
    "scope": "inst3-d7-t3/20",
    "quantity": "alpha",
    "direction": "upper",
    "value": "0.27437",
-   "source": "macrostep write-up Sec. 9.1 table"
+   "source": "Table 4 of the first manuscript (rho_-, rho_c) and its caption (kappa, alpha at d = 9 and at (7, 31/200)); the other entries are reference values"
   },
   {
    "scope": "inst3-d7-t3/20",
    "quantity": "qs",
    "direction": "upper",
    "value": "0.18905",
-   "source": "macrostep write-up Sec. 9.1 table"
+   "source": "Table 4 of the first manuscript (rho_-, rho_c) and its caption (kappa, alpha at d = 9 and at (7, 31/200)); the other entries are reference values"
   },
   {
    "scope": "inst3-d7-t3/20",
    "quantity": "rho_over_rhoc_p",
    "direction": "upper",
    "value": "3.60184",
-   "source": "macrostep write-up Sec. 9.1 table"
+   "source": "Table 4 of the first manuscript (rho_-, rho_c) and its caption (kappa, alpha at d = 9 and at (7, 31/200)); the other entries are reference values"
   },
   {
    "scope": "inst3-d7-t3/20",
    "quantity": "b1",
    "direction": "upper",
    "value": "0.0202623",
-   "source": "macrostep write-up Sec. 9.1 table"
+   "source": "Table 4 of the first manuscript (rho_-, rho_c) and its caption (kappa, alpha at d = 9 and at (7, 31/200)); the other entries are reference values"
   },
   {
    "scope": "inst3-d7-t3/20",
    "quantity": "psi3_00",
    "direction": "upper",
    "value": "0.000065199",
-   "source": "macrostep write-up Sec. 9.1 table"
+   "source": "Table 4 of the first manuscript (rho_-, rho_c) and its caption (kappa, alpha at d = 9 and at (7, 31/200)); the other entries are reference values"
   },
   {
    "scope": "inst3-d7-t3/20",
    "quantity": "rhoc_p",
    "direction": "lower",
    "value": "0.127595",
-   "source": "macrostep write-up Sec. 9.1 table"
+   "source": "Table 4 of the first manuscript (rho_-, rho_c) and its caption (kappa, alpha at d = 9 and at (7, 31/200)); the other entries are reference values"
   },
   {
    "scope": "inst3-d7-t3/20",
    "quantity": "C_fin",
    "direction": "upper",
    "value": "2.2288",
-   "source": "macrostep write-up Sec. 9.2 table, column C_fin"
+   "source": "Table 4 of the first manuscript, column C_fin; the row inst2-d8-t31/200 is a reference value"
   },
   {
    "scope": "inst3-d7-t31/200",
    "quantity": "rho_minus",
    "direction": "lower",
    "value": "0.4536097",
-   "source": "macrostep write-up Sec. 9.1 table"
+   "source": "Table 4 of the first manuscript (rho_-, rho_c) and its caption (kappa, alpha at d = 9 and at (7, 31/200)); the other entries are reference values"
   },
   {
    "scope": "inst3-d7-t31/200",
    "quantity": "rho_c",
    "direction": "lower",
    "value": "0.4616630",
-   "source": "macrostep write-up Sec. 9.1 table"
+   "source": "Table 4 of the first manuscript (rho_-, rho_c) and its caption (kappa, alpha at d = 9 and at (7, 31/200)); the other entries are reference values"
   },
   {
    "scope": "inst3-d7-t31/200",
    "quantity": "kappa",
    "direction": "upper",
    "value": "1.204539",
-   "source": "macrostep write-up Sec. 9.1 table"
+   "source": "Table 4 of the first manuscript (rho_-, rho_c) and its caption (kappa, alpha at d = 9 and at (7, 31/200)); the other entries are reference values"
   },
   {
    "scope": "inst3-d7-t31/200",
    "quantity": "t",
    "direction": "upper",
    "value": "0.0208223",
-   "source": "macrostep write-up Sec. 9.1 table"
+   "source": "Table 4 of the first manuscript (rho_-, rho_c) and its caption (kappa, alpha at d = 9 and at (7, 31/200)); the other entries are reference values"
   },
   {
    "scope": "inst3-d7-t31/200",
    "quantity": "alpha",
    "direction": "upper",
    "value": "0.29152",
-   "source": "macrostep write-up Sec. 9.1 table"
+   "source": "Table 4 of the first manuscript (rho_-, rho_c) and its caption (kappa, alpha at d = 9 and at (7, 31/200)); the other entries are reference values"
   },
   {
    "scope": "inst3-d7-t31/200",
    "quantity": "qs",
    "direction": "upper",
    "value": "0.20573",
-   "source": "macrostep write-up Sec. 9.1 table"
+   "source": "Table 4 of the first manuscript (rho_-, rho_c) and its caption (kappa, alpha at d = 9 and at (7, 31/200)); the other entries are reference values"
   },
   {
    "scope": "inst3-d7-t31/200",
    "quantity": "rho_over_rhoc_p",
    "direction": "upper",
    "value": "3.50663",
-   "source": "macrostep write-up Sec. 9.1 table"
+   "source": "Table 4 of the first manuscript (rho_-, rho_c) and its caption (kappa, alpha at d = 9 and at (7, 31/200)); the other entries are reference values"
   },
   {
    "scope": "inst3-d7-t31/200",
    "quantity": "b1",
    "direction": "upper",
    "value": "0.0216254",
-   "source": "macrostep write-up Sec. 9.1 table"
+   "source": "Table 4 of the first manuscript (rho_-, rho_c) and its caption (kappa, alpha at d = 9 and at (7, 31/200)); the other entries are reference values"
   },
   {
    "scope": "inst3-d7-t31/200",
    "quantity": "psi3_00",
    "direction": "upper",
    "value": "0.000080921",
-   "source": "macrostep write-up Sec. 9.1 table"
+   "source": "Table 4 of the first manuscript (rho_-, rho_c) and its caption (kappa, alpha at d = 9 and at (7, 31/200)); the other entries are reference values"
   },
   {
    "scope": "inst3-d7-t31/200",
    "quantity": "rhoc_p",
    "direction": "lower",
    "value": "0.129357",
-   "source": "macrostep write-up Sec. 9.1 table"
+   "source": "Table 4 of the first manuscript (rho_-, rho_c) and its caption (kappa, alpha at d = 9 and at (7, 31/200)); the other entries are reference values"
   },
   {
    "scope": "inst3-d7-t31/200",
    "quantity": "C_fin",
    "direction": "upper",
    "value": "2.2632",
-   "source": "macrostep write-up Sec. 9.2 table, column C_fin"
+   "source": "Table 4 of the first manuscript, column C_fin; the row inst2-d8-t31/200 is a reference value"
   },
   {
    "scope": "inst1-d9-t7/50",
    "quantity": "L0_1",
    "direction": "exact",
    "value": "15",
-   "source": "macrostep write-up Sec. 9.3"
+   "source": "torus sizes L_0^M(n) of (38), Theorem 5.12; reference values"
   },
   {
    "scope": "inst1-d9-t7/50",
    "quantity": "L0_10",
    "direction": "exact",
    "value": "73",
-   "source": "macrostep write-up Sec. 9.3"
+   "source": "torus sizes L_0^M(n) of (38), Theorem 5.12; reference values"
   },
   {
    "scope": "inst1-d9-t7/50",
    "quantity": "L0_100",
    "direction": "exact",
    "value": "617",
-   "source": "macrostep write-up Sec. 9.3"
+   "source": "torus sizes L_0^M(n) of (38), Theorem 5.12; reference values"
   },
   {
    "scope": "inst3-d7-t31/200",
    "quantity": "L0_1",
    "direction": "exact",
    "value": "14",
-   "source": "macrostep write-up Sec. 9.3"
+   "source": "torus sizes L_0^M(n) of (38), Theorem 5.12; reference values"
   },
   {
    "scope": "inst3-d7-t31/200",
    "quantity": "L0_10",
    "direction": "exact",
    "value": "72",
-   "source": "macrostep write-up Sec. 9.3"
+   "source": "torus sizes L_0^M(n) of (38), Theorem 5.12; reference values"
   },
   {
    "scope": "inst3-d7-t31/200",
    "quantity": "L0_100",
    "direction": "exact",
    "value": "615",
-   "source": "macrostep write-up Sec. 9.3"
+   "source": "torus sizes L_0^M(n) of (38), Theorem 5.12; reference values"
   },
   {
    "scope": "inst1-d9-t7/50",
    "quantity": "max_delta",
    "direction": "upper",
    "value": "-0.0002306",
-   "source": "macrostep write-up Sec. 7.1 (safe-direction rounding; see README)"
+   "source": "Section 5.5 of the first manuscript, local inputs of Sections 4.2-4.3 (safe-direction rounding); the aligned witness is a reference value"
   },
   {
    "scope": "inst1-d9-t7/50",
    "quantity": "aligned_witness",
    "direction": "upper",
    "value": "0.254252",
-   "source": "macrostep write-up Sec. 7.1 (safe-direction rounding; see README)"
+   "source": "Section 5.5 of the first manuscript, local inputs of Sections 4.2-4.3 (safe-direction rounding); the aligned witness is a reference value"
   },
   {
    "scope": "inst1-d9-t7/50",
    "quantity": "min_log_slack",
    "direction": "lower",
    "value": "0.001005",
-   "source": "macrostep write-up Sec. 7.1 (safe-direction rounding; see README)"
+   "source": "Section 5.5 of the first manuscript, local inputs of Sections 4.2-4.3 (safe-direction rounding); the aligned witness is a reference value"
   },
   {
    "scope": "inst1-d8-t3/20",
    "quantity": "max_delta",
    "direction": "upper",
    "value": "-0.0001760",
-   "source": "macrostep write-up Sec. 7.1 (safe-direction rounding; see README)"
+   "source": "Section 5.5 of the first manuscript, local inputs of Sections 4.2-4.3 (safe-direction rounding); the aligned witness is a reference value"
   },
   {
    "scope": "inst1-d8-t3/20",
    "quantity": "min_log_slack",
    "direction": "lower",
    "value": "0.000980",
-   "source": "macrostep write-up Sec. 7.1 (safe-direction rounding; see README)"
+   "source": "Section 5.5 of the first manuscript, local inputs of Sections 4.2-4.3 (safe-direction rounding); the aligned witness is a reference value"
   },
   {
    "scope": "inst2-d8-t3/20",
    "quantity": "chords",
    "direction": "exact",
    "value": "960",
-   "source": "macrostep write-up Sec. 7.5 table"
+   "source": "Section 5.5 of the first manuscript, sharpened local inputs; the row inst2-d8-t31/200 and the noisy witnesses are reference values"
   },
   {
    "scope": "inst2-d8-t3/20",
    "quantity": "max_Psi",
    "direction": "upper",
    "value": "-13.94",
-   "source": "macrostep write-up Sec. 7.5 table"
+   "source": "Section 5.5 of the first manuscript, sharpened local inputs; the row inst2-d8-t31/200 and the noisy witnesses are reference values"
   },
   {
    "scope": "inst2-d8-t3/20",
    "quantity": "noisy_witness",
    "direction": "upper",
    "value": "0.270974",
-   "source": "macrostep write-up Sec. 7.5 table"
+   "source": "Section 5.5 of the first manuscript, sharpened local inputs; the row inst2-d8-t31/200 and the noisy witnesses are reference values"
   },
   {
    "scope": "inst2-d8-t3/20",
    "quantity": "min_gamma",
    "direction": "lower",
    "value": "0.0000749",
-   "source": "macrostep write-up Sec. 7.5 table"
+   "source": "Section 5.5 of the first manuscript, sharpened local inputs; the row inst2-d8-t31/200 and the noisy witnesses are reference values"
   },
   {
    "scope": "inst2-d8-t31/200",
    "quantity": "chords",
    "direction": "exact",
    "value": "960",
-   "source": "macrostep write-up Sec. 7.5 table"
+   "source": "Section 5.5 of the first manuscript, sharpened local inputs; the row inst2-d8-t31/200 and the noisy witnesses are reference values"
   },
   {
    "scope": "inst2-d8-t31/200",
    "quantity": "max_Psi",
    "direction": "upper",
    "value": "-14.39",
-   "source": "macrostep write-up Sec. 7.5 table"
+   "source": "Section 5.5 of the first manuscript, sharpened local inputs; the row inst2-d8-t31/200 and the noisy witnesses are reference values"
   },
   {
    "scope": "inst2-d8-t31/200",
    "quantity": "noisy_witness",
    "direction": "upper",
    "value": "0.278085",
-   "source": "macrostep write-up Sec. 7.5 table"
+   "source": "Section 5.5 of the first manuscript, sharpened local inputs; the row inst2-d8-t31/200 and the noisy witnesses are reference values"
   },
   {
    "scope": "inst2-d8-t31/200",
    "quantity": "min_gamma",
    "direction": "lower",
    "value": "0.0000730",
-   "source": "macrostep write-up Sec. 7.5 table"
+   "source": "Section 5.5 of the first manuscript, sharpened local inputs; the row inst2-d8-t31/200 and the noisy witnesses are reference values"
   },
   {
    "scope": "inst3-d7-t3/20",
    "quantity": "chords",
    "direction": "exact",
    "value": "637",
-   "source": "macrostep write-up Sec. 7.5 table"
+   "source": "Section 5.5 of the first manuscript, sharpened local inputs; the row inst2-d8-t31/200 and the noisy witnesses are reference values"
   },
   {
    "scope": "inst3-d7-t3/20",
    "quantity": "max_Psi",
    "direction": "upper",
    "value": "-2.80",
-   "source": "macrostep write-up Sec. 7.5 table"
+   "source": "Section 5.5 of the first manuscript, sharpened local inputs; the row inst2-d8-t31/200 and the noisy witnesses are reference values"
   },
   {
    "scope": "inst3-d7-t3/20",
    "quantity": "noisy_witness",
    "direction": "upper",
    "value": "0.273224",
-   "source": "macrostep write-up Sec. 7.5 table"
+   "source": "Section 5.5 of the first manuscript, sharpened local inputs; the row inst2-d8-t31/200 and the noisy witnesses are reference values"
   },
   {
    "scope": "inst3-d7-t3/20",
    "quantity": "min_gamma",
    "direction": "lower",
    "value": "0.0000931",
-   "source": "macrostep write-up Sec. 7.5 table"
+   "source": "Section 5.5 of the first manuscript, sharpened local inputs; the row inst2-d8-t31/200 and the noisy witnesses are reference values"
   },
   {
    "scope": "inst3-d7-t31/200",
    "quantity": "chords",
    "direction": "exact",
    "value": "637",
-   "source": "macrostep write-up Sec. 7.5 table"
+   "source": "Section 5.5 of the first manuscript, sharpened local inputs; the row inst2-d8-t31/200 and the noisy witnesses are reference values"
   },
   {
    "scope": "inst3-d7-t31/200",
    "quantity": "max_Psi",
    "direction": "upper",
    "value": "-3.08",
-   "source": "macrostep write-up Sec. 7.5 table"
+   "source": "Section 5.5 of the first manuscript, sharpened local inputs; the row inst2-d8-t31/200 and the noisy witnesses are reference values"
   },
   {
    "scope": "inst3-d7-t31/200",
    "quantity": "noisy_witness",
    "direction": "upper",
    "value": "0.280449",
-   "source": "macrostep write-up Sec. 7.5 table"
+   "source": "Section 5.5 of the first manuscript, sharpened local inputs; the row inst2-d8-t31/200 and the noisy witnesses are reference values"
   },
   {
    "scope": "inst3-d7-t31/200",
    "quantity": "min_gamma",
    "direction": "lower",
    "value": "0.0000933",
-   "source": "macrostep write-up Sec. 7.5 table"
+   "source": "Section 5.5 of the first manuscript, sharpened local inputs; the row inst2-d8-t31/200 and the noisy witnesses are reference values"
   },
   {
    "scope": "inst3-d7-t3/20",
    "quantity": "plain_witness",
    "direction": "upper",
    "value": "0.272179",
-   "source": "macrostep write-up Sec. 7.5 notes and Sec. 11"
+   "source": "Section 5.5 of the first manuscript: aligned frozen value at (7, 3/20) (Remark 4.17)"
   },
   {
    "scope": "inst3-d7-t3/20",
    "quantity": "p_minus_plain_witness",
    "direction": "lower",
    "value": "0.0008",
-   "source": "macrostep write-up Sec. 7.5 notes: p = 0.273 exceeds the plain witness"
+   "source": "Section 5.5 of the first manuscript: p = 0.273 exceeds the aligned frozen value"
   },
   {
    "scope": "R0-d9-246",
    "quantity": "etaF",
    "direction": "upper",
    "value": "0.003727",
-   "source": "macrostep write-up Sec. 9.2 table (R0 columns; shared columns are the worse of L2 and R0)"
+   "source": "certificate values of engine/ind_certify.py; for the near sets of Table 5 the manuscript shows the less favorable of the two programs"
   },
   {
    "scope": "R0-d9-246",
    "quantity": "lambda_min",
    "direction": "upper",
    "value": "0.779209",
-   "source": "macrostep write-up Sec. 9.2 table (R0 columns; shared columns are the worse of L2 and R0)"
+   "source": "certificate values of engine/ind_certify.py; for the near sets of Table 5 the manuscript shows the less favorable of the two programs"
   },
   {
    "scope": "R0-d9-246",
    "quantity": "theta_min",
    "direction": "lower",
    "value": "0.000567",
-   "source": "macrostep write-up Sec. 9.2 table (R0 columns; shared columns are the worse of L2 and R0)"
+   "source": "certificate values of engine/ind_certify.py; for the near sets of Table 5 the manuscript shows the less favorable of the two programs"
   },
   {
    "scope": "R0-d9-246",
    "quantity": "Gamma_w_min",
    "direction": "upper",
    "value": "208.106",
-   "source": "macrostep write-up Sec. 9.2 table (R0 columns; shared columns are the worse of L2 and R0)"
+   "source": "certificate values of engine/ind_certify.py; for the near sets of Table 5 the manuscript shows the less favorable of the two programs"
   },
   {
    "scope": "R0-d9-246",
    "quantity": "lambda_best",
    "direction": "upper",
    "value": "0.867129",
-   "source": "macrostep write-up Sec. 9.2 table (R0 columns; shared columns are the worse of L2 and R0)"
+   "source": "certificate values of engine/ind_certify.py; for the near sets of Table 5 the manuscript shows the less favorable of the two programs"
   },
   {
    "scope": "R0-d9-246",
    "quantity": "bound_best",
    "direction": "upper",
    "value": "518.74",
-   "source": "macrostep write-up Sec. 9.2 table (R0 columns; shared columns are the worse of L2 and R0)"
+   "source": "certificate values of engine/ind_certify.py; for the near sets of Table 5 the manuscript shows the less favorable of the two programs"
   },
   {
    "scope": "R0-d9-246",
    "quantity": "theta_best",
    "direction": "lower",
    "value": "0.001908",
-   "source": "macrostep write-up Sec. 9.2 table (R0 columns; shared columns are the worse of L2 and R0)"
+   "source": "certificate values of engine/ind_certify.py; for the near sets of Table 5 the manuscript shows the less favorable of the two programs"
   },
   {
    "scope": "R0-d9-46",
    "quantity": "etaF",
    "direction": "upper",
    "value": "0.012493",
-   "source": "macrostep write-up Sec. 9.2 table (R0 columns; shared columns are the worse of L2 and R0)"
+   "source": "certificate values of engine/ind_certify.py; for the near sets of Table 5 the manuscript shows the less favorable of the two programs"
   },
   {
    "scope": "R0-d9-46",
    "quantity": "lambda_min",
    "direction": "upper",
    "value": "0.816438",
-   "source": "macrostep write-up Sec. 9.2 table (R0 columns; shared columns are the worse of L2 and R0)"
+   "source": "certificate values of engine/ind_certify.py; for the near sets of Table 5 the manuscript shows the less favorable of the two programs"
   },
   {
    "scope": "R0-d9-46",
    "quantity": "theta_min",
    "direction": "lower",
    "value": "0.001441",
-   "source": "macrostep write-up Sec. 9.2 table (R0 columns; shared columns are the worse of L2 and R0)"
+   "source": "certificate values of engine/ind_certify.py; for the near sets of Table 5 the manuscript shows the less favorable of the two programs"
   },
   {
    "scope": "R0-d9-46",
    "quantity": "Gamma_w_min",
    "direction": "upper",
    "value": "64.355",
-   "source": "macrostep write-up Sec. 9.2 table (R0 columns; shared columns are the worse of L2 and R0)"
+   "source": "certificate values of engine/ind_certify.py; for the near sets of Table 5 the manuscript shows the less favorable of the two programs"
   },
   {
    "scope": "R0-d9-46",
    "quantity": "lambda_best",
    "direction": "upper",
    "value": "0.871403",
-   "source": "macrostep write-up Sec. 9.2 table (R0 columns; shared columns are the worse of L2 and R0)"
+   "source": "certificate values of engine/ind_certify.py; for the near sets of Table 5 the manuscript shows the less favorable of the two programs"
   },
   {
    "scope": "R0-d9-46",
    "quantity": "bound_best",
    "direction": "upper",
    "value": "518.73",
-   "source": "macrostep write-up Sec. 9.2 table (R0 columns; shared columns are the worse of L2 and R0)"
+   "source": "certificate values of engine/ind_certify.py; for the near sets of Table 5 the manuscript shows the less favorable of the two programs"
   },
   {
    "scope": "R0-d9-46",
    "quantity": "theta_best",
    "direction": "lower",
    "value": "0.001908",
-   "source": "macrostep write-up Sec. 9.2 table (R0 columns; shared columns are the worse of L2 and R0)"
+   "source": "certificate values of engine/ind_certify.py; for the near sets of Table 5 the manuscript shows the less favorable of the two programs"
   },
   {
    "scope": "R0-d8-246",
    "quantity": "etaF",
    "direction": "upper",
    "value": "0.009559",
-   "source": "macrostep write-up Sec. 9.2 table (R0 columns; shared columns are the worse of L2 and R0)"
+   "source": "certificate values of engine/ind_certify.py; for the near sets of Table 5 the manuscript shows the less favorable of the two programs"
   },
   {
    "scope": "R0-d8-246",
    "quantity": "lambda_min",
    "direction": "upper",
    "value": "0.892491",
-   "source": "macrostep write-up Sec. 9.2 table (R0 columns; shared columns are the worse of L2 and R0)"
+   "source": "certificate values of engine/ind_certify.py; for the near sets of Table 5 the manuscript shows the less favorable of the two programs"
   },
   {
    "scope": "R0-d8-246",
    "quantity": "theta_min",
    "direction": "lower",
    "value": "0.000539",
-   "source": "macrostep write-up Sec. 9.2 table (R0 columns; shared columns are the worse of L2 and R0)"
+   "source": "certificate values of engine/ind_certify.py; for the near sets of Table 5 the manuscript shows the less favorable of the two programs"
   },
   {
    "scope": "R0-d8-246",
    "quantity": "Gamma_w_min",
    "direction": "upper",
    "value": "92.376",
-   "source": "macrostep write-up Sec. 9.2 table (R0 columns; shared columns are the worse of L2 and R0)"
+   "source": "certificate values of engine/ind_certify.py; for the near sets of Table 5 the manuscript shows the less favorable of the two programs"
   },
   {
    "scope": "R0-d8-246",
    "quantity": "lambda_best",
    "direction": "upper",
    "value": "0.924459",
-   "source": "macrostep write-up Sec. 9.2 table (R0 columns; shared columns are the worse of L2 and R0)"
+   "source": "certificate values of engine/ind_certify.py; for the near sets of Table 5 the manuscript shows the less favorable of the two programs"
   },
   {
    "scope": "R0-d8-246",
    "quantity": "bound_best",
    "direction": "upper",
    "value": "1499.16",
-   "source": "macrostep write-up Sec. 9.2 table (R0 columns; shared columns are the worse of L2 and R0)"
+   "source": "certificate values of engine/ind_certify.py; for the near sets of Table 5 the manuscript shows the less favorable of the two programs"
   },
   {
    "scope": "R0-d8-246",
    "quantity": "theta_best",
    "direction": "lower",
    "value": "0.000660",
-   "source": "macrostep write-up Sec. 9.2 table (R0 columns; shared columns are the worse of L2 and R0)"
+   "source": "certificate values of engine/ind_certify.py; for the near sets of Table 5 the manuscript shows the less favorable of the two programs"
   },
   {
    "scope": "R0-d8-82",
    "quantity": "etaF",
    "direction": "upper",
    "value": "0.020292",
-   "source": "macrostep write-up Sec. 9.2 table (R0 columns; shared columns are the worse of L2 and R0)"
+   "source": "certificate values of engine/ind_certify.py; for the near sets of Table 5 the manuscript shows the less favorable of the two programs"
   },
   {
    "scope": "R0-d8-82",
    "quantity": "lambda_min",
    "direction": "upper",
    "value": "0.933186",
-   "source": "macrostep write-up Sec. 9.2 table (R0 columns; shared columns are the worse of L2 and R0)"
+   "source": "certificate values of engine/ind_certify.py; for the near sets of Table 5 the manuscript shows the less favorable of the two programs"
   },
   {
    "scope": "R0-d8-82",
    "quantity": "theta_min",
    "direction": "lower",
    "value": "0.000647",
-   "source": "macrostep write-up Sec. 9.2 table (R0 columns; shared columns are the worse of L2 and R0)"
+   "source": "certificate values of engine/ind_certify.py; for the near sets of Table 5 the manuscript shows the less favorable of the two programs"
   },
   {
    "scope": "R0-d8-82",
    "quantity": "Gamma_w_min",
    "direction": "upper",
    "value": "44.989",
-   "source": "macrostep write-up Sec. 9.2 table (R0 columns; shared columns are the worse of L2 and R0)"
+   "source": "certificate values of engine/ind_certify.py; for the near sets of Table 5 the manuscript shows the less favorable of the two programs"
   },
   {
    "scope": "R0-d8-82",
    "quantity": "lambda_best",
    "direction": "upper",
    "value": "0.934026",
-   "source": "macrostep write-up Sec. 9.2 table (R0 columns; shared columns are the worse of L2 and R0)"
+   "source": "certificate values of engine/ind_certify.py; for the near sets of Table 5 the manuscript shows the less favorable of the two programs"
   },
   {
    "scope": "R0-d8-82",
    "quantity": "bound_best",
    "direction": "upper",
    "value": "1535.14",
-   "source": "macrostep write-up Sec. 9.2 table (R0 columns; shared columns are the worse of L2 and R0)"
+   "source": "certificate values of engine/ind_certify.py; for the near sets of Table 5 the manuscript shows the less favorable of the two programs"
   },
   {
    "scope": "R0-d8-82",
    "quantity": "theta_best",
    "direction": "lower",
    "value": "0.000647",
-   "source": "macrostep write-up Sec. 9.2 table (R0 columns; shared columns are the worse of L2 and R0)"
+   "source": "certificate values of engine/ind_certify.py; for the near sets of Table 5 the manuscript shows the less favorable of the two programs"
   },
   {
    "scope": "R0-d8-46",
    "quantity": "etaF",
    "direction": "upper",
    "value": "0.028082",
-   "source": "macrostep write-up Sec. 9.2 table (R0 columns; shared columns are the worse of L2 and R0)"
+   "source": "certificate values of engine/ind_certify.py; for the near sets of Table 5 the manuscript shows the less favorable of the two programs"
   },
   {
    "scope": "R0-d8-46",
    "quantity": "lambda_min",
    "direction": "upper",
    "value": "0.961349",
-   "source": "macrostep write-up Sec. 9.2 table (R0 columns; shared columns are the worse of L2 and R0)"
+   "source": "certificate values of engine/ind_certify.py; for the near sets of Table 5 the manuscript shows the less favorable of the two programs"
   },
   {
    "scope": "R0-d8-46",
    "quantity": "theta_min",
    "direction": "lower",
    "value": "0.000490",
-   "source": "macrostep write-up Sec. 9.2 table (R0 columns; shared columns are the worse of L2 and R0)"
+   "source": "certificate values of engine/ind_certify.py; for the near sets of Table 5 the manuscript shows the less favorable of the two programs"
   },
   {
    "scope": "R0-d8-46",
    "quantity": "Gamma_w_min",
    "direction": "upper",
    "value": "33.234",
-   "source": "macrostep write-up Sec. 9.2 table (R0 columns; shared columns are the worse of L2 and R0)"
+   "source": "certificate values of engine/ind_certify.py; for the near sets of Table 5 the manuscript shows the less favorable of the two programs"
   },
   {
    "scope": "R0-d8-46",
    "quantity": "lambda_best",
    "direction": "upper",
    "value": "0.962154",
-   "source": "macrostep write-up Sec. 9.2 table (R0 columns; shared columns are the worse of L2 and R0)"
+   "source": "certificate values of engine/ind_certify.py; for the near sets of Table 5 the manuscript shows the less favorable of the two programs"
   },
   {
    "scope": "R0-d8-46",
    "quantity": "bound_best",
    "direction": "upper",
    "value": "2048.90",
-   "source": "macrostep write-up Sec. 9.2 table (R0 columns; shared columns are the worse of L2 and R0)"
+   "source": "certificate values of engine/ind_certify.py; for the near sets of Table 5 the manuscript shows the less favorable of the two programs"
   },
   {
    "scope": "R0-d8-46",
    "quantity": "theta_best",
    "direction": "lower",
    "value": "0.000490",
-   "source": "macrostep write-up Sec. 9.2 table (R0 columns; shared columns are the worse of L2 and R0)"
+   "source": "certificate values of engine/ind_certify.py; for the near sets of Table 5 the manuscript shows the less favorable of the two programs"
   },
   {
    "scope": "R0-d8s-46",
    "quantity": "etaF",
    "direction": "upper",
    "value": "0.022533",
-   "source": "macrostep write-up Sec. 9.2 table (R0 columns; shared columns are the worse of L2 and R0)"
+   "source": "certificate values of engine/ind_certify.py; for the near sets of Table 5 the manuscript shows the less favorable of the two programs"
   },
   {
    "scope": "R0-d8s-46",
    "quantity": "lambda_min",
    "direction": "upper",
    "value": "0.858128",
-   "source": "macrostep write-up Sec. 9.2 table (R0 columns; shared columns are the worse of L2 and R0)"
+   "source": "certificate values of engine/ind_certify.py; for the near sets of Table 5 the manuscript shows the less favorable of the two programs"
   },
   {
    "scope": "R0-d8s-46",
    "quantity": "theta_min",
    "direction": "lower",
    "value": "0.001884",
-   "source": "macrostep write-up Sec. 9.2 table (R0 columns; shared columns are the worse of L2 and R0)"
+   "source": "certificate values of engine/ind_certify.py; for the near sets of Table 5 the manuscript shows the less favorable of the two programs"
   },
   {
    "scope": "R0-d8s-46",
    "quantity": "Gamma_w_min",
    "direction": "upper",
    "value": "37.084",
-   "source": "macrostep write-up Sec. 9.2 table (R0 columns; shared columns are the worse of L2 and R0)"
+   "source": "certificate values of engine/ind_certify.py; for the near sets of Table 5 the manuscript shows the less favorable of the two programs"
   },
   {
    "scope": "R0-d8s-46",
    "quantity": "lambda_best",
    "direction": "upper",
    "value": "0.872724",
-   "source": "macrostep write-up Sec. 9.2 table (R0 columns; shared columns are the worse of L2 and R0)"
+   "source": "certificate values of engine/ind_certify.py; for the near sets of Table 5 the manuscript shows the less favorable of the two programs"
   },
   {
    "scope": "R0-d8s-46",
    "quantity": "bound_best",
    "direction": "upper",
    "value": "510.93",
-   "source": "macrostep write-up Sec. 9.2 table (R0 columns; shared columns are the worse of L2 and R0)"
+   "source": "certificate values of engine/ind_certify.py; for the near sets of Table 5 the manuscript shows the less favorable of the two programs"
   },
   {
    "scope": "R0-d8s-46",
    "quantity": "theta_best",
    "direction": "lower",
    "value": "0.001937",
-   "source": "macrostep write-up Sec. 9.2 table (R0 columns; shared columns are the worse of L2 and R0)"
+   "source": "certificate values of engine/ind_certify.py; for the near sets of Table 5 the manuscript shows the less favorable of the two programs"
   },
   {
    "scope": "R0-d8s-82",
    "quantity": "etaF",
    "direction": "upper",
    "value": "0.016090",
-   "source": "macrostep write-up Sec. 9.2 table (R0 columns; shared columns are the worse of L2 and R0)"
+   "source": "certificate values of engine/ind_certify.py; for the near sets of Table 5 the manuscript shows the less favorable of the two programs"
   },
   {
    "scope": "R0-d8s-82",
    "quantity": "lambda_min",
    "direction": "upper",
    "value": "0.834445",
-   "source": "macrostep write-up Sec. 9.2 table (R0 columns; shared columns are the worse of L2 and R0)"
+   "source": "certificate values of engine/ind_certify.py; for the near sets of Table 5 the manuscript shows the less favorable of the two programs"
   },
   {
    "scope": "R0-d8s-82",
    "quantity": "theta_min",
    "direction": "lower",
    "value": "0.001654",
-   "source": "macrostep write-up Sec. 9.2 table (R0 columns; shared columns are the worse of L2 and R0)"
+   "source": "certificate values of engine/ind_certify.py; for the near sets of Table 5 the manuscript shows the less favorable of the two programs"
   },
   {
    "scope": "R0-d8s-82",
    "quantity": "Gamma_w_min",
    "direction": "upper",
    "value": "50.863",
-   "source": "macrostep write-up Sec. 9.2 table (R0 columns; shared columns are the worse of L2 and R0)"
+   "source": "certificate values of engine/ind_certify.py; for the near sets of Table 5 the manuscript shows the less favorable of the two programs"
   },
   {
    "scope": "R0-d8s-82",
    "quantity": "lambda_best",
    "direction": "upper",
    "value": "0.884225",
-   "source": "macrostep write-up Sec. 9.2 table (R0 columns; shared columns are the worse of L2 and R0)"
+   "source": "certificate values of engine/ind_certify.py; for the near sets of Table 5 the manuscript shows the less favorable of the two programs"
   },
   {
    "scope": "R0-d8s-82",
    "quantity": "bound_best",
    "direction": "upper",
    "value": "510.31",
-   "source": "macrostep write-up Sec. 9.2 table (R0 columns; shared columns are the worse of L2 and R0)"
+   "source": "certificate values of engine/ind_certify.py; for the near sets of Table 5 the manuscript shows the less favorable of the two programs"
   },
   {
    "scope": "R0-d8s-82",
    "quantity": "theta_best",
    "direction": "lower",
    "value": "0.001941",
-   "source": "macrostep write-up Sec. 9.2 table (R0 columns; shared columns are the worse of L2 and R0)"
+   "source": "certificate values of engine/ind_certify.py; for the near sets of Table 5 the manuscript shows the less favorable of the two programs"
   },
   {
    "scope": "R0-d8t-46",
    "quantity": "etaF",
    "direction": "upper",
    "value": "0.027622",
-   "source": "macrostep write-up Sec. 9.2 table (R0 columns; shared columns are the worse of L2 and R0)"
+   "source": "certificate values of engine/ind_certify.py; for the near sets of Table 5 the manuscript shows the less favorable of the two programs"
   },
   {
    "scope": "R0-d8t-46",
    "quantity": "lambda_min",
    "direction": "upper",
    "value": "0.872212",
-   "source": "macrostep write-up Sec. 9.2 table (R0 columns; shared columns are the worse of L2 and R0)"
+   "source": "certificate values of engine/ind_certify.py; for the near sets of Table 5 the manuscript shows the less favorable of the two programs"
   },
   {
    "scope": "R0-d8t-46",
    "quantity": "theta_min",
    "direction": "lower",
    "value": "0.001971",
-   "source": "macrostep write-up Sec. 9.2 table (R0 columns; shared columns are the worse of L2 and R0)"
+   "source": "certificate values of engine/ind_certify.py; for the near sets of Table 5 the manuscript shows the less favorable of the two programs"
   },
   {
    "scope": "R0-d8t-46",
    "quantity": "Gamma_w_min",
    "direction": "upper",
    "value": "30.578",
-   "source": "macrostep write-up Sec. 9.2 table (R0 columns; shared columns are the worse of L2 and R0)"
+   "source": "certificate values of engine/ind_certify.py; for the near sets of Table 5 the manuscript shows the less favorable of the two programs"
   },
   {
    "scope": "R0-d8t-46",
    "quantity": "lambda_best",
    "direction": "upper",
    "value": "0.873009",
-   "source": "macrostep write-up Sec. 9.2 table (R0 columns; shared columns are the worse of L2 and R0)"
+   "source": "certificate values of engine/ind_certify.py; for the near sets of Table 5 the manuscript shows the less favorable of the two programs"
   },
   {
    "scope": "R0-d8t-46",
    "quantity": "bound_best",
    "direction": "upper",
    "value": "502.28",
-   "source": "macrostep write-up Sec. 9.2 table (R0 columns; shared columns are the worse of L2 and R0)"
+   "source": "certificate values of engine/ind_certify.py; for the near sets of Table 5 the manuscript shows the less favorable of the two programs"
   },
   {
    "scope": "R0-d8t-46",
    "quantity": "theta_best",
    "direction": "lower",
    "value": "0.001971",
-   "source": "macrostep write-up Sec. 9.2 table (R0 columns; shared columns are the worse of L2 and R0)"
+   "source": "certificate values of engine/ind_certify.py; for the near sets of Table 5 the manuscript shows the less favorable of the two programs"
   },
   {
    "scope": "R0-d7a-246",
    "quantity": "etaF",
    "direction": "upper",
    "value": "0.018561",
-   "source": "macrostep write-up Sec. 9.2 table (R0 columns; shared columns are the worse of L2 and R0)"
+   "source": "certificate values of engine/ind_certify.py; for the near sets of Table 5 the manuscript shows the less favorable of the two programs"
   },
   {
    "scope": "R0-d7a-246",
    "quantity": "lambda_min",
    "direction": "upper",
    "value": "0.989775",
-   "source": "macrostep write-up Sec. 9.2 table (R0 columns; shared columns are the worse of L2 and R0)"
+   "source": "certificate values of engine/ind_certify.py; for the near sets of Table 5 the manuscript shows the less favorable of the two programs"
   },
   {
    "scope": "R0-d7a-246",
    "quantity": "theta_min",
    "direction": "lower",
    "value": "0.000092",
-   "source": "macrostep write-up Sec. 9.2 table (R0 columns; shared columns are the worse of L2 and R0)"
+   "source": "certificate values of engine/ind_certify.py; for the near sets of Table 5 the manuscript shows the less favorable of the two programs"
   },
   {
    "scope": "R0-d7a-246",
    "quantity": "Gamma_w_min",
    "direction": "upper",
    "value": "52.327",
-   "source": "macrostep write-up Sec. 9.2 table (R0 columns; shared columns are the worse of L2 and R0)"
+   "source": "certificate values of engine/ind_certify.py; for the near sets of Table 5 the manuscript shows the less favorable of the two programs"
   },
   {
    "scope": "R0-d7a-246",
    "quantity": "lambda_best",
    "direction": "upper",
    "value": "0.989807",
-   "source": "macrostep write-up Sec. 9.2 table (R0 columns; shared columns are the worse of L2 and R0)"
+   "source": "certificate values of engine/ind_certify.py; for the near sets of Table 5 the manuscript shows the less favorable of the two programs"
   },
   {
    "scope": "R0-d7a-246",
    "quantity": "bound_best",
    "direction": "upper",
    "value": "10783.35",
-   "source": "macrostep write-up Sec. 9.2 table (R0 columns; shared columns are the worse of L2 and R0)"
+   "source": "certificate values of engine/ind_certify.py; for the near sets of Table 5 the manuscript shows the less favorable of the two programs"
   },
   {
    "scope": "R0-d7a-246",
    "quantity": "theta_best",
    "direction": "lower",
    "value": "0.000092",
-   "source": "macrostep write-up Sec. 9.2 table (R0 columns; shared columns are the worse of L2 and R0)"
+   "source": "certificate values of engine/ind_certify.py; for the near sets of Table 5 the manuscript shows the less favorable of the two programs"
   },
   {
    "scope": "R0-d7a-804",
    "quantity": "etaF",
    "direction": "upper",
    "value": "0.004216",
-   "source": "macrostep write-up Sec. 9.2 table (R0 columns; shared columns are the worse of L2 and R0)"
+   "source": "certificate values of engine/ind_certify.py; for the near sets of Table 5 the manuscript shows the less favorable of the two programs"
   },
   {
    "scope": "R0-d7a-804",
    "quantity": "lambda_min",
    "direction": "upper",
    "value": "0.935275",
-   "source": "macrostep write-up Sec. 9.2 table (R0 columns; shared columns are the worse of L2 and R0)"
+   "source": "certificate values of engine/ind_certify.py; for the near sets of Table 5 the manuscript shows the less favorable of the two programs"
   },
   {
    "scope": "R0-d7a-804",
    "quantity": "theta_min",
    "direction": "lower",
    "value": "0.000171",
-   "source": "macrostep write-up Sec. 9.2 table (R0 columns; shared columns are the worse of L2 and R0)"
+   "source": "certificate values of engine/ind_certify.py; for the near sets of Table 5 the manuscript shows the less favorable of the two programs"
   },
   {
    "scope": "R0-d7a-804",
    "quantity": "Gamma_w_min",
    "direction": "upper",
    "value": "220.847",
-   "source": "macrostep write-up Sec. 9.2 table (R0 columns; shared columns are the worse of L2 and R0)"
+   "source": "certificate values of engine/ind_certify.py; for the near sets of Table 5 the manuscript shows the less favorable of the two programs"
   },
   {
    "scope": "R0-d7a-804",
    "quantity": "lambda_best",
    "direction": "upper",
    "value": "0.954393",
-   "source": "macrostep write-up Sec. 9.2 table (R0 columns; shared columns are the worse of L2 and R0)"
+   "source": "certificate values of engine/ind_certify.py; for the near sets of Table 5 the manuscript shows the less favorable of the two programs"
   },
   {
    "scope": "R0-d7a-804",
    "quantity": "bound_best",
    "direction": "upper",
    "value": "4353.09",
-   "source": "macrostep write-up Sec. 9.2 table (R0 columns; shared columns are the worse of L2 and R0)"
+   "source": "certificate values of engine/ind_certify.py; for the near sets of Table 5 the manuscript shows the less favorable of the two programs"
   },
   {
    "scope": "R0-d7a-804",
    "quantity": "theta_best",
    "direction": "lower",
    "value": "0.000227",
-   "source": "macrostep write-up Sec. 9.2 table (R0 columns; shared columns are the worse of L2 and R0)"
+   "source": "certificate values of engine/ind_certify.py; for the near sets of Table 5 the manuscript shows the less favorable of the two programs"
   },
   {
    "scope": "R0-d7b-804",
    "quantity": "etaF",
    "direction": "upper",
    "value": "0.005788",
-   "source": "macrostep write-up Sec. 9.2 table (R0 columns; shared columns are the worse of L2 and R0)"
+   "source": "certificate values of engine/ind_certify.py; for the near sets of Table 5 the manuscript shows the less favorable of the two programs"
   },
   {
    "scope": "R0-d7b-804",
    "quantity": "lambda_min",
    "direction": "upper",
    "value": "0.924670",
-   "source": "macrostep write-up Sec. 9.2 table (R0 columns; shared columns are the worse of L2 and R0)"
+   "source": "certificate values of engine/ind_certify.py; for the near sets of Table 5 the manuscript shows the less favorable of the two programs"
   },
   {
    "scope": "R0-d7b-804",
    "quantity": "theta_min",
    "direction": "lower",
    "value": "0.000265",
-   "source": "macrostep write-up Sec. 9.2 table (R0 columns; shared columns are the worse of L2 and R0)"
+   "source": "certificate values of engine/ind_certify.py; for the near sets of Table 5 the manuscript shows the less favorable of the two programs"
   },
   {
    "scope": "R0-d7b-804",
    "quantity": "Gamma_w_min",
    "direction": "upper",
    "value": "158.760",
-   "source": "macrostep write-up Sec. 9.2 table (R0 columns; shared columns are the worse of L2 and R0)"
+   "source": "certificate values of engine/ind_certify.py; for the near sets of Table 5 the manuscript shows the less favorable of the two programs"
   },
   {
    "scope": "R0-d7b-804",
    "quantity": "lambda_best",
    "direction": "upper",
    "value": "0.946970",
-   "source": "macrostep write-up Sec. 9.2 table (R0 columns; shared columns are the worse of L2 and R0)"
+   "source": "certificate values of engine/ind_certify.py; for the near sets of Table 5 the manuscript shows the less favorable of the two programs"
   },
   {
    "scope": "R0-d7b-804",
    "quantity": "bound_best",
    "direction": "upper",
    "value": "3030.13",
-   "source": "macrostep write-up Sec. 9.2 table (R0 columns; shared columns are the worse of L2 and R0)"
+   "source": "certificate values of engine/ind_certify.py; for the near sets of Table 5 the manuscript shows the less favorable of the two programs"
   },
   {
    "scope": "R0-d7b-804",
    "quantity": "theta_best",
    "direction": "lower",
    "value": "0.000326",
-   "source": "macrostep write-up Sec. 9.2 table (R0 columns; shared columns are the worse of L2 and R0)"
+   "source": "certificate values of engine/ind_certify.py; for the near sets of Table 5 the manuscript shows the less favorable of the two programs"
   },
   {
    "scope": "R0-d9-246",
    "quantity": "lambda_min",
    "direction": "upper",
    "value": "0.779215",
-   "source": "macrostep write-up Sec. 2 (theorem statements)"
+   "source": "Table 5 of the first manuscript"
   },
   {
    "scope": "R0-d9-246",
    "quantity": "theta_min",
    "direction": "lower",
    "value": "0.000567",
-   "source": "macrostep write-up Sec. 2 (theorem statements)"
+   "source": "Table 5 of the first manuscript"
   },
   {
    "scope": "R0-d9-246",
    "quantity": "lambda_best",
    "direction": "upper",
    "value": "0.867129",
-   "source": "macrostep write-up Sec. 2 (theorem statements)"
+   "source": "Table 5 of the first manuscript"
   },
   {
    "scope": "R0-d9-246",
    "quantity": "theta_best",
    "direction": "lower",
    "value": "0.001908",
-   "source": "macrostep write-up Sec. 2 (theorem statements)"
+   "source": "Table 5 of the first manuscript"
   },
   {
    "scope": "R0-d8-246",
    "quantity": "lambda_min",
    "direction": "upper",
    "value": "0.892512",
-   "source": "macrostep write-up Sec. 2 (theorem statements)"
+   "source": "Table 5 of the first manuscript"
   },
   {
    "scope": "R0-d8-246",
    "quantity": "theta_min",
    "direction": "lower",
    "value": "0.000539",
-   "source": "macrostep write-up Sec. 2 (theorem statements)"
+   "source": "Table 5 of the first manuscript"
   },
   {
    "scope": "R0-d8-246",
    "quantity": "lambda_best",
    "direction": "upper",
    "value": "0.924459",
-   "source": "macrostep write-up Sec. 2 (theorem statements)"
+   "source": "Table 5 of the first manuscript"
   },
   {
    "scope": "R0-d8-246",
    "quantity": "theta_best",
    "direction": "lower",
    "value": "0.000660",
-   "source": "macrostep write-up Sec. 2 (theorem statements)"
+   "source": "Table 5 of the first manuscript"
   },
   {
    "scope": "R0-d8-82",
    "quantity": "lambda_min",
    "direction": "upper",
    "value": "0.934027",
-   "source": "macrostep write-up Sec. 2 (theorem statements)"
+   "source": "Table 5 of the first manuscript"
   },
   {
    "scope": "R0-d8-82",
    "quantity": "theta_best",
    "direction": "lower",
    "value": "0.000644",
-   "source": "macrostep write-up Sec. 2 (theorem statements)"
+   "source": "Table 5 of the first manuscript"
   },
   {
    "scope": "R0-d8-46",
    "quantity": "lambda_min",
    "direction": "upper",
    "value": "0.962154",
-   "source": "macrostep write-up Sec. 2 (theorem statements)"
+   "source": "Table 5 of the first manuscript"
   },
   {
    "scope": "R0-d8-46",
    "quantity": "theta_best",
    "direction": "lower",
    "value": "0.000483",
-   "source": "macrostep write-up Sec. 2 (theorem statements)"
+   "source": "Table 5 of the first manuscript"
   },
   {
    "scope": "R0-d8s-46",
    "quantity": "lambda_min",
    "direction": "upper",
    "value": "0.858694",
-   "source": "macrostep write-up Sec. 2 (theorem statements)"
+   "source": "Table 5 of the first manuscript"
   },
   {
    "scope": "R0-d8s-46",
    "quantity": "theta_min",
    "direction": "lower",
    "value": "0.001884",
-   "source": "macrostep write-up Sec. 2 (theorem statements)"
+   "source": "Table 5 of the first manuscript"
   },
   {
    "scope": "R0-d8s-46",
    "quantity": "lambda_best",
    "direction": "upper",
    "value": "0.872724",
-   "source": "macrostep write-up Sec. 2 (theorem statements)"
+   "source": "Table 5 of the first manuscript"
   },
   {
    "scope": "R0-d8s-46",
    "quantity": "theta_best",
    "direction": "lower",
    "value": "0.001937",
-   "source": "macrostep write-up Sec. 2 (theorem statements)"
+   "source": "Table 5 of the first manuscript"
   },
   {
    "scope": "R0-d7b-804",
    "quantity": "lambda_min",
    "direction": "upper",
    "value": "0.924672",
-   "source": "macrostep write-up Sec. 2 (theorem statements)"
+   "source": "Table 5 of the first manuscript"
   },
   {
    "scope": "R0-d7b-804",
    "quantity": "theta_min",
    "direction": "lower",
    "value": "0.000265",
-   "source": "macrostep write-up Sec. 2 (theorem statements)"
+   "source": "Table 5 of the first manuscript"
   },
   {
    "scope": "R0-d7b-804",
    "quantity": "lambda_best",
    "direction": "upper",
    "value": "0.946970",
-   "source": "macrostep write-up Sec. 2 (theorem statements)"
+   "source": "Table 5 of the first manuscript"
   },
   {
    "scope": "R0-d7b-804",
    "quantity": "theta_best",
    "direction": "lower",
    "value": "0.000326",
-   "source": "macrostep write-up Sec. 2 (theorem statements)"
+   "source": "Table 5 of the first manuscript"
   },
   {
    "scope": "R0-d7a-804",
    "quantity": "lambda_min",
    "direction": "upper",
    "value": "0.935276",
-   "source": "macrostep write-up Sec. 2 (theorem statements)"
+   "source": "Table 5 of the first manuscript"
   },
   {
    "scope": "R0-d7a-804",
    "quantity": "theta_min",
    "direction": "lower",
    "value": "0.000171",
-   "source": "macrostep write-up Sec. 2 (theorem statements)"
+   "source": "Table 5 of the first manuscript"
   },
   {
    "scope": "R0-d7a-804",
    "quantity": "lambda_best",
    "direction": "upper",
    "value": "0.954393",
-   "source": "macrostep write-up Sec. 2 (theorem statements)"
+   "source": "Table 5 of the first manuscript"
   },
   {
    "scope": "R0-d7a-804",
    "quantity": "theta_best",
    "direction": "lower",
    "value": "0.000227",
-   "source": "macrostep write-up Sec. 2 (theorem statements)"
+   "source": "Table 5 of the first manuscript"
   },
   {
    "scope": "R0t-d7a-246",
    "quantity": "lambda_min",
    "direction": "upper",
    "value": "0.966950",
-   "source": "macrostep write-up Sec. 2 (theorem statements)"
+   "source": "tightened-tail certificates at d = 7 (not used by the manuscript); reference values"
   },
   {
    "scope": "R0t-d7a-246",
    "quantity": "theta_best",
    "direction": "lower",
    "value": "0.000213",
-   "source": "macrostep write-up Sec. 2 (theorem statements)"
+   "source": "tightened-tail certificates at d = 7 (not used by the manuscript); reference values"
   },
   {
    "scope": "R0t-d7b-246",
    "quantity": "lambda_min",
    "direction": "upper",
    "value": "0.964284",
-   "source": "macrostep write-up Sec. 2 (theorem statements)"
+   "source": "tightened-tail certificates at d = 7 (not used by the manuscript); reference values"
   },
   {
    "scope": "R0t-d7b-246",
    "quantity": "theta_best",
    "direction": "lower",
    "value": "0.000288",
-   "source": "macrostep write-up Sec. 2 (theorem statements)"
+   "source": "tightened-tail certificates at d = 7 (not used by the manuscript); reference values"
   },
   {
    "scope": "R0-d9-246",
    "quantity": "margin",
    "direction": "lower",
    "value": "0.22",
-   "source": "macrostep write-up Sec. 0 (margins 1 - lambda)"
+   "source": "Section 5.5 of the first manuscript (margins 1 - lambda)"
   },
   {
    "scope": "R0-d8-246",
    "quantity": "margin",
    "direction": "lower",
    "value": "0.107",
-   "source": "macrostep write-up Sec. 0 (margins 1 - lambda)"
+   "source": "Section 5.5 of the first manuscript (margins 1 - lambda)"
   },
   {
    "scope": "R0-d8s-46",
    "quantity": "margin",
    "direction": "lower",
    "value": "0.14",
-   "source": "macrostep write-up Sec. 0 (margins 1 - lambda)"
+   "source": "Section 5.5 of the first manuscript (margins 1 - lambda)"
   },
   {
    "scope": "R0-d7b-804",
    "quantity": "margin",
    "direction": "lower",
    "value": "0.075",
-   "source": "macrostep write-up Sec. 0 (margins 1 - lambda)"
+   "source": "Section 5.5 of the first manuscript (margins 1 - lambda)"
   },
   {
    "scope": "R0t-d7a-246",
    "quantity": "margin",
    "direction": "lower",
    "value": "0.033",
-   "source": "macrostep write-up Sec. 9.5 (margins 3.3% and 3.6%; the second is 0.0357..., shown here as 0.035)"
+   "source": "margins 1 - lambda of the tightened-tail certificates (3.3% and 3.6%; the second is 0.0357..., shown here as 0.035); reference values"
   },
   {
    "scope": "R0t-d7b-246",
    "quantity": "margin",
    "direction": "lower",
    "value": "0.035",
-   "source": "macrostep write-up Sec. 9.5 (margins 3.3% and 3.6%; the second is 0.0357..., shown here as 0.035)"
+   "source": "margins 1 - lambda of the tightened-tail certificates (3.3% and 3.6%; the second is 0.0357..., shown here as 0.035); reference values"
   },
   {
    "scope": "R0t-d9-246",
    "quantity": "etaF",
    "direction": "upper",
    "value": "0.0035954",
-   "source": "macrostep write-up Sec. 9.5 Table 9.5b and the R0t table (R0t columns)"
+   "source": "certificate values of engine/ind_certify_t.py (tightened forward tails); reference values, not displayed in the manuscript"
   },
   {
    "scope": "R0t-d9-246",
    "quantity": "lambda_min",
    "direction": "upper",
    "value": "0.778620",
-   "source": "macrostep write-up Sec. 9.5 Table 9.5b and the R0t table (R0t columns)"
+   "source": "certificate values of engine/ind_certify_t.py (tightened forward tails); reference values, not displayed in the manuscript"
   },
   {
    "scope": "R0t-d9-246",
    "quantity": "theta_min",
    "direction": "lower",
    "value": "0.000549",
-   "source": "macrostep write-up Sec. 9.5 Table 9.5b and the R0t table (R0t columns)"
+   "source": "certificate values of engine/ind_certify_t.py (tightened forward tails); reference values, not displayed in the manuscript"
   },
   {
    "scope": "R0t-d9-246",
    "quantity": "lambda_best",
    "direction": "upper",
    "value": "0.866773",
-   "source": "macrostep write-up Sec. 9.5 Table 9.5b and the R0t table (R0t columns)"
+   "source": "certificate values of engine/ind_certify_t.py (tightened forward tails); reference values, not displayed in the manuscript"
   },
   {
    "scope": "R0t-d9-246",
    "quantity": "theta_best",
    "direction": "lower",
    "value": "0.00190",
-   "source": "macrostep write-up Sec. 9.5 Table 9.5b and the R0t table (R0t columns)"
+   "source": "certificate values of engine/ind_certify_t.py (tightened forward tails); reference values, not displayed in the manuscript"
   },
   {
    "scope": "R0t-d9-82",
    "quantity": "etaF",
    "direction": "upper",
    "value": "0.0078229",
-   "source": "macrostep write-up Sec. 9.5 Table 9.5b and the R0t table (R0t columns)"
+   "source": "certificate values of engine/ind_certify_t.py (tightened forward tails); reference values, not displayed in the manuscript"
   },
   {
    "scope": "R0t-d9-82",
    "quantity": "lambda_min",
    "direction": "upper",
    "value": "0.796897",
-   "source": "macrostep write-up Sec. 9.5 Table 9.5b and the R0t table (R0t columns)"
+   "source": "certificate values of engine/ind_certify_t.py (tightened forward tails); reference values, not displayed in the manuscript"
   },
   {
    "scope": "R0t-d9-82",
    "quantity": "theta_min",
    "direction": "lower",
    "value": "0.00104",
-   "source": "macrostep write-up Sec. 9.5 Table 9.5b and the R0t table (R0t columns)"
+   "source": "certificate values of engine/ind_certify_t.py (tightened forward tails); reference values, not displayed in the manuscript"
   },
   {
    "scope": "R0t-d9-82",
    "quantity": "lambda_best",
    "direction": "upper",
    "value": "0.877739",
-   "source": "macrostep write-up Sec. 9.5 Table 9.5b and the R0t table (R0t columns)"
+   "source": "certificate values of engine/ind_certify_t.py (tightened forward tails); reference values, not displayed in the manuscript"
   },
   {
    "scope": "R0t-d9-82",
    "quantity": "theta_best",
    "direction": "lower",
    "value": "0.00191",
-   "source": "macrostep write-up Sec. 9.5 Table 9.5b and the R0t table (R0t columns)"
+   "source": "certificate values of engine/ind_certify_t.py (tightened forward tails); reference values, not displayed in the manuscript"
   },
   {
    "scope": "R0t-d9-46",
    "quantity": "etaF",
    "direction": "upper",
    "value": "0.012267",
-   "source": "macrostep write-up Sec. 9.5 Table 9.5b and the R0t table (R0t columns)"
+   "source": "certificate values of engine/ind_certify_t.py (tightened forward tails); reference values, not displayed in the manuscript"
   },
   {
    "scope": "R0t-d9-46",
    "quantity": "lambda_min",
    "direction": "upper",
    "value": "0.815502",
-   "source": "macrostep write-up Sec. 9.5 Table 9.5b and the R0t table (R0t columns)"
+   "source": "certificate values of engine/ind_certify_t.py (tightened forward tails); reference values, not displayed in the manuscript"
   },
   {
    "scope": "R0t-d9-46",
    "quantity": "theta_min",
    "direction": "lower",
    "value": "0.00142",
-   "source": "macrostep write-up Sec. 9.5 Table 9.5b and the R0t table (R0t columns)"
+   "source": "certificate values of engine/ind_certify_t.py (tightened forward tails); reference values, not displayed in the manuscript"
   },
   {
    "scope": "R0t-d9-46",
    "quantity": "lambda_best",
    "direction": "upper",
    "value": "0.870551",
-   "source": "macrostep write-up Sec. 9.5 Table 9.5b and the R0t table (R0t columns)"
+   "source": "certificate values of engine/ind_certify_t.py (tightened forward tails); reference values, not displayed in the manuscript"
   },
   {
    "scope": "R0t-d9-46",
    "quantity": "theta_best",
    "direction": "lower",
    "value": "0.00190",
-   "source": "macrostep write-up Sec. 9.5 Table 9.5b and the R0t table (R0t columns)"
+   "source": "certificate values of engine/ind_certify_t.py (tightened forward tails); reference values, not displayed in the manuscript"
   },
   {
    "scope": "R0t-d8-246",
    "quantity": "etaF",
    "direction": "upper",
    "value": "0.0083599",
-   "source": "macrostep write-up Sec. 9.5 Table 9.5b and the R0t table (R0t columns)"
+   "source": "certificate values of engine/ind_certify_t.py (tightened forward tails); reference values, not displayed in the manuscript"
   },
   {
    "scope": "R0t-d8-246",
    "quantity": "lambda_min",
    "direction": "upper",
    "value": "0.887552",
-   "source": "macrostep write-up Sec. 9.5 Table 9.5b and the R0t table (R0t columns)"
+   "source": "certificate values of engine/ind_certify_t.py (tightened forward tails); reference values, not displayed in the manuscript"
   },
   {
    "scope": "R0t-d8-246",
    "quantity": "theta_min",
    "direction": "lower",
    "value": "0.000498",
-   "source": "macrostep write-up Sec. 9.5 Table 9.5b and the R0t table (R0t columns)"
+   "source": "certificate values of engine/ind_certify_t.py (tightened forward tails); reference values, not displayed in the manuscript"
   },
   {
    "scope": "R0t-d8-246",
    "quantity": "lambda_best",
    "direction": "upper",
    "value": "0.920987",
-   "source": "macrostep write-up Sec. 9.5 Table 9.5b and the R0t table (R0t columns)"
+   "source": "certificate values of engine/ind_certify_t.py (tightened forward tails); reference values, not displayed in the manuscript"
   },
   {
    "scope": "R0t-d8-246",
    "quantity": "theta_best",
    "direction": "lower",
    "value": "0.000660",
-   "source": "macrostep write-up Sec. 9.5 Table 9.5b and the R0t table (R0t columns)"
+   "source": "certificate values of engine/ind_certify_t.py (tightened forward tails); reference values, not displayed in the manuscript"
   },
   {
    "scope": "R0t-d8-82",
    "quantity": "etaF",
    "direction": "upper",
    "value": "0.018129",
-   "source": "macrostep write-up Sec. 9.5 Table 9.5b and the R0t table (R0t columns)"
+   "source": "certificate values of engine/ind_certify_t.py (tightened forward tails); reference values, not displayed in the manuscript"
   },
   {
    "scope": "R0t-d8-82",
    "quantity": "lambda_min",
    "direction": "upper",
    "value": "0.925010",
-   "source": "macrostep write-up Sec. 9.5 Table 9.5b and the R0t table (R0t columns)"
+   "source": "certificate values of engine/ind_certify_t.py (tightened forward tails); reference values, not displayed in the manuscript"
   },
   {
    "scope": "R0t-d8-82",
    "quantity": "theta_min",
    "direction": "lower",
    "value": "0.000659",
-   "source": "macrostep write-up Sec. 9.5 Table 9.5b and the R0t table (R0t columns)"
+   "source": "certificate values of engine/ind_certify_t.py (tightened forward tails); reference values, not displayed in the manuscript"
   },
   {
    "scope": "R0t-d8-82",
    "quantity": "lambda_best",
    "direction": "upper",
    "value": "0.925010",
-   "source": "macrostep write-up Sec. 9.5 Table 9.5b and the R0t table (R0t columns)"
+   "source": "certificate values of engine/ind_certify_t.py (tightened forward tails); reference values, not displayed in the manuscript"
   },
   {
    "scope": "R0t-d8-82",
    "quantity": "theta_best",
    "direction": "lower",
    "value": "0.000659",
-   "source": "macrostep write-up Sec. 9.5 Table 9.5b and the R0t table (R0t columns)"
+   "source": "certificate values of engine/ind_certify_t.py (tightened forward tails); reference values, not displayed in the manuscript"
   },
   {
    "scope": "R0t-d8-46",
    "quantity": "etaF",
    "direction": "upper",
    "value": "0.025743",
-   "source": "macrostep write-up Sec. 9.5 Table 9.5b and the R0t table (R0t columns)"
+   "source": "certificate values of engine/ind_certify_t.py (tightened forward tails); reference values, not displayed in the manuscript"
   },
   {
    "scope": "R0t-d8-46",
    "quantity": "lambda_min",
    "direction": "upper",
    "value": "0.952885",
-   "source": "macrostep write-up Sec. 9.5 Table 9.5b and the R0t table (R0t columns)"
+   "source": "certificate values of engine/ind_certify_t.py (tightened forward tails); reference values, not displayed in the manuscript"
   },
   {
    "scope": "R0t-d8-46",
    "quantity": "theta_min",
    "direction": "lower",
    "value": "0.000557",
-   "source": "macrostep write-up Sec. 9.5 Table 9.5b and the R0t table (R0t columns)"
+   "source": "certificate values of engine/ind_certify_t.py (tightened forward tails); reference values, not displayed in the manuscript"
   },
   {
    "scope": "R0t-d8-46",
    "quantity": "lambda_best",
    "direction": "upper",
    "value": "0.952885",
-   "source": "macrostep write-up Sec. 9.5 Table 9.5b and the R0t table (R0t columns)"
+   "source": "certificate values of engine/ind_certify_t.py (tightened forward tails); reference values, not displayed in the manuscript"
   },
   {
    "scope": "R0t-d8-46",
    "quantity": "theta_best",
    "direction": "lower",
    "value": "0.000557",
-   "source": "macrostep write-up Sec. 9.5 Table 9.5b and the R0t table (R0t columns)"
+   "source": "certificate values of engine/ind_certify_t.py (tightened forward tails); reference values, not displayed in the manuscript"
   },
   {
    "scope": "R0t-d8s-46",
    "quantity": "etaF",
    "direction": "upper",
    "value": "0.020695",
-   "source": "macrostep write-up Sec. 9.5 Table 9.5b and the R0t table (R0t columns)"
+   "source": "certificate values of engine/ind_certify_t.py (tightened forward tails); reference values, not displayed in the manuscript"
   },
   {
    "scope": "R0t-d8s-46",
    "quantity": "lambda_min",
    "direction": "upper",
    "value": "0.851358",
-   "source": "macrostep write-up Sec. 9.5 Table 9.5b and the R0t table (R0t columns)"
+   "source": "certificate values of engine/ind_certify_t.py (tightened forward tails); reference values, not displayed in the manuscript"
   },
   {
    "scope": "R0t-d8s-46",
    "quantity": "theta_min",
    "direction": "lower",
    "value": "0.00184",
-   "source": "macrostep write-up Sec. 9.5 Table 9.5b and the R0t table (R0t columns)"
+   "source": "certificate values of engine/ind_certify_t.py (tightened forward tails); reference values, not displayed in the manuscript"
   },
   {
    "scope": "R0t-d8s-46",
    "quantity": "lambda_best",
    "direction": "upper",
    "value": "0.880887",
-   "source": "macrostep write-up Sec. 9.5 Table 9.5b and the R0t table (R0t columns)"
+   "source": "certificate values of engine/ind_certify_t.py (tightened forward tails); reference values, not displayed in the manuscript"
   },
   {
    "scope": "R0t-d8s-46",
    "quantity": "theta_best",
    "direction": "lower",
    "value": "0.00194",
-   "source": "macrostep write-up Sec. 9.5 Table 9.5b and the R0t table (R0t columns)"
+   "source": "certificate values of engine/ind_certify_t.py (tightened forward tails); reference values, not displayed in the manuscript"
   },
   {
    "scope": "R0t-d8s-82",
    "quantity": "etaF",
    "direction": "upper",
    "value": "0.014398",
-   "source": "macrostep write-up Sec. 9.5 Table 9.5b and the R0t table (R0t columns)"
+   "source": "certificate values of engine/ind_certify_t.py (tightened forward tails); reference values, not displayed in the manuscript"
   },
   {
    "scope": "R0t-d8s-82",
    "quantity": "lambda_min",
    "direction": "upper",
    "value": "0.827947",
-   "source": "macrostep write-up Sec. 9.5 Table 9.5b and the R0t table (R0t columns)"
+   "source": "certificate values of engine/ind_certify_t.py (tightened forward tails); reference values, not displayed in the manuscript"
   },
   {
    "scope": "R0t-d8s-82",
    "quantity": "theta_min",
    "direction": "lower",
    "value": "0.00156",
-   "source": "macrostep write-up Sec. 9.5 Table 9.5b and the R0t table (R0t columns)"
+   "source": "certificate values of engine/ind_certify_t.py (tightened forward tails); reference values, not displayed in the manuscript"
   },
   {
    "scope": "R0t-d8s-82",
    "quantity": "lambda_best",
    "direction": "upper",
    "value": "0.879263",
-   "source": "macrostep write-up Sec. 9.5 Table 9.5b and the R0t table (R0t columns)"
+   "source": "certificate values of engine/ind_certify_t.py (tightened forward tails); reference values, not displayed in the manuscript"
   },
   {
    "scope": "R0t-d8s-82",
    "quantity": "theta_best",
    "direction": "lower",
    "value": "0.00194",
-   "source": "macrostep write-up Sec. 9.5 Table 9.5b and the R0t table (R0t columns)"
+   "source": "certificate values of engine/ind_certify_t.py (tightened forward tails); reference values, not displayed in the manuscript"
   },
   {
    "scope": "R0t-d8t-46",
    "quantity": "etaF",
    "direction": "upper",
    "value": "0.025314",
-   "source": "macrostep write-up Sec. 9.5 Table 9.5b and the R0t table (R0t columns)"
+   "source": "certificate values of engine/ind_certify_t.py (tightened forward tails); reference values, not displayed in the manuscript"
   },
   {
    "scope": "R0t-d8t-46",
    "quantity": "lambda_min",
    "direction": "upper",
    "value": "0.863735",
-   "source": "macrostep write-up Sec. 9.5 Table 9.5b and the R0t table (R0t columns)"
+   "source": "certificate values of engine/ind_certify_t.py (tightened forward tails); reference values, not displayed in the manuscript"
   },
   {
    "scope": "R0t-d8t-46",
    "quantity": "theta_min",
    "direction": "lower",
    "value": "0.00196",
-   "source": "macrostep write-up Sec. 9.5 Table 9.5b and the R0t table (R0t columns)"
+   "source": "certificate values of engine/ind_certify_t.py (tightened forward tails); reference values, not displayed in the manuscript"
   },
   {
    "scope": "R0t-d8t-46",
    "quantity": "lambda_best",
    "direction": "upper",
    "value": "0.877261",
-   "source": "macrostep write-up Sec. 9.5 Table 9.5b and the R0t table (R0t columns)"
+   "source": "certificate values of engine/ind_certify_t.py (tightened forward tails); reference values, not displayed in the manuscript"
   },
   {
    "scope": "R0t-d8t-46",
    "quantity": "theta_best",
    "direction": "lower",
    "value": "0.00197",
-   "source": "macrostep write-up Sec. 9.5 Table 9.5b and the R0t table (R0t columns)"
+   "source": "certificate values of engine/ind_certify_t.py (tightened forward tails); reference values, not displayed in the manuscript"
   },
   {
    "scope": "R0t-d8t-82",
    "quantity": "etaF",
    "direction": "upper",
    "value": "0.017856",
-   "source": "macrostep write-up Sec. 9.5 Table 9.5b and the R0t table (R0t columns)"
+   "source": "certificate values of engine/ind_certify_t.py (tightened forward tails); reference values, not displayed in the manuscript"
   },
   {
    "scope": "R0t-d8t-82",
    "quantity": "lambda_min",
    "direction": "upper",
    "value": "0.835926",
-   "source": "macrostep write-up Sec. 9.5 Table 9.5b and the R0t table (R0t columns)"
+   "source": "certificate values of engine/ind_certify_t.py (tightened forward tails); reference values, not displayed in the manuscript"
   },
   {
    "scope": "R0t-d8t-82",
    "quantity": "theta_min",
    "direction": "lower",
    "value": "0.00177",
-   "source": "macrostep write-up Sec. 9.5 Table 9.5b and the R0t table (R0t columns)"
+   "source": "certificate values of engine/ind_certify_t.py (tightened forward tails); reference values, not displayed in the manuscript"
   },
   {
    "scope": "R0t-d8t-82",
    "quantity": "lambda_best",
    "direction": "upper",
    "value": "0.868541",
-   "source": "macrostep write-up Sec. 9.5 Table 9.5b and the R0t table (R0t columns)"
+   "source": "certificate values of engine/ind_certify_t.py (tightened forward tails); reference values, not displayed in the manuscript"
   },
   {
    "scope": "R0t-d8t-82",
    "quantity": "theta_best",
    "direction": "lower",
    "value": "0.00197",
-   "source": "macrostep write-up Sec. 9.5 Table 9.5b and the R0t table (R0t columns)"
+   "source": "certificate values of engine/ind_certify_t.py (tightened forward tails); reference values, not displayed in the manuscript"
   },
   {
    "scope": "R0t-d7a-246",
    "quantity": "etaF",
    "direction": "upper",
    "value": "0.012891",
-   "source": "macrostep write-up Sec. 9.5 Table 9.5b and the R0t table (R0t columns)"
+   "source": "certificate values of engine/ind_certify_t.py (tightened forward tails); reference values, not displayed in the manuscript"
   },
   {
    "scope": "R0t-d7a-246",
    "quantity": "lambda_min",
    "direction": "upper",
    "value": "0.966950",
-   "source": "macrostep write-up Sec. 9.5 Table 9.5b and the R0t table (R0t columns)"
+   "source": "certificate values of engine/ind_certify_t.py (tightened forward tails); reference values, not displayed in the manuscript"
   },
   {
    "scope": "R0t-d7a-246",
    "quantity": "theta_min",
    "direction": "lower",
    "value": "0.000213",
-   "source": "macrostep write-up Sec. 9.5 Table 9.5b and the R0t table (R0t columns)"
+   "source": "certificate values of engine/ind_certify_t.py (tightened forward tails); reference values, not displayed in the manuscript"
   },
   {
    "scope": "R0t-d7a-246",
    "quantity": "lambda_best",
    "direction": "upper",
    "value": "0.966950",
-   "source": "macrostep write-up Sec. 9.5 Table 9.5b and the R0t table (R0t columns)"
+   "source": "certificate values of engine/ind_certify_t.py (tightened forward tails); reference values, not displayed in the manuscript"
   },
   {
    "scope": "R0t-d7a-246",
    "quantity": "theta_best",
    "direction": "lower",
    "value": "0.000213",
-   "source": "macrostep write-up Sec. 9.5 Table 9.5b and the R0t table (R0t columns)"
+   "source": "certificate values of engine/ind_certify_t.py (tightened forward tails); reference values, not displayed in the manuscript"
   },
   {
    "scope": "R0t-d7b-246",
    "quantity": "etaF",
    "direction": "upper",
    "value": "0.016406",
-   "source": "macrostep write-up Sec. 9.5 Table 9.5b and the R0t table (R0t columns)"
+   "source": "certificate values of engine/ind_certify_t.py (tightened forward tails); reference values, not displayed in the manuscript"
   },
   {
    "scope": "R0t-d7b-246",
    "quantity": "lambda_min",
    "direction": "upper",
    "value": "0.964284",
-   "source": "macrostep write-up Sec. 9.5 Table 9.5b and the R0t table (R0t columns)"
+   "source": "certificate values of engine/ind_certify_t.py (tightened forward tails); reference values, not displayed in the manuscript"
   },
   {
    "scope": "R0t-d7b-246",
    "quantity": "theta_min",
    "direction": "lower",
    "value": "0.000288",
-   "source": "macrostep write-up Sec. 9.5 Table 9.5b and the R0t table (R0t columns)"
+   "source": "certificate values of engine/ind_certify_t.py (tightened forward tails); reference values, not displayed in the manuscript"
   },
   {
    "scope": "R0t-d7b-246",
    "quantity": "lambda_best",
    "direction": "upper",
    "value": "0.964284",
-   "source": "macrostep write-up Sec. 9.5 Table 9.5b and the R0t table (R0t columns)"
+   "source": "certificate values of engine/ind_certify_t.py (tightened forward tails); reference values, not displayed in the manuscript"
   },
   {
    "scope": "R0t-d7b-246",
    "quantity": "theta_best",
    "direction": "lower",
    "value": "0.000288",
-   "source": "macrostep write-up Sec. 9.5 Table 9.5b and the R0t table (R0t columns)"
+   "source": "certificate values of engine/ind_certify_t.py (tightened forward tails); reference values, not displayed in the manuscript"
   },
   {
    "scope": "R0t-d7a-804",
    "quantity": "etaF",
    "direction": "upper",
    "value": "0.0027888",
-   "source": "macrostep write-up Sec. 9.5 Table 9.5b and the R0t table (R0t columns)"
+   "source": "certificate values of engine/ind_certify_t.py (tightened forward tails); reference values, not displayed in the manuscript"
   },
   {
    "scope": "R0t-d7a-804",
    "quantity": "lambda_min",
    "direction": "upper",
    "value": "0.927870",
-   "source": "macrostep write-up Sec. 9.5 Table 9.5b and the R0t table (R0t columns)"
+   "source": "certificate values of engine/ind_certify_t.py (tightened forward tails); reference values, not displayed in the manuscript"
   },
   {
    "scope": "R0t-d7a-804",
    "quantity": "theta_min",
    "direction": "lower",
    "value": "0.000124",
-   "source": "macrostep write-up Sec. 9.5 Table 9.5b and the R0t table (R0t columns)"
+   "source": "certificate values of engine/ind_certify_t.py (tightened forward tails); reference values, not displayed in the manuscript"
   },
   {
    "scope": "R0t-d7a-804",
    "quantity": "lambda_best",
    "direction": "upper",
    "value": "0.956322",
-   "source": "macrostep write-up Sec. 9.5 Table 9.5b and the R0t table (R0t columns)"
+   "source": "certificate values of engine/ind_certify_t.py (tightened forward tails); reference values, not displayed in the manuscript"
   },
   {
    "scope": "R0t-d7a-804",
    "quantity": "theta_best",
    "direction": "lower",
    "value": "0.000228",
-   "source": "macrostep write-up Sec. 9.5 Table 9.5b and the R0t table (R0t columns)"
+   "source": "certificate values of engine/ind_certify_t.py (tightened forward tails); reference values, not displayed in the manuscript"
   },
   {
    "scope": "R0t-d7b-804",
    "quantity": "etaF",
    "direction": "upper",
    "value": "0.0038234",
-   "source": "macrostep write-up Sec. 9.5 Table 9.5b and the R0t table (R0t columns)"
+   "source": "certificate values of engine/ind_certify_t.py (tightened forward tails); reference values, not displayed in the manuscript"
   },
   {
    "scope": "R0t-d7b-804",
    "quantity": "lambda_min",
    "direction": "upper",
    "value": "0.914627",
-   "source": "macrostep write-up Sec. 9.5 Table 9.5b and the R0t table (R0t columns)"
+   "source": "certificate values of engine/ind_certify_t.py (tightened forward tails); reference values, not displayed in the manuscript"
   },
   {
    "scope": "R0t-d7b-804",
    "quantity": "theta_min",
    "direction": "lower",
    "value": "0.000196",
-   "source": "macrostep write-up Sec. 9.5 Table 9.5b and the R0t table (R0t columns)"
+   "source": "certificate values of engine/ind_certify_t.py (tightened forward tails); reference values, not displayed in the manuscript"
   },
   {
    "scope": "R0t-d7b-804",
    "quantity": "lambda_best",
    "direction": "upper",
    "value": "0.948377",
-   "source": "macrostep write-up Sec. 9.5 Table 9.5b and the R0t table (R0t columns)"
+   "source": "certificate values of engine/ind_certify_t.py (tightened forward tails); reference values, not displayed in the manuscript"
   },
   {
    "scope": "R0t-d7b-804",
    "quantity": "theta_best",
    "direction": "lower",
    "value": "0.000327",
-   "source": "macrostep write-up Sec. 9.5 Table 9.5b and the R0t table (R0t columns)"
+   "source": "certificate values of engine/ind_certify_t.py (tightened forward tails); reference values, not displayed in the manuscript"
   }
  ],
  "theorems": {
-  "Q9": {
-   "statement": "d = 9, t = 7/50, instance 1 (local methods of the overlap-revealed route)",
+  "Table5-row1": {
+   "statement": "Table 5, row 1: d = 9, t = 7/50, instance 1 (local inputs of Sections 4.2-4.3), 246 orbits",
    "runs": [
     "R0-d9-246"
    ],
    "instance": "inst1-d9-t7/50"
   },
-  "Q8": {
-   "statement": "d = 8, t = 3/20, instance 1",
+  "Table5-row2": {
+   "statement": "Table 5, row 2: d = 8, t = 3/20, instance 1 (local inputs of Sections 4.2-4.3), 246 orbits",
    "runs": [
-    "R0-d8-246",
-    "R0-d8-82",
+    "R0-d8-246"
+   ],
+   "instance": "inst1-d8-t3/20"
+  },
+  "Table5-row3": {
+   "statement": "Table 5, row 3: d = 8, t = 3/20, instance 1 (local inputs of Sections 4.2-4.3), 82 orbits",
+   "runs": [
+    "R0-d8-82"
+   ],
+   "instance": "inst1-d8-t3/20"
+  },
+  "Table5-row4": {
+   "statement": "Table 5, row 4: d = 8, t = 3/20, instance 1 (local inputs of Sections 4.2-4.3), 46 orbits",
+   "runs": [
     "R0-d8-46"
    ],
    "instance": "inst1-d8-t3/20"
   },
-  "Q8sharp": {
-   "statement": "d = 8, t = 3/20, instance 2 (Lemmas N, P, S)",
+  "Table5-row5": {
+   "statement": "Table 5, row 5: d = 8, t = 3/20, instance 2 (noisy-cavity inputs of Section 4.4: Lemmas 4.15, 4.19, 4.20), 46 orbits",
    "runs": [
     "R0-d8s-46"
    ],
    "instance": "inst2-d8-t3/20"
   },
-  "Q7": {
-   "statement": "d = 7, t = 31/200 and 3/20, instance 3 (Lemmas N, P, S), 804 near types",
+  "Table5-row6": {
+   "statement": "Table 5, row 6: d = 7, t = 31/200, instance 3 (noisy-cavity inputs of Section 4.4), 804 orbits",
    "runs": [
-    "R0-d7b-804",
+    "R0-d7b-804"
+   ],
+   "instance": "inst3-d7-t31/200"
+  },
+  "Table5-row7": {
+   "statement": "Table 5, row 7: d = 7, t = 3/20, instance 3 (noisy-cavity inputs of Section 4.4), 804 orbits",
+   "runs": [
     "R0-d7a-804"
    ],
-   "instance": [
-    "inst3-d7-t31/200",
-    "inst3-d7-t3/20"
-   ]
+   "instance": "inst3-d7-t3/20"
   },
-  "Q7-addendum": {
-   "statement": "d = 7, 246 near types with the tightened forward tails of Lemma R.1 (code base R0t)",
+  "tightened-tails": {
+   "statement": "d = 7, t = 3/20 and 31/200, 246 near types with the tightened forward tails of engine/tail_tight.py (engine/ind_certify_t.py); not used by the manuscript",
    "runs": [
     "R0t-d7a-246",
     "R0t-d7b-246"
@@ -2394,6 +2409,6 @@
     "inst3-d7-t31/200"
    ]
   },
-  "_note": "The other stored certificates (R0 at 46/82/246 types, all certified R0t runs) are the remaining rows of the research tables (macrostep write-up Secs. 9.2, 9.5); every one is re-decided."
+  "_note": "The other stored certificates (engine/ind_certify.py at 46/82/246 types, all certified runs of engine/ind_certify_t.py) are not used by the manuscript; every one is re-decided."
  }
 }

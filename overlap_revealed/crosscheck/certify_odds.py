@@ -1,7 +1,7 @@
-"""Exact rational certificate for the overlap-field odds bound (track B, local input L-c) and the
-mean-field density bound (L-d).
+"""Exact rational certificate for the overlap-field odds bound (manuscript, Section 4.3) and the
+mean-field density bound (Lemma 4.22).
 
-For k=k_+ plus-neighbours (k_-=m-k), S=2k-m, the q-field single-site odds satisfy (see local.md, Lemma C2)
+For k=k_+ plus-neighbours (k_-=m-k), S=2k-m, the q-field single-site odds satisfy (Proposition 4.9 and Lemmas 4.10, 4.11)
    Phi_+/Phi_- >= C^S * N_k / D_k ,   C=cosh(2beta)=(w+1/w)/2,
  N_k = min_j Xt_k(j)  (tangent-plane lower bound for inf_nu E_{lambda_+}[R_nu^-2]),
  D_k = max_j Y_k(j)   (exact sup_nu E_{lambda_-}[R_nu^-2], attained at frozen patterns),

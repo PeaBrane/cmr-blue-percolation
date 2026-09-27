@@ -1,9 +1,9 @@
-"""Sharper lower bound on Cov(sigma_x, sigma_y), x~y, for the torus Ising law (global.md Lemma 3.6).
+"""Sharper lower bound on Cov(sigma_x, sigma_y), x~y, for the torus Ising law (manuscript, Lemma 4.28).
 
 Cov >= 2 sinh(2K') / (E[P+Q])^2  (Jensen), P+Q = e^{K'} cosh(a+b) + e^{-K'} cosh(a-b),
 E cosh(u) <= 1 + E[u^2] (cosh U - 1)/U^2 for |u| <= U,
 E[(a+b)^2] <= 4H^2 + 4 H K' (4d-2) mbar + K'^2 E[T^2],   E[(a-b)^2] <= 2 K'^2 E[T_x^2],
-E[sigma_i sigma_j] <= mbar^2 + D_ij (Lemma 3.6),  D_ij <= G(i-j) + 1e-15 for L >= 40.
+E[sigma_i sigma_j] <= mbar^2 + D_ij (Lemma 4.28),  D_ij <= G(i-j) + 1e-15 for L >= 40.
 Inputs are rationals: Klo <= K' <= Khi, H <= Hhi (H = |h|), mbar >= m_L, tbar >= tanh K'.
 """
 from fractions import Fraction as Fr

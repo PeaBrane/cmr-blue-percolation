@@ -4,19 +4,20 @@ Independent of the programs that produced the rule tables: nothing from them is 
 rule table (params/lp_<d>_<region>_rho*.json: randomized rules for types B and N).  Everything else is re-derived
 from the definitions (regions, covering sets and types; the design lemma; key costs; compatibility; coins):
 
-  * Design-Lemma hypotheses (Lemma R3.1) for types B, N-ter, N-int, S;
-  * exact per-key costs  c_kappa(p) = rho_hi^n(kappa) p^-|O| (1-p)^-|W*\\O|   (Lemma R4.2);
+  * Design-Lemma hypotheses ((H1)-(H6) of Definition 5.5 and Lemma 5.6 of the diluted-model manuscript) for
+    types B, N-ter, N-int, S;
+  * exact per-key costs  c_kappa(p) = rho_hi^n(kappa) p^-|O| (1-p)^-|W*\\O|   (Definition 5.8, Lemma 5.9);
   * node weights W_kappa = max over configurations c of the total option weight of c with key kappa;
-  * the compatibility relation (Lemma R4.4) and maximal-clique enumeration (own Bron-Kerbosch with pivoting);
+  * the compatibility relation (Definition 5.11, Corollary 5.12) and maximal-clique enumeration (own Bron-Kerbosch with pivoting);
   * K_B (bulk groups), K_BN (joint groups near the origin: type-N keys together with the translated type-B keys
     whose region avoids 0), K_S (an own picture-covariant type-S rule, verified at several L; bound = sum over
     ALL keys with the same labelled plaquette, which needs no compatibility argument);
-  * q, N_Q (plaquette coins) and q_c, N_Qc for vertex coins (d = 3) and domino coins (d = 2), Section R7;
+  * q, N_Q (plaquette coins) and q_c, N_Qc for vertex coins (d = 3) and domino coins (d = 2), Section 5.5;
   * Delta = (1 - 2^-(q+1)) / ((q+1) (K + N_Q / (2 (1 - p_hi)))) as an exact rational, floored to 7 digits.
 
-Output lines marked [rev1] were added after the first audit -- K_B, K_N at each endpoint of the p-bracket (K is
-the maximum over both endpoints), the type-B configurations with {x', y'} = e, the maximal single-design cost, and
-the composition of the maximizing type-B clique.  main() returns the exact values for check_window_general.py.
+The output also reports K_B, K_N at each endpoint of the p-bracket (K is the maximum over both endpoints, Lemma
+5.15), the type-B configurations with {x', y'} = e, the maximal single-design cost, and the composition of the
+maximizing type-B clique.  main() returns the exact values for check_window_general.py.
 
 Usage: python cr_check.py <rule.json> L_S [L_S ...]
 """
@@ -137,7 +138,7 @@ class Bad(Exception):
 
 
 def check_design(typ, e, Lam, D, L=None, xp=None, yp=None, src=None):
-    """Hypotheses (H1)-(H6) of the Design Lemma R3.1.  typ in {B, Nter, Nint, S}; L only for type S.
+    """Hypotheses (H1)-(H6) of Definition 5.5 (the design lemma is Lemma 5.6).  typ in {B, Nter, Nint, S}; L only for type S.
     src = position of the source vertex 0 of Pi in the current frame (None: type B in the bulk frame, where the
     source is outside Lambda by the type condition).  Returns dict with I, W* (as W), O, anchored attachments, n."""
     d = len(e[0])
@@ -221,7 +222,7 @@ def cost(nO, nZ, n, p, rho):
 
 # ------------------------------------------------------------------ compatibility and cliques
 def compatible(X, Y):
-    """necessary condition for two keys to be realized by one output (Lemma R4.4).  A key may be produced by
+    """necessary condition for two keys to be realized by one output (Definition 5.11, Corollary 5.12).  A key may be produced by
     several designs that differ only in which vertices must carry a Pi-anchor (N-int with a trivial arc at
     either terminal); X['variants'] lists these anchor sets and the key is realizable if one of them is met."""
     px, py = X['pat'], Y['pat']
@@ -257,7 +258,7 @@ def maximal_cliques(n, adj):
 
 def max_clique_value(nodes, ps, by_endpoint=False):
     """max over maximal cliques and p in ps of sum W_kappa c_kappa(p); also returns #cliques and #edges.
-    by_endpoint=True (rev1): additionally returns [(max over cliques at ps[i], argmax clique) for each i]."""
+    by_endpoint=True: additionally returns [(max over cliques at ps[i], argmax clique) for each i]."""
     n = len(nodes)
     adj = [set() for _ in range(n)]
     ne = 0
@@ -388,7 +389,7 @@ def main():
     print(f'  |Lambda^+|={len(Lp0)}  q = |Q(e)| = {q}   N_Q = max_P #{{e: P in Q(e)}} = {NQ}   (JSON: q={data["q"]}, N_Q={data["NQ"]})')
     coins = None
     if d in (2, 3):
-        # coin partitions (Section R7): every coin is a set of plaquettes pairwise sharing an edge.
+        # coin partitions (Section 5.5): every coin is a set of plaquettes pairwise sharing an edge.
         #   d = 3: vertex coins, coin(P) = lower corner of P (the 3 plaquettes with a common lower corner);
         #   d = 2: domino coins, coin(P) = the vertical edge of P whose lower endpoint has even first coordinate
         #          (so a coin is a horizontal domino {P(x), P(x - e_1)}, x_1 even).
@@ -433,7 +434,7 @@ def main():
     seen = {'B': set(), 'N': set()}
     worst = {'B': Fr(0), 'N': Fr(0)}
     ncheck = 0
-    opt_rows = {'B': [], 'N': []}          # rev1: (cfg, w, |I|, |O|, |W*\O|, n, max cost) per option
+    opt_rows = {'B': [], 'N': []}          # (cfg, w, |I|, |O|, |W*\O|, n, max cost) per option
     for typ in ('B', 'N'):
         for entry in data['rule' + typ]:
             c = entry['config']
@@ -530,20 +531,20 @@ def main():
         Ks[typ] = best
         print(f'  type {typ}: {len(nodes[typ])} groups, {nn} keys, {ne} compatible pairs, {ncl} maximal cliques; '
               f'K_{typ} = 2^{math.log2(best):.4f}')
-        # rev1: Definition R4.7 takes K = max(K(p_lo), K(p_hi)); print both endpoint values to 6 decimals
+        # Lemma 5.15: K = max(K(p_lo), K(p_hi)); print both endpoint values to 6 decimals
         assert best == max(s for s, _, _ in ep_best)
         iat = max(range(len(ps)), key=lambda i: ep_best[i][0])
-        print(f'    [rev1] K_{typ}(p_lo={ps[0]}) = 2^{math.log2(ep_best[0][0]):.6f}, '
+        print(f'    K_{typ}(p_lo={ps[0]}) = 2^{math.log2(ep_best[0][0]):.6f}, '
               f'K_{typ}(p_hi={ps[1]}) = 2^{math.log2(ep_best[1][0]):.6f}; '
               f'K_{typ} = max = 2^{math.log2(best):.6f} = {float(best):.6f}, attained at p = {ps[iat]}')
         ep_arg[typ] = (iat, ep_best[iat])
         ep_vals[typ] = [v for v, _, _ in ep_best]
 
-    # ---- rev1: the type-B configurations with {x', y'} = e, the maximal single-design cost, and the argmax clique
+    # ---- the type-B configurations with {x', y'} = e, the maximal single-design cost, and the argmax clique
     rowsB = opt_rows['B']
     unitv = lambda k: unit(d, k)
     ecfg = sorted({cfg for cfg, *_ in rowsB if {cfg[1], cfg[2]} == {o, unitv(cfg[0])}})
-    print(f'    [rev1] type-B configurations with {{x\'-z, y\'-z}} = e: {len(ecfg)}')
+    print(f'    type-B configurations with {{x\'-z, y\'-z}} = e: {len(ecfg)}')
     for cfg in ecfg:
         rr = [r for r in rowsB if r[0] == cfg]
         shapes = sorted({(r[2], r[3], r[4]) for r in rr})
@@ -553,11 +554,11 @@ def main():
     cmax = max(r[6] for r in rowsB)
     at_max = sorted({r[0] for r in rowsB if r[6] == cmax})
     all_max = sorted(cfg for cfg in {r[0] for r in rowsB} if all(r[6] == cmax for r in rowsB if r[0] == cfg))
-    print(f'    [rev1] maximal single-design type-B cost 2^{math.log2(cmax):.4f}: attained by an option of '
+    print(f'    maximal single-design type-B cost 2^{math.log2(cmax):.4f}: attained by an option of '
           f'{len(at_max)} configurations; configurations all of whose options attain it: {len(all_max)} '
           f'(= the {{x\'-z, y\'-z}} = e set: {all_max == ecfg})')
     iat, (s, grp, cl) = ep_arg['B']
-    print(f'    [rev1] argmax B-clique at p = {ps[iat]}: {len(cl)} keys, value 2^{math.log2(s):.6f}; keys '
+    print(f'    argmax B-clique at p = {ps[iat]}: {len(cl)} keys, value 2^{math.log2(s):.6f}; keys '
           f'(edge in the frame min(P0) = 0, (|I|,|O|,|W*\\O|), n, W, log2 W c, #producing configurations, '
           f'#of them with {{x\'-z, y\'-z}} = e):')
     for nd in sorted(cl, key=lambda nd: -nd['W'] * nd['c'][iat]):
@@ -637,12 +638,12 @@ def main():
         print(f'  {name}: Delta_c = (1-2^-{qc+1}) / ({qc+1} (K + {NQc}/(2(1-p_hi)))) >= {floor_sig(Dc)[0]};  '
               f'g = 2 Delta_c >= {floor_sig(2*Dc)[0]}')
     print('  exact K (numerator/denominator digits):', len(str(K.numerator)), len(str(K.denominator)))
-    # rev1 (audit finding on the displayed d=2 constant): the window if K were replaced by the value of the binding
+    # For the displayed d=2 constant: the window if K were replaced by the value of the binding
     # family at one endpoint only -- for comparison only; the certified window uses K = max over both endpoints.
     for i, pe in enumerate(ps):
         Ki = max(ep_vals["B"][i], ep_vals["N"][i])
         if Ki < K:
-            msg = (f'  [rev1] comparison only: with K replaced by max(K_B, K_N) at p = {pe} alone (2^{math.log2(Ki):.6f} < K), '
+            msg = (f'  comparison only: with K replaced by max(K_B, K_N) at p = {pe} alone (2^{math.log2(Ki):.6f} < K), '
                    f'Delta would be {floor_sig(window(q, NQ, Ki, p_hi))[0]}')
             if coins:
                 msg += f', coin Delta {floor_sig(window(coins[0], coins[1], Ki, p_hi))[0]}'

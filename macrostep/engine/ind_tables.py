@@ -1,12 +1,12 @@
-"""Macrostep route, independent implementation (code base R0), part 1: exact boost tables.
+"""Macrostep route, the a priori error program, part 1: exact boost tables.
 
-Written from the statements of the macrostep write-up (Lemma E) and global.md Lemma 3.4; it does not import the
-L2 rig code.  Every table entry is an exact rational upper bound (a dyadic rational with denominator 2^SC,
+Written from the statements of Lemmas 5.7, 5.10 and 4.26 of the first manuscript; it does not import
+../engine_l2/.  Every table entry is an exact rational upper bound (a dyadic rational with denominator 2^SC,
 obtained by rounding each exact b(r) UP to that grid; sums of such numbers are exact), and is converted to the
 smallest binary64 number >= that rational.
 
-Notation (macrostep write-up Sec. 3): t = tanh K' (exact rational (g_K-1)/(g_K+1)), q = d t/(1-2 d t) < 1,
-  b(r)       = t^r M_r Gamma_r(t)   (global.md Lemma 3.4(b),(d)),  r >= 1,
+Notation (Sections 5.2 and 5.3): t = tanh K' (exact rational (g_K-1)/(g_K+1)), q = d t/(1-2 d t) < 1,
+  b(r)       = t^r M_r Gamma_r(t)   (Lemma 4.26(ii),(iv)),  r >= 1,
   T1(F, r)   = sum_{k=0}^{c} b(F + |r - k|),                        F >= 1,
   Phi2(r, F) = max_{rho >= r} sum_{k=0}^{c} b(F + |rho - k|),       F >= 1,
   psi3(r, D) = sum_{s >= 3} Phi2(max(0, r - c(s-1)), max(s, D - s)).
@@ -46,7 +46,7 @@ def largest_multinomial(d, r):
 
 
 def Gamma(d, t, r):
-    """Gamma_r(t) = 2^-d sum_j C(d,j) (1 - 2t(d-2j))^{-(r+1)}  (global.md Lemma 3.4(b))."""
+    """Gamma_r(t) = 2^-d sum_j C(d,j) (1 - 2t(d-2j))^{-(r+1)}  (Lemma 4.26(ii))."""
     return sum(Fr(comb(d, j)) / (1 - 2 * t * (d - 2 * j)) ** (r + 1) for j in range(d + 1)) / 2 ** d
 
 
@@ -59,7 +59,7 @@ class BoostTables:
         assert q < 1
         be = [None] + [t ** r * largest_multinomial(d, r) * Gamma(d, t, r) for r in range(1, Rb + 1)]
         for r in range(1, Rb):
-            assert be[r + 1] <= q * be[r], r               # Lemma 3.4(d) on the computed range
+            assert be[r + 1] <= q * be[r], r               # Lemma 4.26(iv) on the computed range
         top = max(Fmax + Rmax + 2 * c + 10, S + 2 * c + 10)
         # integer upper bounds B[r] >= 2^SC b(r); beyond Rb use b(r) <= b(Rb) q^{r-Rb}
         B = [0] * (top + 1)

@@ -1,20 +1,20 @@
 #!/usr/bin/env python3
-"""Noisy-cavity route -- EXACT (rational) enumeration checks of Lemma N (noisy-cavity reduction), noisy-cavity write-up Sec. 3.1.
-[Packaged copy of the research script r1_lemmaN_exact.py; changes: none in the computation; an optimisation guard; exit status 1 on failure.]
+"""Noisy-cavity route -- EXACT (rational) enumeration checks of Lemma 4.15 of the manuscript (noisy-cavity reduction,
+Section 4.4). Python refuses optimized mode (-O), and the exit status is 1 on failure.
 
 (1) Torus T_4^2 (d = 2, L = 4, m = 4, n = 3; 15 cavity spins, 2^15 configurations), random off-star couplings s_off.
     LHS: R_nu(s) = E_nu[2cosh(beta s.rho)], nu = marginal on N(v) of the zero-field Gibbs law on V minus v with
          couplings s_off, by brute force over all 2^15 configurations.
     RHS: c0 * E_{nu~}[2cosh(beta_c' s.eps)], c0 = (cosh beta / cosh beta_c')^m, with the law nu~ constructed in the
-         proof of Lemma N: rho_Z from its Gibbs marginal, then eps_w independent with P(eps_w = +) = (1 + m_w/b')/2,
+         proof of Lemma 4.15: rho_Z from its Gibbs marginal, then eps_w independent with P(eps_w = +) = (1 + m_w/b')/2,
          m_w = tanh(beta h_w), h_w = sum_{z ~ w, z != v} s_wz rho_z, b' = tanh(beta_c')/t in [b, 1], b = tanh(n beta).
     Checked: LHS == RHS exactly for all 2^m star-sign vectors s, for several rational t and b' in {b, (1+b)/2, 1};
     lambda_w in [0,1]; nu~ is flip invariant (it is, by the global spin-flip symmetry; the proof does not need it).
     Everything is rational: 2cosh(beta y) = w^{y/2} + w^{-y/2} (y even), Gibbs weight w^{#satisfied edges},
     tanh(beta h) = (w^h - 1)/(w^h + 1), e^{2 beta_c'} = (1 + t b')/(1 - t b'), cosh^2 x = 1/(1 - tanh^2 x).
-(2) A synthetic graph with the star structure of Lemma N for m = 6, n = 5 (vertex v, 6 pairwise non-adjacent neighbours,
+(2) A synthetic graph with the star structure of Lemma 4.15 for m = 6, n = 5 (vertex v, 6 pairwise non-adjacent neighbours,
     each with exactly 5 further neighbours in Z, plus random Z-Z edges; 14 cavity spins): the same exact identity.
-(3) Geometry used by Lemma N on T_L^d: for L >= 4, N(v) is an independent set and every w in N(v) has exactly 2d-1
+(3) Geometry used by Lemma 4.15 on T_L^d: for L >= 4, N(v) is an independent set and every w in N(v) has exactly 2d-1
     neighbours outside {v} u N(v) (checked for d = 2..9, L = 4..7 via the neighbourhood of the origin); for L = 3 N(v)
     is not independent (v + e_1 ~ v - e_1).
 """
@@ -172,8 +172,8 @@ if __name__ == "__main__":
         edges += rng.sample(zz, 6)
         allok &= check_graph(f"synthetic m=6 #{trial}", ["v"] + Ws + Zs, edges, "v", Fr(3, 20), blist, rng)
     # negative control (not part of the certificate): b' = b/2 < b.  The algebraic identity survives with a SIGNED
-    # 'law' (lambda_w outside [0,1]), which is exactly why Lemma N needs b' >= b, i.e. beta_c' >= atanh(t b).
+    # 'law' (lambda_w outside [0,1]), which is exactly why Lemma 4.15 needs b' >= b, i.e. beta_c' >= atanh(t b).
     print("  negative control (b' = b/2, expected: identity True but lambda in [0,1] False):")
     check_graph("T_4^2 control", nodes, E, v, Fr(2, 5), lambda b: [b / 2], rng)
-    print(f"LEMMA N EXACT CHECKS: {'ALL PASSED' if allok else 'FAILED'}  [{time.time() - T0:.0f}s]")
+    print(f"LEMMA 4.15 EXACT CHECKS: {'ALL PASSED' if allok else 'FAILED'}  [{time.time() - T0:.0f}s]")
     sys.exit(0 if allok else 1)

@@ -1,15 +1,15 @@
 """Re-derive the frozen instance-1 local inputs of ../params.json (optional; needs SciPy).
 
 Nothing here is needed for verification: ../certify_macrostep.py reads only the frozen exact rationals. For the two
-instance-1 points (d, t) = (9, 7/50) and (8, 3/20) this program repeats the floating-point choices of code base B
-(research script assembly/certify_new_point.py, via the same search functions as
+instance-1 points (d, t) = (9, 7/50) and (8, 3/20) this program repeats the floating-point choices of the second
+implementation of Section 4.7 of the first manuscript (the search functions of
 ../../overlap_revealed/search/freeze_params.py):
 
 * the bond-floor tangent points c_U: Nelder-Mead over the family
   c_U = kappa * omega(U)^lambda * (2 cosh^m beta)^(1 - lambda), each c_U rounded to 10 decimals;
 * the Holley tangent weights w_k: the best point of {0} U {i/200 : 1 <= i <= 180}, rounded to 4 decimals.
 
-The bond floor p, the line (g_K, g_h) and xbar are the certified inputs of the theorems and are copied from
+The bond floor p, the line (g_K, g_h) and xbar are the certified inputs of Table 4 and are copied from
 ../params.json. Any positive tangent point and any weight in [0, 1] are admissible, so the search cannot affect
 soundness.
 
@@ -46,7 +46,7 @@ def derive(inst):
     return {"pB_tangent_points": {"form": "direct", "values": {str(U): FP.decimal(c, 10) for U, c in sorted(cU.items())}},
             "holley_weights": weights,
             "provenance": {"pB_tangent_points": f"Nelder-Mead family kappa={kappa!r}, lambda={lam!r}; c_U rounded to "
-                                                f"10 decimals (code base B, assembly/certify_new_point.py)",
+                                                f"10 decimals (search functions of overlap_revealed/search/freeze_params.py)",
                            "holley_weights": "best point of {0} U {i/200: 1<=i<=180} for the floating numerator bound"}}
 
 

@@ -1,6 +1,7 @@
-"""General-d window from the octahedral rule (closed form (E8.1)), exact rational arithmetic.
+"""General-d window from the octahedral rule (closed form (5.4) of the diluted-model manuscript, Theorem 5.26 and
+Table 1), exact rational arithmetic.
 
-    q(d)   = 4 d^2 (d-1) (2d^2-3d+4) / 3          (Lemma R8.5, axis-type count; cross-checked by enumeration)
+    q(d)   = 4 d^2 (d-1) (2d^2-3d+4) / 3          (Lemma 5.25, axis-type count; cross-checked by enumeration)
     N_Q(d) = 8 d^2 (2d^2-3d+4) / 3
     c(a,b) = max_{p in {p_-, p_+}} p^-a (1-p)^-b
     K_d    = 2d [ max( c(7,10d-12) / (2(d-2)), c(6,8d-9) ) + c(6,8d-9) ]
@@ -9,12 +10,12 @@ p_+ : p* (d) of Gomes-Pereira-Sanchis, Thm 2.1, bounded above by exact bisection
 p_- : 1/(2d) for d >= 5 (p_c >= 1/(2d-1), Grimmett (1.13)); 1/mu_d - 1e-6 with mu_3 <= 4.7387, mu_4 <= 6.8040
       (Poenitz-Tittmann 2000, Table 2, k = 14).
 Also prints beta_*(d) = (1/2) ln(2 p_-(d) / g_d) (lower bound for beta_l(p) inside the window), rounded down.
-After the table ([rev1] lines, added after the first audit) it prints the exact rational brackets (p_-, p_+) used
+After the table it prints the exact rational brackets (p_-, p_+) used
 for every row, checks that p_+ has denominator dividing 10^6 (so the six-decimal value shown is exact), and
 compares with the finer bracket p_+ = hi_60 + 10^-6 (hi_60 the 60-step bisection upper point; valid as well) and
 with beta_* computed from p_c >= 1/(2d-1) for d >= 5.
-The logarithm in beta_* is a rigorous rational lower bound (atanh series; the research version used 60-bit mpmath
-interval arithmetic); the printed floors are the same.
+The logarithm in beta_* is a rigorous rational lower bound (atanh series); the printed floors are the same as with
+60-bit mpmath interval arithmetic.
 Usage: python gd_table.py
 """
 import itertools
@@ -78,7 +79,7 @@ def gps_upper(d, fine=False):
     ub = Fr(math.ceil(hi * 10 ** 6), 10 ** 6)
     assert h(ub) < 0          # h is nonincreasing in p, so p*(d) < ub
     if fine:
-        assert h(hi) < 0      # rev1: the dyadic bisection point itself (finer bracket, same argument)
+        assert h(hi) < 0      # the dyadic bisection point itself (finer bracket, same argument)
         return hi
     return ub
 
@@ -130,7 +131,7 @@ def window(d, universal=False, fine=False):
 
 
 def main():
-    print('cross-check of the hand counts (Lemma R8.5) by enumeration:')
+    print('cross-check of the hand counts (covering-count lemma) by enumeration:')
     for d in range(2, 8):
         Lp, q, NQ = enumerate_q_NQ(d)
         qf, NQf = q_NQ(d)
@@ -146,9 +147,9 @@ def main():
         gu = 2 * window(d, universal=True)[5]
         print(f'{d} | {float(p_lo):.6f} | {float(p_hi):.6f} | {q} | {NQ} | {math.log2(K):.3f} | {floor_sig(D)} | '
               f'{floor_sig(g)} | {math.floor(bstar * 1000) / 1000:.3f} | {floor_sig(gu)}')
-    # ---- rev1: exact brackets, a finer p_+, and beta_* from p_c >= 1/(2d-1)
+    # ---- exact brackets, a finer p_+, and beta_* from p_c >= 1/(2d-1)
     print()
-    print('[rev1] exact brackets of the table rows (p_+ = ceil(10^6 hi_60)/10^6 + 10^-6, exactly the value shown):')
+    print('exact brackets of the table rows (p_+ = ceil(10^6 hi_60)/10^6 + 10^-6, exactly the value shown):')
     print('d | p_- (exact) | p_+ (exact) | p_+ = 6-decimal value shown | fine p_+ = hi_60 + 10^-6: g_d >= | '
           'beta_*(d) with p_c^- = 1/(2d-1) (d >= 5) >=')
     for d in list(range(3, 13)) + [15, 20, 30, 50, 100]:

@@ -2,6 +2,9 @@
 
     python export_certificate.py RUN.pkl OUT_STEM --label LABEL --code-base R0|R0t --instance KEY
 
+(--code-base R0 for the output of ind_certify.py, R0t for the output of ind_certify_t.py; the value is recorded
+in the field code_base of the header.)
+
 writes OUT_STEM.json (header) and OUT_STEM.bin.xz (payload). The payload is the concatenation of IEEE-754
 binary64 little-endian arrays, compressed with LZMA (xz container):
 

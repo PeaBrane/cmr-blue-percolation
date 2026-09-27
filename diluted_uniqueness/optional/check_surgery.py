@@ -1,6 +1,7 @@
-"""Sanity check (NOT part of the proof) of the surgery map Phi of Claim D (optional; needs networkx).
+"""Sanity check (NOT part of the proof) of the surgery map Phi (the map S of Proposition 4.7 of the diluted-model
+manuscript; optional; needs networkx).
 
-Research-note source: theorem-A.md, Sec. 4.
+Diluted-model manuscript, Section 4 and Appendix A.3.
 
 For random states (omega, alpha) on Z^d (d = 2, 3), L = 10, rho = 4, we enumerate ALL edges e that are
 (+)-pivotal for A_L = {0 <-> S_L in E(omega, alpha)}, apply the map Phi exactly as specified in the

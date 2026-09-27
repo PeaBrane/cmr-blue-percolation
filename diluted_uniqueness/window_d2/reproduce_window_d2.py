@@ -10,7 +10,7 @@ Steps:
     certificate (for the four committed families this is the SHA-256 of the committed file);
  4. check (C1) on every regenerated Path-1 record and (C2) on all 3,879,876 cell records exactly,
     completeness of the all-partition family, and that every one of its records equals the record of
-    its D4 image in the reduced list (Lemma 5.1, checked record by record);
+    its D4 image in the reduced list (Lemma 6.15 of the diluted-model manuscript, checked record by record);
  5. compile the literal brute-force programs engine/jbrute.c and engine/jbrute1.c, which enumerate
     all inside configurations for one boundary condition at a time and share no code with the engine,
     and compare them with sampled records: the binding and tightest records of every inequality and

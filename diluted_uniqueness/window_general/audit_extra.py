@@ -1,10 +1,10 @@
-"""Extra audit checks for the clean-room verification (cr_check.py).  Sanity only; needs networkx.
+"""Extra independent checks for the clean-room verification (cr_check.py).  Sanity only; needs networkx.
 
   (1) maximal cliques: own Bron-Kerbosch (cr_check.maximal_cliques) versus networkx.find_cliques, all groups;
-  (2) the anchor-variant issue: compatibility graphs built with ALL anchor variants of a key (correct, Lemma R4.3)
-      versus only the first variant (the bookkeeping of the program that produced the rule tables, labelled W1 in
-      the output); resulting K_N;
-  (3) every type-N design of the table has 0 as a corner of P0 (used in Lemma R6.2);
+  (2) the anchor-variant issue: compatibility graphs built with ALL anchor variants of a key (correct, Definition 5.11)
+      versus only the first variant (the one-anchor bookkeeping of the program that produced the rule tables);
+      resulting K_N;
+  (3) every type-N design of the table has 0 as a corner of P0 (used in Section 5.7);
   (4) negative controls: mutated designs must be rejected by cr_check.check_design.
 Usage: python audit_extra.py <rule.json>
 """
@@ -96,7 +96,7 @@ def main():
     print(f'(1) maximal cliques: own Bron-Kerbosch = networkx.find_cliques on all {ngr} groups ({ncl} cliques)')
     # (2) anchor variants
     nodes1, _ = build(data, first_variant_only=True)
-    for label, nd_ in (('all anchor variants (correct)', nodes), ('first variant only (W1 bookkeeping)', nodes1)):
+    for label, nd_ in (('all anchor variants (correct)', nodes), ('first variant only (one-anchor bookkeeping)', nodes1)):
         K, npairs = Fr(0), 0
         for grp, dct in nd_['N'].items():
             lst = list(dct.values())

@@ -1,6 +1,5 @@
-"""Macrostep route: fresh exact re-check of stored R0 / R0t certificate pickles.
-[Packaged copy of the research script recheck_certs.py, unchanged apart from this note, an
-optimisation guard and exit status 1 when a certificate fails. It reads the engine pickles written by
+"""Macrostep route: fresh exact re-check of engine certificate pickles.
+[It refuses optimized mode (-O) and exits with status 1 when a certificate fails. It reads the engine pickles written by
 ../engine/ind_certify.py and ../engine/ind_certify_t.py; ../reproduce_engine.py runs it on every freshly computed
 pickle. The arithmetic is exact integer arithmetic; NumPy is needed only to unpickle the engine output.]
 
@@ -10,7 +9,7 @@ arithmetic on the dyadic rationals represented by the stored binary64 numbers:
     (i)  (Mbar w)(z) + H etaF etabar(z) <= lam w(z)   for every z in C',
     (ii) max_z (Gnear w)(z) + H etaF <= lam H,         lam < 1,  w > 0,  etaF < lam,
 and computes theta_* = (99/100) / (C_fin (1 + Lambda lam H / (1 - lam))) exactly, Lambda = max(max etabar/w, 1/H),
-with C_fin = rho_-^{-1} exp(kappa (b(1) + 2 psi3(0,0))) recomputed here from global.md Lemma 3.4 (exact rationals,
+with C_fin = rho_-^{-1} exp(kappa (b(1) + 2 psi3(0,0))) recomputed here from Lemma 4.26(iv) of the first manuscript (exact rationals,
 Taylor upper bound for exp).  It shares no code with the certificate producers.
 
 Usage: python recheck_certs.py file1.pkl [file2.pkl ...]
@@ -38,7 +37,7 @@ def scaled(vals):
     return [n << (K - k) for n, k in pairs], K
 
 
-# ------------------------------------------------------------------------ C_fin from global.md Lemma 3.4
+# ------------------------------------------------------------------------ C_fin from Lemma 4.26(iv)
 def largest_multinomial(d, m):
     q, j = divmod(m, d)
     return Fr(factorial(m), factorial(q + 1) ** j * factorial(q) ** (d - j))

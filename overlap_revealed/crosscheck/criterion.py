@@ -1,4 +1,4 @@
-"""Rigorous evaluation of the oriented Ising-site / Bernoulli-bond second-moment criterion (global.md, Thm G).
+"""Rigorous evaluation of the oriented Ising-site / Bernoulli-bond second-moment criterion (manuscript, Theorem 4.33).
 
 Inputs (rationals): d, Kp (= K' >= 0), H (= -h > 0), pB (lower bound for the bond probability).
 Optionally rho_override: a rigorous lower bound for the true one-site marginal to use instead of the
@@ -141,7 +141,7 @@ def evaluate(d, Kp, H, pB, R=60, rho_override=None, verbose=True):
     term3 = T1 / ((1 - eta) * rho) if eta < 1 else None
     score = term1 + term2 + term3
     theta = rho * (1 - eta) * (1 - score) / (1 - Fr(1, d)) if score < 1 else None
-    # refinement (Sec. 4.8): shared edges cost 1/rho_c, rho_c = rho + c_cov/(4 rho),
+    # refinement (Lemma 4.27): shared edges cost 1/rho_c, rho_c = rho + c_cov/(4 rho),
     # c_cov = 2 sinh(2K') / (e^{K'} cosh(2M) + e^{-K'} cosh(2M'))^2, M = |h| + (2d-1)K', M' = (2d-1)K'
     Kiv, Miv, M2iv = ivq(Kp), ivq(H + (2 * d - 1) * Kp), ivq((2 * d - 1) * Kp)
     ch = lambda x: (iv.exp(x) + iv.exp(-x)) / 2

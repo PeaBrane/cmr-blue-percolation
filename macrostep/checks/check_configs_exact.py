@@ -1,12 +1,11 @@
-"""Per-configuration EXACT check of both kernels (code base R0 and the L2 rig kernel).
-[Packaged copy of the research script check_configs_exact.py (macrostep write-up Sec. 8.3 item 4); only
-the module paths changed (R0 in ../engine, L2 in ../engine_l2). Needs NumPy and Numba. The theorem runs used
+"""Per-configuration EXACT check of both kernels (the a priori error program in ../engine and the directed-rounding
+program in ../engine_l2). Needs NumPy and Numba. The recorded runs used
   9 623/2500 1036137/1000000 83033/100000 676921/5000000 3 1/10 40 6 201
   8 2707/10000 1039407/1000000 860671/1000000 539947/5000000 3 1/10 40 6 202
   7 1401/5000 104253/100000 175269/200000 463903/5000000 3 3/25 40 6 203]
 
 For random states z = (A, D) and random word pairs (w, w'), this script evaluates, for all (i, i'), the defining
-formula of the per-macrostep weight upper bound (macrostep write-up Lemma T.4 / Lemma E / Prop. 4.3)
+formula of the per-macrostep weight upper bound (Proposition 5.8 and Lemma 5.7 of the first manuscript)
     W = rho^{-N_V} beta_e^{N_E + fwd} exp(kappa B),
 in exact rational arithmetic: B from the exact dyadic table values of ind_tables (integer B[r] / 2^SC, i.e. exact
 upper bounds of b(r)), and exp(kappa B) by a rational Taylor upper bound.  It then runs each kernel on a
@@ -38,7 +37,7 @@ def exp_up_exact(x):
 
 
 def exact_excess(fam, T, f, c, A, D, w, wp, i, ip, rho, beta_e, kap):
-    """exact rational upper bound W - 1 (formula of the macrostep write-up), with exact table values."""
+    """exact rational upper bound W - 1 (formula of Proposition 5.8), with exact table values."""
     Bi = T.B
     bq = lambda r: Fr(Bi[r], 1 << SC)
     D = np.array(D); A = np.array(A)
@@ -99,13 +98,13 @@ def main():
     pa = np.array([fup((1 / rho) ** n) for n in range(2 * c + 4)])
     pb = np.array([fup(beta_e ** n) for n in range(2 * c + 4)])
     kapf = fup(kap)
-    # L2 kernel inputs
+    # inputs of the directed-rounding kernel
     Lf = L2f.Family(d, f, c, y); Lt = L2f.Tables(d, t, T.q, c)
     KE = 16
     lcoef = np.array([L2c.fup(Fr(1, math.factorial(k))) for k in range(KE + 1)]); rem = L2c.fup(Fr(3, math.factorial(KE + 1)))
     lpa = np.array([L2c.fup((1 / rho) ** n) for n in range(2 * c + 4)])
     lpb = np.array([L2c.fup(beta_e ** n) for n in range(2 * c + 4)])
-    # map R0 word index -> L2 word index (same words, possibly different order)
+    # map word index of ../engine -> word index of ../engine_l2 (same words, possibly different order)
     key = lambda pts, ln: tuple(tuple(int(v) for v in pts[k]) for k in range(ln + 1))
     L2idx = {key(Lf.PT[k], Lf.LN[k]): k for k in range(Lf.nW)}
     worst = [np.inf, 0.0, np.inf, 0.0]
@@ -127,7 +126,7 @@ def main():
             acc, _ = state_kernel(A, D, f, c, fam.LEN, fam.PTS, fam.END, PM, fam.DAIDX, len(fam.dAs), T.bt, T.T1,
                                   T.PHI2, T.PSI3, pa, pb, kapf, coef)
             di = fam.DAIDX[w, wp]
-            # L2 kernel on the 2-word family {w, wp}
+            # directed-rounding kernel on the 2-word family {w, wp}
             lw = L2idx[key(fam.PTS[w], fam.LEN[w])]; lwp = L2idx[key(fam.PTS[wp], fam.LEN[wp])]
             sel = [lw] if lw == lwp else [lw, lwp]
             PT = Lf.PT[sel]; LN = Lf.LN[sel]; EN = Lf.EN[sel]
@@ -147,8 +146,8 @@ def main():
                         worst[0] = min(worst[0], float(r1)); worst[1] = max(worst[1], float(r1))
                         worst[2] = min(worst[2], float(r2)); worst[3] = max(worst[3], float(r2))
                     nchk += 1
-    print(f"exact per-configuration check d={d}: {nchk} configurations; R0 kernel/exact in [{worst[0]:.12f}, {worst[1]:.12f}],"
-          f" L2 kernel/exact in [{worst[2]:.12f}, {worst[3]:.12f}]  (all >= 1: both kernels are upper bounds)")
+    print(f"exact per-configuration check d={d}: {nchk} configurations; a priori error kernel/exact in [{worst[0]:.12f}, {worst[1]:.12f}],"
+          f" directed-rounding kernel/exact in [{worst[2]:.12f}, {worst[3]:.12f}]  (all >= 1: both kernels are upper bounds)")
 
 
 if __name__ == "__main__":

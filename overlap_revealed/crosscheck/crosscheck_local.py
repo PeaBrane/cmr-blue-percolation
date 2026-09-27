@@ -1,8 +1,8 @@
-"""Code base A: independent exact recomputation of the local inputs (standard library only).
+"""First implementation: independent exact recomputation of the local inputs (standard library only).
 
-For every row of ../params.json this program uses the part-1 exact checkers
-(certify_pB.py, certify_odds.py), which were written independently of
-../certify.py, with the frozen tangent points and weights:
+For every row of ../params.json this program uses the exact local checkers of
+this directory (certify_pB.py, certify_odds.py), which were written
+independently of ../certify.py, with the frozen tangent points and weights:
 
 1. bond floor: every signed-residual vertex sum Gamma_j <= 0;
 2. Holley line in all 2d+1 environments, with the balanced-maximum lemma for
@@ -12,12 +12,12 @@ For every row of ../params.json this program uses the part-1 exact checkers
    xbar = ceil(mbar * 10^4) / 10^4 >= mbar;
 4. the ordered local rationals (Delta_j, aligned witness, N_k, D_k) hash to
    local_vector_sha256 recorded by ../certify.py in
-   ../../expected/overlap_revealed.json, so both code bases produce identical
-   exact rationals.
+   ../../expected/overlap_revealed.json, so both implementations produce
+   identical exact rationals.
 
-It first reruns part 1's headline certificate (certify_local.py) as
-published in the research notes, and confirms that its tangent points and
-weights are the frozen headline inputs.
+It first reruns this implementation's own certificate for d = 12, t = 3/25
+(certify_local.py), and confirms that its tangent points and weights are the
+frozen inputs of that row.
 """
 
 from fractions import Fraction as Fr
@@ -70,7 +70,7 @@ def check_row(row):
     zx = m * xbar
     P, Q = zx.numerator, zx.denominator
     assert (1 / gh) ** Q * gK ** P < ((1 + xbar) / (1 - xbar)) ** Q
-    print(f"PASS A-local {row['label']}: max Gamma_j = {float(max(gam)):+.4e}, Holley line in {m + 1}"
+    print(f"PASS first-implementation local {row['label']}: max Gamma_j = {float(max(gam)):+.4e}, Holley line in {m + 1}"
           f" environments, root test at xbar = {xbar}", flush=True)
     return vector
 
@@ -85,7 +85,7 @@ def main():
     assert head["label"] == "d12-t3/25" and head["pB_tangent_points"]["form"] == "rho_times_omega"
     assert {int(U): Fr(v) for U, v in head["pB_tangent_points"]["values"].items()} == certify_local.RHO_U
     assert [Fr(w) for w in head["holley_weights"]] == [certify_local.W_K[k] for k in range(25)]
-    print(f"PASS A-local headline as in the research log: max Gamma_j = {float(max(gam)):+.4e}, rho > {float(rho)};"
+    print(f"PASS first-implementation certificate at (12, 3/25): max Gamma_j = {float(max(gam)):+.4e}, rho > {float(rho)};"
           f" its tangent points and weights are the frozen ones")
     vector = []
     for row in rows:
@@ -93,7 +93,7 @@ def main():
     local_digest = hashlib.sha256("\n".join(str(v) for v in vector).encode()).hexdigest()
     expected = json.loads(EXPECTED.read_text())["local_vector_sha256"]
     assert local_digest == expected, (local_digest, expected)
-    print(f"PASS code bases A and B agree on all {len(vector)} local rationals: sha256 {local_digest}")
+    print(f"PASS both implementations agree on all {len(vector)} local rationals: sha256 {local_digest}")
 
 
 if __name__ == "__main__":

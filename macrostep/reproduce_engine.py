@@ -1,15 +1,16 @@
 """FULL reproduction of the macrostep engine certificates from scratch (needs NumPy and Numba; hours of CPU at most).
 
 For every selected run of params.json this program
-  1. runs the engine (code base R0: engine/ind_certify.py; R0t: engine/ind_certify_t.py, whose forward-tail caches
-     engine/tail_tight.py builds first if they are missing) from the frozen exact inputs;
+  1. runs the engine, the a priori error program of Section 5.5 of the first manuscript (runs with code_base "R0":
+     engine/ind_certify.py; "R0t": engine/ind_certify_t.py, whose forward-tail caches engine/tail_tight.py builds
+     first if they are missing) from the frozen exact inputs;
   2. converts the output to the portable format (engine/export_certificate.py);
   3. compares the SHA-256 digest of the recomputed near data (etabar, Mbar, the near Green rows and eta_F) with the
      digest stored in certificates/<label>.json;
-  4. re-decides the recomputed certificate exactly twice: checks/recheck_certs.py on the engine pickle (the research
-     rechecker) and certify_macrostep.py --cert-dir on the exported certificate (standard library).
-With --l2 it also reruns the first implementation (code base L2, engine_l2/) at the instances of the
-theorem runs and compares it entrywise with the fresh R0 output.
+  4. re-decides the recomputed certificate exactly twice: checks/recheck_certs.py on the engine pickle (an
+     independent exact rechecker) and certify_macrostep.py --cert-dir on the exported certificate (standard library).
+With --l2 it also reruns the directed-rounding program (engine_l2/) at the instances of the selected runs of
+engine/ind_certify.py and compares it entrywise with the fresh output of the engine.
 
 Digest agreement means that the stored matrices are recomputed bit for bit. The test vectors w and the scalars
 lambda, H come from a floating-point search (LAPACK solves and a bisection); they are recorded but not required to
@@ -17,7 +18,8 @@ agree, because any vector that passes the exact checks gives a valid certificate
 
     python reproduce_engine.py [--runs theorems|all|LABEL,...] [--out DIR] [--nproc N] [--tails DIR] [--l2]
 
-Default: the runs used by Theorems Q9, Q8, Q8-sharp, Q7 and the Q7 addendum, with at most 6 worker processes.
+Default: the seven near sets of Table 5 of the first manuscript and the two dimension-7 runs with tightened forward
+tails (THEOREM_RUNS below), with at most 6 worker processes.
 Measured on a 24-core x86-64 Linux machine with 6 worker processes: see README.md.
 """
 import argparse
@@ -38,9 +40,9 @@ ENGINE_L2 = HERE / "engine_l2"
 PARAMS = json.loads((HERE / "params.json").read_text())
 THEOREM_RUNS = ["R0-d9-246", "R0-d8-246", "R0-d8-82", "R0-d8-46", "R0-d8s-46", "R0-d7a-804", "R0-d7b-804",
                 "R0t-d7a-246", "R0t-d7b-246"]
-# L2 point keys (engine_l2/common.py POINTS) of the instances
-L2_POINT = {"inst1-d9-t7/50": "7/50", "inst1-d8-t3/20": "3/20", "inst2-d8-t3/20": "L1-3/20",
-            "inst2-d8-t31/200": "L1-31/200", "inst3-d7-t3/20": "L1-3/20", "inst3-d7-t31/200": "L1-31/200"}
+# point keys of the directed-rounding program (engine_l2/common.py POINTS) of the instances
+L2_POINT = {"inst1-d9-t7/50": "7/50", "inst1-d8-t3/20": "3/20", "inst2-d8-t3/20": "nc-3/20",
+            "inst2-d8-t31/200": "nc-31/200", "inst3-d7-t3/20": "nc-3/20", "inst3-d7-t31/200": "nc-31/200"}
 L2_ZMAX = {"1/10": 22, "3/25": 28}
 
 
@@ -59,7 +61,7 @@ def log(msg, fh):
 
 
 def start_tails(fs, tails, fh):
-    """Start building the forward-tail caches tt_f{f}.pkl of code base R0t (one background process per f)."""
+    """Start building the forward-tail caches tt_f{f}.pkl of engine/ind_certify_t.py (one background process per f)."""
     nex = PARAMS["engine"]["forward_tails"]["R0t"]["NEX"]
     procs = []
     for f in sorted(fs):
@@ -105,7 +107,7 @@ def export(run, pkl, out):
 
 
 def run_l2(run, out, nproc, fh):
-    """L2 pipeline at the run's instance and near set; returns the path of its output pickle."""
+    """Directed-rounding program at the run's instance and near set; returns the path of its output pickle."""
     I = PARAMS["instances"][run["instance"]]
     fam = PARAMS["engine"]["family"][str(I["d"])]
     d2 = out / "l2"
@@ -127,7 +129,8 @@ def run_l2(run, out, nproc, fh):
 
 
 def compare_l2(l2pkl, r0pkl):
-    """Entrywise comparison of L2 and R0 on the same near set (both upper bounds of the same quantities)."""
+    """Entrywise comparison of the directed-rounding program (keys "L2") and the engine (keys "R0") on the same
+    near set (both upper bounds of the same quantities)."""
     import pickle
     import numpy as np
     L = pickle.load(open(l2pkl, "rb"))
@@ -154,8 +157,8 @@ def main():
     ap.add_argument("--runs", default="theorems", help="'theorems' (default), 'all', or comma-separated labels")
     ap.add_argument("--out", default=None, help="output directory (default: a new temporary directory)")
     ap.add_argument("--nproc", type=int, default=min(6, os.cpu_count() or 1))
-    ap.add_argument("--tails", default=None, help="directory of the R0t tail caches (default: OUT/tails)")
-    ap.add_argument("--l2", action="store_true", help="also rerun the L2 pipeline for the selected R0 runs")
+    ap.add_argument("--tails", default=None, help="directory of the tail caches of engine/ind_certify_t.py (default: OUT/tails)")
+    ap.add_argument("--l2", action="store_true", help="also rerun the directed-rounding program (engine_l2/) for the selected runs of engine/ind_certify.py")
     ap.add_argument("--no-recheck", action="store_true", help="skip the final exact re-check")
     a = ap.parse_args()
     runs = {r["label"]: r for r in PARAMS["runs"]}
@@ -170,7 +173,7 @@ def main():
     T0 = time.time()
     fs = {PARAMS["engine"]["family"][str(PARAMS["instances"][runs[l]["instance"]]["d"])]["f"]
           for l in labels if runs[l]["code_base"] == "R0t"}
-    tail_procs = start_tails(fs, tails, fh)            # built in the background while the R0 runs proceed
+    tail_procs = start_tails(fs, tails, fh)            # built in the background while the other runs proceed
     nproc_r0 = max(1, a.nproc - len(tail_procs))
     summary = []
     for lab in labels:
@@ -202,7 +205,7 @@ def main():
         log(f"{lab}: engine {dt:.0f}s; near data {'IDENTICAL to' if same_near else 'DIFFERENT from'} the stored "
             f"certificate ({h['near_data_sha256'][:16]}); whole payload {'identical' if same_all else 'differs'}; "
             f"recheck_certs {'PASS' if rc == 0 else 'FAIL'}"
-            + (f"; L2 lambda {entry['L2']['lambda_min_L2']:.6f}" if 'L2' in entry else ""), fh)
+            + (f"; directed-rounding lambda {entry['L2']['lambda_min_L2']:.6f}" if 'L2' in entry else ""), fh)
     ok = all(e["near_data_equal_to_stored"] and e["recheck_certs_pass"] for e in summary)
     if not a.no_recheck:
         rc = subprocess.run([sys.executable, str(HERE / "certify_macrostep.py"), "--cert-dir", str(out / "export"),

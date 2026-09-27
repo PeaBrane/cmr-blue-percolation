@@ -1,11 +1,11 @@
 #!/usr/bin/env python3
-"""Code base B: independent rigorous evaluation of the oriented second-moment criterion of global.md
-(Thm 4.5 basic form, and the rho_c refinement of Lemma 3.5), written from the statements of global.md without
-importing its scripts.  All arithmetic is exact rational (fractions.Fraction); no floating point enters a claim.
+"""Local constants of the oriented second-moment criterion (Theorem 4.33 of the first manuscript, basic form, and
+the rho_c refinement of Lemma 4.27): the global part of the second of the two implementations of Section 4.7,
+written from the statements without importing the first implementation.  All arithmetic is exact rational (fractions.Fraction); no floating point enters a claim.
 
-Differences from global.md's implementation (to make this an independent check):
+Differences from the first implementation (../../overlap_revealed/crosscheck/), to make this an independent check:
   * u_k = P(Z_k=0) is computed by a sum over integer PARTITIONS of k (not by polynomial powers);
-  * tbar = tanh K' = (g_K-1)/(g_K+1) exactly (global.md uses the cruder tbar = K');
+  * tbar = tanh K' = (g_K-1)/(g_K+1) exactly (the first implementation uses the cruder tbar = K');
   * exponentials are bounded by Taylor polynomials with explicit remainders; sqrt and pi by rational bounds;
   * the rho_c constant uses the exact identities e^{2K'}=g_K, e^{2M}=g_K^{2d-1}/g_h (only sqrt(g_K) is bounded).
 Inputs per case: d, p (rational lower bound on p_B), g_K = e^{2K'}, g_h = e^{2h} (rationals), xbar (rational,
@@ -131,10 +131,10 @@ def mf_ok(d, gK, gh, xbar):
 def evaluate(d, p, gK, gh, xbar, R=40, green_cache={}):
     p, gK, gh, xbar = Fr(p), Fr(gK), Fr(gh), Fr(xbar)
     out = {}
-    # hypotheses (H1)-(H3):  h<0, 0<=K'<=|h|, 2dK'<1, d>=6
+    # hypotheses (33) of the manuscript:  h<0, 0<=K'<=|h|, 2dK'<1, d>=6
     assert gK >= 1 and gh < 1 and gK * gh <= 1 and gK ** (2 * d) < Fr(2718, 1000) and d >= 6
     assert mf_ok(d, gK, gh, xbar)
-    rho = (1 - xbar) / 2                                   # rho_- (Lemma 3.1)
+    rho = (1 - xbar) / 2                                   # rho_- (Lemma 4.22)
     kappa = (1 - rho) / rho
     t = (gK - 1) / (gK + 1)                                # tanh K' exactly
     alpha = 2 * d * t; assert alpha < 1
@@ -142,7 +142,7 @@ def evaluate(d, p, gK, gh, xbar, R=40, green_cache={}):
     # b(m) and psibar(r); upper bounds are rounded UP to 50 decimals (outward) to keep denominators small
     Mm = 2 * R + 6
     b_exact = [t ** m * Mmax_multinomial(d, m) * Gam(d, t, m) for m in range(Mm + 1)]
-    assert all(b_exact[m + 1] <= qs * b_exact[m] for m in range(Mm))  # consistency with Lemma 3.4(d)
+    assert all(b_exact[m + 1] <= qs * b_exact[m] for m in range(Mm))  # consistency with Lemma 4.26(iv)
     b = [up(x) for x in b_exact]
     btail = lambda S: sum(b[S:]) + b[Mm] * qs / (1 - qs)
     psi = {r: up(sum(b[2 * r - abs(s)] for s in range(-r, r + 1)) + 2 * btail(r + 1)) for r in range(1, R + 1)}
@@ -168,7 +168,7 @@ def evaluate(d, p, gK, gh, xbar, R=40, green_cache={}):
     term2 = (F - Fr(1, d)) / rho
     term3 = T1 / ((1 - eta) * rho)
     score = term1 + term2 + term3
-    # rho_c refinement (Lemma 3.5): c_cov = 2sinh(2K')/(e^{K'}cosh 2M + e^{-K'}cosh 2M')^2, exact up to sqrt(gK)
+    # rho_c refinement (Lemma 4.27): c_cov = 2sinh(2K')/(e^{K'}cosh 2M + e^{-K'}cosh 2M')^2, exact up to sqrt(gK)
     E2M = gK ** (2 * d - 1) / gh                           # e^{2M},  M = |h| + (2d-1)K'
     E2Mp = gK ** (2 * d - 1)                               # e^{2M'}, M' = (2d-1)K'
     ch2M = (E2M + 1 / E2M) / 2; ch2Mp = (E2Mp + 1 / E2Mp) / 2
@@ -183,7 +183,7 @@ def evaluate(d, p, gK, gh, xbar, R=40, green_cache={}):
                score=score, c_cov=c_cov, rho_c=rho_c, score_c=score_c, theta=theta(score), theta_c=theta(score_c))
     return out
 
-CASES = [  # label, d, p, g_K, g_h  (part-1 certified constants; xbar found and verified here)
+CASES = [  # label, d, p, g_K, g_h  (the rows of Table 2 and the uncertified row d10 t=3/25; xbar found and verified here)
     ("d12 t=3/25 headline", 12, Fr(2161, 10000), Fr(102634, 100000), Fr(83527, 100000)),
     ("d12 t=1/8", 12, Fr(2224, 10000), Fr(1028469, 10 ** 6), Fr(407843, 500000)),
     ("d11 t=13/100", 11, Fr(2310, 10000), Fr(6443, 6250), Fr(25553, 31250)),

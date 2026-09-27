@@ -17,6 +17,6 @@ d=5: every configuration has rule designs satisfying the Design Lemma: B 12250, 
   660 labelled plaquettes checked (560 carry keys of two types); 1848890 same-edge key pairs: all incompatible except N-int pairs with arcs at different terminals
   max over labelled P0 of sum_e max_(D at e) W c  /  K_d = 1.000000 (<= 1 required)
   hand constant: log2 K_d = 30.2056 at p in [0.100000, 0.228327]
-  [rev1] bracket "R8": p_lo = 1/10, p_hi = 228327/1000000; log2 K_d = 30.205576
+  bracket "table": p_lo = 1/10, p_hi = 228327/1000000; log2 K_d = 30.205576
   exact bulk max-clique value: 2^29.8624  (hand bound 2^30.2056)
-  [rev1] bracket "R8": exact bulk max-clique value 2^29.862414 <= K_d = 2^30.205576: True
+  bracket "table": exact bulk max-clique value 2^29.862414 <= K_d = 2^30.205576: True

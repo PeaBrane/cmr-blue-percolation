@@ -1,7 +1,7 @@
-"""G Lemma 3.6 (c'_cov, rho'_c) and the least torus size L_* of Lemma 3.6', in exact rational arithmetic.
+"""Lemma 4.28 of the manuscript (c'_cov, rho'_c) and the least torus size L_* of its variant, in exact rational arithmetic.
 
-This is the second implementation of the research notes (noisy-cavity route, research script r1_lemma36_indep.py), written from the
-statement of G Lemma 3.6 without code from code base A. Standard library only.
+This is the second of the two implementations of Lemma 4.28 (Section 4.7), written from the statement of the lemma
+without code from ../crosscheck/covariance.py. Standard library only.
 
     c'_cov = 2 sinh(2K') / ( e^{K'} (1 + E_+ c(U_+)) + e^{-K'} (1 + E_- c(U_-)) )^2,   c(U) = (cosh U - 1)/U^2,
     U_+ = 2(Hb + (2d-1)Kb) >= 2M,   U_- = 2(2d-1)Kb >= 2M',
@@ -17,7 +17,7 @@ Kb >= K' and Hb >= |h| from the atanh series with a geometric remainder; tbar = 
 mbar = the frozen xbar, which passes the exact root test; c(U) bounded by its power series with a geometric
 remainder.
 
-Lemma 3.6 needs 2d Kb <= 35/100 (and L >= 40). Lemma 3.6' replaces this by L >= L_*, where L_* >= 4 is an integer
+Lemma 4.28 needs 2d Kb <= 35/100 (and L >= 40). Its variant replaces this by L >= L_*, where L_* >= 4 is an integer
 with abar^(L_*-3)/(1-abar) <= 10^-15 for a rational abar >= 2d tanh K', abar < 1; least_Lstar returns the least one.
 """
 from fractions import Fraction as Fr
@@ -74,7 +74,7 @@ def least_Lstar(abar):
 
 
 def lemma36(d, gK, gh, mbar):
-    """Lower bound on c'_cov (G Lemma 3.6(ii)) and the auxiliary quantities."""
+    """Lower bound on c'_cov (Lemma 4.28) and the auxiliary quantities."""
     gK, gh, mbar = Fr(gK), Fr(gh), Fr(mbar)
     n1 = 2 * d - 1
     Kb = atanh_hi((gK - 1) / (gK + 1))

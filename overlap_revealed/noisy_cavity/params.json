@@ -1,5 +1,5 @@
 {
- "description": "Frozen exact inputs of the second d = 9 proof (oriented engine of the overlap-revealed route with the noisy-cavity local inputs of Lemmas N, P, S). The local certificate data (psi_U(x), wc', Holley tangent points) are in data/CERT_DATA_d9.json.",
+ "description": "Frozen exact inputs of the rows of Table 3 of the first manuscript (oriented engine of the overlap-revealed route with the noisy-cavity local inputs of Section 4.4: Lemmas 4.15, 4.19 and 4.20). The local certificate data (psi_U(x), wc', Holley tangent points) are in data/CERT_DATA_d9.json.",
  "rows": [
   {
    "label": "t=3/20",
@@ -10,7 +10,7 @@
    "g_h": "831941/1000000",
    "xbar": "1387291/10000000",
    "score_used": "score_c",
-   "theorem": "Q9"
+   "theorem": "Table3-row3"
   },
   {
    "label": "t=29/200",
@@ -21,7 +21,7 @@
    "g_h": "53049/62500",
    "xbar": "1201617/10000000",
    "score_used": "score_c",
-   "theorem": "Q9'"
+   "theorem": "Table3-row2"
   },
   {
    "label": "t=31/200",
@@ -32,7 +32,7 @@
    "g_h": "101831/125000",
    "xbar": "199063/1250000",
    "score_used": "score_c",
-   "theorem": "Q9'"
+   "theorem": "Table3-row4"
   },
   {
    "label": "t=4/25",
@@ -43,7 +43,7 @@
    "g_h": "99531/125000",
    "xbar": "228091/1250000",
    "score_used": "score_c",
-   "theorem": "Q9'"
+   "theorem": "Table3-row5"
   },
   {
    "label": "t=7/50",
@@ -54,7 +54,7 @@
    "g_h": "864557/1000000",
    "xbar": "1037761/10000000",
    "score_used": "score_c_prime",
-   "theorem": "Q9'"
+   "theorem": "Table3-row1"
   }
  ],
  "displays": [
@@ -63,1086 +63,1086 @@
    "quantity": "noisy_witness_beta_c",
    "direction": "upper",
    "value": "0.254658477",
-   "source": "noisy-cavity write-up Sec. 7.1 table"
+   "source": "Section 4.7, local inputs of the rows of Table 3 (largest class sums and smallest class values); the witness values are reference values"
   },
   {
    "scope": "t=7/50",
    "quantity": "p_over_noisy_witness",
    "direction": "lower",
    "value": "0.998985",
-   "source": "noisy-cavity write-up Sec. 7.1 table"
+   "source": "Section 4.7, local inputs of the rows of Table 3 (largest class sums and smallest class values); the witness values are reference values"
   },
   {
    "scope": "t=7/50",
    "quantity": "plain_witness",
    "direction": "upper",
    "value": "0.254251467",
-   "source": "noisy-cavity write-up Sec. 7.1 table"
+   "source": "Section 4.7, local inputs of the rows of Table 3 (largest class sums and smallest class values); the witness values are reference values"
   },
   {
    "scope": "t=7/50",
    "quantity": "max_Psi",
    "direction": "upper",
    "value": "-54.61",
-   "source": "noisy-cavity write-up Sec. 7.1 table"
+   "source": "Section 4.7, local inputs of the rows of Table 3 (largest class sums and smallest class values); the witness values are reference values"
   },
   {
    "scope": "t=7/50",
    "quantity": "min_gamma",
    "direction": "lower",
    "value": "0.0000909",
-   "source": "noisy-cavity write-up Sec. 7.1 table"
+   "source": "Section 4.7, local inputs of the rows of Table 3 (largest class sums and smallest class values); the witness values are reference values"
   },
   {
    "scope": "t=29/200",
    "quantity": "noisy_witness_beta_c",
    "direction": "upper",
    "value": "0.261947866",
-   "source": "noisy-cavity write-up Sec. 7.1 table"
+   "source": "Section 4.7, local inputs of the rows of Table 3 (largest class sums and smallest class values); the witness values are reference values"
   },
   {
    "scope": "t=29/200",
    "quantity": "p_over_noisy_witness",
    "direction": "lower",
    "value": "0.999435",
-   "source": "noisy-cavity write-up Sec. 7.1 table"
+   "source": "Section 4.7, local inputs of the rows of Table 3 (largest class sums and smallest class values); the witness values are reference values"
   },
   {
    "scope": "t=29/200",
    "quantity": "plain_witness",
    "direction": "upper",
    "value": "0.261577750",
-   "source": "noisy-cavity write-up Sec. 7.1 table"
+   "source": "Section 4.7, local inputs of the rows of Table 3 (largest class sums and smallest class values); the witness values are reference values"
   },
   {
    "scope": "t=29/200",
    "quantity": "max_Psi",
    "direction": "upper",
    "value": "-30.89",
-   "source": "noisy-cavity write-up Sec. 7.1 table"
+   "source": "Section 4.7, local inputs of the rows of Table 3 (largest class sums and smallest class values); the witness values are reference values"
   },
   {
    "scope": "t=29/200",
    "quantity": "min_gamma",
    "direction": "lower",
    "value": "0.0000740",
-   "source": "noisy-cavity write-up Sec. 7.1 table"
+   "source": "Section 4.7, local inputs of the rows of Table 3 (largest class sums and smallest class values); the witness values are reference values"
   },
   {
    "scope": "t=3/20",
    "quantity": "noisy_witness_beta_c",
    "direction": "upper",
    "value": "0.269100673",
-   "source": "noisy-cavity write-up Sec. 7.1 table"
+   "source": "Section 4.7, local inputs of the rows of Table 3 (largest class sums and smallest class values); the witness values are reference values"
   },
   {
    "scope": "t=3/20",
    "quantity": "p_over_noisy_witness",
    "direction": "lower",
    "value": "0.999254",
-   "source": "noisy-cavity write-up Sec. 7.1 table"
+   "source": "Section 4.7, local inputs of the rows of Table 3 (largest class sums and smallest class values); the witness values are reference values"
   },
   {
    "scope": "t=3/20",
    "quantity": "plain_witness",
    "direction": "upper",
    "value": "0.268765673",
-   "source": "noisy-cavity write-up Sec. 7.1 table"
+   "source": "Section 4.7, local inputs of the rows of Table 3 (largest class sums and smallest class values); the witness values are reference values"
   },
   {
    "scope": "t=3/20",
    "quantity": "max_Psi",
    "direction": "upper",
    "value": "-41.55",
-   "source": "noisy-cavity write-up Sec. 7.1 table"
+   "source": "Section 4.7, local inputs of the rows of Table 3 (largest class sums and smallest class values); the witness values are reference values"
   },
   {
    "scope": "t=3/20",
    "quantity": "min_gamma",
    "direction": "lower",
    "value": "0.0000860",
-   "source": "noisy-cavity write-up Sec. 7.1 table"
+   "source": "Section 4.7, local inputs of the rows of Table 3 (largest class sums and smallest class values); the witness values are reference values"
   },
   {
    "scope": "t=31/200",
    "quantity": "noisy_witness_beta_c",
    "direction": "upper",
    "value": "0.276118662",
-   "source": "noisy-cavity write-up Sec. 7.1 table"
+   "source": "Section 4.7, local inputs of the rows of Table 3 (largest class sums and smallest class values); the witness values are reference values"
   },
   {
    "scope": "t=31/200",
    "quantity": "p_over_noisy_witness",
    "direction": "lower",
    "value": "0.999208",
-   "source": "noisy-cavity write-up Sec. 7.1 table"
+   "source": "Section 4.7, local inputs of the rows of Table 3 (largest class sums and smallest class values); the witness values are reference values"
   },
   {
    "scope": "t=31/200",
    "quantity": "plain_witness",
    "direction": "upper",
    "value": "0.275816740",
-   "source": "noisy-cavity write-up Sec. 7.1 table"
+   "source": "Section 4.7, local inputs of the rows of Table 3 (largest class sums and smallest class values); the witness values are reference values"
   },
   {
    "scope": "t=31/200",
    "quantity": "max_Psi",
    "direction": "upper",
    "value": "-43.99",
-   "source": "noisy-cavity write-up Sec. 7.1 table"
+   "source": "Section 4.7, local inputs of the rows of Table 3 (largest class sums and smallest class values); the witness values are reference values"
   },
   {
    "scope": "t=31/200",
    "quantity": "min_gamma",
    "direction": "lower",
    "value": "0.0000828",
-   "source": "noisy-cavity write-up Sec. 7.1 table"
+   "source": "Section 4.7, local inputs of the rows of Table 3 (largest class sums and smallest class values); the witness values are reference values"
   },
   {
    "scope": "t=4/25",
    "quantity": "noisy_witness_beta_c",
    "direction": "upper",
    "value": "0.283003656",
-   "source": "noisy-cavity write-up Sec. 7.1 table"
+   "source": "Section 4.7, local inputs of the rows of Table 3 (largest class sums and smallest class values); the witness values are reference values"
   },
   {
    "scope": "t=4/25",
    "quantity": "p_over_noisy_witness",
    "direction": "lower",
    "value": "0.999280",
-   "source": "noisy-cavity write-up Sec. 7.1 table"
+   "source": "Section 4.7, local inputs of the rows of Table 3 (largest class sums and smallest class values); the witness values are reference values"
   },
   {
    "scope": "t=4/25",
    "quantity": "plain_witness",
    "direction": "upper",
    "value": "0.282732613",
-   "source": "noisy-cavity write-up Sec. 7.1 table"
+   "source": "Section 4.7, local inputs of the rows of Table 3 (largest class sums and smallest class values); the witness values are reference values"
   },
   {
    "scope": "t=4/25",
    "quantity": "max_Psi",
    "direction": "upper",
    "value": "-28.83",
-   "source": "noisy-cavity write-up Sec. 7.1 table"
+   "source": "Section 4.7, local inputs of the rows of Table 3 (largest class sums and smallest class values); the witness values are reference values"
   },
   {
    "scope": "t=4/25",
    "quantity": "min_gamma",
    "direction": "lower",
    "value": "0.0000821",
-   "source": "noisy-cavity write-up Sec. 7.1 table"
+   "source": "Section 4.7, local inputs of the rows of Table 3 (largest class sums and smallest class values); the witness values are reference values"
   },
   {
    "scope": "t=7/50",
    "quantity": "rho_minus",
    "direction": "lower",
    "value": "0.4481119",
-   "source": "noisy-cavity write-up Sec. 7.2 table"
+   "source": "Table 3 and Section 4.7 of the first manuscript; kappa, alpha, 2dK', the basic Score and the remaining Score'_c and theta' entries are reference values"
   },
   {
    "scope": "t=7/50",
    "quantity": "kappa",
    "direction": "upper",
    "value": "1.231586",
-   "source": "noisy-cavity write-up Sec. 7.2 table"
+   "source": "Table 3 and Section 4.7 of the first manuscript; kappa, alpha, 2dK', the basic Score and the remaining Score'_c and theta' entries are reference values"
   },
   {
    "scope": "t=7/50",
    "quantity": "alpha",
    "direction": "upper",
    "value": "0.302373",
-   "source": "noisy-cavity write-up Sec. 7.2 table"
+   "source": "Table 3 and Section 4.7 of the first manuscript; kappa, alpha, 2dK', the basic Score and the remaining Score'_c and theta' entries are reference values"
   },
   {
    "scope": "t=7/50",
    "quantity": "two_d_Kprime",
    "direction": "upper",
    "value": "0.302402",
-   "source": "noisy-cavity write-up Sec. 7.2 table"
+   "source": "Table 3 and Section 4.7 of the first manuscript; kappa, alpha, 2dK', the basic Score and the remaining Score'_c and theta' entries are reference values"
   },
   {
    "scope": "t=7/50",
    "quantity": "eta_prime",
    "direction": "upper",
    "value": "0.2244019",
-   "source": "noisy-cavity write-up Sec. 7.2 table"
+   "source": "Table 3 and Section 4.7 of the first manuscript; kappa, alpha, 2dK', the basic Score and the remaining Score'_c and theta' entries are reference values"
   },
   {
    "scope": "t=7/50",
    "quantity": "score",
    "direction": "upper",
    "value": "1.0168791",
-   "source": "noisy-cavity write-up Sec. 7.2 table"
+   "source": "Table 3 and Section 4.7 of the first manuscript; kappa, alpha, 2dK', the basic Score and the remaining Score'_c and theta' entries are reference values"
   },
   {
    "scope": "t=7/50",
    "quantity": "score_c",
    "direction": "upper",
    "value": "1.0033446",
-   "source": "noisy-cavity write-up Sec. 7.2 table"
+   "source": "Table 3 and Section 4.7 of the first manuscript; kappa, alpha, 2dK', the basic Score and the remaining Score'_c and theta' entries are reference values"
   },
   {
    "scope": "t=7/50",
    "quantity": "score_c_prime",
    "direction": "upper",
    "value": "0.9975456",
-   "source": "noisy-cavity write-up Sec. 7.2 table"
+   "source": "Table 3 and Section 4.7 of the first manuscript; kappa, alpha, 2dK', the basic Score and the remaining Score'_c and theta' entries are reference values"
   },
   {
    "scope": "t=7/50",
    "quantity": "theta_prime",
    "direction": "lower",
    "value": "0.000950",
-   "source": "noisy-cavity write-up Sec. 7.2 table"
+   "source": "Table 3 and Section 4.7 of the first manuscript; kappa, alpha, 2dK', the basic Score and the remaining Score'_c and theta' entries are reference values"
   },
   {
    "scope": "t=29/200",
    "quantity": "rho_minus",
    "direction": "lower",
    "value": "0.4399191",
-   "source": "noisy-cavity write-up Sec. 7.2 table"
+   "source": "Table 3 and Section 4.7 of the first manuscript; kappa, alpha, 2dK', the basic Score and the remaining Score'_c and theta' entries are reference values"
   },
   {
    "scope": "t=29/200",
    "quantity": "kappa",
    "direction": "upper",
    "value": "1.273145",
-   "source": "noisy-cavity write-up Sec. 7.2 table"
+   "source": "Table 3 and Section 4.7 of the first manuscript; kappa, alpha, 2dK', the basic Score and the remaining Score'_c and theta' entries are reference values"
   },
   {
    "scope": "t=29/200",
    "quantity": "alpha",
    "direction": "upper",
    "value": "0.322613",
-   "source": "noisy-cavity write-up Sec. 7.2 table"
+   "source": "Table 3 and Section 4.7 of the first manuscript; kappa, alpha, 2dK', the basic Score and the remaining Score'_c and theta' entries are reference values"
   },
   {
    "scope": "t=29/200",
    "quantity": "two_d_Kprime",
    "direction": "upper",
    "value": "0.322647",
-   "source": "noisy-cavity write-up Sec. 7.2 table"
+   "source": "Table 3 and Section 4.7 of the first manuscript; kappa, alpha, 2dK', the basic Score and the remaining Score'_c and theta' entries are reference values"
   },
   {
    "scope": "t=29/200",
    "quantity": "eta_prime",
    "direction": "upper",
    "value": "0.2538402",
-   "source": "noisy-cavity write-up Sec. 7.2 table"
+   "source": "Table 3 and Section 4.7 of the first manuscript; kappa, alpha, 2dK', the basic Score and the remaining Score'_c and theta' entries are reference values"
   },
   {
    "scope": "t=29/200",
    "quantity": "score",
    "direction": "upper",
    "value": "1.0085141",
-   "source": "noisy-cavity write-up Sec. 7.2 table"
+   "source": "Table 3 and Section 4.7 of the first manuscript; kappa, alpha, 2dK', the basic Score and the remaining Score'_c and theta' entries are reference values"
   },
   {
    "scope": "t=29/200",
    "quantity": "score_c",
    "direction": "upper",
    "value": "0.9945159",
-   "source": "noisy-cavity write-up Sec. 7.2 table"
+   "source": "Table 3 and Section 4.7 of the first manuscript; kappa, alpha, 2dK', the basic Score and the remaining Score'_c and theta' entries are reference values"
   },
   {
    "scope": "t=29/200",
    "quantity": "score_c_prime",
    "direction": "upper",
    "value": "0.9875702",
-   "source": "noisy-cavity write-up Sec. 7.2 table"
+   "source": "Table 3 and Section 4.7 of the first manuscript; kappa, alpha, 2dK', the basic Score and the remaining Score'_c and theta' entries are reference values"
   },
   {
    "scope": "t=29/200",
    "quantity": "theta_prime",
    "direction": "lower",
    "value": "0.004544",
-   "source": "noisy-cavity write-up Sec. 7.2 table"
+   "source": "Table 3 and Section 4.7 of the first manuscript; kappa, alpha, 2dK', the basic Score and the remaining Score'_c and theta' entries are reference values"
   },
   {
    "scope": "t=29/200",
    "quantity": "theta_star",
    "direction": "lower",
    "value": "0.002004",
-   "source": "noisy-cavity write-up Sec. 7.2 table"
+   "source": "Table 3 and Section 4.7 of the first manuscript; kappa, alpha, 2dK', the basic Score and the remaining Score'_c and theta' entries are reference values"
   },
   {
    "scope": "t=3/20",
    "quantity": "rho_minus",
    "direction": "lower",
    "value": "0.4306354",
-   "source": "noisy-cavity write-up Sec. 7.2 table"
+   "source": "Table 3 and Section 4.7 of the first manuscript; kappa, alpha, 2dK', the basic Score and the remaining Score'_c and theta' entries are reference values"
   },
   {
    "scope": "t=3/20",
    "quantity": "kappa",
    "direction": "upper",
    "value": "1.322150",
-   "source": "noisy-cavity write-up Sec. 7.2 table"
+   "source": "Table 3 and Section 4.7 of the first manuscript; kappa, alpha, 2dK', the basic Score and the remaining Score'_c and theta' entries are reference values"
   },
   {
    "scope": "t=3/20",
    "quantity": "alpha",
    "direction": "upper",
    "value": "0.343308",
-   "source": "noisy-cavity write-up Sec. 7.2 table"
+   "source": "Table 3 and Section 4.7 of the first manuscript; kappa, alpha, 2dK', the basic Score and the remaining Score'_c and theta' entries are reference values"
   },
   {
    "scope": "t=3/20",
    "quantity": "two_d_Kprime",
    "direction": "upper",
    "value": "0.343350",
-   "source": "noisy-cavity write-up Sec. 7.2 table"
+   "source": "Table 3 and Section 4.7 of the first manuscript; kappa, alpha, 2dK', the basic Score and the remaining Score'_c and theta' entries are reference values"
   },
   {
    "scope": "t=3/20",
    "quantity": "eta_prime",
    "direction": "upper",
    "value": "0.2886861",
-   "source": "noisy-cavity write-up Sec. 7.2 table"
+   "source": "Table 3 and Section 4.7 of the first manuscript; kappa, alpha, 2dK', the basic Score and the remaining Score'_c and theta' entries are reference values"
   },
   {
    "scope": "t=3/20",
    "quantity": "score",
    "direction": "upper",
    "value": "1.0052129",
-   "source": "noisy-cavity write-up Sec. 7.2 table"
+   "source": "Table 3 and Section 4.7 of the first manuscript; kappa, alpha, 2dK', the basic Score and the remaining Score'_c and theta' entries are reference values"
   },
   {
    "scope": "t=3/20",
    "quantity": "score_c",
    "direction": "upper",
    "value": "0.9906982",
-   "source": "noisy-cavity write-up Sec. 7.2 table"
+   "source": "Table 3 and Section 4.7 of the first manuscript; kappa, alpha, 2dK', the basic Score and the remaining Score'_c and theta' entries are reference values"
   },
   {
    "scope": "t=3/20",
    "quantity": "score_c_prime",
    "direction": "upper",
    "value": "0.9824125",
-   "source": "noisy-cavity write-up Sec. 7.2 table"
+   "source": "Table 3 and Section 4.7 of the first manuscript; kappa, alpha, 2dK', the basic Score and the remaining Score'_c and theta' entries are reference values"
   },
   {
    "scope": "t=3/20",
    "quantity": "theta_prime",
    "direction": "lower",
    "value": "0.006000",
-   "source": "noisy-cavity write-up Sec. 7.2 table"
+   "source": "Table 3 and Section 4.7 of the first manuscript; kappa, alpha, 2dK', the basic Score and the remaining Score'_c and theta' entries are reference values"
   },
   {
    "scope": "t=3/20",
    "quantity": "theta_star",
    "direction": "lower",
    "value": "0.003173",
-   "source": "noisy-cavity write-up Sec. 7.2 table"
+   "source": "Table 3 and Section 4.7 of the first manuscript; kappa, alpha, 2dK', the basic Score and the remaining Score'_c and theta' entries are reference values"
   },
   {
    "scope": "t=31/200",
    "quantity": "rho_minus",
    "direction": "lower",
    "value": "0.4203748",
-   "source": "noisy-cavity write-up Sec. 7.2 table"
+   "source": "Table 3 and Section 4.7 of the first manuscript; kappa, alpha, 2dK', the basic Score and the remaining Score'_c and theta' entries are reference values"
   },
   {
    "scope": "t=31/200",
    "quantity": "kappa",
    "direction": "upper",
    "value": "1.378830",
-   "source": "noisy-cavity write-up Sec. 7.2 table"
+   "source": "Table 3 and Section 4.7 of the first manuscript; kappa, alpha, 2dK', the basic Score and the remaining Score'_c and theta' entries are reference values"
   },
   {
    "scope": "t=31/200",
    "quantity": "alpha",
    "direction": "upper",
    "value": "0.364897",
-   "source": "noisy-cavity write-up Sec. 7.2 table"
+   "source": "Table 3 and Section 4.7 of the first manuscript; kappa, alpha, 2dK', the basic Score and the remaining Score'_c and theta' entries are reference values"
   },
   {
    "scope": "t=31/200",
    "quantity": "two_d_Kprime",
    "direction": "upper",
    "value": "0.364947",
-   "source": "noisy-cavity write-up Sec. 7.2 table"
+   "source": "Table 3 and Section 4.7 of the first manuscript; kappa, alpha, 2dK', the basic Score and the remaining Score'_c and theta' entries are reference values"
   },
   {
    "scope": "t=31/200",
    "quantity": "eta_prime",
    "direction": "upper",
    "value": "0.3309161",
-   "source": "noisy-cavity write-up Sec. 7.2 table"
+   "source": "Table 3 and Section 4.7 of the first manuscript; kappa, alpha, 2dK', the basic Score and the remaining Score'_c and theta' entries are reference values"
   },
   {
    "scope": "t=31/200",
    "quantity": "score",
    "direction": "upper",
    "value": "1.0061294",
-   "source": "noisy-cavity write-up Sec. 7.2 table"
+   "source": "Table 3 and Section 4.7 of the first manuscript; kappa, alpha, 2dK', the basic Score and the remaining Score'_c and theta' entries are reference values"
   },
   {
    "scope": "t=31/200",
    "quantity": "score_c",
    "direction": "upper",
    "value": "0.9910479",
-   "source": "noisy-cavity write-up Sec. 7.2 table"
+   "source": "Table 3 and Section 4.7 of the first manuscript; kappa, alpha, 2dK', the basic Score and the remaining Score'_c and theta' entries are reference values"
   },
   {
    "scope": "t=31/200",
    "quantity": "score_c_prime",
    "direction": "upper",
    "value": "0.9811929",
-   "source": "noisy-cavity write-up Sec. 7.2 table"
+   "source": "Table 3 and Section 4.7 of the first manuscript; kappa, alpha, 2dK', the basic Score and the remaining Score'_c and theta' entries are reference values"
   },
   {
    "scope": "t=31/200",
    "quantity": "theta_prime",
    "direction": "lower",
    "value": "0.005891",
-   "source": "noisy-cavity write-up Sec. 7.2 table"
+   "source": "Table 3 and Section 4.7 of the first manuscript; kappa, alpha, 2dK', the basic Score and the remaining Score'_c and theta' entries are reference values"
   },
   {
    "scope": "t=31/200",
    "quantity": "theta_star",
    "direction": "lower",
    "value": "0.002804",
-   "source": "noisy-cavity write-up Sec. 7.2 table"
+   "source": "Table 3 and Section 4.7 of the first manuscript; kappa, alpha, 2dK', the basic Score and the remaining Score'_c and theta' entries are reference values"
   },
   {
    "scope": "t=4/25",
    "quantity": "rho_minus",
    "direction": "lower",
    "value": "0.4087636",
-   "source": "noisy-cavity write-up Sec. 7.2 table"
+   "source": "Table 3 and Section 4.7 of the first manuscript; kappa, alpha, 2dK', the basic Score and the remaining Score'_c and theta' entries are reference values"
   },
   {
    "scope": "t=4/25",
    "quantity": "kappa",
    "direction": "upper",
    "value": "1.446402",
-   "source": "noisy-cavity write-up Sec. 7.2 table"
+   "source": "Table 3 and Section 4.7 of the first manuscript; kappa, alpha, 2dK', the basic Score and the remaining Score'_c and theta' entries are reference values"
   },
   {
    "scope": "t=4/25",
    "quantity": "alpha",
    "direction": "upper",
    "value": "0.386942",
-   "source": "noisy-cavity write-up Sec. 7.2 table"
+   "source": "Table 3 and Section 4.7 of the first manuscript; kappa, alpha, 2dK', the basic Score and the remaining Score'_c and theta' entries are reference values"
   },
   {
    "scope": "t=4/25",
    "quantity": "two_d_Kprime",
    "direction": "upper",
    "value": "0.387001",
-   "source": "noisy-cavity write-up Sec. 7.2 table"
+   "source": "Table 3 and Section 4.7 of the first manuscript; kappa, alpha, 2dK', the basic Score and the remaining Score'_c and theta' entries are reference values"
   },
   {
    "scope": "t=4/25",
    "quantity": "eta_prime",
    "direction": "upper",
    "value": "0.3827874",
-   "source": "noisy-cavity write-up Sec. 7.2 table"
+   "source": "Table 3 and Section 4.7 of the first manuscript; kappa, alpha, 2dK', the basic Score and the remaining Score'_c and theta' entries are reference values"
   },
   {
    "scope": "t=4/25",
    "quantity": "score",
    "direction": "upper",
    "value": "1.0125371",
-   "source": "noisy-cavity write-up Sec. 7.2 table"
+   "source": "Table 3 and Section 4.7 of the first manuscript; kappa, alpha, 2dK', the basic Score and the remaining Score'_c and theta' entries are reference values"
   },
   {
    "scope": "t=4/25",
    "quantity": "score_c",
    "direction": "upper",
    "value": "0.9967978",
-   "source": "noisy-cavity write-up Sec. 7.2 table"
+   "source": "Table 3 and Section 4.7 of the first manuscript; kappa, alpha, 2dK', the basic Score and the remaining Score'_c and theta' entries are reference values"
   },
   {
    "scope": "t=4/25",
    "quantity": "score_c_prime",
    "direction": "upper",
    "value": "0.9851155",
-   "source": "noisy-cavity write-up Sec. 7.2 table"
+   "source": "Table 3 and Section 4.7 of the first manuscript; kappa, alpha, 2dK', the basic Score and the remaining Score'_c and theta' entries are reference values"
   },
   {
    "scope": "t=4/25",
    "quantity": "theta_prime",
    "direction": "lower",
    "value": "0.004182",
-   "source": "noisy-cavity write-up Sec. 7.2 table"
+   "source": "Table 3 and Section 4.7 of the first manuscript; kappa, alpha, 2dK', the basic Score and the remaining Score'_c and theta' entries are reference values"
   },
   {
    "scope": "t=4/25",
    "quantity": "theta_star",
    "direction": "lower",
    "value": "0.000899",
-   "source": "noisy-cavity write-up Sec. 7.2 table"
+   "source": "Table 3 and Section 4.7 of the first manuscript; kappa, alpha, 2dK', the basic Score and the remaining Score'_c and theta' entries are reference values"
   },
   {
    "scope": "t=7/50",
    "quantity": "score",
    "direction": "lower",
    "value": "1.0168",
-   "source": "noisy-cavity write-up Sec. 7.2 (basic Score > 1: not certified)"
+   "source": "caption of Table 3: the basic score S exceeds 1 in every row"
   },
   {
    "scope": "t=29/200",
    "quantity": "score",
    "direction": "lower",
    "value": "1.0085",
-   "source": "noisy-cavity write-up Sec. 7.2 (basic Score > 1: not certified)"
+   "source": "caption of Table 3: the basic score S exceeds 1 in every row"
   },
   {
    "scope": "t=3/20",
    "quantity": "score",
    "direction": "lower",
    "value": "1.0052",
-   "source": "noisy-cavity write-up Sec. 7.2 (basic Score > 1: not certified)"
+   "source": "caption of Table 3: the basic score S exceeds 1 in every row"
   },
   {
    "scope": "t=31/200",
    "quantity": "score",
    "direction": "lower",
    "value": "1.0061",
-   "source": "noisy-cavity write-up Sec. 7.2 (basic Score > 1: not certified)"
+   "source": "caption of Table 3: the basic score S exceeds 1 in every row"
   },
   {
    "scope": "t=4/25",
    "quantity": "score",
    "direction": "lower",
    "value": "1.0125",
-   "source": "noisy-cavity write-up Sec. 7.2 (basic Score > 1: not certified)"
+   "source": "caption of Table 3: the basic score S exceeds 1 in every row"
   },
   {
    "scope": "t=7/50",
    "quantity": "score_c",
    "direction": "lower",
    "value": "1.0033",
-   "source": "noisy-cavity write-up Sec. 7.2 (Score_c > 1 at t = 7/50)"
+   "source": "Table 3: Score_c > 1 at t = 7/50"
   },
   {
    "scope": "t=7/50",
    "quantity": "c_cov_prime",
    "direction": "lower",
    "value": "0.01625507",
-   "source": "noisy-cavity write-up Sec. 7.2, second-implementation table"
+   "source": "second implementation of Lemma 4.28 (lemma36.py); reference values"
   },
   {
    "scope": "t=7/50",
    "quantity": "rho_c_prime",
    "direction": "lower",
    "value": "0.45718059",
-   "source": "noisy-cavity write-up Sec. 7.2, second-implementation table"
+   "source": "second implementation of Lemma 4.28 (lemma36.py); reference values"
   },
   {
    "scope": "t=29/200",
    "quantity": "c_cov_prime",
    "direction": "lower",
    "value": "0.01717826",
-   "source": "noisy-cavity write-up Sec. 7.2, second-implementation table"
+   "source": "second implementation of Lemma 4.28 (lemma36.py); reference values"
   },
   {
    "scope": "t=29/200",
    "quantity": "rho_c_prime",
    "direction": "lower",
    "value": "0.44968132",
-   "source": "noisy-cavity write-up Sec. 7.2, second-implementation table"
+   "source": "second implementation of Lemma 4.28 (lemma36.py); reference values"
   },
   {
    "scope": "t=3/20",
    "quantity": "c_cov_prime",
    "direction": "lower",
    "value": "0.01805547",
-   "source": "noisy-cavity write-up Sec. 7.2, second-implementation table"
+   "source": "second implementation of Lemma 4.28 (lemma36.py); reference values"
   },
   {
    "scope": "t=3/20",
    "quantity": "rho_c_prime",
    "direction": "lower",
    "value": "0.44111732",
-   "source": "noisy-cavity write-up Sec. 7.2, second-implementation table"
+   "source": "second implementation of Lemma 4.28 (lemma36.py); reference values"
   },
   {
    "scope": "t=31/200",
    "quantity": "c_cov_prime",
    "direction": "lower",
    "value": "0.01889100",
-   "source": "noisy-cavity write-up Sec. 7.2, second-implementation table"
+   "source": "second implementation of Lemma 4.28 (lemma36.py); reference values"
   },
   {
    "scope": "t=31/200",
    "quantity": "rho_c_prime",
    "direction": "lower",
    "value": "0.43160942",
-   "source": "noisy-cavity write-up Sec. 7.2, second-implementation table"
+   "source": "second implementation of Lemma 4.28 (lemma36.py); reference values"
   },
   {
    "scope": "t=4/25",
    "quantity": "c_cov_prime",
    "direction": "lower",
    "value": "0.01962741",
-   "source": "noisy-cavity write-up Sec. 7.2, second-implementation table"
+   "source": "second implementation of Lemma 4.28 (lemma36.py); reference values"
   },
   {
    "scope": "t=4/25",
    "quantity": "rho_c_prime",
    "direction": "lower",
    "value": "0.42076773",
-   "source": "noisy-cavity write-up Sec. 7.2, second-implementation table"
+   "source": "second implementation of Lemma 4.28 (lemma36.py); reference values"
   },
   {
    "scope": "t=31/200",
    "quantity": "least_Lstar",
    "direction": "exact",
    "value": "38",
-   "source": "noisy-cavity write-up Sec. 3.4"
+   "source": "least torus size L_* of the variant of Lemma 4.28 for 2dK' > 35/100; reference values"
   },
   {
    "scope": "t=4/25",
    "quantity": "least_Lstar",
    "direction": "exact",
    "value": "40",
-   "source": "noisy-cavity write-up Sec. 3.4"
+   "source": "least torus size L_* of the variant of Lemma 4.28 for 2dK' > 35/100; reference values"
   },
   {
    "scope": "t=31/200",
    "quantity": "least_Lstar_alpha",
    "direction": "exact",
    "value": "38",
-   "source": "noisy-cavity write-up Sec. 3.4"
+   "source": "least torus size L_* of the variant of Lemma 4.28 for 2dK' > 35/100; reference values"
   },
   {
    "scope": "t=4/25",
    "quantity": "least_Lstar_alpha",
    "direction": "exact",
    "value": "40",
-   "source": "noisy-cavity write-up Sec. 3.4"
+   "source": "least torus size L_* of the variant of Lemma 4.28 for 2dK' > 35/100; reference values"
   },
   {
    "scope": "t=3/20",
    "quantity": "Kprime_lo",
    "direction": "lower",
    "value": "0.019074973",
-   "source": "noisy-cavity write-up Sec. 2 (Theorem Q9)"
+   "source": "enclosures of K' and |h| at t = 3/20; reference values"
   },
   {
    "scope": "t=3/20",
    "quantity": "Kprime_hi",
    "direction": "upper",
    "value": "0.019074974",
-   "source": "noisy-cavity write-up Sec. 2 (Theorem Q9)"
+   "source": "enclosures of K' and |h| at t = 3/20; reference values"
   },
   {
    "scope": "t=3/20",
    "quantity": "abs_h_lo",
    "direction": "lower",
    "value": "0.091996877",
-   "source": "noisy-cavity write-up Sec. 2 (Theorem Q9)"
+   "source": "enclosures of K' and |h| at t = 3/20; reference values"
   },
   {
    "scope": "t=3/20",
    "quantity": "abs_h_hi",
    "direction": "upper",
    "value": "0.091996878",
-   "source": "noisy-cavity write-up Sec. 2 (Theorem Q9)"
+   "source": "enclosures of K' and |h| at t = 3/20; reference values"
   },
   {
    "scope": "t=3/20",
    "quantity": "margin_c",
    "direction": "lower",
    "value": "0.0093",
-   "source": "noisy-cavity write-up Sec. 2 Remark 1"
+   "source": "Section 4.7 (margin 1 - Score_c at t = 3/20); the margin with Score'_c is a reference value"
   },
   {
    "scope": "t=3/20",
    "quantity": "margin_c_prime",
    "direction": "lower",
    "value": "0.0175",
-   "source": "noisy-cavity write-up Sec. 2 Remark 1"
+   "source": "Section 4.7 (margin 1 - Score_c at t = 3/20); the margin with Score'_c is a reference value"
   },
   {
    "scope": "t=3/20",
    "quantity": "term1",
    "direction": "upper",
    "value": "0.9595264",
-   "source": "noisy-cavity write-up Sec. 7.2, components at t = 3/20"
+   "source": "Section 4.7: the three terms of Score_c and 9 rho_c p at t = 3/20; the other components are reference values"
   },
   {
    "scope": "t=3/20",
    "quantity": "term1_c",
    "direction": "upper",
    "value": "0.9450117",
-   "source": "noisy-cavity write-up Sec. 7.2, components at t = 3/20"
+   "source": "Section 4.7: the three terms of Score_c and 9 rho_c p at t = 3/20; the other components are reference values"
   },
   {
    "scope": "t=3/20",
    "quantity": "term1_c_prime",
    "direction": "upper",
    "value": "0.9367260",
-   "source": "noisy-cavity write-up Sec. 7.2, components at t = 3/20"
+   "source": "Section 4.7: the three terms of Score_c and 9 rho_c p at t = 3/20; the other components are reference values"
   },
   {
    "scope": "t=3/20",
    "quantity": "term2",
    "direction": "upper",
    "value": "0.0390500",
-   "source": "noisy-cavity write-up Sec. 7.2, components at t = 3/20"
+   "source": "Section 4.7: the three terms of Score_c and 9 rho_c p at t = 3/20; the other components are reference values"
   },
   {
    "scope": "t=3/20",
    "quantity": "term3",
    "direction": "upper",
    "value": "0.0066367",
-   "source": "noisy-cavity write-up Sec. 7.2, components at t = 3/20"
+   "source": "Section 4.7: the three terms of Score_c and 9 rho_c p at t = 3/20; the other components are reference values"
   },
   {
    "scope": "t=3/20",
    "quantity": "G_lo",
    "direction": "lower",
    "value": "1.1465356230",
-   "source": "noisy-cavity write-up Sec. 7.2, components at t = 3/20"
+   "source": "Section 4.7: the three terms of Score_c and 9 rho_c p at t = 3/20; the other components are reference values"
   },
   {
    "scope": "t=3/20",
    "quantity": "G_hi",
    "direction": "upper",
    "value": "1.1466935227",
-   "source": "noisy-cavity write-up Sec. 7.2, components at t = 3/20"
+   "source": "Section 4.7: the three terms of Score_c and 9 rho_c p at t = 3/20; the other components are reference values"
   },
   {
    "scope": "t=3/20",
    "quantity": "F",
    "direction": "upper",
    "value": "0.1279274016",
-   "source": "noisy-cavity write-up Sec. 7.2, components at t = 3/20"
+   "source": "Section 4.7: the three terms of Score_c and 9 rho_c p at t = 3/20; the other components are reference values"
   },
   {
    "scope": "t=3/20",
    "quantity": "Sh2",
    "direction": "upper",
    "value": "0.03540720",
-   "source": "noisy-cavity write-up Sec. 7.2, components at t = 3/20"
+   "source": "Section 4.7: the three terms of Score_c and 9 rho_c p at t = 3/20; the other components are reference values"
   },
   {
    "scope": "t=3/20",
    "quantity": "U1",
    "direction": "upper",
    "value": "0.0574151",
-   "source": "noisy-cavity write-up Sec. 7.2, components at t = 3/20"
+   "source": "Section 4.7: the three terms of Score_c and 9 rho_c p at t = 3/20; the other components are reference values"
   },
   {
    "scope": "t=3/20",
    "quantity": "SU",
    "direction": "upper",
    "value": "11.06112",
-   "source": "noisy-cavity write-up Sec. 7.2, components at t = 3/20"
+   "source": "Section 4.7: the three terms of Score_c and 9 rho_c p at t = 3/20; the other components are reference values"
   },
   {
    "scope": "t=3/20",
    "quantity": "c_cov",
    "direction": "lower",
    "value": "0.0113933",
-   "source": "noisy-cavity write-up Sec. 7.2, components at t = 3/20"
+   "source": "Section 4.7: the three terms of Score_c and 9 rho_c p at t = 3/20; the other components are reference values"
   },
   {
    "scope": "t=3/20",
    "quantity": "rho_c",
    "direction": "lower",
    "value": "0.4372496",
-   "source": "noisy-cavity write-up Sec. 7.2, components at t = 3/20"
+   "source": "Section 4.7: the three terms of Score_c and 9 rho_c p at t = 3/20; the other components are reference values"
   },
   {
    "scope": "t=3/20",
    "quantity": "c_cov_prime",
    "direction": "lower",
    "value": "0.0180554",
-   "source": "noisy-cavity write-up Sec. 7.2, components at t = 3/20"
+   "source": "Section 4.7: the three terms of Score_c and 9 rho_c p at t = 3/20; the other components are reference values"
   },
   {
    "scope": "t=3/20",
    "quantity": "rho_c_prime",
    "direction": "lower",
    "value": "0.4411173",
-   "source": "noisy-cavity write-up Sec. 7.2, components at t = 3/20"
+   "source": "Section 4.7: the three terms of Score_c and 9 rho_c p at t = 3/20; the other components are reference values"
   },
   {
    "scope": "t=3/20",
    "quantity": "nine_rho_c_p",
    "direction": "lower",
    "value": "1.0581879",
-   "source": "noisy-cavity write-up Sec. 7.2, components at t = 3/20"
+   "source": "Section 4.7: the three terms of Score_c and 9 rho_c p at t = 3/20; the other components are reference values"
   },
   {
    "scope": "t=3/20",
    "quantity": "nine_rho_c_prime_p",
    "direction": "lower",
    "value": "1.0675480",
-   "source": "noisy-cavity write-up Sec. 7.2, components at t = 3/20",
-   "note": "the research notes display 9 rho'_c p >= 1.0675481 for code base A (its own mbar gives rho_- larger by 4e-8; A value 1.06754814...), asserted by crosscheck/crosscheck_global_A.py; this default checker uses code base B's xbar with the second implementation of Lemma 3.6 (value 1.06754804...), so it asserts the safe 7-digit display 1.0675480"
+   "source": "Section 4.7: the three terms of Score_c and 9 rho_c p at t = 3/20; the other components are reference values",
+   "note": "the first implementation (../crosscheck/) gives 9 rho'_c p >= 1.0675481 (its own mbar gives rho_- larger by 4e-8; its value is 1.06754814...), asserted by crosscheck/crosscheck_global_A.py; this default checker uses the xbar of ../certify.py with the second implementation of Lemma 4.28 (value 1.06754804...), so it asserts the safe 7-digit value 1.0675480"
   },
   {
    "scope": "t=3/20",
    "quantity": "Psi_0",
    "direction": "upper",
    "value": "-7760.3774",
-   "source": "noisy-cavity write-up Sec. 7.1, pair certificate at t = 3/20"
+   "source": "class sums (32) of the pair certificate at t = 3/20; reference values"
   },
   {
    "scope": "t=3/20",
    "quantity": "Psi_1",
    "direction": "upper",
    "value": "-6696.2771",
-   "source": "noisy-cavity write-up Sec. 7.1, pair certificate at t = 3/20"
+   "source": "class sums (32) of the pair certificate at t = 3/20; reference values"
   },
   {
    "scope": "t=3/20",
    "quantity": "Psi_2",
    "direction": "upper",
    "value": "-5945.5224",
-   "source": "noisy-cavity write-up Sec. 7.1, pair certificate at t = 3/20"
+   "source": "class sums (32) of the pair certificate at t = 3/20; reference values"
   },
   {
    "scope": "t=3/20",
    "quantity": "Psi_3",
    "direction": "upper",
    "value": "-5109.0744",
-   "source": "noisy-cavity write-up Sec. 7.1, pair certificate at t = 3/20"
+   "source": "class sums (32) of the pair certificate at t = 3/20; reference values"
   },
   {
    "scope": "t=3/20",
    "quantity": "Psi_4",
    "direction": "upper",
    "value": "-4380.6126",
-   "source": "noisy-cavity write-up Sec. 7.1, pair certificate at t = 3/20"
+   "source": "class sums (32) of the pair certificate at t = 3/20; reference values"
   },
   {
    "scope": "t=3/20",
    "quantity": "Psi_5",
    "direction": "upper",
    "value": "-3648.9781",
-   "source": "noisy-cavity write-up Sec. 7.1, pair certificate at t = 3/20"
+   "source": "class sums (32) of the pair certificate at t = 3/20; reference values"
   },
   {
    "scope": "t=3/20",
    "quantity": "Psi_6",
    "direction": "upper",
    "value": "-2996.2409",
-   "source": "noisy-cavity write-up Sec. 7.1, pair certificate at t = 3/20"
+   "source": "class sums (32) of the pair certificate at t = 3/20; reference values"
   },
   {
    "scope": "t=3/20",
    "quantity": "Psi_7",
    "direction": "upper",
    "value": "-2366.8228",
-   "source": "noisy-cavity write-up Sec. 7.1, pair certificate at t = 3/20"
+   "source": "class sums (32) of the pair certificate at t = 3/20; reference values"
   },
   {
    "scope": "t=3/20",
    "quantity": "Psi_8",
    "direction": "upper",
    "value": "-1824.0388",
-   "source": "noisy-cavity write-up Sec. 7.1, pair certificate at t = 3/20"
+   "source": "class sums (32) of the pair certificate at t = 3/20; reference values"
   },
   {
    "scope": "t=3/20",
    "quantity": "Psi_9",
    "direction": "upper",
    "value": "-1320.2806",
-   "source": "noisy-cavity write-up Sec. 7.1, pair certificate at t = 3/20"
+   "source": "class sums (32) of the pair certificate at t = 3/20; reference values"
   },
   {
    "scope": "t=3/20",
    "quantity": "Psi_10",
    "direction": "upper",
    "value": "-915.5729",
-   "source": "noisy-cavity write-up Sec. 7.1, pair certificate at t = 3/20"
+   "source": "class sums (32) of the pair certificate at t = 3/20; reference values"
   },
   {
    "scope": "t=3/20",
    "quantity": "Psi_11",
    "direction": "upper",
    "value": "-564.1688",
-   "source": "noisy-cavity write-up Sec. 7.1, pair certificate at t = 3/20"
+   "source": "class sums (32) of the pair certificate at t = 3/20; reference values"
   },
   {
    "scope": "t=3/20",
    "quantity": "Psi_12",
    "direction": "upper",
    "value": "-314.5546",
-   "source": "noisy-cavity write-up Sec. 7.1, pair certificate at t = 3/20"
+   "source": "class sums (32) of the pair certificate at t = 3/20; reference values"
   },
   {
    "scope": "t=3/20",
    "quantity": "Psi_13",
    "direction": "upper",
    "value": "-139.8746",
-   "source": "noisy-cavity write-up Sec. 7.1, pair certificate at t = 3/20"
+   "source": "class sums (32) of the pair certificate at t = 3/20; reference values"
   },
   {
    "scope": "t=3/20",
    "quantity": "Psi_14",
    "direction": "upper",
    "value": "-41.5531",
-   "source": "noisy-cavity write-up Sec. 7.1, pair certificate at t = 3/20"
+   "source": "class sums (32) of the pair certificate at t = 3/20; reference values"
   },
   {
    "scope": "t=3/20",
    "quantity": "Psi_15",
    "direction": "upper",
    "value": "-41.5531",
-   "source": "noisy-cavity write-up Sec. 7.1, pair certificate at t = 3/20"
+   "source": "class sums (32) of the pair certificate at t = 3/20; reference values"
   },
   {
    "scope": "t=3/20",
    "quantity": "Psi_16",
    "direction": "upper",
    "value": "-41.5531",
-   "source": "noisy-cavity write-up Sec. 7.1, pair certificate at t = 3/20"
+   "source": "class sums (32) of the pair certificate at t = 3/20; reference values"
   },
   {
    "scope": "t=3/20",
    "quantity": "Psi_17",
    "direction": "upper",
    "value": "-41.5531",
-   "source": "noisy-cavity write-up Sec. 7.1, pair certificate at t = 3/20"
+   "source": "class sums (32) of the pair certificate at t = 3/20; reference values"
   },
   {
    "scope": "t=3/20",
    "quantity": "prefactor_base",
    "direction": "exact",
    "value": "391/818",
-   "source": "noisy-cavity write-up Sec. 7.1: prefactor (w/(1+w^2))^17 = (391/818)^17"
+   "source": "prefactor (w/(1+w^2))^17 = (391/818)^17 of the pair certificate at t = 3/20; reference value"
   },
   {
    "scope": "t=3/20",
    "quantity": "min_gamma_k0",
    "direction": "lower",
    "value": "8.604e-5",
-   "source": "noisy-cavity write-up Sec. 7.1, Holley certificate at t = 3/20"
+   "source": "smallest class value in each environment of the Holley certificate at t = 3/20; reference values"
   },
   {
    "scope": "t=3/20",
    "quantity": "min_gamma_k1",
    "direction": "lower",
    "value": "3.342e-3",
-   "source": "noisy-cavity write-up Sec. 7.1, Holley certificate at t = 3/20"
+   "source": "smallest class value in each environment of the Holley certificate at t = 3/20; reference values"
   },
   {
    "scope": "t=3/20",
    "quantity": "min_gamma_k2",
    "direction": "lower",
    "value": "5.200e-3",
-   "source": "noisy-cavity write-up Sec. 7.1, Holley certificate at t = 3/20"
+   "source": "smallest class value in each environment of the Holley certificate at t = 3/20; reference values"
   },
   {
    "scope": "t=3/20",
    "quantity": "min_gamma_k3",
    "direction": "lower",
    "value": "7.157e-3",
-   "source": "noisy-cavity write-up Sec. 7.1, Holley certificate at t = 3/20"
+   "source": "smallest class value in each environment of the Holley certificate at t = 3/20; reference values"
   },
   {
    "scope": "t=3/20",
    "quantity": "min_gamma_k4",
    "direction": "lower",
    "value": "8.355e-3",
-   "source": "noisy-cavity write-up Sec. 7.1, Holley certificate at t = 3/20"
+   "source": "smallest class value in each environment of the Holley certificate at t = 3/20; reference values"
   },
   {
    "scope": "t=3/20",
    "quantity": "min_gamma_k5",
    "direction": "lower",
    "value": "9.455e-3",
-   "source": "noisy-cavity write-up Sec. 7.1, Holley certificate at t = 3/20"
+   "source": "smallest class value in each environment of the Holley certificate at t = 3/20; reference values"
   },
   {
    "scope": "t=3/20",
    "quantity": "min_gamma_k6",
    "direction": "lower",
    "value": "9.828e-3",
-   "source": "noisy-cavity write-up Sec. 7.1, Holley certificate at t = 3/20"
+   "source": "smallest class value in each environment of the Holley certificate at t = 3/20; reference values"
   },
   {
    "scope": "t=3/20",
    "quantity": "min_gamma_k7",
    "direction": "lower",
    "value": "1.027e-2",
-   "source": "noisy-cavity write-up Sec. 7.1, Holley certificate at t = 3/20"
+   "source": "smallest class value in each environment of the Holley certificate at t = 3/20; reference values"
   },
   {
    "scope": "t=3/20",
    "quantity": "min_gamma_k8",
    "direction": "lower",
    "value": "9.998e-3",
-   "source": "noisy-cavity write-up Sec. 7.1, Holley certificate at t = 3/20"
+   "source": "smallest class value in each environment of the Holley certificate at t = 3/20; reference values"
   },
   {
    "scope": "t=3/20",
    "quantity": "min_gamma_k9",
    "direction": "lower",
    "value": "9.956e-3",
-   "source": "noisy-cavity write-up Sec. 7.1, Holley certificate at t = 3/20"
+   "source": "smallest class value in each environment of the Holley certificate at t = 3/20; reference values"
   },
   {
    "scope": "t=3/20",
    "quantity": "min_gamma_k10",
    "direction": "lower",
    "value": "9.324e-3",
-   "source": "noisy-cavity write-up Sec. 7.1, Holley certificate at t = 3/20"
+   "source": "smallest class value in each environment of the Holley certificate at t = 3/20; reference values"
   },
   {
    "scope": "t=3/20",
    "quantity": "min_gamma_k11",
    "direction": "lower",
    "value": "8.901e-3",
-   "source": "noisy-cavity write-up Sec. 7.1, Holley certificate at t = 3/20"
+   "source": "smallest class value in each environment of the Holley certificate at t = 3/20; reference values"
   },
   {
    "scope": "t=3/20",
    "quantity": "min_gamma_k12",
    "direction": "lower",
    "value": "7.814e-3",
-   "source": "noisy-cavity write-up Sec. 7.1, Holley certificate at t = 3/20"
+   "source": "smallest class value in each environment of the Holley certificate at t = 3/20; reference values"
   },
   {
    "scope": "t=3/20",
    "quantity": "min_gamma_k13",
    "direction": "lower",
    "value": "6.962e-3",
-   "source": "noisy-cavity write-up Sec. 7.1, Holley certificate at t = 3/20"
+   "source": "smallest class value in each environment of the Holley certificate at t = 3/20; reference values"
   },
   {
    "scope": "t=3/20",
    "quantity": "min_gamma_k14",
    "direction": "lower",
    "value": "5.631e-3",
-   "source": "noisy-cavity write-up Sec. 7.1, Holley certificate at t = 3/20"
+   "source": "smallest class value in each environment of the Holley certificate at t = 3/20; reference values"
   },
   {
    "scope": "t=3/20",
    "quantity": "min_gamma_k15",
    "direction": "lower",
    "value": "4.623e-3",
-   "source": "noisy-cavity write-up Sec. 7.1, Holley certificate at t = 3/20"
+   "source": "smallest class value in each environment of the Holley certificate at t = 3/20; reference values"
   },
   {
    "scope": "t=3/20",
    "quantity": "min_gamma_k16",
    "direction": "lower",
    "value": "3.049e-3",
-   "source": "noisy-cavity write-up Sec. 7.1, Holley certificate at t = 3/20"
+   "source": "smallest class value in each environment of the Holley certificate at t = 3/20; reference values"
   },
   {
    "scope": "t=3/20",
    "quantity": "min_gamma_k17",
    "direction": "lower",
    "value": "1.848e-3",
-   "source": "noisy-cavity write-up Sec. 7.1, Holley certificate at t = 3/20"
+   "source": "smallest class value in each environment of the Holley certificate at t = 3/20; reference values"
   },
   {
    "scope": "t=3/20",
    "quantity": "min_gamma_k18",
    "direction": "lower",
    "value": "1.467e-4",
-   "source": "noisy-cavity write-up Sec. 7.1, Holley certificate at t = 3/20"
+   "source": "smallest class value in each environment of the Holley certificate at t = 3/20; reference values"
   }
  ]
 }

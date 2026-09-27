@@ -1,27 +1,30 @@
-"""Exact certificate for the second d = 9 proof: the oriented engine with noisy-cavity local inputs (Theorem Q9').
+"""Exact certificate for the rows of Table 3 of the manuscript: the oriented engine of Section 4 with the
+noisy-cavity local inputs of Section 4.4 in dimension 9.
 
-Standard library only. For each of the five temperatures t = 3/20 (the headline row), 29/200, 31/200, 4/25 and
-7/50, with the frozen inputs of params.json and data/CERT_DATA_d9.json, this program decides in exact rational
-arithmetic:
+Standard library only. For each of the five temperatures t = 3/20, 29/200, 31/200, 4/25 and 7/50, with the frozen
+inputs of params.json and data/CERT_DATA_d9.json, this program decides in exact rational arithmetic:
 
-(N)  the noisy-cavity class of Lemma N: e^{2 atanh(t b)} <= wc' <= e^{2 beta}, b = tanh((2d-1) beta);
-(P)  Lemma P (bond floor p <= every conditional bond probability): the 162 point conditions, the 1377 chord
-     polynomials of degree 5 (Bernstein subdivision, then Sturm) and the 18 class sums Psi(j) <= 0;
-(S)  Lemma S (Holley line g_h g_K^S in all 19 environments): every two-block class Gamma(l+, l-) >= 0, with the
-     stored Lambda'_k recomputed and the flip symmetry checked;
+(N)  the noisy-cavity class of Lemma 4.15 and condition (N1): e^{2 atanh(t b)} <= wc' <= e^{2 beta},
+     b = tanh((2d-1) beta);
+(P)  Lemma 4.19 (bond floor p <= every conditional bond probability): the 162 point conditions, the 1377 chord
+     polynomials of degree 5 of (31) (Bernstein subdivision, then Sturm) and the 18 class sums (32);
+(S)  Lemma 4.20 and Corollary 4.21, condition (N2) (Holley line g_h g_K^S in all 19 environments): every
+     two-block class Gamma(l+, l-) >= 0, with the stored Lambda'_k recomputed and the flip symmetry checked;
 (W)  plain aligned-frozen witness < p <= noisy aligned-frozen witness (so the noisy class is strictly smaller than
-     the plain class at the certified floor);
+     the plain class at the certified floor; Remark 4.17);
 (H)  g_h < 1 <= g_K, g_K g_h <= 1, g_K^d < g_K^(2d) < 2718/1000, d >= 6, and the mean-field root test
      tanh(|h| + 2dK' xbar) < xbar at the frozen xbar;
-(G)  the oriented second-moment criterion (G Thm 4.5) with code base B (functions of ../certify.py): rho_-, eta',
-     Score and Score_c with rho_-^2 >= c_cov/4 (G Lemma 3.5);
-(G') the sharper covariance constant of G Lemma 3.6 (lemma36.py, the second implementation): c'_cov, rho'_c and
-     Score'_c, with 2d Kb <= 35/100 where Lemma 3.6 is used, and the least L_* of Lemma 3.6' otherwise;
-(T)  theta_* = (99/100) rho_- (1 - eta') (1 - Score_e)/(1 - 1/d) for the score used by the theorem (Score_c, or
+(G)  the oriented second-moment criterion (Theorem 4.33) with the functions of ../certify.py: rho_-, eta',
+     Score and Score_c with rho_-^2 >= c_cov/4 (Lemma 4.27);
+(G') the sharper covariance constant of Lemma 4.28 (lemma36.py, the second implementation): c'_cov, rho'_c and
+     Score'_c, with 2d Kb <= 35/100 where Lemma 4.28 is used, and otherwise the least torus size L_* of its
+     variant for any 2d Kb < 1;
+(T)  theta_* = (99/100) rho_- (1 - eta') (1 - Score_e)/(1 - 1/d) for the score used in Table 3 (Score_c, or
      Score'_c at t = 7/50) and theta' with Score'_c.
 
-It then asserts every displayed number listed in params.json ("displays"), each the worse of the research code
-bases and rounded in the safe direction, and prints a JSON summary equal to ../../expected/noisy_cavity.json.
+It then asserts every number listed in params.json ("displays"); the entries of Table 3 are the worse of the two
+implementations, rounded in the safe direction. It prints a JSON summary equal to
+../../expected/noisy_cavity.json.
 """
 from fractions import Fraction as Fr
 from pathlib import Path
@@ -36,7 +39,7 @@ if sys.flags.optimize:
 HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE.parent))
 sys.path.insert(0, str(HERE))
-import certify as OR                 # noqa: E402  code base B of the overlap-revealed route
+import certify as OR                 # noqa: E402  overlap-revealed certificate (second implementation)
 import lemma36 as L36                # noqa: E402
 import local_certificates as LC      # noqa: E402
 
@@ -79,15 +82,15 @@ def certify_row(row, green_cache):
     assert rho ** 2 >= ccp / 4
     rho_cp = rho + ccp / (4 * rho)
     score_cp = 1 / (d * rho_cp * p) + g["term2"] + g["term3"]
-    lemma = "3.6" if aux["abar"] <= Fr(35, 100) else "3.6'"
+    lemma = "Lemma 4.28" if aux["abar"] <= Fr(35, 100) else "Lemma 4.28 variant with L >= L_*"
     Ls, Ls_alpha = L36.least_Lstar(aux["abar"]), L36.least_Lstar(aux["alpha"])
-    assert Ls <= 40                  # Lemma 3.6' changes no torus size, since L_0(n) >= 40
+    assert Ls <= 40                  # the variant of Lemma 4.28 changes no torus size, since L_0(n) >= 40
     # (T)
     used = g["score_c"] if row["score_used"] == "score_c" else score_cp
     theta = OR.theta_star(d, rho, g["eta"], used)
     theta_p = OR.theta_star(d, rho, g["eta"], score_cp)
     if row["score_used"] == "score_c_prime":
-        assert lemma == "3.6"        # t = 7/50: G Lemma 3.6 itself applies
+        assert lemma == "Lemma 4.28"  # t = 7/50: Lemma 4.28 itself applies
     M = P["model"]
     values = dict(
         p=p, noisy_witness_beta_c=P["noisy_witness_beta_c"], noisy_witness=P["noisy_witness"],
@@ -149,8 +152,8 @@ def main():
         rows.append(rep)
         vector += vec
         used = rep["score_c_upper"] if row["score_used"] == "score_c" else rep["score_c_prime_upper"]
-        print(f"PASS d=9 {row['label']} ({row['theorem']}): p_B >= {row['p']} (Lemma P), Holley line in "
-              f"{rep['holley_line']['environments']} environments (Lemma S, min Gamma >= "
+        print(f"PASS d=9 {row['label']} ({row['theorem']}): p_B >= {row['p']} (Lemma 4.19), Holley line in "
+              f"{rep['holley_line']['environments']} environments (Lemma 4.20, min Gamma >= "
               f"{rep['holley_line']['min_Gamma_lower']}), {row['score_used']} <= {used}, theta_* >= "
               f"{rep['theta_star_lower']} ({time.monotonic() - start:.1f}s)", flush=True)
     n = check_displays(PARAMS["displays"], values)

@@ -58,7 +58,7 @@ class Family:
 
 
 class Tables:
-    """Float upper bounds: bt[r] >= b(r) (Lemma 3.4(d)); Phi2[r, F] >= max_{rho >= r} sum_{k=0}^{c} b(F+|rho-k|);
+    """Float upper bounds: bt[r] >= b(r) (Lemma 4.26(iv)); Phi2[r, F] >= max_{rho >= r} sum_{k=0}^{c} b(F+|rho-k|);
     psi3[r0, D1] >= sum_{s>=3} Phi2[max(0, r0 - c(s-1)), max(s, D1 - s)]."""
     def __init__(self, d, t, qs, c, Rb=160, rmax=120, Fmax=420, Dmax=80, S=300):
         self.c = c

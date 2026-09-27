@@ -1,5 +1,5 @@
 {
-  "description": "Frozen exact inputs of the overlap-revealed certificates. Numbers are exact decimal or fraction strings, read by certify.py with fractions.Fraction. Each row's 'published' block lists numbers displayed in the manuscript that certify.py must reproduce: the key is '<quantity>_<direction>', where the direction says whether the display is an upper bound, a lower bound, a lower bound on the logarithm ('loglower') or an exact value. 'uncertified_rows' lists research rows at which only the global criterion is evaluated, to confirm that it fails there. 'provenance' is documentation only; search/freeze_params.py re-derives the searched values.",
+  "description": "Frozen exact inputs of the overlap-revealed certificates. Numbers are exact decimal or fraction strings, read by certify.py with fractions.Fraction. Each row's 'published' block lists numbers displayed in the manuscript that certify.py must reproduce: the key is '<quantity>_<direction>', where the direction says whether the display is an upper bound, a lower bound, a lower bound on the logarithm ('loglower') or an exact value. 'uncertified_rows' lists rows at which only the global criterion is evaluated, to confirm that it fails there. 'provenance' is documentation only; search/freeze_params.py re-derives the searched values.",
   "tangent_forms": {
     "rho_times_omega": "c_U = value * omega(U), omega(U) = w^((1+U)/2) + w^(-(1+U)/2), w = (1+t)/(1-t)",
     "direct": "c_U = value"
@@ -106,9 +106,9 @@
         "margin_upper": "0.095"
       },
       "provenance": {
-        "row": "p from the part-1 procedure of choose_rows.py; Holley line = exploration line K'=0.013, h=-0.09 with e^(2K'), e^(2h) rounded down to five decimals (local.md, Theorems B6, C4)",
-        "pB_tangent_points": "part-1 values rho_U from the family kappa=1.01439, lambda=0.56291, rounded to 6 decimals (local.md, Theorem B6)",
-        "holley_weights": "part-1 weights W_K of research notes scripts/certify_local.py (bounded floating maximisation of the numerator bound, rounded to 4 decimals; local.md Thm C4, results_headline.txt); they give the Holley slack displayed in the manuscript",
+        "row": "p from the first implementation's procedure of choose_rows.py; Holley line = exploratory line K'=0.013, h=-0.09 with e^(2K'), e^(2h) rounded down to five decimals (Propositions 4.7 and 4.12)",
+        "pB_tangent_points": "first-implementation values rho_U from the family kappa=1.01439, lambda=0.56291, rounded to 6 decimals (Proposition 4.7)",
+        "holley_weights": "weights W_K of the first implementation, crosscheck/certify_local.py (bounded floating maximisation of the numerator bound, rounded to 4 decimals; Proposition 4.12); they give the Holley slack displayed in the manuscript",
         "mbar": "smallest multiple of 1e-7 above the floating mean-field root passing the exact test"
       }
     },
@@ -181,7 +181,7 @@
         "margin_upper": "0.0735"
       },
       "provenance": {
-        "row": "choose_rows.py (part-1 procedure; research notes scripts/certify_all.py, local.md Sec. 6)",
+        "row": "choose_rows.py (procedure of the first implementation)",
         "pB_tangent_points": "Nelder-Mead family kappa=1.010922073951337, lambda=0.6079696148845753; c_U rounded to 10 decimals",
         "holley_weights": "best point of {0} U {i/200: 1<=i<=180} for the floating numerator bound",
         "mbar": "smallest multiple of 1e-7 above the floating mean-field root passing the exact test"
@@ -256,7 +256,7 @@
         "margin_upper": "0.0955"
       },
       "provenance": {
-        "row": "choose_rows.py (part-1 procedure; research notes scripts/certify_all.py, local.md Sec. 6)",
+        "row": "choose_rows.py (procedure of the first implementation)",
         "pB_tangent_points": "Nelder-Mead family kappa=1.0125521591928373, lambda=0.5864661582538693; c_U rounded to 10 decimals",
         "holley_weights": "best point of {0} U {i/200: 1<=i<=180} for the floating numerator bound",
         "mbar": "smallest multiple of 1e-7 above the floating mean-field root passing the exact test"
@@ -331,7 +331,7 @@
         "margin_upper": "0.0955"
       },
       "provenance": {
-        "row": "choose_rows.py (part-1 procedure; research notes scripts/certify_all.py, local.md Sec. 6)",
+        "row": "choose_rows.py (procedure of the first implementation)",
         "pB_tangent_points": "Nelder-Mead family kappa=1.0163304103237927, lambda=0.5438570035990169; c_U rounded to 10 decimals",
         "holley_weights": "best point of {0} U {i/200: 1<=i<=180} for the floating numerator bound",
         "mbar": "smallest multiple of 1e-7 above the floating mean-field root passing the exact test"
@@ -406,7 +406,7 @@
         "margin_upper": "0.0955"
       },
       "provenance": {
-        "row": "choose_rows.py (part-1 procedure; research notes scripts/certify_all.py, local.md Sec. 6)",
+        "row": "choose_rows.py (procedure of the first implementation)",
         "pB_tangent_points": "Nelder-Mead family kappa=1.0184075019316867, lambda=0.5273864615872483; c_U rounded to 10 decimals",
         "holley_weights": "best point of {0} U {i/200: 1<=i<=180} for the floating numerator bound",
         "mbar": "smallest multiple of 1e-7 above the floating mean-field root passing the exact test"
@@ -478,7 +478,7 @@
         "margin_upper": "0.0485"
       },
       "provenance": {
-        "row": "choose_rows.py (part-1 procedure; research notes scripts/certify_all.py, local.md Sec. 6)",
+        "row": "choose_rows.py (procedure of the first implementation)",
         "pB_tangent_points": "Nelder-Mead family kappa=1.016344070888541, lambda=0.5691064433898696; c_U rounded to 10 decimals",
         "holley_weights": "best point of {0} U {i/200: 1<=i<=180} for the floating numerator bound",
         "mbar": "smallest multiple of 1e-7 above the floating mean-field root passing the exact test"
@@ -549,7 +549,7 @@
         "margin_upper": "0.0395"
       },
       "provenance": {
-        "row": "choose_rows.py (part-1 procedure; research notes scripts/certify_all.py, local.md Sec. 6)",
+        "row": "choose_rows.py (procedure of the first implementation)",
         "pB_tangent_points": "Nelder-Mead family kappa=1.0132659368714383, lambda=0.5754104954098886; c_U rounded to 10 decimals",
         "holley_weights": "best point of {0} U {i/200: 1<=i<=180} for the floating numerator bound",
         "mbar": "smallest multiple of 1e-7 above the floating mean-field root passing the exact test"
@@ -622,7 +622,7 @@
         "rho_c_gain_upper": "0.0065"
       },
       "provenance": {
-        "row": "choose_rows.py (new-point procedure; research notes assembly/certify_new_point.py 10 27/200)",
+        "row": "choose_rows.py (procedure of the second implementation, d = 10, t = 27/200)",
         "pB_tangent_points": "Nelder-Mead family kappa=1.016852293573503, lambda=0.5551249296883991; c_U rounded to 10 decimals",
         "holley_weights": "best point of {0} U {i/200: 1<=i<=180} for the floating numerator bound",
         "mbar": "smallest multiple of 1e-7 above the floating mean-field root passing the exact test"
@@ -694,7 +694,7 @@
         "rho_c_gain_upper": "0.0065"
       },
       "provenance": {
-        "row": "choose_rows.py (part-1 procedure; research notes scripts/certify_all.py, local.md Sec. 6)",
+        "row": "choose_rows.py (procedure of the first implementation)",
         "pB_tangent_points": "Nelder-Mead family kappa=1.0148862056594852, lambda=0.5739876293327595; c_U rounded to 10 decimals",
         "holley_weights": "best point of {0} U {i/200: 1<=i<=180} for the floating numerator bound",
         "mbar": "smallest multiple of 1e-7 above the floating mean-field root passing the exact test"
@@ -715,7 +715,7 @@
         "score_c_upper": "1.0193"
       },
       "provenance": {
-        "row": "choose_rows.py (part-1 procedure; research notes scripts/certify_all.py, theorem.md Table 7.1, last row)",
+        "row": "choose_rows.py (procedure of the first implementation; reported as not certified in Section 4.7)",
         "mbar": "smallest multiple of 1e-7 above the floating mean-field root passing the exact test"
       }
     }

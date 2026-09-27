@@ -1,24 +1,25 @@
-"""Exact deciders for the sharpened local inputs in the noisy-cavity class (Lemmas N, P and S).
+"""Exact deciders for the sharpened local inputs in the noisy-cavity class (manuscript, Section 4.4: Lemma 4.15,
+Lemma 4.19 and Lemma 4.20; conditions (N1) and (N2) of Section 4.7).
 
 Standard library only. All decisions are exact (fractions.Fraction and Python integers).
 
 Model constants at t = tanh(beta):  w = e^{2 beta} = (1+t)/(1-t),  a = w^2/(1+w^2),  p_A = 1 - w^-2,
 C = cosh(2 beta) = (w + 1/w)/2,  m = 2d,  n = m - 1.
 
-Lemma N (noisy-cavity reduction) allows the cavity factor 2cosh(beta_c y) with any beta_c in
+Lemma 4.15 (noisy-cavity reduction) allows the cavity factor 2cosh(beta_c y) with any beta_c in
 [atanh(t b), beta], b = tanh((2d-1) beta); the certificate stores e^{2 beta_c} as a rational wc' and this module
 checks (1 + t b)/(1 - t b) <= wc' <= w exactly. Then f(y) = 2cosh(beta_c y) = wc'^{y/2} + wc'^{-y/2} for even y.
 
-Lemma P (pair certificate for the bond floor p). With r = p/p_A and lam = w^2 (1-r)/r, for odd U in 1..n:
+Lemma 4.19 (pair certificate for the bond floor p). With r = p/p_A and lam = w^2 (1-r)/r, for odd U in 1..n:
 alpha_U = w^U - lam w^-U > 0, gamma_U = lam w^U - w^-U > 0 and phi_U(A, B) = alpha_U A^-2 - gamma_U B^-2.
 p_x = (f(x-1), f(x+1)) for x in X = {-n, -n+2, ..., n}. The certificate is a table of rationals psi_U(x) with
-  (V) theta psi_U(x) + (1-theta) psi_U(x') >= phi_U(theta p_x + (1-theta) p_x') for all x, x' and theta in [0, 1],
+  (V) [condition (31)] theta psi_U(x) + (1-theta) psi_U(x') >= phi_U(theta p_x + (1-theta) p_x') for all x, x' and theta in [0, 1],
       decided as psi_U(x) > phi_U(p_x) at every point and, for every pair x < x', positivity on [0, 1] of the
       degree-5 polynomial L(theta) A(theta)^2 B(theta)^2 - alpha_U B(theta)^2 + gamma_U A(theta)^2 (exact
       Sturm root count on (0, 1) plus the signs at the end points);
-  (C) Psi(j) = sum_{U odd} sum_h C(n-j, h) C(j, (n+U)/2 - h) psi_U(U - 2(2h - (n-j))) <= 0 for j = 0..n.
+  (C) [condition (32)] Psi(j) = sum_{U odd} sum_h C(n-j, h) C(j, (n+U)/2 - h) psi_U(U - 2(2h - (n-j))) <= 0 for j = 0..n.
 
-Lemma S (symmetrised coupled odds certificate, Holley line g_K, g_h). Environment k: N+ has k coordinates and
+Lemma 4.20 (symmetrised coupled odds certificate) and Corollary 4.21 (Holley line g_K, g_h). Environment k: N+ has k coordinates and
 N- has m-k, S = 2k - m, Lambda'_k = g_h g_K^S C^-S. With i+- the plus counts of sigma in N+-:
   lambda+(i+) = a^{i+} (1-a)^{k-i+} 2^{-(m-k)},  lambda-(i-) = a^{i-} (1-a)^{m-k-i-} 2^{-k},
   kappa = lambda+ - Lambda' lambda-,  kappa_s(i+, i-) = (kappa(i+, i-) + kappa(k-i+, m-k-i-))/2,
@@ -151,9 +152,9 @@ def positive_on_unit_interval(P, depth=6):
     return True
 
 
-# ------------------------------------------------------------------ Lemma P
+# ------------------------------------------------------------------ Lemma 4.19
 def pair_certificate(d, entry):
-    """Decide Lemma P for one temperature. entry: t, p, wc_prime, psi[U][x] (rational strings).
+    """Decide Lemma 4.19 for one temperature. entry: t, p, wc_prime, psi[U][x] (rational strings).
     Returns a dict of exact results; asserts every condition."""
     M = Model(d, entry["t"], entry["wc_prime"])
     n, w = M.n, M.w
@@ -218,7 +219,7 @@ def aligned_witness(M, noisy=True, wc=None):
     return M.pA * a * X / (a * X + (1 - a) * Y)
 
 
-# ------------------------------------------------------------------ Lemma S
+# ------------------------------------------------------------------ Lemma 4.20
 def _block_counts(nb, l):
     """cnt[i][e] = #{s in {+-1}^nb : #plus(s) = i, s.rho = 2e - nb} for rho = (+^l, -^(nb-l))."""
     cnt = [[0] * (nb + 1) for _ in range(nb + 1)]
@@ -230,7 +231,7 @@ def _block_counts(nb, l):
 
 
 def holley_certificate(d, entry):
-    """Decide Lemma S in all 2d+1 environments for one temperature. entry: t, wc_prime and
+    """Decide Lemma 4.20 in all 2d+1 environments for one temperature. entry: t, wc_prime and
     holley = {gK, gh, envs: [{k, Lam, c: {"i+,i-": value}}]}. Asserts every condition."""
     M = Model(d, entry["t"], entry["wc_prime"])
     m, a, C = M.m, M.a, M.C

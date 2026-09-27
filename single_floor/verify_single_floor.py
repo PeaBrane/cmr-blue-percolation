@@ -1,35 +1,35 @@
-"""Exact certificates for the single-floor oriented comparison (manuscript appendix).
+"""Exact certificates for the single-floor oriented comparison (Appendix A of the first manuscript).
 
-Theorem (single-floor oriented comparison): if a uniform fresh-star floor p
+Theorem A.2 (single-floor oriented comparison): if a uniform fresh-star floor p
 exceeds F_d = 1 - 1/G_d, where G_d is the collision Green function of two
 uniform oriented walks, then both overlap signs percolate and
 nu(o <-> infinity blue, q_o = s) >= (1/2)(p - F_d)/(p (1 - F_d)). The row
 h = 0 of the fresh-star floor, p_0(2d, beta), is such a floor.
 
-This program checks, in exact rational arithmetic (research-note names in
+This program checks, in exact rational arithmetic (manuscript locators in
 brackets):
 
-(G)   collision Green function bounds [Lemma G]: u_0..u_3 in closed form,
+(G)   collision Green function bounds [Lemma A.5]: u_0..u_3 in closed form,
       exact head sums over n < 4d plus the maximal-atom tail (part (e)), the
       eight-term closed form hat G_d (part (f)) and the four-term bound on
       G_22 (part (g));
-(K)   the row h = 0 as a single ratio [identity (K1)]: the closed form p_* at
+(K)   the row h = 0 as a single ratio [Lemma A.8]: the closed form p_* at
       k = 1 equals the nonnegative-residual value p(1), and the block cover of
-      the reduction to k = 1 by blocks [Proposition K] gives p(k) >= p(1) for
+      the reduction to k = 1 by blocks [Proposition A.10, Table 7] gives p(k) >= p(1) for
       every overlap count k, so p_0(2d, beta) = p_*;
-(S)   the corollary for dimensions 16 to 20 and 22 [Corollaries S16-S20, S22
-      route (ii)]: p_* > F_d at seven points, with the table displays;
-(S22) the signed refinement at d = 22 [route (i)]: the signed residuals
+(S)   the corollary for dimensions 16 to 20 and 22 [Corollary A.3, Table 6]:
+      p_* > F_d at seven points, with the table displays;
+(S22) the signed refinement at d = 22 [Remark A.11]: the signed residuals
       M_(0,1), M_(0,2) < 0 at lambda = 1/0.0586, c = 119/100, the nonnegative
       residual min_(k >= 3) p(k) > 0.0586, and G_22 < 1/(1 - 0.0586);
-(S16) the signed floor 0.0689 at d = 16, t = 13/125;
+(S16) the signed floor 0.0689 at d = 16, t = 13/125 [Remark A.11];
 (P)   the closed-form star floor and the certificate in dimension 25
-      [Proposition P]: min(p_pair(1), p_pair(2d)) exceeds 1 - 1/hat G_d at
-      d = 25 and 26 (and at d = 28, a research-note value), with no finite
-      sums.
+      [Proposition A.13, Corollary A.14]: min(p_pair(1), p_pair(2d)) exceeds
+      1 - 1/hat G_d at d = 25 and 26 (and at d = 28, a reference value that
+      the manuscript does not state), with no finite sums.
 
 The cavity maximum of the nonnegative residual is evaluated at the balanced
-index, which the lemma "the balanced tilt maximizes" [Lemma J] justifies;
+index, which the lemma "the balanced tilt maximizes" [Lemma A.7] justifies;
 check_lemmas.py in this directory evaluates every index. All decisive
 comparisons are assertions on exact rationals; decimals in the output are
 directed summaries. Only the standard library is used.
@@ -48,7 +48,7 @@ if sys.flags.optimize:
 
 POINTS = [(16, Fr(13, 125)), (16, Fr(51, 500)), (17, Fr(1, 10)), (18, Fr(12, 125)),
           (19, Fr(7, 75)), (20, Fr(1, 11)), (22, Fr(11, 125))]
-# Proposition K block covers of {2, ..., 2d} (found by an exact greedy search).
+# Proposition A.10 block covers of {2, ..., 2d} (found by an exact greedy search).
 BLOCKS = {
     (16, Fr(13, 125)): [(2, 2), (3, 3), (4, 4), (5, 5), (6, 7), (8, 13), (14, 32)],
     (16, Fr(51, 500)): [(2, 2), (3, 3), (4, 4), (5, 5), (6, 7), (8, 13), (14, 32)],
@@ -58,7 +58,7 @@ BLOCKS = {
     (20, Fr(1, 11)): [(2, 2), (3, 3), (4, 4), (5, 5), (6, 7), (8, 10), (11, 25), (26, 40)],
     (22, Fr(11, 125)): [(2, 2), (3, 3), (4, 4), (5, 5), (6, 6), (7, 8), (9, 13), (14, 37), (38, 44)],
 }
-# Displayed bounds (short-route.md Sec. 10.2; appendix tables of the revised manuscript):
+# Displayed bounds (Tables 6 and 7 and Corollary A.3 of the first manuscript):
 # p_* >=, p(2) >=, p_*/F_d >= (head, hat G), theta_* = (1/2)(p_* - F)/(p_* (1 - F)) >= (head, hat G),
 # smallest block slack Gamma_1 - B >=.
 SHOWN = {
@@ -72,10 +72,10 @@ SHOWN = {
 }
 GAMMA_1_RANGE = (Fr("3.020"), Fr("3.093"))
 P2_OVER_P1_RANGE = (Fr("1.0094"), Fr("1.0149"))
-# Binomial sums used by the block check: E_1, E_2d and two per block (appendix block table).
+# Binomial sums used by the block check: E_1, E_2d and two per block (Table 7).
 SUMS = {(16, Fr(13, 125)): 16, (16, Fr(51, 500)): 16, (17, Fr(1, 10)): 18, (18, Fr(12, 125)): 18,
         (19, Fr(7, 75)): 18, (20, Fr(1, 11)): 18, (22, Fr(11, 125)): 20}
-# Lemma G displays (short-route.md Sec. 8): head G_d <=, F_d <= (head), hat G_d <=, F_d <= (hat G), F_d >=.
+# Lemma A.5 displays (reference values of the collision Green function bounds): head G_d <=, F_d <= (head), hat G_d <=, F_d <= (hat G), F_d >=.
 SHOWN_G = {
     16: ("1.0718281723", "0.06701464", "1.07233323", "0.067455", "0.06701463"),
     17: ("1.0669890897", "0.06278330", "1.06736610", "0.063115", "0.06278329"),
@@ -84,7 +84,7 @@ SHOWN_G = {
     20: ("1.0557390227", "0.05279622", "1.05591558", "0.052955", "0.05279621"),
     22: ("1.0501326858", "0.04773939", "1.05024614", "0.047843", "0.04773938"),
 }
-# Proposition P (short-route.md Sec. 9.4): p_pair(1) >=, p_pair(2d) >=, F_d <= (hat G), ratio >=,
+# Proposition A.13 and Corollary A.14: p_pair(1) >=, p_pair(2d) >=, F_d <= (hat G), ratio >=,
 # (1/2)(p - F)/(p (1 - F)) >=.
 SHOWN_P = {
     (25, Fr(27, 400)): ("0.04196433", "0.05133661", "0.04180338", "1.0038", "0.0020"),
@@ -133,13 +133,13 @@ def m_atom(d, n):
 
 
 def tail_bound(d, A):
-    """sum_(n >= dA) u_n <= d M_(dA) (1 + 2(A+1)/(d-3)) (Lemma G(e); d >= 4, A >= 1)."""
+    """sum_(n >= dA) u_n <= d M_(dA) (1 + 2(A+1)/(d-3)) (Lemma A.5(e); d >= 4, A >= 1)."""
     assert d >= 4 and A >= 1
     return d * m_atom(d, d * A) * (1 + Fr(2 * (A + 1), d - 3))
 
 
 def g_closed(d):
-    """Eight-term closed-form upper bound hat G_d (Lemma G(f); d >= 6)."""
+    """Eight-term closed-form upper bound hat G_d (Lemma A.5(f); d >= 6)."""
     assert d >= 6
     return (1 + Fr(1, d) + Fr(2 * d - 1, d ** 3) + Fr(6 * d * d - 9 * d + 4, d ** 5)
             + Fr(24, d ** 4) + Fr(120, d ** 5) + Fr((d - 6) * 720, d ** 6)
@@ -159,7 +159,7 @@ def g_head(d, A=4):
 
 
 def g22_four_term():
-    """Lemma G(g): u_2 <= 2/d^2, u_n <= 6/d^3 for 3 <= n <= 21, tail with A = 1."""
+    """Lemma A.5(g): u_2 <= 2/d^2, u_n <= 6/d^3 for 3 <= n <= 21, tail with A = 1."""
     d = 22
     return 1 + Fr(1, d) + Fr(2, d * d) + (d - 3) * Fr(6, d ** 3) + tail_bound(d, 1)
 
@@ -270,7 +270,7 @@ def signed_residual(S, k, lam, c):
 
 
 class Reduction:
-    """Identity (K1), the closed form p_* and the block bound of Proposition K."""
+    """Lemma A.8, the closed form p_* and the block bound of Proposition A.10."""
 
     def __init__(self, d, t):
         self.D = D = 2 * d
@@ -367,18 +367,18 @@ def main():
     for d, t in POINTS:
         R = Reduction(d, t)
         p1 = nonneg_floor(R.S, 1)
-        assert R.p_star == p1                                  # closed form (K1) at k = 1
+        assert R.p_star == p1                                  # closed form of Lemma A.8 at k = 1
         blocks = BLOCKS[d, t]
         assert blocks[0][0] == 2 and blocks[-1][1] == 2 * d
         assert all(b[1] + 1 == c[0] and b[0] <= b[1] for b, c in zip(blocks, blocks[1:] + [(2 * d + 1, 0)]))
         assert 2 + 2 * len(blocks) == SUMS[d, t]
         slacks = [R.N1 - R.block(ka, kb) for ka, kb in blocks]
-        assert min(slacks) >= 0                                # Proposition K: p(k) >= p(1) for all k
+        assert min(slacks) >= 0                                # Proposition A.10: p(k) >= p(1) for all k
         p2 = nonneg_floor(R.S, 2)
         p2_over_p1.append(p2 / R.p_star)
         head, up, hat = green[d]
         F_head, F_hat = 1 - 1 / up, 1 - 1 / hat
-        assert R.p_star > F_head and R.p_star > F_hat          # Theorem S hypothesis p_0 > F_d
+        assert R.p_star > F_head and R.p_star > F_hat          # Theorem A.2 hypothesis p_0 > F_d
         shown = [Fr(x) for x in SHOWN[d, t]]
         assert R.p_star >= shown[0] and p2 >= shown[1]
         assert R.p_star / F_head >= shown[2] and R.p_star / F_hat >= shown[3]
@@ -397,7 +397,7 @@ def main():
     report["corollaries"] = corollaries
     report["p2_over_p1"] = [dec_dn(min(p2_over_p1), 4), dec_up(max(p2_over_p1), 4)]
 
-    # Corollary S22, route (i): the floor 0.0586 from signed k = 1, 2 and nonnegative k >= 3.
+    # Remark A.11 at d = 22: the floor 0.0586 from signed k = 1, 2 and nonnegative k >= 3.
     S22 = Star(Fr(11, 125), 44)
     assert S22.eta == Fr(57, 68)
     signed = [signed_residual(S22, k, 1 / FLOOR_22, TANGENT_22) for k in (1, 2)]
@@ -416,7 +416,7 @@ def main():
     _, _, hat22 = green[22]
     assert 2 * root_constant(Reduction(22, Fr(11, 125)).p_star, 1 - 1 / hat22) >= Fr("0.1806")
     vector += [value for value, _ in signed] + row22 + [four]
-    report["S22_route_i"] = {"M01_upper": dec_up(signed[0][0], 15), "orientations_01": signed[0][1],
+    report["signed_refinement_d22"] = {"M01_upper": dec_up(signed[0][0], 15), "orientations_01": signed[0][1],
                              "M02_upper": dec_up(signed[1][0], 15), "orientations_02": signed[1][1],
                              "min_k_ge_3_lower": dec_dn(rest, 15), "four_term_G22_upper": dec_up(four, 10),
                              "F22_upper": dec_up(F4, 7), "root_constant_lower": dec_dn(root_constant(FLOOR_22, F4), 4)}
@@ -431,13 +431,13 @@ def main():
     assert m16 < 0 and m16 <= Fr("-0.00136416316276") and n16 == 32 and rest16 >= Fr("0.0690100") > FLOOR_16
     assert FLOOR_16 / (1 - 1 / up16) >= Fr("1.0281") and FLOOR_16 / (1 - 1 / hat16) >= Fr("1.0214")
     vector += [m16, rest16]
-    report["S16_signed"] = {"M01_upper": dec_up(m16, 15), "orientations": n16,
+    report["signed_refinement_d16"] = {"M01_upper": dec_up(m16, 15), "orientations": n16,
                             "min_k_ge_2_lower": dec_dn(rest16, 7),
                             "ratio_head_lower": dec_dn(FLOOR_16 / (1 - 1 / up16), 4),
                             "ratio_hat_lower": dec_dn(FLOOR_16 / (1 - 1 / hat16), 4)}
     print(f"PASS signed refinement d=16: floor 0.0689 > F_16 ({time.monotonic() - start:.1f}s)", flush=True)
 
-    # Proposition P: certificate-free dimensions.
+    # Proposition A.13 and Corollary A.14: certificate-free dimensions.
     closed = []
     for (d, t), shown in SHOWN_P.items():
         p1, pD = p_pair_ends(d, t)
@@ -450,7 +450,7 @@ def main():
         closed.append({"d": d, "t": str(t), "p_pair_1_lower": dec_dn(p1, 8), "p_pair_2d_lower": dec_dn(pD, 8),
                        "hat_G_upper": dec_up(hat, 8), "F_d_upper": dec_up(F, 8), "ratio_lower": dec_dn(p1 / F, 4),
                        "root_constant_lower": dec_dn(root_constant(p1, F), 4)})
-    report["proposition_P"] = closed
+    report["closed_form_star_floor"] = closed
     print(f"PASS closed-form star floor above F_d at d = 25, 26, 28 ({time.monotonic() - start:.1f}s)", flush=True)
     report["value_vector_sha256"] = hashlib.sha256("\n".join(str(x) for x in vector).encode()).hexdigest()
     print(json.dumps(report, indent=2))

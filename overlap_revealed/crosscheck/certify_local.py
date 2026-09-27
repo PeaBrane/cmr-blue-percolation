@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Track B part 1 -- exact rational certificates for the local inputs (see ../local.md).
+"""Exact rational certificates for the local inputs of the overlap-revealed route (manuscript, Sections 4.2-4.5).
 
 Headline case: d=12 (m=24), unit fair couplings, t=tanh(beta)=3/25.
   (1) p_B >= 2161/10000                         [signed-residual vertex certificate, 24 vertex classes]

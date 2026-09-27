@@ -1,16 +1,16 @@
 """Exact side results of the single-floor account (standard library only).
 
-None of these is needed for Theorem S or its corollaries.
+None of these is needed for Theorem A.2 of the first manuscript or its corollaries.
 
-R2  The nonnegative-residual floor is not minimised at k = 1 uniformly in
+(a) The nonnegative-residual floor is not minimised at k = 1 uniformly in
     beta: at (Delta, t) = (16, 1/2), (20, 3/10), (20, 1/3), (32, 1/5) and
     (44, 3/20) the minimum over k is at k = Delta and lies strictly below
     p(1). At seven control points the minimum is at k = 1.
-R3  The same-cavity monotonicity p_k(a) >= p_1(a) fails for an explicit law
+(b) The same-cavity monotonicity p_k(a) >= p_1(a) fails for an explicit law
     a on {-1, 1}^4 at e^beta = 3 (t = 4/5), also after mixing in 1/1000 or
     1/100 of the uniform law. It holds after mixing in 1/10, and for the
     undiluted law at e^beta = 11/10.
-R4  At d = 15, t = 27/250 the overlap counts k >= 2 clear F_15: the signed
+(c) Remark A.12: at d = 15, t = 27/250 the overlap counts k >= 2 clear F_15: the signed
     residual at k = 2 with lambda = 1/0.0725, c = 6/5 is negative and the
     nonnegative residual gives min_(k >= 3) p(k) > 0.0725 > F_15. The
     nonnegative residual alone gives p(1) < p(2) < F_15.
@@ -79,12 +79,12 @@ def main():
         row = floor_row(D, t)
         assert min(row) == row[k_min - 1] < row[0] and row.index(min(row)) == k_min - 1
         assert truncated(row[0], shown_1) and truncated(row[k_min - 1], shown_min)
-        print(f"PASS R2 witness Delta={D} t={t}: argmin k={k_min}, p({k_min}) < p(1) "
+        print(f"PASS (a) witness Delta={D} t={t}: argmin k={k_min}, p({k_min}) < p(1) "
               f"({time.monotonic() - start:.1f}s)", flush=True)
     for D, t in CONTROLS:
         row = floor_row(D, t)
         assert min(row) == row[0] and row.index(row[0]) == 0
-        print(f"PASS R2 control Delta={D} t={t}: argmin k=1 ({time.monotonic() - start:.1f}s)", flush=True)
+        print(f"PASS (a) control Delta={D} t={t}: argmin k=1 ({time.monotonic() - start:.1f}s)", flush=True)
 
     base = [(Fr(75, 200), (1, -1, -1, -1)), (Fr(58, 200), (1, 1, -1, 1)),
             (Fr(58, 200), (1, 1, 1, -1)), (Fr(9, 200), (1, 1, 1, 1))]
@@ -98,7 +98,7 @@ def main():
             assert p[1] < p[0] and p[1] / p[0] <= Fr(bound)
     p = p_k_all(4, Fr(11, 10), base)
     assert all(pk >= p[0] for pk in p)
-    print(f"PASS R3 same-cavity counterexample and controls ({time.monotonic() - start:.1f}s)", flush=True)
+    print(f"PASS (b) same-cavity counterexample and controls ({time.monotonic() - start:.1f}s)", flush=True)
 
     head, up = g_head(15)
     F_lo, F_up = 1 - 1 / head, 1 - 1 / up
@@ -110,7 +110,7 @@ def main():
     assert orientations == 58 and M2 < 0 and M2 <= Fr("-0.0105469944")
     assert floor > F_up and min(row[2:]) > floor and min(row[2:]) >= Fr("0.072807")
     assert row[0] < row[1] < F_lo
-    print(f"PASS R4 d=15 t=27/250: k=2 signed and k>=3 nonnegative clear F_15 <= 0.0718626462 "
+    print(f"PASS (c) d=15 t=27/250: k=2 signed and k>=3 nonnegative clear F_15 <= 0.0718626462 "
           f"({time.monotonic() - start:.1f}s)")
 
 

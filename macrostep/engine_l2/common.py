@@ -1,4 +1,4 @@
-"""Rigorous helpers for the macrostep second-moment engine (L2 lens).
+"""Rigorous helpers for the macrostep second-moment engine (the directed-rounding program).
 
 Rounding conventions.  Exact inputs are fractions.Fraction.  Heavy sums are done in IEEE-754 binary64 with
 UPWARD rounding emulated by math.nextafter after every round-to-nearest operation (x (+) y and x (*) y are within
@@ -13,10 +13,10 @@ from fractions import Fraction as Fr
 
 sys.dont_write_bytecode = True
 import os
-IG_DIR = os.environ.get("IG_DIR", os.path.dirname(os.path.abspath(__file__)))   # packaged copy: code base B next to this file
+IG_DIR = os.environ.get("IG_DIR", os.path.dirname(os.path.abspath(__file__)))   # indep_global.py lives next to this file
 if IG_DIR not in sys.path:
     sys.path.insert(0, IG_DIR)
-import indep_global as IG  # noqa: E402  (code base B of the audited assembly; used read-only)
+import indep_global as IG  # noqa: E402  (local constants; used read-only)
 
 INF = float("inf")
 
@@ -58,9 +58,9 @@ def div_up(a, b):
 
 
 def local_constants(d, p, gK, gh, xbar=None):
-    """Exact rational local constants from the audited code base B (indep_global.evaluate):
-    rho_- (mean-field lower bound, Lemma 3.1), rho_c (Lemma 3.5), t = tanh K' (exact), kappa = (1-rho)/rho,
-    alpha = 2 d t, q_* = d t/(1 - 2 d t).  Asserts the hypotheses (H1)-(H3) and the mean-field root test."""
+    """Exact rational local constants from indep_global.evaluate:
+    rho_- (mean-field lower bound, Lemma 4.22), rho_c (Lemma 4.27), t = tanh K' (exact), kappa = (1-rho)/rho,
+    alpha = 2 d t, q_* = d t/(1 - 2 d t).  Asserts the hypotheses (33) and the mean-field root test."""
     p, gK, gh = Fr(p), Fr(gK), Fr(gh)
     if xbar is None:
         xbar = IG.find_xbar(d, gK, gh)
@@ -71,12 +71,12 @@ def local_constants(d, p, gK, gh, xbar=None):
 
 
 def b_exact(d, t, m):
-    """Lemma 3.4(d): b(m) = t^m M_m Gamma_m(t) >= sup_{|u|_1 = m} G_t(u)."""
+    """Lemma 4.26(iv): b(m) = t^m M_m Gamma_m(t) >= sup_{|u|_1 = m} G_t(u)."""
     return t ** m * IG.Mmax_multinomial(d, m) * IG.Gam(d, t, m)
 
 
-# certified local points (exact inputs; certificates in ../local_cert/*.txt, produced by the assembly's
-# certify_new_point.py = code base B, exact rational decisions)
+# local points (exact inputs); the points used by the stored certificates are decided exactly by
+# ../certify_macrostep.py
 POINTS = {
     (9, "7/50"): dict(p=Fr(623, 2500), gK=Fr(1036137, 10 ** 6), gh=Fr(83033, 10 ** 5), xbar=Fr(676921, 5000000)),
     (9, "29/200"): dict(p=Fr(2553, 10000), gK=Fr(1038647, 10 ** 6), gh=Fr(812491, 10 ** 6), xbar=Fr(1556769, 10 ** 7)),
@@ -87,11 +87,11 @@ POINTS = {
     (8, "31/200"): dict(p=Fr(271, 1000), gK=Fr(208871, 200000), gh=Fr(25247, 31250), xbar=Fr(806041, 5000000)),
     (8, "4/25"): dict(p=Fr(2767, 10000), gK=Fr(1047157, 10 ** 6), gh=Fr(395043, 500000), xbar=Fr(1832723, 10 ** 7)),
     (8, "7/50"): dict(p=Fr(1261, 5000), gK=Fr(32389, 31250), gh=Fr(856969, 10 ** 6), xbar=Fr(1075653, 10 ** 7)),
-    # [macrostep route] L1-type inputs (noisy cavity Lemma N, pair certificate Lemma P, symmetrised coupled Holley line
-    # Lemma S), exact certificates produced by code base L1 (pipeline2.py) and verified by verify_pair_indep.py /
-    # verify_holley_indep.py (research logs).  ONLY this table differs from code base L2.
-    (8, "L1-3/20"): dict(p=Fr(2707, 10000), gK=Fr(1039407, 10 ** 6), gh=Fr(860671, 10 ** 6), xbar=Fr(539947, 5000000)),
-    (8, "L1-31/200"): dict(p=Fr(1389, 5000), gK=Fr(65119, 62500), gh=Fr(845583, 10 ** 6), xbar=Fr(154899, 1250000)),
-    (7, "L1-3/20"): dict(p=Fr(273, 1000), gK=Fr(519989, 500000), gh=Fr(44449, 50000), xbar=Fr(808479, 10 ** 7)),
-    (7, "L1-31/200"): dict(p=Fr(1401, 5000), gK=Fr(104253, 100000), gh=Fr(175269, 200000), xbar=Fr(463903, 5000000)),
+    # [macrostep route] noisy-cavity inputs of Section 4.4 (Lemma 4.15, pair certificate Lemma 4.19, symmetrised
+    # Holley line Lemma 4.20); their local certificates are ../local_sharpened.json, decided by
+    # ../certify_macrostep.py.
+    (8, "nc-3/20"): dict(p=Fr(2707, 10000), gK=Fr(1039407, 10 ** 6), gh=Fr(860671, 10 ** 6), xbar=Fr(539947, 5000000)),
+    (8, "nc-31/200"): dict(p=Fr(1389, 5000), gK=Fr(65119, 62500), gh=Fr(845583, 10 ** 6), xbar=Fr(154899, 1250000)),
+    (7, "nc-3/20"): dict(p=Fr(273, 1000), gK=Fr(519989, 500000), gh=Fr(44449, 50000), xbar=Fr(808479, 10 ** 7)),
+    (7, "nc-31/200"): dict(p=Fr(1401, 5000), gK=Fr(104253, 100000), gh=Fr(175269, 200000), xbar=Fr(463903, 5000000)),
 }

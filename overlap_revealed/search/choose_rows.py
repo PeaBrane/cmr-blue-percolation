@@ -3,10 +3,9 @@
 Nothing here is needed for verification. Floating point only proposes
 parameters; the exact checks here and in ../certify.py decide them.
 
-Part-1 procedure (code base A; research notes scripts/certify_all.py, output
-results_nearby.txt, local.md Sec. 6), at the nine research points of that
-code base (eight certified rows and the uncertified d = 10, t = 3/25). For
-each (d, t):
+Procedure of the first implementation (../crosscheck/; Section 4.7 of the
+manuscript), at its nine candidate points (eight certified rows and the
+uncertified d = 10, t = 3/25). For each (d, t):
   1. bisect the largest r = p_B / p_A for which a Nelder-Mead point of the
      two-parameter tangent family makes every floating vertex sum <= 0, and
      take p = floor(p_A r * 10^4)/10^4 - 10^-4;
@@ -15,16 +14,15 @@ each (d, t):
   3. maximise the floating mean-field density over lines 2h + 2K'S that stay
      0.001 below log(C^S N_k / D_k) in every environment, then round g_K down
      and lower g_h in steps of 10^-6 until the line passes the exact check.
-The headline t = 3/25 row keeps this p but uses the exploration-phase line
+The row d = 12, t = 3/25 keeps this p but uses the exploratory line
 K' = 0.013, h = -0.09 with e^(2K'), e^(2h) rounded down to five decimals.
 
-New-point procedure for d = 10, t = 27/200 (code base B; research notes
-assembly/certify_new_point.py): the same steps with code base B's search
-functions (bisection over p directly, a grid for the weights and a
-10^-5 grid for K').
+Procedure of the second implementation for d = 10, t = 27/200: the same
+steps with the search functions of freeze_params.py (bisection over p
+directly, a grid for the weights and a 10^-5 grid for K').
 
-The final lines compare the chosen values with ../params.json. The part-1
-search takes several minutes.
+The final lines compare the chosen values with ../params.json. The search of
+the first implementation takes several minutes.
 """
 
 import sys
@@ -43,17 +41,17 @@ HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE.parent / "crosscheck"))
 sys.path.insert(0, str(HERE))
 
-from certify_odds import choose_wk, denominator, make, numerator  # noqa: E402  (code base A)
+from certify_odds import choose_wk, denominator, make, numerator  # noqa: E402  (first implementation)
 from certify_pB import aligned_witness  # noqa: E402
 from certify_pB import certify as certify_pB  # noqa: E402
 from explore_pB_opt2 import build  # noqa: E402
 from pB_family import Gfam  # noqa: E402
-import freeze_params as B  # noqa: E402  (code base B searches and exact functions)
+import freeze_params as B  # noqa: E402  (second implementation: searches and exact functions)
 
 PARAMS = HERE.parent / "params.json"
 
 
-# ---------------------------------------------------------------- part-1 procedure (certify_all.py)
+# ---------------------------------------------------------------- procedure of the first implementation
 def pB_params(d, tf):
     m = 2*d; beta = atanh(tf); pre = 1-exp(-4*beta)
     a, Us, PU, NU, SU = build(beta, m)
@@ -135,7 +133,7 @@ def part1(d, t):
     return tgt, Gam, H
 
 
-# ---------------------------------------------------------------- new-point procedure (certify_new_point.py)
+# ---------------------------------------------------------------- procedure of the second implementation
 def pB_float(M):
     pre = float(M.pA)
     def cert(p):
@@ -196,7 +194,7 @@ def main():
         print("Different from params.json:", mismatches)
         sys.exit(1)
     print("PASS: the searches reproduce (p, g_K, g_h) of every row in params.json, including the "
-          "uncertified row (p only for d12-t3/25, whose line is the exploration line)")
+          "uncertified row (p only for d12-t3/25, whose line is the exploratory line)")
 
 
 if __name__ == "__main__":

@@ -1,11 +1,11 @@
 """Interval-arithmetic cross-check of the window constants (optional; needs mpmath).
 
-The decisive version is ../gd_constants.py (standard library only). Research-note source:
-theorem-A.md, Secs. 0.2, 1.2 and 10 (revision 2).
+The decisive version is ../gd_constants.py (standard library only). Manuscript locators: the constant
+(1.4), the threshold (1.7) and Appendix A.1 of the diluted-model manuscript.
 
 Closed-form quantities only (4 expressions per dimension); no case-by-case certificate.
 
-(1) g_d = (p_c/2)^K_F / (N_1 2^(K_F+K_Q)), eq. (1.1), with
+(1) g_d = (p_c/2)^K_F / (N_1 2^(K_F+K_Q)), eq. (1.4), with
       K_F = 12 d 11^(d-1),  K_Q = C(d,2) 14^2 13^(d-2),  N_1 = d (4*11^d + 9^d).
     d = 2: p_c(Z^2) = 1/2 (Kesten 1980, Thm 1), so 1/g_2 = 2^(3 K_F + K_Q) N_1 is an integer.
     d = 3: 1/5 <= p_c(Z^3) <= 1/2 (Grimmett 1999 (1.13) with lambda(3) <= 5; (1.9) and Kesten),

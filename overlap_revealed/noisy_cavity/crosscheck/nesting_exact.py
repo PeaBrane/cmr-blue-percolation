@@ -1,8 +1,9 @@
 #!/usr/bin/env python3
-"""Noisy-cavity route -- exact checks for Lemma N' (nesting of the noisy classes), noisy-cavity write-up Sec. 3.1.
-[Packaged copy of the research script r1_nesting_exact.py; changes: none in the computation (ROOT resolves to ../ , which holds data/); an optimisation guard; exit status 1 on failure.]
+"""Noisy-cavity route -- exact checks for the nesting of the noisy classes (Remark 4.17 of the manuscript,
+Section 4.4). ROOT resolves to ../ , which holds data/; Python refuses optimized mode (-O), and the exit status is 1
+on failure.
 
-Lemma N'.  Let 0 < beta1 <= beta2, t_i = tanh(beta_i), b'' = t1/t2 in (0, 1].  For a law nu of eps on {+-1}^m let
+Nesting.  Let 0 < beta1 <= beta2, t_i = tanh(beta_i), b'' = t1/t2 in (0, 1].  For a law nu of eps on {+-1}^m let
 xi = (xi_w) be iid +-1 with E xi_w = b'', independent of eps, and let nu'' be the law of rho = (eps_w xi_w)_w.  Then
     R^{beta2}_{nu''}(s) = c * R^{beta1}_{nu}(s)   for all s in {+-1}^m,   c = (cosh beta2 / cosh beta1)^m,
 and nu'' is flip invariant when nu is.  Here R^{beta}_nu(s) = E_nu[2 cosh(beta s.rho)].
@@ -13,7 +14,7 @@ and nu'' is flip invariant when nu is.  Here R^{beta}_nu(s) = E_nu[2 cosh(beta s
     (random rational weights on random supports, symmetrised).  Also checked: nu'' is a probability law and is flip
     invariant.
 (2) Negative control: for b'' > 1 (i.e. beta1 > beta2) the noise law P(xi = +1) = (1 + b'')/2 exceeds 1.
-(3) Strictness at the five certified points (consequence (c) of Lemma N'): the plain aligned-frozen witness
+(3) Strictness at the five certified points (the strict comparison of Remark 4.17): the plain aligned-frozen witness
     p_A r_beta(aligned; [m]) (beta inside R, an exact upper bound on p_A * inf over the PLAIN class) is < p, the certified
     noisy floor.  Also printed: the noisy aligned-frozen witness at beta_c and at the certificate's beta' (w_c'), both
     >= p.  All values exact rationals; witnesses (upper bounds) shown rounded UP to 9 digits, ratios DOWN.
@@ -74,7 +75,7 @@ def noise(law, m, bpp):
 
 
 def witness(d, t, wR):
-    """p_A r(aligned-frozen; [m]) with f(y) = w_R^{y/2} + w_R^{-y/2} inside R (exact; Lo Sec. 3.4 form)."""
+    """p_A r(aligned-frozen; [m]) with f(y) = w_R^{y/2} + w_R^{-y/2} inside R (exact; the aligned frozen value of Remark 4.17)."""
     n = 2 * d - 1; t = Fr(t)
     w = (1 + t) / (1 - t); a = w * w / (1 + w * w); pA = 1 - 1 / w ** 2
     f = lambda y: two_cosh(wR, y)
@@ -97,7 +98,7 @@ def down(x, k=9):
 def main():
     T0 = time.time(); rng = random.Random(20260926)
     n_id = 0; ok_all = True
-    print("(1) Lemma N' identity  R^{beta2}_{nu''}(s) == c R^{beta1}_{nu}(s)  (exact rationals, all s)")
+    print("(1) nesting identity  R^{beta2}_{nu''}(s) == c R^{beta1}_{nu}(s)  (exact rationals, all s)")
     for m in (2, 4, 6):
         for t2 in (Fr(1, 5), Fr(3, 20), Fr(2, 5)):
             w2 = (1 + t2) / (1 - t2)

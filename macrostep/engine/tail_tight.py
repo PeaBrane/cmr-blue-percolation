@@ -1,14 +1,15 @@
-"""Macrostep route, code base R0t: tightened rigorous forward return probabilities u_n(0) and tails T_u(N).
+"""Macrostep route, tightened forward tails for ind_certify_t.py: rigorous forward return probabilities u_n(0) and
+tails T_u(N).
 
 u_n(0) = P(Y_n = 0) for the difference Y_n of two independent uniform oriented walks in Z^f, i.e.
     u_n(0) = V_f(n) / f^(2n),   V_f(n) = sum_{k in N^f, |k| = n} multinom(n; k)^2   (exact integers).
 Block recursion (exact): V_1(n) = 1, V_2(n) = C(2n, n), V_{a+b}(n) = sum_m C(n, m)^2 V_a(m) V_b(n - m).
 Each u_n(0), n <= NEX, is stored as the integer U_n = ceil(2^SC V_f(n) / f^(2n)) (so U_n / 2^SC >= u_n(0)).
 
-Tails beyond NEX (macrostep write-up, Lemma R.1):
+Tails beyond NEX (the f = 4 bound is proved from the 2+2 split below; the manuscript does not use it):
   f = 4 (2+2 split):  u_n(0) <= C4 n^(-3/2) + 2 exp(-2 eps^2 n),  C4 = 2 pi^(-3/2) (1 - 4 eps^2)^(-1/2),
                       valid for n >= 1/(1/2 - eps);  sum_{n >= N1} n^(-3/2) <= N1^(-3/2) + 2 N1^(-1/2).
-  f >= 5 (atom bound, global.md Lemma 4.2(ii) as in R0):
+  f >= 5 (atom bound, Lemma 4.29(ii) of the first manuscript, as in ind_green.py):
                       sum_{n >= f A1} u_n(0) <= f sqrt(f) (2 pi)^(-s) (A1^(-s) + A1^(1-s)/(s-1)),  s = (f-1)/2.
 Every constant is an exact rational upper bound; no floating point enters.
 
@@ -106,7 +107,7 @@ def U_from_V(f, Vf):
 
 # ------------------------------------------------------------------------------------ analytic tails
 def tail_split4(N1, eps=Fr(1, 20)):
-    """rational >= sum_{n >= N1} u_n(0) for f = 4 (Lemma R.1)."""
+    """rational >= sum_{n >= N1} u_n(0) for f = 4 (the 2+2 split bound of the module docstring)."""
     eps = Fr(eps)
     assert 0 < eps < Fr(1, 2) and N1 >= 1 / (Fr(1, 2) - eps)
     pi32_inv = 1 / (PI_LO * sqrt_lo(PI_LO))                      # >= pi^(-3/2)
@@ -118,7 +119,7 @@ def tail_split4(N1, eps=Fr(1, 20)):
 
 
 def robbins_tail(f, A1):
-    """rational >= sum_{n >= f A1} u_n(0), f >= 5 (the R0 bound, global.md Lemma 4.2(ii))."""
+    """rational >= sum_{n >= f A1} u_n(0), f >= 5 (the bound of ind_green.py, Lemma 4.29(ii))."""
     s2 = f - 1
     assert s2 > 2
 

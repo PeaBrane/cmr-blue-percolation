@@ -1,4 +1,4 @@
-"""Macrostep route, code base R0: the macrostep family, states and orbits (independent of the L2 rig code).
+"""Macrostep route, the a priori error program: the macrostep family, states and orbits (independent of ../engine_l2/).
 
 A lateral word is a sequence of signed unit vectors in the m = 3 lateral coordinates, of length <= c, in which
 no coordinate occurs with both signs ("monotone").  P(w) = y^|w| / Z.  A macrostep is (w, i), i uniform in the

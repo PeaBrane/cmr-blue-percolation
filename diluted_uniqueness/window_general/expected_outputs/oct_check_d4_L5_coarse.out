@@ -16,7 +16,7 @@ d=4: every configuration has rule designs satisfying the Design Lemma: B 3968, N
   S    S2c  : (|O|, |W*\O|) = [(5, 17)]
   28094 labelled plaquettes checked (240 carry keys of two types); 880808 same-edge key pairs: all incompatible except N-int pairs with arcs at different terminals
   max over labelled P0 of sum_e max_(D at e) W c  /  K_d = 1.000000 (<= 1 required)
-  hand constant: log2 K_d = 27.3847 at p in [0.146971, 0.278746]
-  [rev1] bracket "R8": p_lo = 249998299/1701000000, p_hi = 139373/500000; log2 K_d = 27.384688
-  exact bulk max-clique value: 2^27.1006  (hand bound 2^27.3847)
-  [rev1] bracket "R8": exact bulk max-clique value 2^27.100618 <= K_d = 2^27.384688: True
+  hand constant: log2 K_d = 29.2208 at p in [0.125000, 0.350000]
+  bracket "coarse": p_lo = 1/8, p_hi = 7/20; log2 K_d = 29.220844
+  exact bulk max-clique value: 2^29.0037  (hand bound 2^29.2208)
+  bracket "coarse": exact bulk max-clique value 2^29.003687 <= K_d = 2^29.220844: True

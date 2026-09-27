@@ -1,4 +1,4 @@
-d=3: every configuration has rule designs satisfying the Design Lemma: B 918, N 972, S(L=6) 22977
+d=3: every configuration has rule designs satisfying the Design Lemma: B 918, N 972, S(L=5) 14409
   B    F1   : (|O|, |W*\O|) = [(6, 15)]
   B    F2   : (|O|, |W*\O|) = [(7, 18)]
   B    F3   : (|O|, |W*\O|) = [(6, 15)]
@@ -14,9 +14,9 @@ d=3: every configuration has rule designs satisfying the Design Lemma: B 918, N 
   S    S2a  : (|O|, |W*\O|) = [(4, 8)]
   S    S2b  : (|O|, |W*\O|) = [(5, 11)]
   S    S2c  : (|O|, |W*\O|) = [(5, 11)]
-  2628 labelled plaquettes checked (72 carry keys of two types); 44082 same-edge key pairs: all incompatible except N-int pairs with arcs at different terminals
+  1740 labelled plaquettes checked (72 carry keys of two types); 35778 same-edge key pairs: all incompatible except N-int pairs with arcs at different terminals
   max over labelled P0 of sum_e max_(D at e) W c  /  K_d = 1.000000 (<= 1 required)
-  hand constant: log2 K_d = 23.7234 at p in [0.211027, 0.347298]
-  [rev1] bracket "R8": p_lo = 9999952613/47387000000, p_hi = 173649/500000; log2 K_d = 23.723359
-  exact bulk max-clique value: 2^23.4516  (hand bound 2^23.7234)
-  [rev1] bracket "R8": exact bulk max-clique value 2^23.451600 <= K_d = 2^23.723359: True
+  hand constant: log2 K_d = 23.7238 at p in [0.211000, 0.347300]
+  bracket "coarse": p_lo = 211/1000, p_hi = 3473/10000; log2 K_d = 23.723761
+  exact bulk max-clique value: 2^23.4520  (hand bound 2^23.7238)
+  bracket "coarse": exact bulk max-clique value 2^23.452008 <= K_d = 2^23.723761: True

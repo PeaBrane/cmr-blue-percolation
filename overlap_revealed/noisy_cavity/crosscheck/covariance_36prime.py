@@ -1,14 +1,14 @@
-"""Code base A, Lemma 3.6' variant (research script covariance.py of code base A, Lemma 3.6' version): the covariance bound of
-global.md Lemma 3.6 for any alpha = 2d tbar < 1 on tori L >= L_*. It equals ../../crosscheck/covariance.py except that
+"""First implementation, variant of Lemma 4.28 of the manuscript: the covariance bound of Lemma 4.28 for any
+alpha = 2d tbar < 1 on tori L >= L_*. It equals ../../crosscheck/covariance.py except that
 the assertion 2d Khi <= 35/100 is replaced by the computation of L_* (one larger than the least value; valid) and the
 exact wrap check alpha^(L_*-3)/(1-alpha) <= 10^-15.
 
-Sharper lower bound on Cov(sigma_x, sigma_y), x~y, for the torus Ising law (global.md Lemma 3.6).
+Sharper lower bound on Cov(sigma_x, sigma_y), x~y, for the torus Ising law (Lemma 4.28).
 
 Cov >= 2 sinh(2K') / (E[P+Q])^2  (Jensen), P+Q = e^{K'} cosh(a+b) + e^{-K'} cosh(a-b),
 E cosh(u) <= 1 + E[u^2] (cosh U - 1)/U^2 for |u| <= U,
 E[(a+b)^2] <= 4H^2 + 4 H K' (4d-2) mbar + K'^2 E[T^2],   E[(a-b)^2] <= 2 K'^2 E[T_x^2],
-E[sigma_i sigma_j] <= mbar^2 + D_ij (Lemma 3.6),  D_ij <= G(i-j) + 1e-15 for L >= 40.
+E[sigma_i sigma_j] <= mbar^2 + D_ij (Lemma 4.28),  D_ij <= G(i-j) + 1e-15 for L >= 40.
 Inputs are rationals: Klo <= K' <= Khi, H <= Hhi (H = |h|), mbar >= m_L, tbar >= tanh K'.
 """
 from fractions import Fraction as Fr
@@ -23,8 +23,8 @@ EPS_WRAP = Fr(1, 10 ** 15)
 
 def cov_lower_sharp(d, Klo, Khi, Hhi, mbar, tbar):
     n1 = 2 * d - 1                       # |N(x)\{y}|
-    # Lemma 3.6' (generalised): alpha = 2d tbar < 1 and L >= L_*(alpha) := 3 + ceil(log(1e15/(1-alpha))/log(1/alpha)),
-    # so that the wrap-around term alpha^{L-3}/(1-alpha) <= 1e-15 (exactly as in Lemma 3.6, where alpha<=0.35, L>=40).
+    # Variant of Lemma 4.28: alpha = 2d tbar < 1 and L >= L_*(alpha) := 3 + ceil(log(1e15/(1-alpha))/log(1/alpha)),
+    # so that the wrap-around term alpha^{L-3}/(1-alpha) <= 1e-15 (exactly as in Lemma 4.28, where alpha<=0.35, L>=40).
     alpha = 2 * d * tbar; assert alpha < 1
     import math
     Lstar = 3 + math.ceil(math.log(1e15 / (1 - float(alpha))) / math.log(1 / float(alpha))) + 1

@@ -1,17 +1,17 @@
-"""Code base A: independent evaluation of the global criterion (optional; needs mpmath).
+"""First implementation: independent evaluation of the global criterion (optional; needs mpmath).
 
-For every row of ../params.json this program runs part 2's implementation
-(criterion.py, green.py, covariance.py, evaluate_part1.py), written
+For every row of ../params.json this program runs the global criterion of this
+directory (criterion.py, green.py, covariance.py, evaluate_part1.py), written
 independently of ../certify.py. It encloses K' = log(g_K)/2 and
 |h| = -log(g_h)/2 in outward-rounded 200-bit mpmath intervals, takes
 tbar = K' (not tanh K'), finds its own mbar by interval bisection and sums the
 resolvent to radius 60. It evaluates the basic Score, Score_c (the manuscript's
-shared-edge lemma; research notes global.md Lemma 3.5) and, where
-2dK' <= 0.35, Score'_c (global.md Lemma 3.6, which the manuscript does not use).
+shared-edge lemma, Lemma 4.27) and, where 2dK' <= 0.35, Score'_c (Lemma 4.28,
+which Table 2 does not use).
 
-The published table shows the worse of the two code bases, so code base A must
-satisfy every displayed bound: rho_-, eta', Score, Score_c and theta_* from
-../params.json, and the Score'_c column and its theta below. Assertions decide
+Table 2 of the manuscript shows the worse of the two implementations, so this
+one must satisfy every displayed bound: rho_-, eta', Score, Score_c and theta_* from
+../params.json, and the reference Score'_c bounds and their theta below. Assertions decide
 every comparison in exact rational arithmetic on the interval endpoints.
 
     python crosscheck_global.py [LABEL ...]   # all rows, or only the rows with these labels
@@ -43,7 +43,8 @@ def dn(x, k):
 def up(x, k):
     return f"{float(Fr(-((-x.numerator * 10 ** k) // x.denominator), 10 ** k)):.{k}f}"
 
-# Displayed Score'_c <= and the corresponding theta_* >= (theorem.md Table 7.1 and Sec. 7.1).
+# Reference bounds Score'_c <= and the corresponding theta_* >= at the rows of Table 2 (Lemma 4.28; these
+# values are not displayed in the manuscript, which does not use Lemma 4.28 for Table 2).
 LEMMA_36 = {"d12-t3/25": ("0.892753", "0.04188"), "d12-t11/100": ("0.915188", "0.03630"),
             "d12-t23/200": ("0.900825", "0.04073"), "d12-t1/8": ("0.889209", "0.04078"),
             "d12-t13/100": (None, None), "d11-t13/100": ("0.934120", "0.02392"),
@@ -96,11 +97,11 @@ def main():
         if score_s is not None:
             assert score_s <= Fr(shown_s) and score_s < 1 and theta(score_s) >= Fr(shown_theta)
         extra = f", Score'_c <= {up(score_s, 6)}" if score_s is not None else ", Score'_c n/a"
-        print(f"PASS A-global {row['label']}: rho_- >= {dn(rho, 7)}, eta' <= {up(eta, 6)},"
+        print(f"PASS first-implementation global {row['label']}: rho_- >= {dn(rho, 7)}, eta' <= {up(eta, 6)},"
               f" Score <= {up(score, 6)}, Score_c <= {up(score_c, 6)}{extra},"
               f" theta_* >= {dn(theta(used), 6)} ({time.monotonic() - start:.1f}s)", flush=True)
     scope = f"at the {len(labels)} selected rows" if labels else "at every row"
-    print(f"PASS code base A satisfies every published global bound {scope}")
+    print(f"PASS the first implementation satisfies every published global bound {scope}")
 
 
 if __name__ == "__main__":

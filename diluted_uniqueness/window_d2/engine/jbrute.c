@@ -2,7 +2,7 @@
  * Written from the definitions (isolated diamond; (+)-pivotal; s-pivotal), sharing no code with engine/lrm.c.
  * usage: jbrute cell LAB X Y     (4x4 cell, candidate {1,2}^2, boundary = 12 cell-perimeter vertices)
  *        jbrute box  LAB X Y     (B_1(0) plus 12 outer neighbours; boundary = outer neighbours; not used here)
- * LAB: 12 chars (0-9,a-f) = outside-connection block of each boundary vertex, in the lens' cyclic order.
+ * LAB: 12 chars (0-9,a-f) = outside-connection block of each boundary vertex, in the cyclic boundary order.
  * Output (cell): D N0_P N0_T N0_G N1_P N1_T N1_G   [counts over 2^24 configs; pivot counts x2 per 23-config]
  * Output (box):  Nplus_e1 Nplus_e2 Ns              [same normalisation; Ns summed over the 4 inside plaquettes]
  */
@@ -49,7 +49,7 @@ static int deg(uint32_t z, int v) {
     for (int k = 0; k < ne; k++) if ((z >> k & 1u) && (eu[k] == v || ew[k] == v)) d++;
     return d;
 }
-/* Theorem A Def 2.1: four edges open and exactly one diagonal pair of degree-2 vertices */
+/* Definition 2.1 of the diluted-model manuscript: four edges open and exactly one diagonal pair of degree-2 vertices */
 static int is_diamond(uint32_t z, int q) {
     if ((z & plm[q]) != plm[q]) return 0;
     int p1 = deg(z, plc[q][0]) == 2 && deg(z, plc[q][2]) == 2;

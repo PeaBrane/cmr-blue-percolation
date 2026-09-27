@@ -1,13 +1,13 @@
 """Supplementary exact checks behind verify_single_floor.py (standard library only).
 
-1. Lemma J at all 256 (d, t, k) triples of the seven corollary points: the
+1. Lemma A.7 of the first manuscript at all 256 (d, t, k) triples of the seven corollary points: the
    cavity maximum T_s over every orientation index equals its balanced value.
    With it, the complete h = 0 row p(1), ..., p(2d) is evaluated directly and
    its minimum is p(1) = p_*, independently of the block cover of
-   Proposition K.
-2. Identity (K1) for every k, and the monotonicity facts of Lemma M (i)-(v),
+   Proposition A.10.
+2. Lemma A.8 for every k, and the monotonicity facts of Lemma A.9 (i)-(v),
    at (d, t) = (16, 13/125) and (17, 1/10).
-3. The count enumeration of the signed residual (paper eq. (50)) agrees with
+3. The count enumeration of the signed residual M_(h,k) of (66) agrees with
    brute-force enumeration over all eps, x in {-1, 1}^Delta for
    Delta = 4, 6, k = 1, 2, 3 and three (t, lambda, c), and with a separate
    k = 1 formula at d = 16 and d = 22.
@@ -36,14 +36,14 @@ import verify_signed_star  # noqa: E402
 
 
 def nonneg_floor_all_j(S, k):
-    """p(k) with the cavity maximum over every orientation index; asserts Lemma J."""
+    """p(k) with the cavity maximum over every orientation index; asserts Lemma A.7."""
     D, t, C, v, u, eta = S.D, S.t, S.C, S.v, S.u, S.eta
     s = D - k
     N = t * (1 - t * t) ** (D - 1) * C ** (k - 1) / h_ell(S, k - 1) ** 2
     cs = Fr(1) if s % 2 == 0 else C
     lam = (1 + eta ** (2 * k) + 2 * cs * eta ** k) / S.alpha
     T_all = [S.e_psi(D, s, j) for j in range(s + 1)]
-    assert max(T_all) == T_all[s // 2], ("Lemma J", D, S.t, k)
+    assert max(T_all) == T_all[s // 2], ("Lemma A.7", D, S.t, k)
     B = max((u - lam * v) * S.e_psi(D - 1, k - 1, j, 1) + (1 - u) * S.e_psi(D - 1, k - 1, j, -1)
             for j in range(k))
     M = C ** s * T_all[s // 2] / 2 + C ** k / 2 * B
@@ -61,9 +61,9 @@ def check_identity_k1(d, t):
         kap = R.kap(k)
         B_hat = max(eta * S.e_psi(D - 1, k - 1, j, -1) - kap * S.e_psi(D - 1, k - 1, j, 1) for j in range(k))
         gamma_k = R.lt(k) + R.c2D * R.h(k) * (C ** (D - 2 * k + 1) * E[k] + B_hat / 2)
-        assert gamma_k == R.sh2 / nonneg_floor(S, k), ("identity K1", d, t, k)
-        assert B_hat <= eta * R.phistar(k) - kap * R.phik(k)                   # Lemma M(v)
-    assert E[1] == E[2] and all(E[k + 1] <= E[k] for k in range(1, D))          # Lemma M(i)
+        assert gamma_k == R.sh2 / nonneg_floor(S, k), ("Lemma A.8", d, t, k)
+        assert B_hat <= eta * R.phistar(k) - kap * R.phik(k)                   # Lemma A.9(v)
+    assert E[1] == E[2] and all(E[k + 1] <= E[k] for k in range(1, D))          # Lemma A.9(i)
     assert all(E[2 * m - 1] == E[2 * m] for m in range(1, D // 2 + 1))
     assert all(R.r(k + 1) < R.r(k) and R.h(k + 1) > R.h(k) for k in range(1, D))        # (ii)
     assert all(R.lt(k + 1) < R.lt(k) and R.kap(k + 1) < R.kap(k) for k in range(1, D))  # (iii)
@@ -119,12 +119,12 @@ def main():
         row = [nonneg_floor_all_j(S, k) for k in range(1, 2 * d + 1)]
         triples += len(row)
         assert min(row) == row[0] == Reduction(d, t).p_star
-        print(f"PASS full h=0 row d={d} t={t}: Lemma J at all {len(row)} k, minimum at k=1 "
+        print(f"PASS full h=0 row d={d} t={t}: Lemma A.7 at all {len(row)} k, minimum at k=1 "
               f"({time.monotonic() - start:.1f}s)", flush=True)
     assert triples == 256
     for d, t in [(16, Fr(13, 125)), (17, Fr(1, 10))]:
         check_identity_k1(d, t)
-        print(f"PASS identity (K1) and Lemma M at d={d} t={t} ({time.monotonic() - start:.1f}s)", flush=True)
+        print(f"PASS Lemma A.8 and Lemma A.9 at d={d} t={t} ({time.monotonic() - start:.1f}s)", flush=True)
     cases = 0
     for D in (4, 6):
         for k in (1, 2, 3):

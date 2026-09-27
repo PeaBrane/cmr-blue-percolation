@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
-"""Noisy-cavity route -- third, independent check of the Holley-line certificates (Lemma S with Lemma N, noisy-cavity write-up
-[Packaged copy of the research script r1_verify_holley.py; changes: the default data path is ../data/CERT_DATA_d9.json relative to this file; an optimisation guard; exit status 1 on failure.]
-Sec. 3.3).  Written from the statement of Lemma S only (no code shared with code base L1's exact_local.py / exact_holley.py /
-verify_holley_indep.py).  Input: data/CERT_DATA_d9.json (t, wc', g_K, g_h, and for every environment k the stored
+"""Noisy-cavity route -- independent check of the Holley-line certificates (Lemma 4.20 with Lemma 4.15; condition (N2)
+of Section 4.7 of the manuscript).  Written from the statement of Lemma 4.20 only, independently of the other
+implementations of this certificate.  The default data path is ../data/CERT_DATA_d9.json relative to this file; Python
+refuses optimized mode (-O), and the exit status is 1 on failure.  Input: data/CERT_DATA_d9.json (t, wc', g_K, g_h, and for every environment k the stored
 Lambda'_k and the tangent points c(i+, i-)).  All decisions are exact (fractions.Fraction, Python integers); numpy is
 used only for integer counting.
 

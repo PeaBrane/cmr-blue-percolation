@@ -1,8 +1,9 @@
 #!/usr/bin/env python3
-"""Noisy-cavity route -- third, independent check of the pair certificates (Lemma P, noisy-cavity write-up Sec. 3.2).
-[Packaged copy of the research script r1_verify_pair.py; changes: the default data path is ../data/CERT_DATA_d9.json relative to this file; an optimisation guard; exit status 1 on failure.]
+"""Noisy-cavity route -- independent check of the pair certificates (Lemma 4.19; condition (N1) of Section 4.7 of the
+manuscript).  The default data path is ../data/CERT_DATA_d9.json relative to this file; Python refuses optimized mode
+(-O), and the exit status is 1 on failure.
 
-Written from the statement of Lemma P only (no code shared with code base L1's exact_pair.py or verify_pair_indep.py).
+Written from the statement of Lemma 4.19 only, independently of the other implementations of this certificate.
 Input: data/CERT_DATA_d9.json (t, p, wc', psi_U(x) as exact rational strings).  All decisions are exact
 (fractions.Fraction and Python integers); numpy is used only for integer bit-counting in the enumeration of (C).
 

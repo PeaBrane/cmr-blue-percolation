@@ -4,23 +4,23 @@ The manuscript's appendix reports that a literal implementation of the surgery
 map, check_surgery.py in this directory, found no failure on 6546 (+)-pivotal
 instances in d = 2 (739 resolved in Step 1; 2285, 1892 and 1630 of types N, B
 and S) and on 2197 in d = 3 (442, 793, 384 and 578). These totals are the sums
-of the five runs below. The research logs did not record the seeds; each seed
-was recovered by rerunning check_surgery.py and matching the first line of the
-log, the cumulative counts after 10 samples.
+of the five runs below. The seeds were not recorded with the original runs;
+each seed was recovered by rerunning check_surgery.py and matching the
+recorded cumulative counts after 10 samples (RUNS below).
 
-    d  samples  seed  mode    L   research log
-    2  200      13    path    10  surgery_d2_path_L10.out
-    2  300      12    path    16  surgery_d2_path_L16.out
-    2  100      11    random  10  surgery_d2_random_L10.out
-    3  60       15    path    10  surgery_d3_path_L10.out
-    3  100      14    path    12  surgery_d3_path_L12.out
+    d  samples  seed  mode    L
+    2  200      13    path    10
+    2  300      12    path    16
+    2  100      11    random  10
+    3  60       15    path    10
+    3  100      14    path    12
 
 By default the three d = 2 runs stop after 10 samples (10 to 20 CPU
-seconds), and their counts are compared with the first line of the research
-log.
+seconds), and their counts are compared with the recorded counts after 10
+samples.
 --slow adds the first 10 samples of the two d = 3 runs, which take minutes
 (about 15 CPU seconds for the first 2 samples at L = 10). --full completes
-all five runs, compares their final counts with the last line of each log and
+all five runs, compares their final counts with the recorded final counts and
 checks the manuscript's totals; it takes hours. Every run also passes all
 assertions of check_surgery.py. This is a finite sanity check, not a proof
 input.
@@ -79,7 +79,7 @@ def main():
         assert counts == (final if args.full else first), (d, seed, mode, L, counts)
         totals[d] = [a + b for a, b in zip(totals[d], counts)]
         print(f"PASS d={d} {mode} L={L} seed={seed}, {n} samples: {counts[-1]} (+)-pivotal edges, "
-              f"counts equal to the research log ({time.monotonic() - start:.1f}s)", flush=True)
+              f"counts equal to the recorded counts ({time.monotonic() - start:.1f}s)", flush=True)
     if args.full:
         assert {d: tuple(v) for d, v in totals.items()} == TOTALS
         print(f"PASS manuscript totals: {TOTALS[2][-1]} instances in d = 2 and {TOTALS[3][-1]} in d = 3")

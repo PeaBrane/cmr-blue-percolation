@@ -49,8 +49,8 @@
         5
       ],
       "brackets": [
-        "old",
-        "R8"
+        "coarse",
+        "table"
       ]
     },
     "octahedral_table": {
@@ -189,19 +189,19 @@
     }
   },
   "runs": {
-    "oct_check d=5 L=5 R8": {
+    "oct_check d=5 L=5 table": {
       "ok": true,
       "seconds": 372.6
     },
-    "oct_check d=3 L=6 R8": {
+    "oct_check d=3 L=6 table": {
       "ok": true,
       "seconds": 2.2
     },
-    "oct_check d=4 L=5 R8": {
+    "oct_check d=4 L=5 table": {
       "ok": true,
       "seconds": 45.5
     },
-    "oct_check d=4 L=5 old": {
+    "oct_check d=4 L=5 coarse": {
       "ok": true,
       "seconds": 44.6
     },

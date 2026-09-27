@@ -2,7 +2,7 @@
 
 Forward part: u_n(z) = P_0(Y_n = z), Y = difference of two independent oriented walks in Z^f (uniform steps),
 exact rationals for n <= N0:  u_n(z) = (n!)^2 f^{-2n} [x^n] prod_i A_{z_i}(x),  A_r(x) = sum_k x^k/(k!(k-r)!).
-Tail: sum_{n>N0} u_n(0) <= exact sum up to K + Robbins bound (global.md Lemma 4.2(ii) with d -> f).
+Tail: sum_{n>N0} u_n(0) <= exact sum up to K + Robbins bound (Lemma 4.29(ii) of the first manuscript with d -> f).
 u_n(z) <= u_n(0) (Cauchy-Schwarz).
 
 Lateral part: l_n(z) = P(D^X_n = z), D^X_n = X_n - X'_n, X_n = sum of n iid word endpoints.
@@ -44,7 +44,7 @@ def u_table(f, N0, zs):
 
 
 def robbins_tail(f, A):
-    """rational >= sum_{n >= f*A} u_n(0)  (global.md Lemma 4.2(ii) with d -> f: u_k <= A_{f floor(k/f)}
+    """rational >= sum_{n >= f*A} u_n(0)  (Lemma 4.29(ii) with d -> f: u_k <= A_{f floor(k/f)}
     <= sqrt(f) (2 pi floor(k/f))^{-(f-1)/2}; sum_{a>=A} a^{-s} <= A^{-s} + A^{1-s}/(s-1), s = (f-1)/2 > 1)."""
     s2 = f - 1
     assert Fr(s2, 2) > 1

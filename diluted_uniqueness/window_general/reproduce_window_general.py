@@ -2,8 +2,8 @@
 
 Runs, each in a child process of this interpreter, and compares every output line with expected_outputs/:
  1. the default light check check_window_general.py;
- 2. oct_check.py for d = 3 at L = 6 (bracket R8), d = 4 at L = 5 (brackets R8 and old; about 45 s and
-    3.8 GB each) and d = 5 at L = 5 (bracket R8, without the bulk clique; about 6.5 min, 0.4 GB): every
+ 2. oct_check.py for d = 3 at L = 6 (bracket table), d = 4 at L = 5 (brackets table and coarse; about 45 s and
+    3.8 GB each) and d = 5 at L = 5 (bracket table, without the bulk clique; about 6.5 min, 0.4 GB): every
     rule design satisfies the design-lemma hypotheses with the costs of its case, the same-edge key pairs
     behave as the arc-reconstruction lemma requires, the realizable-key sum is at most K_d, and (d = 4) the
     exact bulk clique value is at most K_d on the stated bracket;
@@ -35,10 +35,10 @@ T3, T2 = "params/lp_3_cube_rho_256.json", "params/lp_2_box_rho.json"
 # (label, script and arguments, expected output, mode): mode "all" compares the whole output, "prefix" compares
 # the output up to the recorded last line (the recorded run was stopped early), ignoring the final summary line.
 OCT = [
-    ("oct_check d=3 L=6 R8", ["oct_check.py", 3, 6, 1, 1, "R8"], "oct_check_d3_L6_R8.out", "all"),
-    ("oct_check d=4 L=5 R8", ["oct_check.py", 4, 5, 1, 1, "R8"], "oct_check_d4_L5_R8.out", "all"),
-    ("oct_check d=4 L=5 old", ["oct_check.py", 4, 5, 1, 1, "old"], "oct_check_d4_L5_old.out", "all"),
-    ("oct_check d=5 L=5 R8", ["oct_check.py", 5, 5, 1, 0, "R8"], "oct_check_d5_L5_R8.out", "all"),
+    ("oct_check d=3 L=6 table", ["oct_check.py", 3, 6, 1, 1, "table"], "oct_check_d3_L6_table.out", "all"),
+    ("oct_check d=4 L=5 table", ["oct_check.py", 4, 5, 1, 1, "table"], "oct_check_d4_L5_table.out", "all"),
+    ("oct_check d=4 L=5 coarse", ["oct_check.py", 4, 5, 1, 1, "coarse"], "oct_check_d4_L5_coarse.out", "all"),
+    ("oct_check d=5 L=5 table", ["oct_check.py", 5, 5, 1, 0, "table"], "oct_check_d5_L5_table.out", "all"),
 ]
 AUDIT = [
     ("audit_extra T_3", ["audit_extra.py", T3], "audit_extra_d3.out", "all"),
@@ -87,7 +87,7 @@ def main():
     if args.e2e:
         jobs += E2E
     # longest first
-    order = {"oct_check d=5 L=5 R8": 0}
+    order = {"oct_check d=5 L=5 table": 0}
     jobs.sort(key=lambda j: order.get(j[0], 1))
     with ThreadPoolExecutor(args.jobs) as ex:
         results = list(ex.map(run, jobs))

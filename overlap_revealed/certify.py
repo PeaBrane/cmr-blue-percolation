@@ -1,8 +1,8 @@
 """Exact certificate for the overlap-revealed route (explicit dimensions 10, 11, 12).
 
-For every certified row of the manuscript's table of constants (Section 4),
-this program reads the frozen inputs in params.json and recomputes, in exact
-rational arithmetic, the conditions listed in the manuscript:
+For every certified row of Table 2 of the manuscript (Section 4.7), this
+program reads the frozen inputs in params.json and recomputes, in exact
+rational arithmetic, the conditions (C1)-(C6) listed in Section 4.7:
 
 (C1) bond floor p <= p_B: the vertex sums Delta_j <= 0, j = 0, ..., 2d-1, of
      the finite floor certificate, with the frozen tangent points c_m;
@@ -21,11 +21,11 @@ It then asserts every displayed number that params.json lists for the row
 Green-function bounds and the certified margins, for example), asserts that
 the parameter kappa_2d of the manuscript's centered susceptibility bound
 exceeds 1 at every row (so that bound does not apply there), and evaluates
-the global criterion at the uncertified research row d = 10, t = 3/25, where
-the Score_c bound exceeds 1.
+the global criterion at the uncertified row d = 10, t = 3/25, where the
+Score_c bound exceeds 1.
 
-This is code base B of the research notes (assembly/indep_local.py,
-assembly/indep_global.py), with the floating-point parameter search removed:
+This is the second of the two implementations described in Section 4.7, with
+the floating-point parameter search removed:
 tangent points, tangent weights and mbar are read from params.json
 (search/freeze_params.py re-derives them). Transcendental quantities are
 enclosed by rationals: exp by a Taylor sum with a remainder bound, atanh by
@@ -266,8 +266,8 @@ def numerator_lower(M, k, wk):
 def denominator_upper(M, k):
     """Den_k = max over frozen classes j of Y_k(j) = E[(2 cosh beta Z_j)^-2]; every class is computed.
 
-    The maximum is asserted to sit at j = floor((2d-k)/2), the class named in the manuscript's
-    lemma "Denominator"."""
+    The maximum is asserted to sit at j = floor((2d-k)/2), the class named in Lemma 4.11
+    of the manuscript ("Denominator")."""
     km = M.m - k
     fair = binom_dist(k, Fr(1, 2))
     values = []
@@ -533,7 +533,7 @@ def certify_row(row, green_cache):
 
 
 def evaluate_uncertified(row, green_cache):
-    """Global criterion only, at a research row that the manuscript reports as not certified."""
+    """Global criterion only, at a row that the manuscript reports as not certified."""
     d, p, gK, gh, mbar = row["d"], Fr(row["p"]), Fr(row["g_K"]), Fr(row["g_h"]), Fr(row["mbar"])
     (_, K_hi), (_, H_hi) = hypotheses(d, gK, gh)
     root_test(d, K_hi, H_hi, mbar)

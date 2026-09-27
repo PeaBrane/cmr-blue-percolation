@@ -1,6 +1,6 @@
 """Exact (symbolic) checks of the isolated-diamond decimation identity (optional; needs SymPy).
 
-Research-note source: theorem-A.md, Lemma 2.4. The lemma is proved by hand; this is a finite check.
+Lemma 2.4 of the diluted-model manuscript (Appendix A.3). The lemma is proved by hand; this is a finite check.
 
 All checks are identities of Laurent polynomials / rational functions in x = e^beta,
 so they hold for every beta > 0 simultaneously (sympy exact arithmetic, no floating point).

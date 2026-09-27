@@ -3,7 +3,7 @@
 For every macrostep choice omega = (w1, w2, i, i') (probability P(w1)P(w2)/f^2) at state z = (A, D) we compute
   nV   = shared lateral points (only if D = 0),   nE = shared lateral edges,
   fwd  = 1{D = 0, i = i', A + e(w1) - e(w2) = 0}  (shared forward edge),
-  B    = boost bound of Lemma E (sum of four groups of b-terms, see report),
+  B    = boost bound of Lemma 5.7 of the first manuscript (sum of four groups of b-terms),
   W    = a^nV * bb^(nE+fwd) * exp(kappa B),
 and accumulate mass*(W - 1) into acc[index of e(w1)-e(w2), i, i'].  Every floating operation is rounded UPWARD
 (np.nextafter after round-to-nearest), all table entries are upper bounds, so acc is an upper bound of the exact

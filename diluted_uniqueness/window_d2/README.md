@@ -187,12 +187,11 @@ programs certify the finite inequalities (C0)–(C2) on the explicit records.
 Three implementations of the records agree: the engine `engine/lrm.c`
 (general transition keys, all partitions), the literal brute force
 `engine/jbrute*.c` (one boundary condition at a time, no tables), and, for the
-Path-1 boxes, the Python engine in `lrm_common.py`. The research computation
-additionally agreed with the program that first produced the certificate and
-with two further independent record computations; those programs are not
-included here. The code of `engine/*.c`, `geom.py` and `sl_box.py` is that of
-the audited research version; only header comments and docstrings were
-edited.
+Path-1 boxes, the Python engine in `lrm_common.py`. The records also agreed
+with the program that first produced the certificate and with two further
+independent record computations; those programs are not included here. The
+code of `engine/*.c`, `geom.py` and `sl_box.py` is unchanged apart from
+comments and docstrings.
 
 Not claimed: any Monte Carlo estimate of the true window, and near-sharpness
 of `g*`.

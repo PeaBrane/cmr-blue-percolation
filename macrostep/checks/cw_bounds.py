@@ -1,13 +1,13 @@
 """Macrostep route: exact Collatz-Wielandt enclosure of the Perron root of a stored computed near matrix Mbar.
-[Packaged copy of the research script cw_bounds.py, unchanged apart from this note and an
-optimisation guard (needs NumPy). Macrostep write-up Sec. 9.4 and Table 9.5c: exact Collatz-Wielandt enclosures of the
-Perron root of a computed near matrix, used only for the robustness statements (older local inputs at d = 7).]
+[It refuses optimized mode (-O) and needs NumPy. Exact Collatz-Wielandt enclosures of the Perron root of a computed
+near matrix, used only for the robustness statements of Remark 5.13 of the first manuscript (local inputs of the kind
+of Sections 4.2-4.3 at d = 7).]
 
 For a nonnegative matrix A and a vector v > 0:  min_i (Av)_i / v_i <= rho(A) <= max_i (Av)_i / v_i.
 We take v = the float Perron vector of Mbar (made positive) and evaluate both ratios EXACTLY (integer arithmetic on
 the dyadic rationals represented by the stored binary64 entries).  This bounds rho of the COMPUTED Mbar only; the
 exact near matrix M satisfies M <= Mbar entrywise, so a lower bound >= 1 excludes a certificate built on this Mbar
-(condition (i) of Theorem G forces Mbar w <= lam w, hence rho(Mbar) <= lam < 1), not a certificate for the family.
+(condition (i) of Theorem 5.9 forces Mbar w <= lam w, hence rho(Mbar) <= lam < 1), not a certificate for the family.
 
 Usage: python cw_bounds.py file.pkl [...]
 """

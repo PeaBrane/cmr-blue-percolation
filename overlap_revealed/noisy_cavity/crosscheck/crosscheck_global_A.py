@@ -1,12 +1,12 @@
-"""Code base A at the five noisy-cavity rows (optional; needs mpmath).
+"""The first implementation at the five rows of Table 3 of the manuscript (optional; needs mpmath).
 
-The published global numbers of the second d = 9 proof are the worse of two code bases. The default checker
-../certify_noisy_cavity.py evaluates code base B (../../certify.py) and the second implementation of Lemma 3.6
-(../lemma36.py). This program evaluates code base A (../../crosscheck/: 200-bit mpmath intervals, tbar = K', its own
-mbar by interval bisection) at the same rows, with Lemma 3.6 where 2dK' <= 35/100 (../../crosscheck/covariance.py) and
-Lemma 3.6' otherwise (covariance_36prime.py), and asserts in exact rational arithmetic that code base A satisfies
-every worse-of-two display of ../params.json (rho_-, eta', Score, Score_c, Score'_c, theta_*, theta') and the
-code-base-A columns of the research notes (noisy-cavity write-up Sec. 7.2).
+The global entries of Table 3 are the worse of two implementations. The default checker
+../certify_noisy_cavity.py evaluates the second implementation (../../certify.py) and the second implementation of
+Lemma 4.28 (../lemma36.py). This program evaluates the first implementation (../../crosscheck/: 200-bit mpmath
+intervals, tbar = K', its own mbar by interval bisection) at the same rows, with Lemma 4.28 where 2dK' <= 35/100
+(../../crosscheck/covariance.py) and its variant for any 2dK' < 1 otherwise (covariance_36prime.py), and asserts
+in exact rational arithmetic that it satisfies every worse-of-two display of ../params.json (rho_-, eta', Score,
+Score_c, Score'_c, theta_*, theta') and its own reference values below.
 
     python crosscheck_global_A.py [LABEL ...]      # all rows, or only these labels (e.g. t=3/20)
 """
@@ -23,20 +23,20 @@ HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
 sys.path.insert(0, str(HERE.parent.parent / "crosscheck"))
 
-from covariance import cov_lower_sharp  # noqa: E402  Lemma 3.6 (asserts 2dK' <= 35/100)
+from covariance import cov_lower_sharp  # noqa: E402  Lemma 4.28 (asserts 2dK' <= 35/100)
 from criterion import evaluate, iv, ivq, q_lo  # noqa: E402
 from evaluate_part1 import enclose  # noqa: E402
-import covariance_36prime as COV36  # noqa: E402  Lemma 3.6'
+import covariance_36prime as COV36  # noqa: E402  variant of Lemma 4.28 for any 2dK' < 1
 
 PARAMS = json.loads((HERE.parent / "params.json").read_text())
 WORSE_OF_TWO = {"rho_minus", "eta_prime", "score", "score_c", "score_c_prime", "theta_star", "theta_prime"}
-# Code-base-A columns of the noisy-cavity write-up, Sec. 7.2: c'_cov >= (A), Score'_c <= (A), theta' >= (A).
+# Reference values of this implementation, rounded in the safe direction: c'_cov >=, Score'_c <=, theta' >=.
 A_COLUMNS = {"t=7/50": ("0.0162550", "0.99754560", "0.000950073"),
              "t=29/200": ("0.0171782", "0.98757016", "0.004544209"),
              "t=3/20": ("0.0180554", "0.98241246", "0.006000179"),
              "t=31/200": ("0.0188910", "0.98119283", "0.005891535"),
              "t=4/25": ("0.0196274", "0.98511541", "0.004182459")}
-# Components at t = 3/20 that the notes attribute to code base A (the larger of the two code bases).
+# Components at t = 3/20 for which this implementation gives the less favorable of the two values.
 A_COMPONENTS = {"U1": ("upper", "0.0574151"), "SU": ("upper", "11.06112"),
                 "rho_c_prime": ("lower", "0.4411173"), "nine_rho_c_prime_p": ("lower", "1.0675481")}
 
@@ -65,10 +65,10 @@ def row_values(row):
     assert rho ** 2 >= c / 4
     score_c = 1 / (d * (rho + c / (4 * rho)) * p) + o["term2"] + o["term3"]
     if 2 * d * Khi <= Fr(35, 100):
-        lemma, (c2, _) = "3.6", cov_lower_sharp(d, Klo, Khi, Hhi, o["mbar"], Khi)
+        lemma, (c2, _) = "Lemma 4.28", cov_lower_sharp(d, Klo, Khi, Hhi, o["mbar"], Khi)
         Lstar = 40
     else:
-        lemma, (c2, _) = "3.6'", COV36.cov_lower_sharp(d, Klo, Khi, Hhi, o["mbar"], Khi)
+        lemma, (c2, _) = "Lemma 4.28 variant", COV36.cov_lower_sharp(d, Klo, Khi, Hhi, o["mbar"], Khi)
         Lstar = COV36.cov_lower_sharp.Lstar
         assert Lstar <= 41
     assert rho ** 2 >= c2 / 4
@@ -110,11 +110,11 @@ def main():
             for key, (direction, shown) in A_COMPONENTS.items():
                 assert (v[key] <= Fr(shown)) if direction == "upper" else (v[key] >= Fr(shown)), (key, shown)
                 checked += 1
-        print(f"PASS A-global {row['label']}: rho_- >= {dn(v['rho_minus'], 7)}, eta' <= {up(v['eta_prime'], 7)}, "
+        print(f"PASS first-implementation global {row['label']}: rho_- >= {dn(v['rho_minus'], 7)}, eta' <= {up(v['eta_prime'], 7)}, "
               f"Score <= {up(v['score'], 7)}, Score_c <= {up(v['score_c'], 7)}, Score'_c <= {up(v['score_c_prime'], 8)} "
-              f"(Lemma {v['lemma']}, L_* = {v['Lstar']}), theta_* >= {dn(v['theta_star'], 6)}, "
+              f"({v['lemma']}, L_* = {v['Lstar']}), theta_* >= {dn(v['theta_star'], 6)}, "
               f"theta' >= {dn(v['theta_prime'], 9)} ({time.monotonic() - start:.1f}s)", flush=True)
-    print(f"PASS code base A satisfies {checked} displayed bounds")
+    print(f"PASS the first implementation satisfies {checked} displayed bounds")
 
 
 if __name__ == "__main__":

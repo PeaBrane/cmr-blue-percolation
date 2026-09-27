@@ -1,13 +1,13 @@
-"""Macrostep route, independent implementation (code base R0), part 2: the one-macrostep excess kernel.
+"""Macrostep route, the a priori error program, part 2: the one-macrostep excess kernel.
 
 For a pair-chain state z = (A, D) (A lateral offset in Z^3, D forward offset in the root lattice of Z^f) and a
-macrostep pair omega = (w, i; w', i'), macrostep write-up Sec. 3 defines
+macrostep pair omega = (w, i; w', i'), Proposition 5.8 of the first manuscript defines
     W(z; omega) = rho^-N_V * beta_e^(N_E + fwd) * exp(kappa * B(z; omega)),   beta_e = rho/(rho_e p) >= 1,
-with the shared counts N_V, N_E, fwd and the boost bound B = B0 + B1 + B2 + B3 (Lemma E).  This module returns,
+with the shared counts N_V, N_E, fwd and the boost bound B = B0 + B1 + B2 + B3 (Lemma 5.7).  This module returns,
 for every (w, w') pair class dA = e(w) - e(w') and every (i, i'), an upper bound for
     sum_{w,w' with e(w)-e(w') = dA} P(w) P(w') f^-2 (W - 1).
 
-Arithmetic: binary64, round to nearest, with an a-priori error analysis (macrostep write-up Sec. 7.2):
+Arithmetic: binary64, round to nearest, with an a-priori error analysis (Section 5.5):
   * all inputs (tables, masses, pa, pb, kappa, Taylor coefficients) are floats >= the exact values;
   * B is a sum of <= 64 nonnegative floats, e^x (0 <= x <= 1) is a degree-22 Taylor polynomial by Horner
     (nonnegative coefficients) plus the remainder e x^23/23! < 3e-22, and W is a product of three factors;
@@ -15,7 +15,7 @@ Arithmetic: binary64, round to nearest, with an a-priori error analysis (macrost
   * the per-configuration upper bound for W - 1 is (W_fl - 1)(1 + 1e-15) + EPS_W W_fl;
   * every bin is a sum of <= 10^7 nonnegative terms; the caller multiplies each bin by (1 + INFL), INFL = 1e-8,
     which dominates gamma_{10^7} + 3u.
-The structure (separable i / i' parts, per-pair records) is deliberately different from the L2 rig kernel.
+The structure (separable i / i' parts, per-pair records) is deliberately different from the kernel of ../engine_l2/.
 """
 import numpy as np
 from numba import njit

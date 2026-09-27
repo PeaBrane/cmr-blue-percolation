@@ -1,7 +1,7 @@
-"""Exact rational certificate for the q-revealed bond floor p_B (track B, local input L-b).
+"""Exact rational certificate for the q-revealed bond floor p_B (manuscript, Section 4.2, Proposition 4.7).
 
 Setting: unit fair couplings, degree m=2d, t=tanh(beta) rational, w=e^{2beta}=(1+t)/(1-t), a=w^2/(1+w^2), n=m-1.
-After the partition-extremality lemma only k'=m-1 (all m star signs a-biased) remains.  For a target r_low define
+After the partition-extremality theorem (Theorem 4.5) only k'=m-1 (all m star signs a-biased) remains.  For a target r_low define
 lam=w^2(1-r_low)/r_low.  Signed residual with tangent points c_U>0 (U odd, used where w^{-2U}<lam):
    Gamma_j = sum_{alpha,b} C(j,alpha)C(n-j,b) a^{alpha+b}(1-a)^{n-alpha-b} (w^{-2U}-lam) phi_U(z),
    A=2alpha-j, B=2b-(n-j), U=A+B, z=A-B, K(z)=2cosh(beta(1+z)) = w^{(1+z)/2}+w^{-(1+z)/2},

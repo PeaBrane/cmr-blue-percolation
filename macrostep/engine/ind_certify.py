@@ -1,10 +1,11 @@
-"""Macrostep route, code base R0 (independent second implementation of the macrostep criterion, macrostep write-up Thm G).
+"""Macrostep route, the a priori error program (engine/): certificate for the criterion of Theorem 5.9 of the first
+manuscript, written independently of the directed-rounding program in ../engine_l2/.
 
 Usage:  python ind_certify.py d p gK gh xbar f c y RA RD N0 out.pkl [--lam LAM]
   (p, gK, gh, xbar, y exact rationals, e.g. 623/2500).
 
-Pipeline (every step independent of the L2 rig code; only the local constants rho_-, rho_c, kappa, t are taken
-from the audited assembly code base B, indep_global.evaluate):
+Pipeline (every step independent of ../engine_l2/; only the local constants rho_-, rho_c, kappa, t are taken from
+indep_global.evaluate):
   1. exact boost tables (ind_tables), family and states (ind_family);
   2. near kernel Qbar(z, .) and etabar(z) for every orbit representative z of C' (ind_kernel, a-priori bounds);
   3. Green bounds Gbar(z'', O') (ind_green: exact forward u_n, float lateral l_n with a-priori bound, tails);
@@ -23,9 +24,9 @@ from ind_family import Family, akey, dkey, a_orbit, d_orbit, a_types, d_types
 from ind_kernel import state_kernel, NTAY, INFL
 from ind_green import u_exact_table, forward_tail, lateral_table, robbins_tail
 
-IG_DIR = os.environ.get("IG_DIR", HERE)          # packaged copy: code base B lives next to this file
+IG_DIR = os.environ.get("IG_DIR", HERE)          # indep_global.py lives next to this file
 sys.path.insert(1, IG_DIR)
-import indep_global as IG     # audited assembly code base B (local constants only)
+import indep_global as IG     # local constants only
 
 _G = {}
 
@@ -87,7 +88,7 @@ def main():
     kapf = fup(kap)
     _G.update(f=f, c=c, LEN=fam.LEN, PTS=fam.PTS, END=fam.END, PAIRMASS=fam.PAIRMASS, DAIDX=fam.DAIDX,
               nDA=len(fam.dAs), bt=T.bt, T1=T.T1, PHI2=T.PHI2, PSI3=T.PSI3, pa=pa, pb=pb, kap=kapf, coef=coef)
-    print(f"[R0] d={d} f={f} c={c} y={y} RA={RA} RD={RD} N0={N0}: rho_->={float(rho):.7f} rho_c>={float(rho_c):.7f} "
+    print(f"[engine] d={d} f={f} c={c} y={y} RA={RA} RD={RD} N0={N0}: rho_->={float(rho):.7f} rho_c>={float(rho_c):.7f} "
           f"kappa<={float(kap):.6f} t={float(t):.7f} alpha={float(alpha):.5f} q*={float(T.q):.5f} "
           f"#words={len(fam.W)} Z={fam.Z} [{time.time()-T0:.0f}s]", flush=True)
     # ---------------------------------------------------------------- 2. near kernel
@@ -108,7 +109,7 @@ def main():
         Qbar.append(ns)
         eta[k] = sum(ns.values()) * (1 + INFL)
     assert xmax <= 1.0
-    print(f"[R0] near kernel: {nS} states, max kappa*B = {xmax:.4f}, eta(0) = {eta[0]:.6f} [{time.time()-T0:.0f}s]",
+    print(f"[engine] near kernel: {nS} states, max kappa*B = {xmax:.4f}, eta(0) = {eta[0]:.6f} [{time.time()-T0:.0f}s]",
           flush=True)
     # ---------------------------------------------------------------- 3. Green bounds
     nexts = sorted({k for ns in Qbar for k in ns} | set(states))
@@ -131,7 +132,7 @@ def main():
     Tu, u0 = forward_tail(f, N0)
     l0N = lat[(0, 0, 0)][N0]
     tail_unit = fup(Fr(l0N) * Tu) * (1 + 1e-12)
-    print(f"[R0] Green: #next reps={len(nexts)} #zA={len(zA)} #zD={len(zD)} l_N0(0)<={l0N:.4e} T_u<={float(Tu):.4e} "
+    print(f"[engine] Green: #next reps={len(nexts)} #zA={len(zA)} #zD={len(zD)} l_N0(0)<={l0N:.4e} T_u<={float(Tu):.4e} "
           f"[{time.time()-T0:.0f}s]", flush=True)
     LA = {}
     UD = {}
@@ -157,7 +158,7 @@ def main():
             M[k] += q * Grow[key]
     M *= (1 + 1e-9)
     rhoM = max(abs(np.linalg.eigvals(M)))
-    print(f"[R0] Mbar assembled: float rho(Mbar) = {rhoM:.6f} [{time.time()-T0:.0f}s]", flush=True)
+    print(f"[engine] Mbar assembled: float rho(Mbar) = {rhoM:.6f} [{time.time()-T0:.0f}s]", flush=True)
     # ---------------------------------------------------------------- 5. far region
     far = far_region(d, f, c, fam, T, kapf, pa, pb, coef, RA, RD, RS, R3, NF, nproc, T0)
     etaF = far['etaF']
@@ -167,12 +168,12 @@ def main():
     pickle.dump(dict(d=d, p=p, gK=gK, gh=gh, xbar=xbar, f=f, c=c, y=y, RA=RA, RD=RD, N0=N0, states=states, M=M,
                      eta=eta, Gnear=Gnear, far=far, cert=cert, rho=rho, rho_c=rho_c, kappa=kap, t=t,
                      Qbar=Qbar, xmax=xmax), open(out, "wb"))
-    print(f"[R0] done [{time.time()-T0:.0f}s]", flush=True)
+    print(f"[engine] done [{time.time()-T0:.0f}s]", flush=True)
 
 
 def crude_upsilon(f, c, fam, T, kapf, D, r):
     """upper bound, valid for EVERY lateral offset A with |A|_1 >= r and no shared points (r >= 2c+1 if D = 0),
-    for E_z[e^{kappa B} - 1] <= kappa E[B] exp(kappa B_sup) (macrostep write-up Lemma G.4)."""
+    for E_z[e^{kappa B} - 1] <= kappa E[B] exp(kappa B_sup) (Lemma 5.10)."""
     D = np.array(D)
     D1 = int(np.abs(D).sum())
     if D1 == 0:
@@ -211,7 +212,7 @@ def crude_upsilon(f, c, fam, T, kapf, D, r):
 
 
 def shell_upsilon(c, T, kapf, D1):
-    """sup over all D with |D|_1 = D1 >= 4 and all A of E[e^{kappa B} - 1] (macrostep write-up Lemma G.4(c))."""
+    """sup over all D with |D|_1 = D1 >= 4 and all A of E[e^{kappa B} - 1] (Lemma 5.10(c))."""
     P2 = lambda F: T.PHI2[0, min(F, T.Fmax)]
     per = P2(D1) + P2(D1 - 1) + P2(D1 - 2) + T.PSI3[0, min(D1, T.Dmax)]
     B = 2 * (c + 1) * per * (1 + 1e-13)
@@ -286,7 +287,7 @@ def far_region(d, f, c, fam, T, kapf, pa, pb, coef, RA, RD, RS, R3, NF, nproc, T
         eta_out += min(Fr(umax), un * Sout)
     eta_out += Sout * robbins_tail(f, len(u0) // f)
     etaF = fup(Fr(h_in) + eta_out)
-    print(f"[R0] far: etaF <= {etaF:.4e} (inner {h_in:.4e} max over {len(inner)} forward types, outer "
+    print(f"[engine] far: etaF <= {etaF:.4e} (inner {h_in:.4e} max over {len(inner)} forward types, outer "
           f"{float(eta_out):.3e}; Sout={float(Sout):.3e}) [{time.time()-T0:.0f}s]", flush=True)
     return dict(etaF=etaF, ups=ups, h_in=h_in, eta_out=float(eta_out), hin=hin)
 
@@ -315,7 +316,7 @@ def certificate(M, eta, Gnear, etaF, rho, kapf, T, T0):
 
     hi = trial(0.999)
     if hi is None or not hi['ok']:
-        print(f"[R0] NOT CERTIFIED: rho(Mbar)={rhoM:.6f}, etaF={etaF:.4e}", flush=True)
+        print(f"[engine] NOT CERTIFIED: rho(Mbar)={rhoM:.6f}, etaF={etaF:.4e}", flush=True)
         return dict(ok=False, rhoM=rhoM)
     lo_, hi_ = rhoM * (1 + 1e-6), 0.999
     best = hi
@@ -342,9 +343,9 @@ def certificate(M, eta, Gnear, etaF, rho, kapf, T, T0):
             t2 = theta(r)
             if t2[0] > bestth[0][0]:
                 bestth = (t2, r)
-    print(f"[R0] CERTIFIED (exact rational check of (i),(ii)): lam = {best['lam']:.6f}; rho(Mbar)={rhoM:.6f}, "
+    print(f"[engine] CERTIFIED (exact rational check of (i),(ii)): lam = {best['lam']:.6f}; rho(Mbar)={rhoM:.6f}, "
           f"etaF<={etaF:.4e}, Gamma_w<={best['Gam']:.4f}, H={best['H']:.4f}; theta_* >= {th[0]:.6f}", flush=True)
-    print(f"[R0]   best theta over the lam0 scan: lam = {bestth[1]['lam']:.6f}, sup_n E W_n^2 <= {bestth[0][2]:.4f}, "
+    print(f"[engine]   best theta over the lam0 scan: lam = {bestth[1]['lam']:.6f}, sup_n E W_n^2 <= {bestth[0][2]:.4f}, "
           f"theta_* >= {bestth[0][0]:.6f}; C_fin <= {Cfin:.4f}", flush=True)
     return dict(ok=True, lam=best['lam'], w=best['w'], H=best['H'], Gam=best['Gam'], theta=th[0], rhoM=rhoM,
                 lam_th=bestth[1]['lam'], theta_best=bestth[0][0], bound_best=bestth[0][2], w_th=bestth[1]['w'],

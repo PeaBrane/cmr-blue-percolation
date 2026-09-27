@@ -1,8 +1,8 @@
 """Run the certificates; optionally add supplementary and optional-dependency checks.
 
 The default run and --supplementary need only the Python standard library.
---optional-deps adds finite sanity checks and the code-base-A global
-crosschecks, which need mpmath, SymPy, NumPy or networkx; a check whose
+--optional-deps adds finite sanity checks and the global crosschecks of
+overlap_revealed/crosscheck/, which need mpmath, SymPy, NumPy or networkx; a check whose
 package cannot be imported is skipped with a message. Every script runs in a
 child process of the interpreter that runs this file. The full reproductions
 (macrostep/reproduce_engine.py, diluted_uniqueness/window_d2/reproduce_window_d2.py,

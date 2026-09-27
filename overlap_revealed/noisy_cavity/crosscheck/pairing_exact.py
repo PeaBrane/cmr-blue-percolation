@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
-"""Noisy-cavity route -- EXACT checks of the pairing identity (Lemma P, step (i)) and of the full inequality chain of Lemma P.
-[Packaged copy of the research script r1_pairing_exact.py; changes: the data path is ../data/CERT_DATA_d9.json relative to this file; an optimisation guard; exit status 1 on failure.]
+"""Noisy-cavity route -- EXACT checks of the pairing identity (proof of Lemma 4.19 of the manuscript) and of the full
+inequality chain of Lemma 4.19. The data path is ../data/CERT_DATA_d9.json relative to this file; Python refuses
+optimized mode (-O), and the exit status is 1 on failure.
 
 Part A (small n, exact, all laws random and flip invariant): for n = 2d-1 in {3, 5, 7}, m = n+1,
    r(nu; [m]) from its DEFINITION (sum over all s in {+-1}^m with the tilted product law), equals aX/(aX+(1-a)Y);

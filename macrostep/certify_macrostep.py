@@ -1,4 +1,4 @@
-"""Exact check of the macrostep interaction-matrix certificates (Theorems Q9, Q8, Q8-sharp, Q7 and the Q7 addendum).
+"""Exact check of the macrostep interaction-matrix certificates (Section 5 of the first manuscript, Tables 4 and 5).
 
 Standard library only. For every instance (d, t) of params.json this program recomputes, in exact rational
 arithmetic:
@@ -7,13 +7,13 @@ arithmetic:
      - instance 1 (d = 9 and 8, the local methods of the overlap-revealed route): the bond floor p <= p_B from the
        vertex sums Delta_j <= 0 with the frozen tangent points, and the Holley line in all 2d+1 environments with
        the frozen tangent weights (functions of ../overlap_revealed/certify.py);
-     - instances 2 and 3 (d = 8 sharpened and d = 7, the noisy-cavity class): Lemma P (chord conditions and class
-       sums) and Lemma S (all classes Gamma >= 0) with the frozen data of local_sharpened.json (functions of
-       ../overlap_revealed/noisy_cavity/local_certificates.py);
-(H)  the hypotheses of Theorem M: g_h < 1 <= g_K, g_K g_h <= 1, g_K^(2d) < 2718/1000, the mean-field root test
+     - instances 2 and 3 (d = 8 sharpened and d = 7, the noisy-cavity class of Section 4.4): Lemma 4.19 (chord
+       conditions and class sums) and Lemma 4.20 (all classes Gamma >= 0) with the frozen data of
+       local_sharpened.json (functions of ../overlap_revealed/noisy_cavity/local_certificates.py);
+(H)  the hypotheses (M1)-(M2) of Theorem 5.12: g_h < 1 <= g_K, g_K g_h <= 1, g_K^(2d) < 2718/1000, the mean-field root test
      at the frozen xbar, alpha = 2d tanh K' < 1, q_* = d tanh K'/(1 - alpha) < 1, rho_-^2 >= c_cov/4 and
-     rho_c p < rho_- (code base B, engine/indep_global.py, which also gives rho_-, rho_c, kappa and t);
-(C)  C_fin >= rho_-^-1 exp(kappa (b(1) + 2 psi_3(0,0))) with b(m) = t^m M_m Gamma_m(t) and a Taylor bound for exp,
+     rho_c p < rho_- (engine/indep_global.py, which also gives rho_-, rho_c, kappa and t);
+(C)  C_fin >= rho_-^-1 exp(kappa (b(1) + 2 psi_3(0,0))) of Proposition 5.8 with b(m) = t^m M_m Gamma_m(t) and a Taylor bound for exp,
      and the torus sizes L_0(n) = 2cn + 1 + ceil(log(100 kappa ((c+1)n+1)^2/(1-alpha))/log(1/alpha)) at
      n = 1, 10, 100, with rational enclosures of the logarithms.
 
@@ -21,7 +21,7 @@ For every stored engine certificate (certificates/<label>.json and .bin.xz) it t
 (E)  checks the SHA-256 digest of the payload, that the certificate's inputs and the local constants used by the
      engine equal the ones recomputed in (H), and that its state list is exactly the set of orbit types
      {|D|_1 <= 2 R_D, |A|_1 <= R_A} with R_A >= 2c (so C' contains every state that carries intersections);
-(G)  re-decides the criterion of Theorem G for both stored certificates (the minimal-lambda one and the
+(G)  re-decides the criterion of Theorem 5.9 for both stored certificates (the minimal-lambda one and the
      theta_*-maximising one), reading every binary64 number as the exact dyadic rational it is:
        (i)  (Mbar w)(z) + H eta_F etabar(z) <= lambda w(z) for every z in C',
        (ii) max_z (Gnear w)(z) + H eta_F <= lambda H,
@@ -56,9 +56,9 @@ ROOT = HERE.parent
 sys.path.insert(0, str(HERE / "engine"))
 sys.path.insert(0, str(ROOT / "overlap_revealed"))
 sys.path.insert(0, str(ROOT / "overlap_revealed" / "noisy_cavity"))
-import indep_global as IG          # noqa: E402  code base B: local constants (standard library)
+import indep_global as IG          # noqa: E402  local constants (standard library)
 import certify as OR               # noqa: E402  overlap-revealed certificate: instance-1 local inputs
-import local_certificates as LC    # noqa: E402  Lemmas P and S in the noisy-cavity class
+import local_certificates as LC    # noqa: E402  Lemmas 4.19 and 4.20 in the noisy-cavity class
 
 PARAMS = json.loads((HERE / "params.json").read_text())
 C_WORD = PARAMS["engine"]["c"]
@@ -142,8 +142,9 @@ def ceil_ratio_of_logs(a, b):
 # ------------------------------------------------------------------ boost constants and C_fin
 def boost_constants(d, t, c):
     """b(1) and an upper bound for psi_3(0,0) = sum_{s>=3} Phi_2(0, s), Phi_2(0, F) = max_{rho in [0,c]}
-    sum_{k=0}^{c} b(F + |rho - k|), with b(m) = t^m M_m Gamma_m(t) (global.md Lemma 3.4) and the tail
-    sum_{s > S} Phi_2(0, s) <= g b(S+1)/(1-q), g = 1 + 2q/(1-q), q = d t/(1 - 2 d t) (macrostep write-up, Lemma G.4(d))."""
+    sum_{k=0}^{c} b(F + |rho - k|), with b(m) = t^m M_m Gamma_m(t) (Lemma 4.26(iv)) and the tail
+    sum_{s > S} Phi_2(0, s) <= g b(S+1)/(1-q), g = 1 + 2q/(1-q), q = d t/(1 - 2 d t) (as in the proof of
+    Lemma 5.10(d))."""
     t = Fr(t)
     q = d * t / (1 - 2 * d * t)
     assert 0 < 2 * d * t < 1 and q < 1
@@ -172,7 +173,7 @@ def check_instance(key, inst, sharpened, full=True):
     assert gh < 1 <= gK and gK * gh <= 1 and gK ** (2 * d) < Fr(2718, 1000) and IG.mf_ok(d, gK, gh, xbar)
     rho, rho_c, kappa, tb, alpha, qs = o["rho"], o["rho_c"], o["kappa"], o["t"], o["alpha"], o["qs"]
     assert tb == (gK - 1) / (gK + 1) and alpha == 2 * d * tb and alpha < 1 and qs < 1
-    assert rho ** 2 >= o["c_cov"] / 4 and rho_c * p < rho      # rho_e p < rho_- with rho_e = rho_c (Lemma 3.5)
+    assert rho ** 2 >= o["c_cov"] / 4 and rho_c * p < rho      # rho_e p < rho_- with rho_e = rho_c (Lemma 4.27)
     b1, psi = boost_constants(d, tb, C_WORD)
     cfin = cfin_upper(rho, kappa, b1, psi)
     L0 = {n: 2 * C_WORD * n + 1 + ceil_ratio_of_logs(100 * kappa * ((C_WORD + 1) * n + 1) ** 2 / (1 - alpha), 1 / alpha)
@@ -212,7 +213,7 @@ def check_instance(key, inst, sharpened, full=True):
         v.update(max_Psi=max(P["Psi"]), chords=Fr(P["chords"]), noisy_witness=P["noisy_witness"],
                  plain_witness=P["plain_witness"], p_minus_plain_witness=p - P["plain_witness"],
                  min_gamma=H["min_gamma"])
-        report["local"] = {"pair_certificate": f"p_B >= {inst['p']} (Lemmas N, P)", "wc_prime": E["wc_prime"],
+        report["local"] = {"pair_certificate": f"p_B >= {inst['p']} (noisy-cavity reduction and pair certificate)", "wc_prime": E["wc_prime"],
                            "chord_polynomials": P["chords"], "point_conditions": P["points"],
                            "max_Psi_upper": "-" + dec_dn(-max(P["Psi"]), 2),
                            "noisy_witness_upper": dec_up(P["noisy_witness"], 6),
@@ -364,7 +365,7 @@ def main():
         values[key], inst_reports[key] = v, rep
         local_all += lv
         extra = (f"; local inputs ({inst['local_inputs']}) certified" if full else "")
-        print(f"PASS {key}: hypotheses of Theorem M, rho_- >= {rep['rho_minus_lower']}, rho_c >= {rep['rho_c_lower']},"
+        print(f"PASS {key}: hypotheses of Theorem 5.12, rho_- >= {rep['rho_minus_lower']}, rho_c >= {rep['rho_c_lower']},"
               f" C_fin <= {rep['C_fin_upper']}, L_0(1, 10, 100) = {rep['L0']}{extra} ({time.monotonic() - t0:.1f}s)",
               flush=True)
     run_reports = []

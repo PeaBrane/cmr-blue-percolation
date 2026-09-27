@@ -1,4 +1,4 @@
-"""Rigorous certificate for the macrostep second-moment criterion (L2 lens), part 1: the near matrix.
+"""Rigorous certificate for the macrostep second-moment criterion (the directed-rounding program), part 1: the near matrix.
 
 States of the pair chain: z = (A, D), A in Z^3 lateral offset, D in the forward root lattice of Z^f.
 Near set C' = {D in {0, roots}, |A|_1 <= RA}, orbit-reduced under B_3 (lateral signed permutations) x S_f.

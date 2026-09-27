@@ -1,10 +1,10 @@
 """Exact finite-volume check of the Gibbs factorization (optional; needs NumPy).
 
-Research-note source: theorem-A.md, Secs. 3 and 6 (Lemma 6.1, Corollary 3.3). Not a proof input.
+Diluted-model manuscript, Sections 3 and 7 (Lemma 7.2, Corollary 3.3; Appendix A.3). Not a proof input.
 
 Free-boundary n1 x n2 boxes of Z^2 with iid couplings in {0, +1, -1} (P(J != 0) = p).
 Box-level isolated diamonds (non-4-cycle), box-activated = frustrated, I = internal vertices,
-B = rest, G = (B, open edges within B).  Prediction (Lemma 6.1 / Prop. 3.1 finite version):
+B = rest, G = (B, open edges within B).  Prediction (Lemma 7.2 / Prop. 3.1 finite version):
 for all sites x, y with disjoint relevant-component sets R(x), R(y)
 (R(x) = {C(x)} for x in B, R(x) = {C(u), C(w)} for x internal with terminals u, w),
 <sigma_x sigma_y> = 0 EXACTLY.  We verify this by exact enumeration with integer arithmetic

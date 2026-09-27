@@ -2,18 +2,18 @@
 
 Nothing here is needed for verification: ../certify.py reads only the frozen
 exact rationals and never calls this program. Floating point only chooses
-admissible parameters, following code base B of the research notes
-(assembly/indep_local.py and assembly/indep_global.py):
+admissible parameters, following the second of the two implementations
+described in Section 4.7 of the manuscript:
 
 * p_B tangent points. For the eight rows marked "direct", Nelder-Mead chooses
   (kappa, lambda) in the family
   c_U = kappa * omega(U)^lambda * (2 cosh^m beta)^(1 - lambda), and every c_U
-  is rounded to 10 decimals. The headline row keeps the part-1 values
-  c_U = rho_U * omega(U) (local.md, Theorem B6).
+  is rounded to 10 decimals. The row (12, 3/25) keeps the first
+  implementation's values c_U = rho_U * omega(U) (Proposition 4.7).
 * Holley tangent weights w_k: the best point of the grid
   {0} U {i/200 : 1 <= i <= 180} for the floating numerator bound. The
-  headline row keeps the part-1 weights (research notes
-  scripts/certify_local.py), for which the manuscript displays the slack.
+  row (12, 3/25) keeps the first implementation's weights
+  (crosscheck/certify_local.py), for which the manuscript displays the slack.
 * mbar: the smallest multiple of 1e-7 above the floating mean-field root
   that passes the exact root test.
 
@@ -45,19 +45,19 @@ import certify as exact  # noqa: E402
 
 PARAMS = HERE.parent / "params.json"
 
-# Part-1 headline tangent multipliers rho_U (local.md, Theorem B6): c_U = rho_U * omega(U).
+# Tangent multipliers rho_U of the first implementation at (12, 3/25) (Proposition 4.7): c_U = rho_U * omega(U).
 HEADLINE_RHO_U = {1: "1.080881", 3: "1.042249", 5: "0.984864", 7: "0.916142", 9: "0.842612",
                   11: "0.768993", 13: "0.698220", 15: "0.631872", 17: "0.570633", 19: "0.514653",
                   21: "0.463784", 23: "0.417731"}
 
 MBAR_ORIGIN = "smallest multiple of 1e-7 above the floating mean-field root passing the exact test"
-PART1 = "choose_rows.py (part-1 procedure; research notes scripts/certify_all.py, local.md Sec. 6)"
-# label, d, t, p, g_K, g_h, criterion, published Table 7.1 bounds, origin of (p, g_K, g_h).
+PART1 = "choose_rows.py (procedure of the first implementation)"
+# label, d, t, p, g_K, g_h, criterion, published Table 2 bounds, origin of (p, g_K, g_h).
 ROWS = [
     ("d12-t3/25", 12, "3/25", "2161/10000", "102634/100000", "83527/100000", "basic",
      ("0.4351284", "0.168984", "0.907068", "0.897470", "0.036292"),
-     "p from the part-1 procedure of choose_rows.py; Holley line = exploration line K'=0.013, h=-0.09 "
-     "with e^(2K'), e^(2h) rounded down to five decimals (local.md, Theorems B6, C4)"),
+     "p from the first implementation's procedure of choose_rows.py; Holley line = exploratory line K'=0.013, "
+     "h=-0.09 with e^(2K'), e^(2h) rounded down to five decimals (Propositions 4.7 and 4.12)"),
     ("d12-t11/100", 12, "11/100", "2023/10000", "255577/250000", "873143/1000000", "basic",
      ("0.4540507", "0.127091", "0.926888", "0.918156", "0.031296"), PART1),
     ("d12-t23/200", 12, "23/200", "2094/10000", "1024283/1000000", "855173/1000000", "basic",
@@ -72,13 +72,13 @@ ROWS = [
      ("0.4454995", "0.162436", "0.960915", "0.950461", "0.015882"), PART1),
     ("d10-t27/200", 10, "27/200", "2399/10000", "516713/500000", "102809/125000", "refined_c",
      ("0.4279573", "0.236224", "1.007739", "0.994576", "0.001950"),
-     "choose_rows.py (new-point procedure; research notes assembly/certify_new_point.py 10 27/200)"),
+     "choose_rows.py (procedure of the second implementation, d = 10, t = 27/200)"),
     ("d10-t13/100", 10, "13/100", "2336/10000", "1031101/1000000", "840843/1000000", "refined_c",
      ("0.4379919", "0.205637", "1.009832", "0.997261", "0.001048"), PART1),
 ]
 PUBLISHED_KEYS = ("rho_minus_lower", "eta_prime_upper", "score_upper", "score_c_upper",
                   "theta_star_lower")
-# The inputs p, g_K, g_h as the terminating decimals of the manuscript's table of constants.
+# The inputs p, g_K, g_h as the terminating decimals of Table 2 of the manuscript.
 TABLE_INPUTS = {
     "d12-t3/25": ("0.2161", "1.02634", "0.83527"),
     "d12-t11/100": ("0.2023", "1.022308", "0.873143"),
@@ -91,8 +91,7 @@ TABLE_INPUTS = {
     "d10-t13/100": ("0.2336", "1.031101", "0.840843"),
 }
 TABLE_INPUT_KEYS = ("p_exact", "g_K_exact", "g_h_exact")
-# Further displays of the manuscript's Section 4 (research notes: theorem.md Secs. 2, 7.1; local.md
-# Theorem B6 and Sec. 4.3; revision/revision_checks.txt; assembly/indep_global_all.txt). 'margin' is
+# Further displays of the manuscript's Section 4 (Sections 4.2 and 4.7, Remarks 4.6 and 4.40). 'margin' is
 # 1 - Score (dimensions 11, 12) or 1 - Score_c (dimension 10), displayed as "about" a percentage: the
 # certified margins range from about 7.3% to 9.5% in dimension 12 (about 9% at t = 3/25), are about 4.8%
 # and 3.9% in dimension 11, and 0.54% and 0.27% in dimension 10; 'rho_c_gain' = rho_c - rho_- is about
@@ -132,11 +131,11 @@ EXTRA_PUBLISHED = {
                     "margin_lower": "0.00265", "margin_upper": "0.00275",
                     "rho_c_gain_lower": "0.0055", "rho_c_gain_upper": "0.0065"},
 }
-# Part-1 headline tangent weights W_K (research notes scripts/certify_local.py); the manuscript's Holley
+# Tangent weights W_K of the first implementation (crosscheck/certify_local.py); the manuscript's Holley
 # slack at d = 12, t = 3/25 is displayed for these weights.
 HEADLINE_WEIGHTS = ["0"] * 16 + ["0.0442", "0.0964", "0.1519", "0.2104", "0.2718", "0.3359",
                                  "0.4027", "0.4719", "0.5435"]
-# Research rows that the manuscript reports as not certified: label, d, t, p, g_K, g_h, displays.
+# Rows that the manuscript reports as not certified: label, d, t, p, g_K, g_h, displays.
 UNCERTIFIED = [("d10-t3/25", 10, "3/25", "2199/10000", "1026679/1000000", "437233/500000",
                 {"score_c_lower": "1.0192", "score_c_upper": "1.0193"})]
 
@@ -263,8 +262,8 @@ def build():
         entry = {"label": label, "d": d, "t": t, "p": p, "g_K": gK, "g_h": gh}
         if label == "d12-t3/25":
             tangent = {"form": "rho_times_omega", "values": {str(U): v for U, v in HEADLINE_RHO_U.items()}}
-            tangent_origin = ("part-1 values rho_U from the family kappa=1.01439, lambda=0.56291, "
-                              "rounded to 6 decimals (local.md, Theorem B6)")
+            tangent_origin = ("first-implementation values rho_U from the family kappa=1.01439, "
+                              "lambda=0.56291, rounded to 6 decimals (Proposition 4.7)")
         else:
             kappa, lam = search_family(M, Fr(p))
             cU = tangent_family(M, Fr(p), kappa, lam)
@@ -273,9 +272,9 @@ def build():
             print(f"{label}: tangent family kappa={kappa:.6f} lambda={lam:.6f}", flush=True)
         if label == "d12-t3/25":
             weights = HEADLINE_WEIGHTS
-            weights_origin = ("part-1 weights W_K of research notes scripts/certify_local.py (bounded floating "
-                              "maximisation of the numerator bound, rounded to 4 decimals; local.md Thm C4, "
-                              "results_headline.txt); they give the Holley slack displayed in the manuscript")
+            weights_origin = ("weights W_K of the first implementation, crosscheck/certify_local.py (bounded "
+                              "floating maximisation of the numerator bound, rounded to 4 decimals; "
+                              "Proposition 4.12); they give the Holley slack displayed in the manuscript")
         else:
             weights = [decimal(choose_wk(M, k), 4) for k in range(M.m + 1)]
             weights_origin = "best point of {0} U {i/200: 1<=i<=180} for the floating numerator bound"
@@ -301,8 +300,8 @@ def build():
         uncertified.append({
             "label": label, "d": d, "t": t, "p": p, "g_K": gK, "g_h": gh,
             "mbar": f"{mbar.numerator}/{mbar.denominator}", "published": published,
-            "provenance": {"row": ("choose_rows.py (part-1 procedure; research notes scripts/certify_all.py, "
-                                   "theorem.md Table 7.1, last row)"),
+            "provenance": {"row": ("choose_rows.py (procedure of the first implementation; reported as not "
+                                   "certified in Section 4.7)"),
                            "mbar": MBAR_ORIGIN},
         })
     return {
@@ -311,7 +310,7 @@ def build():
                         "'published' block lists numbers displayed in the manuscript that certify.py must "
                         "reproduce: the key is '<quantity>_<direction>', where the direction says whether the "
                         "display is an upper bound, a lower bound, a lower bound on the logarithm ('loglower') "
-                        "or an exact value. 'uncertified_rows' lists research rows at which only the global "
+                        "or an exact value. 'uncertified_rows' lists rows at which only the global "
                         "criterion is evaluated, to confirm that it fails there. 'provenance' is documentation "
                         "only; search/freeze_params.py re-derives the searched values."),
         "tangent_forms": {

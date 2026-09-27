@@ -10,17 +10,18 @@ Standard library only; about 15 s, at most about 150 MB per process. Decides, in
         d = 3 cube:  Delta_3 >= 3.232324e-9 (plaquette coins), >= 7.405526e-9 (vertex coins),
         d = 2 box:   Delta_2 >= 4.552624e-8 (plaquette coins), >= 7.153991e-8 (domino coins),
     with g_d = 2 Delta_d, and the classical-window thresholds beta_*(d) = (1/2) ln(p_c^- / Delta_d).
- 3. oct_check.py for d = 3 at L = 5 (brackets "old" and "R8"): every configuration of the
+ 3. oct_check.py for d = 3 at L = 5 (brackets "coarse" and "table"): every configuration of the
     octahedral hand rule gets designs satisfying the hypotheses with the costs of its case, the same-edge
     key pairs are incompatible except N-int pairs at different terminals, the realizable-key sum per
     labelled plaquette is at most K_d, and the exact bulk clique value is at most K_d.
  4. The octahedral closed form for Delta_d: the counts q(d), N_Q(d) (formula = enumeration for d = 2..7), and every
-    displayed entry of the octahedral table (d = 3..8, 10, 20, 100) and of the axis-star-coin table
+    displayed entry of the octahedral table (Table 1 of the diluted-model manuscript: d = 3..8, 10, 20, 100) and
+    of the axis-star-coin values (Remark 5.27)
     (d = 3..8, 10, 12), recomputed here from gd_table.window and gd_coins.counts: exact brackets, q, N_Q,
     q_c, N_c, and each displayed window or threshold is the floor of the exact value (displayed value
     <= exact value < displayed value + one unit of its last digit); log2 K_d to the displayed 3 decimals.
 The printed outputs of cr_check.py, oct_check.py, gd_table.py and gd_coins.py are also compared line by
-line with expected_outputs/ (the outputs of the audited runs). That comparison is a regression check;
+line with expected_outputs/ (the outputs of the reference runs). That comparison is a regression check;
 the decisions above are assertions on recomputed exact values. The heavier d = 4, 5 octahedral checks,
 d = 3 at L = 6, the networkx clique cross-check and the end-to-end sanity runs are in
 reproduce_window_general.py.
@@ -54,7 +55,7 @@ TABLES = {
 
 # Octahedral table as displayed: d: (p_-, p_+, q, N_Q, log2 K_d, Delta_d >=, g_d >=, beta_*(d) >=,
 # g_d >= with p_- = 1/(2d), p_+ = 7/20). p_+ is exact; p_- is rounded to 6 decimals (exact values below).
-TABLE_R8 = {
+TABLE_1 = {
     3: ("0.211027", "0.347298", 312, 312, "23.723", "2.3067e-10", "4.6135e-10", "10.317", "2.3957e-10"),
     4: ("0.146971", "0.278746", 1536, 1024, "27.385", "3.7128e-12", "7.4257e-12", "12.200", "2.0797e-12"),
     5: ("0.1", "0.228327", 5200, 2600, "30.206", "1.5528e-13", "3.1056e-13", "13.595", "1.0464e-14"),
@@ -68,7 +69,7 @@ TABLE_R8 = {
 }
 P_MINUS_EXACT = {3: Fr(10000, 47387) - Fr(1, 10 ** 6), 4: Fr(10000, 68040) - Fr(1, 10 ** 6)}
 # Axis-star coins: d: (q, q_c, N_Q, N_c, g_d >= (plaquette coins), g_d >= (axis-star coins), gain)
-TABLE_R8_COINS = {
+TABLE_1_COINS = {
     3: (312, 226, 312, 366, "4.6135e-10", "6.3614e-10", None),
     4: (1536, 914, 1024, 1392, "7.4257e-12", "1.2473e-11", "1.680"),
     5: (5200, 2726, 2600, 4060, "3.1056e-13", "5.9232e-13", "1.907"),
@@ -232,11 +233,12 @@ def check_box(report):
 
 def check_octahedral(report):
     t = time.monotonic()
-    for args, name in (((3, 5, 1, 1, "old"), "oct_check_d3_L5_old.out"), ((3, 5, 1, 1, "R8"), "oct_check_d3_L5_R8.out")):
+    for args, name in (((3, 5, 1, 1, "coarse"), "oct_check_d3_L5_coarse.out"),
+                       ((3, 5, 1, 1, "table"), "oct_check_d3_L5_table.out")):
         expect(run_script("oct_check.py", args), name)
-    print(f"PASS octahedral rule, d=3, L=5 (rule validity, costs, key multiplicity; brackets old and R8) ({time.monotonic() - t:.1f}s)",
+    print(f"PASS octahedral rule, d=3, L=5 (rule validity, costs, key multiplicity; brackets coarse and table) ({time.monotonic() - t:.1f}s)",
           flush=True)
-    report["octahedral_rule_checked"] = {"d": 3, "L_S": [5], "brackets": ["old", "R8"]}
+    report["octahedral_rule_checked"] = {"d": 3, "L_S": [5], "brackets": ["coarse", "table"]}
 
 
 def check_closed_form(report):
@@ -244,7 +246,7 @@ def check_closed_form(report):
     expect(run_script("gd_table.py", []), "gd_table.out")
     expect(run_script("gd_coins.py", [12]), "gd_coins.out")
     rows = {}
-    for d, (pm, pp, q, nq, log2k, delta, g, beta, g_univ) in TABLE_R8.items():
+    for d, (pm, pp, q, nq, log2k, delta, g, beta, g_univ) in TABLE_1.items():
         q0, nq0, p_lo, p_hi, K, D = gd_table.window(d)
         assert (q0, nq0) == (q, nq) == gd_table.q_NQ(d)
         assert p_hi == Fr(pp) and p_lo == P_MINUS_EXACT.get(d, Fr(1, 2 * d))
@@ -263,7 +265,7 @@ def check_closed_form(report):
                for d in list(range(3, 13)) + [15, 20, 30, 50, 100])
     report["octahedral_table"] = rows
     coin_rows = {}
-    for d, (q, qc, nq, nc, g, gc, gain) in TABLE_R8_COINS.items():
+    for d, (q, qc, nq, nc, g, gc, gain) in TABLE_1_COINS.items():
         q1, qc1, nc1 = gd_coins.counts(d)
         q0, nq0, p_lo, p_hi, K, D = gd_table.window(d)
         assert (q1, qc1, nq0, nc1) == (q, qc, nq, nc) and q0 == q

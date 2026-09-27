@@ -1,6 +1,6 @@
-"""Macrostep route, code base R0: Green-function bounds for the pair chain (independent of the L2 rig code).
+"""Macrostep route, the a priori error program: Green-function bounds for the pair chain (independent of ../engine_l2/).
 
-The pair chain S = (A, D) has independent components (macrostep write-up Lemma T.3):
+The pair chain S = (A, D) has independent components (Lemma 5.3(e) of the first manuscript):
   D_n = Y_n, the difference of two independent uniform oriented walks in Z^f   (forward part),
   A_n = X_n - X'_n, X_n a sum of n iid word endpoints                           (lateral part),
 so G((A'',D''), (A',D')) = sum_n u_n(D' - D'') l_n(A' - A'').
@@ -11,7 +11,7 @@ Tail: u_n(delta) <= u_n(0) <= max_k P(multinom(n; 1/f) = k) <= sqrt(f) (2 pi flo
 (Cauchy-Schwarz, monotonicity of the largest atom, Robbins' Stirling bounds).
 
 Lateral part: p_n = law of X_n, computed in binary64 by direct convolution (round to nearest) with the step law
-rounded UP; l_n(z) = sum_x p_n(x) p_n(x - z).  A-priori error bound (macrostep write-up Sec. 7.2): the exact values are
+rounded UP; l_n(z) = sum_x p_n(x) p_n(x - z).  A-priori error bound (Section 5.5): the exact values are
 <= computed * (1 + LAT_INFL) + 1e-300, LAT_INFL = 1e-8 >> (1-gamma_{2E})^{-2n}(1-gamma_K)^{-1} - 1, where E <= 63 is
 the number of distinct endpoints and K <= 1e8 the number of terms in an autocorrelation sum.
 Tail: l_n(z) <= l_n(0) <= l_{N0}(0) for n >= N0 (Young and Cauchy-Schwarz).

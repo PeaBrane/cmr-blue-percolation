@@ -131,7 +131,7 @@
     "1.0094",
     "1.0149"
   ],
-  "S22_route_i": {
+  "signed_refinement_d22": {
     "M01_upper": "-0.000374848573757",
     "orientations_01": 44,
     "M02_upper": "-0.019889903399663",
@@ -141,14 +141,14 @@
     "F22_upper": "0.0568646",
     "root_constant_lower": "0.0157"
   },
-  "S16_signed": {
+  "signed_refinement_d16": {
     "M01_upper": "-0.001364163162760",
     "orientations": 32,
     "min_k_ge_2_lower": "0.0690100",
     "ratio_head_lower": "1.0281",
     "ratio_hat_lower": "1.0214"
   },
-  "proposition_P": [
+  "closed_form_star_floor": [
     {
       "d": 25,
       "t": "27/400",

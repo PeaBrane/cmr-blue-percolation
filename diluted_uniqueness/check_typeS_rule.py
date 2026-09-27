@@ -1,5 +1,5 @@
-"""Sanity check (not part of any proof) of the type-S surgery rule of Claim D, as written in the
-manuscript (research-note source: theorem-A.md, Sec. 4.6, revision 2), in original coordinates.
+"""Sanity check (not part of any proof) of the type-S surgery rule in Step 2 of the proof of Proposition 4.7, as
+written in the diluted-model manuscript (Section 4.5; Appendix A.3 reports this check), in original coordinates.
 
 For (d, L) = (2, 10), (2, 11), (2, 13) and (3, 10): every centre z with L - rho <= |z| <= L, every entry vertex x' in R = Lambda cap B_{L-1}
 that has a neighbour x outside Lambda, and every such x. Build (i*, sigma*), j*, c, u, a, b, w, seg_1, O as in the
@@ -7,10 +7,10 @@ text and check the local facts used in the proof:
   (S1) c exists; u, a in R; b, w in Lambda cap S_L;
   (S2) seg_1 is a nearest-neighbour path, self-avoiding, contained in R, avoiding a, b, w;
   (S3) seg_1 meets V(P_0) only in u and no edge of seg_1 or xx' is a P_0-edge;
-  (S4) O-degrees: a, b, w have degree 2, u has degree 3 (so (R1) holds with internal pair {a, b});
+  (S4) O-degrees: a, b, w have degree 2, u has degree 3 (so (D1) holds with internal pair {a, b});
   (S5) O minus E(P_0) is exactly the edge set of the arc (x, x', ..., u), whose vertices other than x lie in
        Lambda minus S_L (the hypothesis of Lemma 4.8);
-  (S6) O connects x to S_L (via u -> b), the local part of (R2).
+  (S6) O connects x to S_L (via u -> b), the local part of (D2).
 """
 import itertools
 import sys
