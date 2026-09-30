@@ -21,6 +21,7 @@ DEFAULT = [
     "verify_signed_star.py",
     "verify_signed_star_independent.py",
     "verify_physical_separation.py",
+    "verify_explicit_balance.py",
     "overlap_revealed/certify.py",
     "single_floor/verify_single_floor.py",
     "diluted_uniqueness/gd_constants.py",

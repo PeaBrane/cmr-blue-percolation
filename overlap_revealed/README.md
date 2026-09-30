@@ -1,8 +1,8 @@
 # Overlap-revealed route: dimensions 10, 11 and 12
 
 These programs certify the finite inequalities behind Theorem 1.2 of the
-first manuscript in dimensions 10 to 12 (Section 4, "Explicit dimensions
-through overlap-revealed exploration"; Proposition 4.1 and Table 2). The
+first manuscript in dimensions 10 to 12 (Section 3, "Explicit dimensions
+through overlap-revealed exploration"; Proposition 3.1 and Table 2). The
 theorem covers iid fair ±1 couplings and every selected periodic joint limit. Both overlap signs have
 root blue-percolation probability at least θ\* > 0 and infinite blue
 components almost surely, in these cases:
@@ -19,18 +19,18 @@ exact rationals: a bond floor `p`, a Holley line `g_K = e^{2K'}`,
 
 [certify.py](certify.py) uses only the standard library. It reads the frozen
 inputs in [params.json](params.json) and decides, for every row, the
-conditions (C1)–(C6) listed in Section 4.7 of the manuscript ("The certified
-constants"):
+conditions (C1)–(C6) listed in Appendix A.1 of the manuscript ("Dimensions nine to
+twelve: the oriented engine"):
 
 | Condition | Manuscript result | Exact check | Size per row |
 |---|---|---|---|
-| (C1) `p <= p_B` | Proposition 4.7 ("A finite certificate for the floor"), after Theorem 4.5 (the extremal partition) | vertex sums `Delta_j <= 0`, `j = 0..2d-1`, with frozen tangent points `c_m`; also `p` lies below the aligned frozen-cavity witness | `2d` double sums of at most `d(d+1)` terms |
-| (C2) Holley line in all `2d+1` environments | Lemmas 4.10 ("Numerator") and 4.11 ("Denominator"), Proposition 4.12 ("Certified Holley line") | `C^S Num_k / Den_k >= g_h g_K^S` for `S = 2k-2d`, `k = 0..2d`; `Num_k` with frozen tangent weights `w_k`; `Den_k` as the maximum over every frozen class, asserted to sit at the class `floor((2d-k)/2)` named in the lemma | `sum_k (k+1)` numerator double sums (325 at `d = 12`) and `sum_k (2d-k+1)` denominator convolutions |
-| (C3) hypotheses | hypotheses of Section 4.6 | `g_h < 1 <= g_K`, `g_K g_h <= 1`, `g_K^{2d} < 2718/1000 < e` (so `4dK' < 1`); also `g_K^d < 2718/1000` and `d >= 6` | rational powers |
-| (C4) Ising plus-density | Lemma 4.22 ("Mean-field lower bound on the plus-density") | `tanh(abs(h) + 2dK' mbar) < mbar`, giving `rho_- = (1 - mbar)/2` | three `atanh` enclosures |
-| (C5) walk sums | Lemma 4.26 ("Walk-sum bounds") | `lambda_* = d tbar/(1 - 2d tbar) < 1` with `tbar = tanh K' = (g_K-1)/(g_K+1)` exactly, and `B(m+1) <= lambda_* B(m)` for `m < 86` | closed forms |
-| (C6) second moment | Theorem 4.33 ("Second-moment criterion"), Lemmas 4.29 ("Collision Green function"), 4.32 ("Cycle weights") and 4.27 ("Correlation gain along shared edges") | `eta' < 1`; `Score < 1` for `d = 11, 12`; `rho_-^2 >= c_cov/4` and `Score_c < 1` for `d = 10` | `u_k` for `k < 4d`, `B(m)` for `m <= 86`, `psibar(r)` and `abs(A_r)` for `r <= 40`, closed-form tails |
-| θ\* | root-probability constant (18), Corollary 4.34 ("Uniformity in the torus size") | `theta_* = e^{-1/100} rho_- (1-eta')(1-Score)/(1-1/d)`, with `e^{-1/100} >= 99/100`, at least the displayed value | one product |
+| (C1) `p <= p_B` | Proposition 3.7 ("A finite certificate for the floor"), after Theorem 3.5 (the extremal partition) | vertex sums `Delta_j <= 0`, `j = 0..2d-1`, with frozen tangent points `c_m`; also `p` lies below the aligned frozen-cavity witness | `2d` double sums of at most `d(d+1)` terms |
+| (C2) Holley line in all `2d+1` environments | Lemmas 3.10 ("Numerator") and 3.11 ("Denominator"), Proposition 3.12 ("Certified Holley line") | `C^S Num_k / Den_k >= g_h g_K^S` for `S = 2k-2d`, `k = 0..2d`; `Num_k` with frozen tangent weights `w_k`; `Den_k` as the maximum over every frozen class, asserted to sit at the class `floor((2d-k)/2)` named in the lemma | `sum_k (k+1)` numerator double sums (325 at `d = 12`) and `sum_k (2d-k+1)` denominator convolutions |
+| (C3) hypotheses | hypotheses of Section 3.6 | `g_h < 1 <= g_K`, `g_K g_h <= 1`, `g_K^{2d} < 2718/1000 < e` (so `4dK' < 1`); also `g_K^d < 2718/1000` and `d >= 6` | rational powers |
+| (C4) Ising plus-density | Lemma 3.22 ("Mean-field lower bound on the plus-density") | `tanh(abs(h) + 2dK' mbar) < mbar`, giving `rho_- = (1 - mbar)/2` | three `atanh` enclosures |
+| (C5) walk sums | Lemma 3.26 ("Walk-sum bounds") | `lambda_* = d tbar/(1 - 2d tbar) < 1` with `tbar = tanh K' = (g_K-1)/(g_K+1)` exactly, and `B(m+1) <= lambda_* B(m)` for `m < 86` | closed forms |
+| (C6) second moment | Theorem 3.33 ("Second-moment criterion"), Lemmas 3.29 ("Collision Green function"), 3.32 ("Cycle weights") and 3.27 ("Correlation gain along shared edges") | `eta' < 1`; `Score < 1` for `d = 11, 12`; `rho_-^2 >= c_cov/4` and `Score_c < 1` for `d = 10` | `u_k` for `k < 4d`, `B(m)` for `m <= 86`, `psibar(r)` and `abs(A_r)` for `r <= 40`, closed-form tails |
+| θ\* | root-probability constant (10), Corollary 3.34 ("Uniformity in the torus size") | `theta_* = e^{-1/100} rho_- (1-eta')(1-Score)/(1-1/d)`, with `e^{-1/100} >= 99/100`, at least the displayed value | one product |
 
 Then `certify.py` asserts every number that the manuscript displays for these
 rows. Each row's `published` block in `params.json` lists them, keyed
@@ -40,7 +40,7 @@ with an upper bound on `e^shown`):
 
 - Table 2: the inputs `p`, `g_K`, `g_h` as its terminating decimals, and
   `rho_-`, `eta'`, Score, Score_c and θ\* for every row;
-- the certified margins of Section 4.7: `1 - Score` is about 9% at `(12, 3/25)` and ranges
+- the certified margins of Appendix A.1: `1 - Score` is about 9% at `(12, 3/25)` and ranges
   from about 7.3% to 9.5% in dimension 12, it is about 4.8% and 3.9% in
   dimension 11, and `1 - Score_c` is 0.54% and 0.27% in dimension 10, where
   the shared-edge gain `rho_c - rho_-` is about 0.006;
@@ -48,7 +48,7 @@ with an upper bound on `e^shown`):
   `p_A/2 = 75/392` and the Score of about 1.02 that it would give; the largest
   vertex sum `Delta_20 ≈ -1.95e-4`; the witness `p_B <= 0.2210000` and the
   frozen-success values `0.2186899`, `0.2163712`, `0.2140597`, `0.2117739`
-  (Remark 4.6, "Observed successes are not harmless"); `K' ≈ 0.013000` and
+  (Remark 3.6, "Observed successes are not harmless"); `K' ≈ 0.013000` and
   `h ≈ -0.090000`; the Holley slack, at least `0.001827` at `S = 24`,
   `0.00192` at `S = -24` and `0.0057` in the other 23 environments; the worst
   conditional plus probability of about 0.31; `G_12` in
@@ -62,17 +62,18 @@ with an upper bound on `e^shown`):
   basic criterion certifies neither row;
 - at every row, the bond floor is "about `0.9 tanh 2β`": `p / tanh 2β >= 0.85`
   and the witness satisfies `witness / tanh 2β <= 0.95`;
-- the parameter `kappa_2d = 2d B A^(2d-1)` of the manuscript's centered
-  susceptibility bound (Proposition 6.1), with `A, B = (cosh 4β ± cosh 2β)/2`:
-  it is about 5.5 at `(12, 3/25)` (Remark 4.40, "Scope and consequences"),
-  and `certify.py` asserts `kappa_2d > 1` at every row, as the proof of
-  Corollary 6.2 states, so that bound does not apply at these points.
+- the parameter `kappa_2d = 2d B A^(2d-1)` of the manuscript's edge-by-edge
+  susceptibility bound (Proposition E.1), with `A, B = (cosh 4β ± cosh 2β)/2`:
+  it is about 5.5 at `(12, 3/25)`, and `certify.py` asserts `kappa_2d > 1` at
+  every row, so that bound does not apply at these points. The
+  dimension-uniform bound of Proposition 5.1 does; see
+  [verify_explicit_balance.py](../verify_explicit_balance.py).
 
 Finally, it evaluates the global criterion at the row `d = 10`, `t = 3/25`,
-which the manuscript reports as not certified (Section 4.7), and asserts that
+which the manuscript reports as not certified (Appendix A.1), and asserts that
 the Score_c bound lies in `[1.0192, 1.0193]`, above one.
 
-The floating-point observations of Remark 4.35 ("Dimension nine and below;
+The floating-point observations of Remark 3.35 ("Dimension nine and below;
 numerical observations") come from exploratory scans; they are not
 certificates and are not reproduced here.
 
@@ -95,7 +96,7 @@ together with `rho_-`, `eta'`, Score, Score_c and θ\*.
 | 10 | 13/100 | 2336/10000 | 1031101/10^6 | 840843/10^6 | 0.4379919 | 0.205637 | 1.009832 | 0.997261 | 0.001048 |
 
 These are the entries of Table 2. Each is the worse of two independent
-implementations (Section 4.7), rounded in the safe direction, so the exact
+implementations (Appendix A.1), rounded in the safe direction, so the exact
 bounds of `certify.py` are at least as good; they sometimes differ in the
 last digit, for example `rho_- >= 0.4540508` and `theta_* >= 0.036293`.
 
@@ -150,7 +151,7 @@ verifier.
 
 ## Independent crosscheck (`crosscheck/`)
 
-This directory holds the first of the two implementations of Section 4.7:
+This directory holds the first of the two implementations of Appendix A.1:
 the local checkers (`certify_local.py`, `certify_pB.py`, `certify_odds.py`)
 and the global criterion (`criterion.py`, `green.py`, `covariance.py`,
 `evaluate_part1.py`). They were written independently of `certify.py`, the
@@ -173,7 +174,7 @@ points.
   200-bit outward-rounded intervals, finds its own `mbar`, takes `tbar = K'`
   and sums to radius 60. It checks that its bounds meet every displayed
   `rho_-`, `eta'`, Score, Score_c and θ\*. It also evaluates the sharper
-  Score'_c of Lemma 4.28 (which needs `L >= 40` and `2dK' <= 0.35`); the
+  Score'_c of Lemma 3.28 (which needs `L >= 40` and `2dK' <= 0.35`); the
   rows of Table 2 do not use it. Row labels as
   arguments restrict it to those rows, for example
   `python crosscheck/crosscheck_global.py d12-t3/25`.
@@ -201,19 +202,19 @@ These programs need NumPy and SciPy and are not needed for verification.
 
 ## Relation to the proof
 
-The programs certify the finite inequalities only. Section 4 of the
+The programs certify the finite inequalities only. Section 3 of the
 manuscript supplies the analytic steps:
 
-- the gauge representation and the overlap-revealed star law (Section 4.1);
-- the extremal partition and the bond floor after failures (Section 4.2);
+- the gauge representation and the overlap-revealed star law (Section 3.1);
+- the extremal partition and the bond floor after failures (Section 3.2);
 - overlap odds, the single-site bound and one-sided Holley domination
-  (Section 4.3);
-- the mean-field density lemma (GHS, GKS; Section 4.5) and the Ising pair
-  ratio (FKG, Dobrushin comparison; Section 4.6);
+  (Section 3.3);
+- the mean-field density lemma (GHS, GKS; Section 3.5) and the Ising pair
+  ratio (FKG, Dobrushin comparison; Section 3.6);
 - the weighted Paley–Zygmund bound, the renewal argument with the Schur test,
-  and uniformity in the torus size (Section 4.6);
+  and uniformity in the torus size (Section 3.6);
 - the overlap-revealed exploration, transfer to selected limits and
-  almost-sure coexistence (Section 4.8).
+  almost-sure coexistence (Section 3.8).
 
 Runtimes with CPython 3.13.5 on an idle Apple Silicon laptop, in CPU seconds
 (roughly doubled on a loaded machine): `certify.py`
@@ -222,7 +223,7 @@ about 8 s, `crosscheck_local.py` about 5 s, `crosscheck_global.py` about
 
 ## The two implementations
 
-- `certify.py` is the second implementation of Section 4.7, with its
+- `certify.py` is the second implementation of Appendix A.1, with its
   searches moved to `search/`;
 - `crosscheck/` holds the first implementation. `crosscheck_local.py` and
   `crosscheck_global.py` run it at every row of Table 2. Table 2 shows the

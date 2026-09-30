@@ -1,9 +1,9 @@
-# Macrostep interaction-matrix engine (Section 5, Tables 4 and 5)
+# Macrostep interaction-matrix engine (Section 4, Tables 4 and 5)
 
-This directory holds the certificates for the macrostep route in dimensions 9, 8 and 7 (Section 5 of the first
+This directory holds the certificates for the macrostep route in dimensions 9, 8 and 7 (Section 4 of the first
 manuscript). The route replaces the global step of the overlap-revealed route (uniform oriented paths) with
-macrostep paths that make monotone lateral excursions. Theorem 5.12 (the macrostep engine) reduces the torus bound
-`P^aux_L(O_n) >= theta_*` to an exact finite criterion (Theorem 5.9). The criterion has two conditions on a near
+macrostep paths that make monotone lateral excursions. Theorem 4.12 (the macrostep engine) reduces the torus bound
+`P^aux_L(O_n) >= theta_*` to an exact finite criterion (Theorem 4.9). The criterion has two conditions on a near
 set `C'` of orbit types `z = (A, D)`:
 
 ```text
@@ -18,15 +18,15 @@ scalars `lambda`, `H` come from a floating-point search. Each binary64 number is
 it represents.
 
 Section, table and equation numbers below refer to the first manuscript. The finite conditions are (V0)–(V3) of
-Section 5.5.
+Appendix A.2.
 
 ## Rows and certificates
 
 | Table 5 row (d, tanh β) | local inputs | certificate(s) used | λ ≤ (minimal) | θ\* ≥ (θ\*-maximising) |
 |---|---|---|---|---|
-| (9, 7/50) | instance 1: tangent bond floor and Holley line of Sections 4.2–4.3 | `R0-d9-246` | 0.779209 | 0.001908 |
+| (9, 7/50) | instance 1: tangent bond floor and Holley line of Sections 3.2–3.3 | `R0-d9-246` | 0.779209 | 0.001908 |
 | (8, 3/20) | instance 1 | `R0-d8-246` (also `R0-d8-82`, `R0-d8-46`) | 0.892491 | 0.0006603 |
-| (8, 3/20) | instance 2: noisy-cavity inputs of Section 4.4 (Lemmas 4.15, 4.19, 4.20) | `R0-d8s-46` | 0.858128 | 0.001937 |
+| (8, 3/20) | instance 2: noisy-cavity inputs of Section 3.4 (Lemmas 3.15, 3.19, 3.20) | `R0-d8s-46` | 0.858128 | 0.001937 |
 | (7, 31/200) | instance 3: noisy-cavity inputs | `R0-d7b-804` | 0.924670 | 0.0003267 |
 | (7, 3/20) | instance 3 | `R0-d7a-804` | 0.935275 | 0.0002274 |
 | not in Table 5: (7, 3/20), (7, 31/200) | instance 3 with the tightened forward tails of `engine/tail_tight.py` | `R0t-d7a-246`, `R0t-d7b-246` | 0.966950, 0.964284 | 0.0002132, 0.0002888 |
@@ -50,12 +50,12 @@ run records the same distinction. The field `theorems` of a run names its row of
 | `params.json` | Frozen exact inputs: the six instances `(d, t, p, g_K, g_h, xbar)` (the five rows of Table 4 and one further instance), the instance-1 tangent points and Holley weights, the engine constants (`c = 3`, `N0 = 24`, `N_F = 60`, `R_S = 4`, families), the 25 runs, the map from Table 5 to runs, and 276 asserted numbers, each with its locator in the manuscript or marked as a reference value. |
 | `local_sharpened.json` | Instance 2 and 3 local certificate data: `wc'`, `psi_U(x)`, Holley tangent points and `Lambda'_k`. |
 | `certificates/<label>.json`, `<label>.bin.xz` | The 25 stored certificates in portable form (format below). 23 MB in total; the largest file is 4.7 MB. |
-| `engine/` | The a priori error program of Section 5.5 (`ind_tables.py`, `ind_family.py`, `ind_kernel.py`, `ind_green.py`, `ind_certify.py`), its variant with tightened forward tails (`ind_certify_t.py` and the forward-tail cache builder `tail_tight.py`), the local constants (`indep_global.py`, standard library), and `export_certificate.py` (pickle to portable format). |
-| `engine_l2/` | The directed-rounding program of Section 5.5, written independently of `engine/`. `check_boost.py` and `check_green.py` need SciPy. |
+| `engine/` | The a priori error program of Appendix A.2 (`ind_tables.py`, `ind_family.py`, `ind_kernel.py`, `ind_green.py`, `ind_certify.py`), its variant with tightened forward tails (`ind_certify_t.py` and the forward-tail cache builder `tail_tight.py`), the local constants (`indep_global.py`, standard library), and `export_certificate.py` (pickle to portable format). |
+| `engine_l2/` | The directed-rounding program of Appendix A.2, written independently of `engine/`. `check_boost.py` and `check_green.py` need SciPy. |
 | `reproduce_engine.py` | **Full reproduction** (NumPy and Numba). `reproduction_record.json` is the summary it wrote in the recorded run below. |
 | `checks/recheck_certs.py` | Exact rechecker. It re-decides both certificates of an engine pickle in exact integer arithmetic and recomputes `C_fin` and θ\*. It shares no code with the producers. `reproduce_engine.py` runs it on every fresh pickle. |
-| `checks/check_configs_exact.py` | Optional (NumPy, Numba). Evaluates the defining formula of the per-macrostep weight (Proposition 5.8) in exact arithmetic on random configurations and checks that both kernels (`engine/` and `engine_l2/`) are upper bounds. With the three argument lists in its docstring it gives, for example, a priori error kernel/exact in `[1.000000000001, 1.000000732859]` over 8640 configurations at d = 9. The runs took 80 s, 57 s and 36 s (d = 9, 8, 7) on the Linux machine and used about 210 MB each. |
-| `checks/cw_bounds.py` | Optional (NumPy). Exact Collatz–Wielandt enclosure of `rho(Mbar)` of a computed near matrix. It is used only for the robustness statements of Remark 5.13. |
+| `checks/check_configs_exact.py` | Optional (NumPy, Numba). Evaluates the defining formula of the per-macrostep weight (Proposition 4.8) in exact arithmetic on random configurations and checks that both kernels (`engine/` and `engine_l2/`) are upper bounds. With the three argument lists in its docstring it gives, for example, a priori error kernel/exact in `[1.000000000001, 1.000000732859]` over 8640 configurations at d = 9. The runs took 80 s, 57 s and 36 s (d = 9, 8, 7) on the Linux machine and used about 210 MB each. |
+| `checks/cw_bounds.py` | Optional (NumPy). Exact Collatz–Wielandt enclosure of `rho(Mbar)` of a computed near matrix. It is used only for the robustness statements of Remark 4.13. |
 | `search/freeze_instance1.py` | Optional (SciPy). Repeats the floating-point choice of the instance-1 tangent points and weights, with the same Nelder–Mead procedure as `../overlap_revealed/search/freeze_params.py`. It is not part of any verification. The frozen values are reproduced exactly on Apple Silicon (SciPy 1.16.0, NumPy 2.2.6). On x86-64 Linux (SciPy 1.18.1, NumPy 2.5.3) the search ends at a slightly different point, and the tangent points differ from about the eighth significant digit. Any positive tangent points are admissible, and the frozen ones are the ones certified. |
 
 Instances 2 and 3 are noisy-cavity instances. Their local certificates use the deciders in
@@ -71,13 +71,13 @@ python macrostep/certify_macrostep.py
 This needs only the standard library and makes every decision in exact rational or integer arithmetic.
 
 1. **Local inputs (V0).** Instance 1: the bond floor `p <= p_B` (all vertex sums `Delta_j <= 0`) and the Holley
-   line in all `2d+1` environments. Instances 2 and 3: Lemma 4.19 (point and chord conditions, class sums
-   `Psi(j) <= 0`) and Lemma 4.20 (every two-block class `Gamma >= 0`), together with the noisy-class constraint on
+   line in all `2d+1` environments. Instances 2 and 3: Lemma 3.19 (point and chord conditions, class sums
+   `Psi(j) <= 0`) and Lemma 3.20 (every two-block class `Gamma >= 0`), together with the noisy-class constraint on
    `wc'`.
-2. **Hypotheses of Theorem 5.12 (V1)–(V2).** `g_h < 1 <= g_K`, `g_K g_h <= 1`, `g_K^(2d) < 2718/1000`, the
+2. **Hypotheses of Theorem 4.12 (V1)–(V2).** `g_h < 1 <= g_K`, `g_K g_h <= 1`, `g_K^(2d) < 2718/1000`, the
    mean-field root test at the frozen `xbar`, `alpha < 1`, `q_* < 1`, `rho_-^2 >= c_cov/4` and `rho_c p < rho_-`.
-   It also recomputes `rho_-`, `rho_c`, `kappa`, `t`, `b(1)`, `psi_3(0,0)` and `C_fin` of (37), and the torus
-   sizes `L_0(n)` of (38) at `n = 1, 10, 100` from rational logarithm enclosures.
+   It also recomputes `rho_-`, `rho_c`, `kappa`, `t`, `b(1)`, `psi_3(0,0)` and `C_fin` of (29), and the torus
+   sizes `L_0(n)` of (30) at `n = 1, 10, 100` from rational logarithm enclosures.
 3. **Stored certificates (V3).** It checks the payload digests and that the certificate inputs and the engine's
    local constants equal those recomputed in step 2. It checks that the state list is exactly the orbit-type set
    `{|D|_1 <= 2R_D, |A|_1 <= R_A}` with `R_A >= 2c`. It re-decides (i) and (ii) for both certificates of each run
@@ -93,8 +93,8 @@ Options: `--runs LABEL,...` checks a subset; `--cert-dir DIR --certificates-only
 certificates, skipping the local inputs and the displays.
 
 **What the default run does not check.** It takes `Mbar`, `etabar`, `Gnear` and `eta_F` as stored. The
-certificate is valid only if these are upper bounds of the quantities in Theorem 5.9. That rests on the engine code
-and its a-priori floating-point error analysis (Section 5.5). The full reproduction below recomputes them, and
+certificate is valid only if these are upper bounds of the quantities in Theorem 4.9. That rests on the engine code
+and its a-priori floating-point error analysis (Appendix A.2). The full reproduction below recomputes them, and
 `engine_l2/` gives an independent second computation.
 
 ## Certificate format

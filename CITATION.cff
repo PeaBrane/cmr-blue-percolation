@@ -5,7 +5,7 @@ type: software
 authors:
   - family-names: Pei
     given-names: Yan Ru
-date-released: 2026-09-27
+date-released: 2026-09-29
 url: "https://github.com/PeaBrane/cmr-blue-percolation"
 repository-code: "https://github.com/PeaBrane/cmr-blue-percolation"
 abstract: >-
@@ -15,8 +15,9 @@ abstract: >-
   in dimension 9 by the overlap-revealed route with noisy-cavity local inputs,
   and in dimensions 9, 8 and 7 by the macrostep interaction-matrix route; the
   single-floor oriented comparison in dimensions 16 to 20, 22 and 25; the
-  dimension-22 fresh-star certificate; and simultaneous blue percolation with
-  finite spin-glass susceptibility in dimension 180. The repository also holds
+  dimension-22 fresh-star certificate; finite spin-glass susceptibility and
+  exact sector balance at the seventeen explicit pairs; and simultaneous blue
+  percolation with finite spin-glass susceptibility in dimension 180. The repository also holds
   the window constants, the explicit two-dimensional and sparse-insulation
   windows and finite sanity checks for the companion manuscript on uniqueness
   in the diluted plus-minus-one Edwards-Anderson model, together with
